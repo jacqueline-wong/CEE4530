@@ -98,39 +98,39 @@ $$A=\log \left(\frac{P_{o} }{P} \right)$$
 1) Show the linear regression equation that you obtained using latex.
 
 ```python
-      # Find a set of data that includes units (or make one up!) that could reasonably be fit with linear regression.
-      # Save the data to a tab delimited file in your atom project workspace.
-      # Load the data from the file into a Pandas dataframe.
-      from aguaclara.core.units import unit_registry as u
-      import numpy as np
-      import matplotlib.pyplot as plt
-      import pandas as pd
-      from scipy import stats
-      dframe = pd.read_csv("/Users/jacquelinewong/Documents/ CEE 4530/turbidity.txt",delimiter='\t')
+  # Find a set of data that includes units (or make one up!) that could reasonably be fit with linear regression.
+  # Save the data to a tab delimited file in your atom project workspace.
+  # Load the data from the file into a Pandas dataframe.
+  from aguaclara.core.units import unit_registry as u
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  from scipy import stats
+  dframe = pd.read_csv("turbidity.txt",delimiter='\t')
 
-      # Plot the data and the linear regression line.
-      # Make sure to handle units carefully and to attach units to the linear regression line.
-      C = dframe.iloc[:,0].values * u.mg/u.L
-      T = dframe.iloc[:,1].values * u.NTU
+  # Plot the data and the linear regression line.
+  # Make sure to handle units carefully and to attach units to the linear regression line.
+  C = dframe.iloc[:,0].values * u.mg/u.L
+  T = dframe.iloc[:,1].values * u.NTU
 
-      slope, intercept, r_value, p_value, std_err = stats.linregress(C,T)
-      intercept = intercept * T.units
-      slope = slope * T.units/C.units
+  slope, intercept, r_value, p_value, std_err = stats.linregress(C,T)
+  intercept = intercept * T.units
+  slope = slope * T.units/C.units
 
-      fig, ax = plt.subplots()
-      ax.plot(C, T, 'bo', )
-      ax.plot(C, slope * C + intercept, 'k-', )
-      ax.set(xlabel=list(dframe)[0])
-      ax.set(ylabel=list(dframe)[1])
-      ax.legend(['Measured', 'Linear regression'])
-      ax.grid(True)
+  fig, ax = plt.subplots()
+  ax.plot(C, T, 'bo', )
+  ax.plot(C, slope * C + intercept, 'k-', )
+  ax.set(xlabel=list(dframe)[0])
+  ax.set(ylabel=list(dframe)[1])
+  ax.legend(['Measured', 'Linear regression'])
+  ax.grid(True)
 
-      # Add a figure in Markdown showing the graph you produced.
-      plt.show()
+  # Add a figure in Markdown showing the graph you produced.
+  plt.show()
 
   # Show the linear regression equation that you obtained using latex.
   print(slope)
   print(intercept)
 ```
 
-$$T = 15.72 \frac{\text { NTU L }}{\text {mg}} \times C - 0.5222 \text{ NTU} $$
+$$T = 15.72 \frac{\text {NTU  L}}{\text {mg}} \times C - 0.5222 \text{ NTU} $$
