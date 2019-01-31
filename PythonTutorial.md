@@ -13,7 +13,7 @@ For a more detailed tutorial see the [python tutorial](https://aguaclara.github.
 1. create an equation
 1. add the graph to your document as a figure.
 
-See [Selecting Subsets of Data in Pandas](https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c) for a good background on working with a pandas dataframe.
+See [Selecting Subsets of Data in Pandas](https://medium.com/dunder-data/selecting-subsets-of-data-in-pandas-6fcd0170be9c) for a good background on working with a pandas dafaframe.
 
 ```python
   from aguaclara.core.units import unit_registry as u
@@ -49,7 +49,6 @@ See [Selecting Subsets of Data in Pandas](https://medium.com/dunder-data/selecti
   # We will use the stats package to do the linear regression.
   # It is important to note that the units are stripped from the x and y arrays when processed by the stats package.
   slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
-  slope
 
   #We can add the units to intercept by giving it the same units as the y values.
   intercept = intercept * y.units
@@ -72,12 +71,13 @@ See [Selecting Subsets of Data in Pandas](https://medium.com/dunder-data/selecti
   ax.grid(True)
   # Here I save the file to my local harddrive. You will need to change this to work on your computer.
   # We don't need the file type (png) here.
-  # plt.savefig('C:/Users/mw24/github/CEE4530/images/linear')
+  plt.savefig('PythonTutorial.png')
   plt.show()
 ```
 
 Now we will display our figure in Markdown. To have the figure show up for anyone who opens this markdown file we will push the figure to github and then link to it there. To find the link in github, go to the code tab and then browse to the image.
-![linear](https://github.com/monroews/CEE4530/blob/master/images/linear.png)
+
+![linear](https://github.com/monroews/CEE4530/blob/master/images/linear.png?raw=true)
 
 Figure 1: Captions are very important for figures. Captions go below figures.
 
@@ -106,7 +106,8 @@ $$A=\log \left(\frac{P_{o} }{P} \right)$$
   import matplotlib.pyplot as plt
   import pandas as pd
   from scipy import stats
-  dframe = pd.read_csv("turbidity.txt",delimiter='\t')
+  data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/turbidity.txt"
+  dframe = pd.read_csv(data_file_path,delimiter='\t')
 
   # Plot the data and the linear regression line.
   # Make sure to handle units carefully and to attach units to the linear regression line.
@@ -125,12 +126,17 @@ $$A=\log \left(\frac{P_{o} }{P} \right)$$
   ax.legend(['Measured', 'Linear regression'])
   ax.grid(True)
 
-  # Add a figure in Markdown showing the graph you produced.
   plt.show()
+  plt.savefig('turbidity.png')
 
+  # Add a figure in Markdown showing the graph you produced.
   # Show the linear regression equation that you obtained using latex.
   print(slope)
   print(intercept)
 ```
+
+![linear](https://github.com/monroews/CEE4530/blob/master/images/linear.png?raw=true)
+
+Figure 1: Captions are very important for figures. Captions go below figures.
 
 $$T = 15.72 \frac{\text {NTU  L}}{\text {mg}} \times C - 0.5222 \text{ NTU} $$
