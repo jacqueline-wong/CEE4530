@@ -126,8 +126,8 @@ $$A=\log \left(\frac{P_{o} }{P} \right)$$
   ax.legend(['Measured', 'Linear regression'])
   ax.grid(True)
 
-  plt.show()
   plt.savefig('turbidity.png')
+  plt.show()
 
   # Add a figure in Markdown showing the graph you produced.
   # Show the linear regression equation that you obtained using latex.
