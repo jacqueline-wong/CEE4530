@@ -135,8 +135,8 @@ $$A=\log \left(\frac{P_{o} }{P} \right)$$
   print(intercept)
 ```
 
-![linear](https://github.com/monroews/CEE4530/blob/master/images/linear.png?raw=true)
+![linear](https://github.com/lw583/CEE4530/blob/master/turbidity.png?raw=true)
 
-Figure 1: Captions are very important for figures. Captions go below figures.
+Figure 1: A graph of varying aluminium sulfate concentration against turbidity.
 
-$$T = 15.72 \frac{\text {NTU  L}}{\text {mg}} \times C - 0.5222 \text{ NTU} $$
+$$T = 15.72 \frac{\text {NTU  L}}{\text {mg}} \times C - 1.188 \text{ NTU} $$
