@@ -1,5 +1,9 @@
 # Lab 1 for CEE 4530
 
+1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course will be done in Atom using Python!
+
+2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.
+
 ```python
   # Find a set of data that includes units (or make one up!) that could reasonably be fit with linear regression.
   # Save the data to a tab delimited file in your atom project workspace.
@@ -9,27 +13,27 @@
   import matplotlib.pyplot as plt
   import pandas as pd
   from scipy import stats
-  data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/turbidity.txt"
-  dframe = pd.read_csv(data_file_path,delimiter='\t')
+
+  dframe = pd.read_csv("lab1_data.xlsx",delimiter='\t')
 
   # Plot the data and the linear regression line.
   # Make sure to handle units carefully and to attach units to the linear regression line.
   C = dframe.iloc[:,0].values * u.mg/u.L
-  T = dframe.iloc[:,1].values * u.NTU
+  A = dframe.iloc[:,1].values
 
-  slope, intercept, r_value, p_value, std_err = stats.linregress(C,T)
-  intercept = intercept * T.units
-  slope = slope * T.units/C.units
+  slope, intercept, r_value, p_value, std_err = stats.linregress(C,A)
+  intercept = intercept * A.units
+  slope = slope * A.units/C.units
 
   fig, ax = plt.subplots()
-  ax.plot(C, T, 'bo', )
+  ax.plot(C, A, 'bo', )
   ax.plot(C, slope * C + intercept, 'k-', )
   ax.set(xlabel=list(dframe)[0])
   ax.set(ylabel=list(dframe)[1])
   ax.legend(['Measured', 'Linear regression'])
   ax.grid(True)
 
-  plt.savefig('turbidity.png')
+  plt.savefig('linear.png')
   plt.show()
 
   # Add a figure in Markdown showing the graph you produced.
@@ -41,5 +45,3 @@
 ![linear](https://github.com/lw583/CEE4530/blob/master/turbidity.png?raw=true)
 
 Figure 1: A graph of varying aluminium sulfate concentration against turbidity.
-
-$$T = 15.72 \frac{\text {NTU  L}}{\text {mg}} \times C - 1.188 \text{ NTU} $$
