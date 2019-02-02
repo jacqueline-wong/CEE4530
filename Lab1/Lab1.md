@@ -1,7 +1,8 @@
 # Lab 1 for CEE 4530
 
-1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course wil
-l be done in Atom using Python!  
+1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course will be done in Atom using Python!
+
+The attached spreadsheet has been saved and sent as "lab1_data.xlsx".  
 
 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.
 
@@ -37,19 +38,15 @@ Air bubbles
 9. Verify that your report and graphs meet the requirements as outlined on the course website.
 
 ```python
-  # Find a set of data that includes units (or make one up!) that could reasonably be fit with linear regression.
-  # Save the data to a tab delimited file in your atom project workspace.
-  # Load the data from the file into a Pandas dataframe.
   from aguaclara.core.units import unit_registry as u
   import numpy as np
   import matplotlib.pyplot as plt
   import pandas as pd
   from scipy import stats
 
-  dframe = "/Users/jacquelinewong/github/CEE4530/Lab1/absorbance.txt" pd.read_csv("absorbance.txt",delimiter='\t')
+  data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/absorbance.txt"
+  dframe = pd.read_csv(data_file_path,delimiter='\t')
 
-  # Plot the data and the linear regression line.
-  # Make sure to handle units carefully and to attach units to the linear regression line.
   C = dframe.iloc[:,0].values * u.mg/u.L
   A = dframe.iloc[:,1].values
 
@@ -68,12 +65,8 @@ Air bubbles
   plt.savefig('absorbance.png')
   plt.show()
 
-  # Add a figure in Markdown showing the graph you produced.
-  # Show the linear regression equation that you obtained using latex.
-  print(slope)
-  print(intercept)
 ```
 
-![linear](https://github.com/lw583/CEE4530/blob/master/turbidity.png?raw=true)
+![linear](https://github.com/lw583/CEE4530/blob/master/Lab1/absorbance.png?raw=true)
 
-Figure 1: A graph of varying aluminium sulfate concentration against turbidity.
+Figure 1: A graph of varying red dye concentration against absorbance.
