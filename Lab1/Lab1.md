@@ -1,20 +1,29 @@
 # Lab 1 for CEE 4530
 
-1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course will be done in Atom using Python!
+1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course wil
+l be done in Atom using Python!  
 
 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.
 
+
 3. What is the value of the extinction coefficient, ε?
 
+
+The value of the extinction coefficient, ε is
+
+
 4. Did you use interpolation or extrapolation to get the concentration of the unknown?
+   We used interpolation to get the concentration of the unknown.
 
 5. What measurement controls the accuracy of the density measurement for the NaCl solution?
+   The measurement that controls the accuracy of the density measurement for the NaCl solution is the pipette.
 
 6. What density did you expect (see prelab 2)?
-   The density that I expected was
+   The density that we expected was1038 kg/m^3.
 
 7. Approximately what should the accuracy be for the density measurement?
 
+The accuracy for the density measurement should be approximately
 
 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.
 
@@ -37,7 +46,7 @@ Air bubbles
   import pandas as pd
   from scipy import stats
 
-  dframe = pd.read_csv("lab1_data.xlsx",delimiter='\t')
+  dframe = pd.read_csv("absorbance.txt",delimiter='\t')
 
   # Plot the data and the linear regression line.
   # Make sure to handle units carefully and to attach units to the linear regression line.
@@ -56,7 +65,7 @@ Air bubbles
   ax.legend(['Measured', 'Linear regression'])
   ax.grid(True)
 
-  plt.savefig('linear.png')
+  plt.savefig('absorbance.png')
   plt.show()
 
   # Add a figure in Markdown showing the graph you produced.
