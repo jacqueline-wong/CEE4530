@@ -51,8 +51,8 @@ Air bubbles
   A = dframe.iloc[:,1].values
 
   slope, intercept, r_value, p_value, std_err = stats.linregress(C,A)
-  intercept = intercept * A.units
-  slope = slope * A.units/C.units
+  intercept = intercept
+  slope = slope * 1/C.units
 
   fig, ax = plt.subplots()
   ax.plot(C, A, 'bo', )
@@ -64,9 +64,8 @@ Air bubbles
 
   plt.savefig('absorbance.png')
   plt.show()
-
 ```
 
-![linear](https://github.com/lw583/CEE4530/blob/master/Lab1/absorbance.png?raw=true)
+![linear](https://github.com/lw583/CEE4530/blob/master/absorbance.png?raw=true)
 
 Figure 1: A graph of varying red dye concentration against absorbance.
