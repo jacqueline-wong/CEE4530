@@ -6,37 +6,6 @@ The attached spreadsheet has been saved and sent as "lab1_data.xlsx".
 
 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.
 
-
-3. What is the value of the extinction coefficient, ε?
-
-
-The value of the extinction coefficient, ε is
-
-
-4. Did you use interpolation or extrapolation to get the concentration of the unknown?
-   We used interpolation to get the concentration of the unknown.
-
-5. What measurement controls the accuracy of the density measurement for the NaCl solution?
-   The measurement that controls the accuracy of the density measurement for the NaCl solution is the pipette.
-
-6. What density did you expect (see prelab 2)?
-   The density that we expected was1038 kg/m^3.
-
-7. Approximately what should the accuracy be for the density measurement?
-
-The accuracy for the density measurement should be approximately
-
-8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.
-
-```python
-Human error
-Range of instrument
-Air bubbles
-```
-
-
-9. Verify that your report and graphs meet the requirements as outlined on the course website.
-
 ```python
   from aguaclara.core.units import unit_registry as u
   import numpy as np
@@ -66,6 +35,37 @@ Air bubbles
   plt.show()
 ```
 
-![linear](https://github.com/lw583/CEE4530/blob/master/absorbance.png?raw=true)
+Does absorbance increase linearly with concentration of the red dye?
+![linear](https://raw.githubusercontent.com/lw583/CEE4530/master/absorbance.png)
 
 Figure 1: A graph of varying red dye concentration against absorbance.
+
+
+3. What is the value of the extinction coefficient, ε?
+
+
+The value of the extinction coefficient, ε is
+
+
+4. Did you use interpolation or extrapolation to get the concentration of the unknown?
+   We used interpolation to get the concentration of the unknown.
+
+5. What measurement controls the accuracy of the density measurement for the NaCl solution?
+   The measurement that controls the accuracy of the density measurement for the NaCl solution is the pipette.
+
+6. What density did you expect (see prelab 2)?
+   The density that we expected was1038 kg/m^3.
+
+7. Approximately what should the accuracy be for the density measurement?
+
+The accuracy for the density measurement should be approximately
+
+8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.
+
+```python
+Human error
+Range of instrument
+Air bubbles
+```
+
+9. Verify that your report and graphs meet the requirements as outlined on the course website.
