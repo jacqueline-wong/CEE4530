@@ -4,6 +4,29 @@
 
 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.
 
+3. What is the value of the extinction coefficient, ε?
+
+4. Did you use interpolation or extrapolation to get the concentration of the unknown?
+
+5. What measurement controls the accuracy of the density measurement for the NaCl solution?
+
+6. What density did you expect (see prelab 2)?
+   The density that I expected was
+
+7. Approximately what should the accuracy be for the density measurement?
+
+
+8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.
+
+```python
+Human error
+Range of instrument
+Air bubbles
+```
+
+
+9. Verify that your report and graphs meet the requirements as outlined on the course website.
+
 ```python
   # Find a set of data that includes units (or make one up!) that could reasonably be fit with linear regression.
   # Save the data to a tab delimited file in your atom project workspace.
