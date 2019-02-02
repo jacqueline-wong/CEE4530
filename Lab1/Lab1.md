@@ -46,7 +46,7 @@ Air bubbles
   import pandas as pd
   from scipy import stats
 
-  dframe = pd.read_csv("absorbance.txt",delimiter='\t')
+  dframe = "/Users/jacquelinewong/github/CEE4530/Lab1/absorbance.txt" pd.read_csv("absorbance.txt",delimiter='\t')
 
   # Plot the data and the linear regression line.
   # Make sure to handle units carefully and to attach units to the linear regression line.
