@@ -67,7 +67,7 @@ The accuracy for the density measurement should be approximately
 
 <b> 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown. </b>
 
-In this experiment, our goal was to determine the concentration of the solution that was given to us. We approached this problem by utilizing Beer-Lambert law, which states the relationship between the concentration of solution and its absorbance. To do this, several standards were created with known concentration to determine the relationship between absorbance and concentration. From the graph plotted, it was found that there is a linear decreasing relationship between the two variables. The unknown solution's absorbance was found and the concentration was determined to be 11.26 mg/L.
+In this experiment, our goal was to determine the concentration of the solution that was given to us. We approached this problem by utilizing Beer-Lambert law, which states the relationship between the concentration of solution and its absorbance. To do this, several standards were created with known concentration to determine the relationship between absorbance and concentration. From the graph plotted, it was found that there is a linear decreasing relationship between the two variables. The unknown solution's absorbance was found and the concentration was determined to be 11.26 mg/L
 ```python
 Human error
 Range of instrument
