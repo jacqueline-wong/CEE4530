@@ -2,47 +2,28 @@
 
 <b> 1. How many grams of NaHCO3 would be required to keep the ANC levels in a lake above 50 μeq/L for 3 hydraulic residence times given an influent pH of 3.0 and a lake volume of 4 L, if the current lake ANC is 0 μeq/L?</b>
 
-Since volume is fixed, 3 hydraulic residence time is given as:
-
-$$ 3\theta = \frac{V}{\frac{1}{3}Q}$$
-
 Assuming that the lake is well mixed, the mass balance in the lake is given as:
 
 $$ Q\left(ANC_{in}  - ANC_{out} \right) =  \rlap{-} V \frac{d(ANC)}{dt} $$
 
-The influent pH of 3.0 can be converted into equivalence.
+The Acid Neutralizing Capacity of the lake influent can be estimated from pH because it is below 4.3. Thus, an influent of pH 3.0 can be converted into:
 
-$$ANC_{in} = -\left[H^+ \right] = -0.001 eq/L$$
+$$ANC_{in} = -\left[H^+ \right] = -0.001 \text{ eq/L}$$
 
-The solution to the mass balance differential equation is:
+The solution to the mass balance differential equation for a well-mixed lake is:
 
-$$ANC_{out} \; =\; ANC_{in} \; \cdot \; \left(1\; -\; {\mathop{e}\nolimits^{-t/\theta \; \; }} \right)+\; ANC_{0} \; \cdot \; {\mathop{e}\nolimits^{-t/\theta \; }}$$
+$$ANC_{out} = ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta\;}} \right)+ ANC_{0} \cdot {\mathop{e}\nolimits^{-t/\theta}}$$
 
-$$0.000050 \; =\; -0.001 \; \cdot \; \left(1\; -\; {\mathop{e}\nolimits^{-t/\theta \; \; }} \right)+\; 0 \; \cdot \; {\mathop{e}\nolimits^{-t/\theta \; }}$$
+For 3 hydraulic residence times:
 
-_____
+$$0.000050 \text{ eq/L} = -0.001 \text{ eq/L} \cdot \left(1 - {\mathop{e}\nolimits^{-3}} \right)+ ANC_{0} \cdot {\mathop{e}\nolimits^{-3}}$$
 
+Rearranging the equation and solving for $ANC_{0}$, we get:
 
-$$ ANC = \frac{{(equivalent\; vol.)(normality\; of\; titrant)}}{{(vol.\; of\; sample)}} $$
+$$ {ANC}_{{0}} =\left[{0.000050}+{0.001}\cdot \left(1-{\mathop{e}\nolimits^{-3}} \right)\right]{\mathop{e}\nolimits^{3}} =  0.02009 \text{ eq/L} $$
 
-$$ 50 \text{ µeq/L}= \frac{{(equivalent\; vol.)(normality\; of\; titrant)}}{{4\text { L}}} $$
-
-
-
-
-
-
-$$ {ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
-
-$$ {ANC}\cong -\left[{H}^{+} \right] $$
-
-
-
-
-Substituting into equation :eq:`eq_ANC0_CMFR`:
-
-$$ {ANC}_{{0}} {\; }=\left[{0.000050}+{0.001\; }\cdot \left(1\; -\; {\mathop{e}\nolimits^{-1}} \right)\right]{\mathop{e}\nolimits^{1}} = 1.854 meq/L $$
+The quantity of sodium bicarbonate required can be calculated from:
 
 $$ [\text{NaHCO}_3]_{0} = ANC_{0} $$
 
-$$ \frac{{1.854\; \text{m mol}\; NaHCO}_3 }{\text{L}} {\times }\frac{{84.007\; \text{mg}\; NaHCO}_3 }{{\text{m mol}\; NaHCO}_3 } {\times \; 4\; \text{L}\; =\; 623\; \text{mg\; NaHCO}_3} $$
+$$ \frac{{0.02009 \text{ mol}\; NaHCO}_3 }{\text{L}} {\times }\frac{{84\; \text{g}\; NaHCO}_3 }{{\text{ mol}\; NaHCO}_3 } {\times \; 4\; \text{L}\; =\; 6.75 \; \text{g\; NaHCO}_3} $$
