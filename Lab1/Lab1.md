@@ -63,15 +63,14 @@ The measurement that controls the accuracy of the density measurement for the Na
 , whereas the density of our solution was 1038.26 kg/m<sup>3</sup>.
 The accuracy for the density measurement should be approximately
 
-(theoretical-experiment/theoretical)
+(theoretical-experiment/theoretical) <b>FOR JACQUELINE</b>
 
 <b> 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown. </b>
 
 In this experiment, our goal was to determine the concentration of the solution that was given to us. We approached this problem by utilizing Beer-Lambert law, which states the relationship between the concentration of solution and its absorbance. To do this, several standards were created with known concentration to determine the relationship between absorbance and concentration. From the graph plotted, it was found that there is a linear decreasing relationship between the two variables. The unknown solution's absorbance was found and the concentration was determined to be 11.26 mg/L
-```python
-Human error
-Range of instrument
+
+Human error (not all the salt went in)
+Ranges of instrument
 Air bubbles
-```
 
 <b> 9. Verify that your report and graphs meet the requirements as outlined on the course website. </b>
