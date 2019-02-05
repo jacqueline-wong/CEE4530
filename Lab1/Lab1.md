@@ -7,10 +7,9 @@ Our client has presented our research laboratory with a sample of distilled wate
 
 ## Procedures ##
 
-To determine the linear relationship between 
+First, we prepared 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L standards of red dye in distilled water. Each standard was created in a 100 mL volumetric flask, with red dye measured using a 10-100 µL pipette. After the standards were created,... . The standards' absorbances were measured from the blank to increasing concentrations in order and 
 
-
-pipette and distilled water to create 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L samples of red dye.
+Plotted to determine the effective range of absorbance measurements of the photometer instrument.
 
 ## Results ##
 
