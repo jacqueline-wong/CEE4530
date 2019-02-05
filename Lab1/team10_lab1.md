@@ -7,9 +7,11 @@ Our client has presented our research laboratory with a sample of distilled wate
 
 ## Procedures ##
 
-First, we prepared 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L standards of red dye in distilled water. Each standard was created in a 100 mL volumetric flask, with red dye measured using a 10-100 µL pipette. After the standards were created,... . The standards' absorbances were measured from the blank to increasing concentrations in order and 
+First, we prepared 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L standards of red dye in distilled water. Each standard was created in a 100 mL volumetric flask, with red dye measured using a 10-100 µL pipette. The absorbance of each standard was measured with a photometer in order of increasing concentration as voltages, which were later converted to .
 
 Plotted to determine the effective range of absorbance measurements of the photometer instrument.
+
+Other supporting data has been included in a spreadsheet named "datasheet.xlsx".  
 
 ## Results ##
 
@@ -81,8 +83,6 @@ accuracy = 100 * (1 - error)
 Based on the equation, ...
 
 the density that we expected was 1038.72 kg/m<sup>3</sup>. As the density of our solution was 1038.26 kg/m<sup>3</sup>, the accuracy of our measurement is approximately 99.96%.
-
-Other supporting information has been included in a spreadsheet named "datasheet.xlsx".  
 
 ## Discussion ##
 
