@@ -1,10 +1,18 @@
 # Lab 1 for CEE 4530
 
-<b> 1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course will be done in Atom using Python!
-</b>
-The attached spreadsheet has been saved and sent as "lab1_data.xlsx".  
+## Introduction ##
+Our client, Dr. Monroe Weber-Shirk and Jonathan Harris, are expert food scientists who are concerned that our daily diet contains too much additives, particularly the unnecessary use of dye for aesthetic appeal. Whilst dye is generally considered a safe substance to be used in food, overconsumption may lead to certain health problems such as bladder tumors. Children are particularly vulnerable to the detrimental health effects posed by dye. In particular, some brands of fruit punch and strawberry jello, two popular children’s snacks, can contain large amounts of red dye. Hence, the current situation with food dye and human health is very concerning to our client.
 
-<b> 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region. </b>
+Our client has presented our research laboratory with a sample of the most popular fruit punch on the market, which contains an unknown concentration of red dye. Our task is to measure the concentration of red dye in the fruit punch, which will help them further their investigations on food dye levels in popular food and beverage items.
+
+## Procedures ##
+
+As most popular children's beverages (including the one tested) are made from artificial flavorings and other ingredients that are colorless when dissolved in water, our clients informed us that it was a valid assumption that without the addition red dye, the beverage would have an effective absorbance almost identical to that of water. Thus, distilled water was used as an effective blank for 
+
+
+## Results ##
+
+It is also important to note that the photometer has a limited range of absorbance that can be detected. Based on the relationship between absorption and concentration as stated in Beer's law, this range falls between 0 to 20 mg/L for the instrument used as a linear relationship was observed between concentration and absorbance. In this particular case, the absorbance of the unknown solution fell within this range. Thus, we were able to use Beer's law to interpolate a concentration from the unknown solutions's measured absorbance.
 
 ```python
   from aguaclara.core.units import unit_registry as u
@@ -37,40 +45,50 @@ The attached spreadsheet has been saved and sent as "lab1_data.xlsx".
 
 ![linear](https://raw.githubusercontent.com/lw583/CEE4530/master/absorbance.png)
 
-Figure 1: A graph of varying red dye concentration (from 0 to 20 mg/L) against absorbance.
+Figure 1: A graph of absorbance against red dye concentration. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
 
 
 From 0 to 2 mg/L, the absorbance of red dye does not increase linearly, likely due to the these points being under the detection limit of the instrument. From 2 mg/L to 20 mg/L, there appears to be a linear relationship between absorbance and concentration. However, at concentrations higher than 20 mg/L (not graphed), this linear relationship no longer exists, likely due to these points being out of the instrument's measurement range.
 
-<b> 3. What is the value of the extinction coefficient, ε?
-</b>
-The value of the extinction coefficient, ε is <b>FOR JACQUELINE</b>
+<b> 3. What is the value of the extinction coefficient, ε? </b>
+
+As given in the powerpoint slides,
+
+$$ A = εbc $$
+
+where $A$ is absorbance, $b$ is path length and $c$ is concentration. Hence, $εb$ is the slope of the linear regression in our graph. This is based on the assumption that our linear regression line has an intercept of zero (it is not, but is very close to it). As given to us in the experiment, $b$ is 1 cm.
+
+```python
+b = 19 * u.mm
+ε = slope / b
+print(ε)
+```
+
+The value of the extinction coefficient, $ε$ is -0.00342 L mg<sup>-1</sup> mm<sup>-1</sup>.
 
 <b> 4. Did you use interpolation or extrapolation to get the concentration of the unknown?
 </b>
 We used interpolation to get the unknown concentration as its absorbance level fell within the range of observations that had a linear relationship.
 
-<b> 5. What measurement controls the accuracy of the density measurement for the NaCl solution?
-</b>
+```python
+actual = 1038.72 * u.m**3
+exp = 1038.26 * u.m**3
+error = (actual-exp)/actual
+accuracy = 100 * (1 - error)
+```
+
+Based on the equation, ...
+
+the density that we expected was 1038.72 kg/m<sup>3</sup>. As the density of our solution was 1038.26 kg/m<sup>3</sup>, the accuracy of our measurement is approximately 99.96%.
+
+Other supporting information has been included in a spreadsheet named "datasheet.xlsx".  
+
+## Discussion ##
+
+While the laboratory technicians have been well trained to conduct the above procedure, there was still the possibility of error. In terms of instrumental error, ...
+
 The measurement that controls the accuracy of the density measurement for the NaCl solution is the 10-100µL pipette, which has the highest uncertainty amongst the instruments used at 0.8%. The electronic balance has an uncertainty of 0.001 g (~0.017%), the volumetric flask has an uncertainty of 0.16 mL (0.16%).
 
-<b> 6. What density did you expect (see prelab 1)?
-</b>
-   The density that we expected was 1038.72 kg/m<sup>3</sup>.
+While experimental accuracy for creating a salt solution was quite high at 99.96%, it is not at 100%. This may be because not every single salt granule weighed may have ended up inside our solution. While the laboratory technicians did their best to transfer all the salt granules into the distilled water, a few may have been left behind on our plastic weighing boat. This error was difficult to tell because the standard weighing boat is white in color. This could be avoided with a different colored boat, but the difference is quite negligible in this case.
 
-<b> 7. Approximately what should the accuracy be for the density measurement? </b>
-
-, whereas the density of our solution was 1038.26 kg/m<sup>3</sup>.
-The accuracy for the density measurement should be approximately
-
-(theoretical-experiment/theoretical) <b>FOR JACQUELINE</b>
-
-<b> 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown. </b>
-
-In this experiment, our goal was to determine the concentration of the solution that was given to us. We approached this problem by utilizing Beer-Lambert law, which states the relationship between the concentration of solution and its absorbance. To do this, several standards were created with known concentration to determine the relationship between absorbance and concentration. From the graph plotted, it was found that there is a linear decreasing relationship between the two variables. The unknown solution's absorbance was found and the concentration was determined to be 11.26 mg/L
-
-Human error (not all the salt went in)
-Ranges of instrument
-Air bubbles
-
-<b> 9. Verify that your report and graphs meet the requirements as outlined on the course website. </b>
+Additionally, there was the possibility of having air bubbles inside the photometer, which would affect absorbance measurements. To prevent this, the laboratory technicians made sure to tap the instrument repeatedly to ensure that air bubbles have escaped, and only record when readings have been stabilized.
