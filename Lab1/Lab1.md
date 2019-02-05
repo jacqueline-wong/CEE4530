@@ -3,12 +3,14 @@
 ## Introduction ##
 Our client, Dr. Monroe Weber-Shirk and Jonathan Harris, are expert food scientists who are concerned that our daily diet contains too much additives, particularly the unnecessary use of dye for aesthetic appeal. Whilst dye is generally considered a safe substance to be used in food, overconsumption may lead to certain health problems such as bladder tumors. Children are particularly vulnerable to the detrimental health effects posed by dye. In particular, some brands of fruit punch and strawberry jello, two popular children’s snacks, can contain large amounts of red dye. Hence, the current situation with food dye and human health is very concerning to our client.
 
-Our client has presented our research laboratory with a sample of the most popular fruit punch on the market, which contains an unknown concentration of red dye. Our task is to measure the concentration of red dye in the fruit punch, which will help them further their investigations on food dye levels in popular food and beverage items.
+Our client has presented our research laboratory with a sample of distilled water that contains the same amount of red dye as one of the most popular fruit punches on the market. Our task is to measure the concentration of red dye in the solution, which will be a first step in supporting their investigations on food dye levels in popular food and beverage items.
 
 ## Procedures ##
 
-As most popular children's beverages (including the one tested) are made from artificial flavorings and other ingredients that are colorless when dissolved in water, our clients informed us that it was a valid assumption that without the addition red dye, the beverage would have an effective absorbance almost identical to that of water. Thus, distilled water was used as an effective blank for 
+To determine the linear relationship between 
 
+
+pipette and distilled water to create 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L samples of red dye.
 
 ## Results ##
 
