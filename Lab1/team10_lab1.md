@@ -16,6 +16,31 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
   import pandas as pd
   from scipy import stats
 
+  data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/scatter.txt"
+  dframe = pd.read_csv(data_file_path,delimiter='\t')
+
+  C = dframe.iloc[:,0].values * u.mg/u.L
+  A = dframe.iloc[:,1].values
+
+  slope, intercept, r_value, p_value, std_err = stats.linregress(C,A)
+  intercept = intercept
+  slope = slope * 1/C.units
+
+  fig, ax = plt.subplots()
+  ax.plot(C, A, 'bo', )
+  ax.plot(C, slope * C + intercept, 'k', )
+  ax.set(xlabel=list(dframe)[0])
+  ax.set(ylabel=list(dframe)[1])
+  ax.legend(['Measured', 'Linear regression'])
+  ax.grid(True)
+
+  plt.savefig('scatter.png')
+  plt.show()
+```
+
+![linear](https://github.com/lw583/CEE4530/blob/master/scatter.png?raw=true)
+
+```python  
   data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/absorbance.txt"
   dframe = pd.read_csv(data_file_path,delimiter='\t')
 
@@ -85,7 +110,7 @@ The density that we expected was 1038.72 kg/m<sup>3</sup>. As the density of our
 
 <b> 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.</b>
 
-In conclusion, a linear decreasing relationship was found between absorbance and concentration of solution. The concentration of the unknown solution is found to be 11.15 $\frac{mg}{L}$. The density of the $1M$ salt solution created was 1038.26 .
+In conclusion, a linear decreasing relationship was found between absorbance and concentration of solution for solutions with concentration in the range of 0$\frac{mg}{L}$ to 20 $\frac{mg}{L}$. The concentration of the unknown solution is found to be 11.15 $\frac{mg}{L}$. The density of the $1M$ salt solution created was 1038.26 kg/m<sup>3</sup>.
 
 While the instruments are of high accuracy and precision, and we followed the procedure carefully, there was still the possibility of human error in this experiment.
 
