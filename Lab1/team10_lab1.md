@@ -16,16 +16,16 @@ Another concern that our client had was how the effects of the dye on a person v
 #### Objectives ####
 Our client has presented us with two sets of objectives:
 $\bullet$ Investigate the concentration of dye in given solution
-$\bullet$ Prepare a $ 1M \ NaCl $ solution
+$\bullet$ Prepare a $ 1\text{M} \ NaCl $ solution
 
 
 ## Procedures ##
-<b>Investigate the concentration of dye in given solution</b>
+<b>Investigating the concentration of dye in given solution</b>
 First, we prepared 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L standards of red dye in distilled water. Each standard was created in a 100 mL volumetric flask, with red dye measured using a 10-100 µL pipette. The absorbance of each standard was measured with a photometer in order of increasing concentration as voltages, which were later converted to .
 
 Plotted to determine the effective range of absorbance measurements of the photometer instrument.
 
-<b>Prepare a $ 1M \ NaCl $ solution</b>
+<b>Preparing a $ 1M \ NaCl $ solution</b>
 First,
 
 
@@ -88,13 +88,14 @@ c_B = A / (ε*b)
 print(c_B)
 ```
 
-Using Beer's law, the concentration of the unknown solution is around 10.32 mg/L. However, considering that the intercept was not at exactly zero, the linear regression should provide a better result.
+Using Beer's law, the concentration of the unknown solution is around 10.32 mg/L. However, considering that the intercept was not at exactly zero, the linear regression should provide a more accurate result.
 
 ```python
 c_L = (A - intercept)/ slope
 print(c_L)
 ```
 
+Thus, the unknown solution is 11.15 mg/L.
 ...
 
 ```python
