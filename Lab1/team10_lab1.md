@@ -3,7 +3,7 @@
 
 <b> 1. Fill out the attached spreadsheet. Make sure that all calculated values are entered in the spreadsheet as equations. All remaining analysis for the course will be done in Atom using Python! </b>
 
-All supporting data has been included in a spreadsheet named "datasheet.xlsx".
+All supporting data has been included in a spreadsheet named "team10_datasheet.xlsx".
 
 <b> 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.</b>
 
@@ -34,7 +34,7 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
 
-The graph above does not show a linear relationship, contrary to what we would expect from Beer's law. However, for concentration 0 mg/L to 20 mg/L, there is a somewhat linear relationship. From this, because (range of absorbance that it can detect)
+The graph above does not show a linear relationship, contrary to what we would expect from Beer's law. This is because the photometer has a limited range of absorbance that can be detected. From 0 mg/L to 20 mg/L, there appears to be a linear relationship between absorbance and concentration (Figure 2). However, at concentrations higher than 20 mg/L, this linear relationship no longer exists, likely due to these points being out of the instrument's measurement range.
 
 ```python  
   data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/absorbance.txt"
@@ -63,7 +63,6 @@ The graph above does not show a linear relationship, contrary to what we would e
 
 Figure 2: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 20 mg/L. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
 
-The photometer has a limited range of absorbance that can be detected. From 0 to 2 mg/L, the absorbance of red dye does not increase linearly, likely due to the these points being under the detection limit of the instrument. From 2 mg/L to 20 mg/L, there appears to be a linear relationship between absorbance and concentration (Figure 1). However, at concentrations higher than 20 mg/L (not graphed), this linear relationship no longer exists, likely due to these points being out of the instrument's measurement range.
 
 <b> 3. What is the value of the extinction coefficient, ε?</b>
 
@@ -106,7 +105,7 @@ The density that we expected was 1038.72 kg/m<sup>3</sup>. As the density of our
 
 <b> 8. Don’t forget to write a brief paragraph on conclusions and on suggestions using Markdown.</b>
 
-In conclusion, a linear decreasing relationship was found between absorbance and concentration of solution for solutions with concentration in the range of 0$\frac{mg}{L}$ to 20 $\frac{mg}{L}$. The concentration of the unknown solution is found to be 11.15 $\frac{mg}{L}$. The density of the $1M$ salt solution created was 1038.26 kg/m<sup>3</sup>.
+In conclusion, a linear decreasing relationship was found between absorbance and concentration of solution for solutions with concentration in the range of 0 to 20 mg/L. The concentration of the unknown solution is found to be 11.15 mg/L. The density of the 1M sodium chloride solution created was 1038.26 kg/m<sup>3</sup>.
 
 While the instruments are of high accuracy and precision, and we followed the procedure carefully, there was still the possibility of human error in this experiment.
 
@@ -118,6 +117,4 @@ Overall, the experiment went quite well and the results obtained were fairly acc
 
 <b> 9. Verify that your report and graphs meet the requirements as outlined on the course website.</b>
 
-...
-
-the density that we expected was 1038.72 kg/m<sup>3</sup>. As the density of our solution was 1038.26 kg/m<sup>3</sup>, the accuracy of our measurement is approximately 99.96%.
+Yes, completed.
