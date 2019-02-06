@@ -11,7 +11,7 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
 
-The graph above does not show a linear relationship as we would expect from Beer's law. However, it seems that for concentration 0 mg/L to 20 mg/L, there is a linear relationship. From this,
+The graph above does not show a linear relationship in contrary to what we would expect from Beer's law. However, for concentration 0 mg/L to 20 mg/L, there is a somewhat linear relationship. From this,
 
 ```python
   from aguaclara.core.units import unit_registry as u
@@ -23,18 +23,13 @@ The graph above does not show a linear relationship as we would expect from Beer
   dfp = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/scatter.txt"
   df = pd.read_csv(dfp,delimiter='\t')
 
-  c = dframe.iloc[:,0].values * u.mg/u.L
-  a = dframe.iloc[:,1].values
-
-  slope, intercept, r_value, p_value, std_err = stats.linregress(c,a)
-  intercept = intercept
-  slope = slope * 1/C.units
+  c = df.iloc[:,0].values * u.mg/u.L
+  a = df.iloc[:,1].values
 
   fig, ax = plt.subplots()
-  ax.plot(C, A, 'bo', )
-  ax.set(xlabel=list(dframe)[0])
-  ax.set(ylabel=list(dframe)[1])
-  ax.legend(['Measured', 'Linear regression'])
+  ax.plot(c, a, 'ro', )
+  ax.set(xlabel=list(df)[0])
+  ax.set(ylabel=list(df)[1])
   ax.grid(True)
 
   plt.savefig('scatter.png')
