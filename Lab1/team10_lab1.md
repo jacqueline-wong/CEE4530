@@ -7,12 +7,6 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 <b> 2. Create a graph of absorbance vs. concentration of red dye \#40 in Atom/Markdown using the exported data file. Does absorbance increase linearly with concentration of the red dye? Remove data points from the graph that are outside of the linear region.</b>
 
-<b> Insert scatter plot then justify reasoning for deleting points </b>
-
-Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
-
-The graph above does not show a linear relationship in contrary to what we would expect from Beer's law. However, for concentration 0 mg/L to 20 mg/L, there is a somewhat linear relationship. From this,
-
 ```python
   from aguaclara.core.units import unit_registry as u
   import numpy as np
@@ -37,6 +31,10 @@ The graph above does not show a linear relationship in contrary to what we would
 ```
 
 ![scatter](https://github.com/lw583/CEE4530/blob/master/scatter.png?raw=true)
+
+Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
+
+The graph above does not show a linear relationship, contrary to what we would expect from Beer's law. However, for concentration 0 mg/L to 20 mg/L, there is a somewhat linear relationship. From this, because (range of absorbance that it can detect)
 
 ```python  
   data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/absorbance.txt"
