@@ -9,7 +9,9 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 <b> Insert scatter plot then justify reasoning for deleting points </b>
 
-Figure 1: A graph of absorbance against red dye concentration.
+Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
+
+The graph above does not show a linear
 
 ```python
   from aguaclara.core.units import unit_registry as u
