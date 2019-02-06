@@ -11,7 +11,7 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 Figure 1: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 200 mg/L.
 
-The graph above does not show a linear
+The graph above does not show a linear relationship as we would expect from Beer's law. However, it seems that for concentration 0 mg/L to 20 mg/L, there is a linear relationship. From this,
 
 ```python
   from aguaclara.core.units import unit_registry as u
@@ -41,7 +41,7 @@ The graph above does not show a linear
   plt.show()
 ```
 
-![linear](https://github.com/lw583/CEE4530/blob/master/scatter.png?raw=true)
+![scatter](https://github.com/lw583/CEE4530/blob/master/scatter.png?raw=true)
 
 ```python  
   data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/absorbance.txt"
