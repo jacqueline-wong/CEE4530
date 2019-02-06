@@ -46,7 +46,7 @@ It is also important to note that the photometer has a limited range of absorban
   plt.show()
 ```
 
-![linear](https://raw.githubusercontent.com/lw583/CEE4530/master/absorbance.png)
+![linear](https://github.com/lw583/CEE4530/blob/master/absorbance.png?raw=true)
 
 Figure 1: A graph of absorbance against red dye concentration. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
 
