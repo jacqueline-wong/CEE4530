@@ -91,7 +91,8 @@ print(c_B)
 Using Beer's law, the concentration of the unknown solution is around 10.32 mg/L. However, considering that the intercept was not at exactly zero, the linear regression should provide a better result.
 
 ```python
-
+c_L = (A - intercept)/ slope
+print(c_L)
 ```
 
 ...
