@@ -9,7 +9,7 @@ All supporting data has been included in a spreadsheet named "datasheet.xlsx".
 
 <b> Insert scatter plot then justify reasoning for deleting points </b>
 
-Figure : A graph of absorbance against red dye concentration. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
+Figure 1: A graph of absorbance against red dye concentration.
 
 ```python
   from aguaclara.core.units import unit_registry as u
@@ -21,16 +21,15 @@ Figure : A graph of absorbance against red dye concentration. There appears to b
   dfp = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab1/scatter.txt"
   df = pd.read_csv(dfp,delimiter='\t')
 
-  C = dframe.iloc[:,0].values * u.mg/u.L
-  A = dframe.iloc[:,1].values
+  c = dframe.iloc[:,0].values * u.mg/u.L
+  a = dframe.iloc[:,1].values
 
-  slope, intercept, r_value, p_value, std_err = stats.linregress(C,A)
+  slope, intercept, r_value, p_value, std_err = stats.linregress(c,a)
   intercept = intercept
   slope = slope * 1/C.units
 
   fig, ax = plt.subplots()
   ax.plot(C, A, 'bo', )
-  ax.plot(C, slope * C + intercept, 'k-', )
   ax.set(xlabel=list(dframe)[0])
   ax.set(ylabel=list(dframe)[1])
   ax.legend(['Measured', 'Linear regression'])
@@ -67,7 +66,7 @@ Figure : A graph of absorbance against red dye concentration. There appears to b
 
 ![linear](https://github.com/lw583/CEE4530/blob/master/absorbance.png?raw=true)
 
-Figure 2: A graph of absorbance against red dye concentration. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
+Figure 2: A graph of absorbance against red dye concentration for concentration ranging from 0 mg/L to 20 mg/L. There appears to be a linear relationship between 0 to 20 mg/L that follows Beer's law.
 
 The photometer has a limited range of absorbance that can be detected. From 0 to 2 mg/L, the absorbance of red dye does not increase linearly, likely due to the these points being under the detection limit of the instrument. From 2 mg/L to 20 mg/L, there appears to be a linear relationship between absorbance and concentration (Figure 1). However, at concentrations higher than 20 mg/L (not graphed), this linear relationship no longer exists, likely due to these points being out of the instrument's measurement range.
 
