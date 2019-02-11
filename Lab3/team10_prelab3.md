@@ -12,7 +12,7 @@ from scipy import stats
 
 <b> 1. Compare the ability of Cayuga lake and Wolf pond (an Adirondack lake) to withstand an acid rain runoff event (from snow melt) that results in 20% of the original lake water being replaced by acid rain. The acid rain has a pH of 3.5 and is in equilibrium with the atmosphere. The ANC of Cayuga lake is 1.6 meq/L and the ANC of Wolf Pond is 70 μeq/L. Assume that carbonate species are the primary component of ANC in both lakes, and that they are in equilibrium with the atmosphere. What is the pH of both bodies of water after the acid rain input? Remember that ANC is the conservative parameter (not pH!). Hint: You can use the scipy optimize root finding function called brentq. Scipy can’t handle units so the units must be removed using .magnitude.}</b>
 
-As the pH of acid rain is below 4, its ANC can be approximated by: $$ANC=[H^+]$$
+As the pH of acid rain is below 4, its $ANC$ can be approximated by: $$ANC=[H^+]$$
 
 First, need to find the equivalence volume required
 
@@ -63,6 +63,10 @@ $$ pH = -\log_{10}{(-0.00128)} $$
 
 For Wolf Pond,
 
+...
+
+For pH 3...
+$$ V_s \times 10^{-3} = 3 \Delta V_t \times N_t $$
 
 <b> 2. What is the ANC of a water sample containing only carbonates and a strong acid that is at pH 3.2? This requires that you inspect all of the species in the ANC equation (Equation (33)) and determine which species are important.</b>
 
@@ -75,4 +79,9 @@ As the pH of acid rain is below 4, its ANC can be approximated by: $$ANC=[H^+]$$
 
 <b> 3. Why is [H+] not a conserved species? </b>
 
-[H+] is not a conserved species because of the chemical reactions between different species.
+[H<sup>+</sup>] is generally not conserved because it likely to react with there may react with bicarbonate or other species in the water. However, at a very low pH, [H<sup>+</sup>] is generally conserved. </u>
+
+---
+Do we know the ANC of the samples? Use CMFR
+
+Q ANC = Q2 ANC + Q3 ANC
