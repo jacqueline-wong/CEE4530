@@ -7,30 +7,23 @@ Do we know the ANC of the samples? Use CMFR equation
 - Graph should go to -0.001
 - Should delete comments in data file for lab
 
-<b> 1. How many grams of NaHCO3 would be required to keep the ANC levels in a lake above 50 μeq/L for 3 hydraulic residence times given an influent pH of 3.0 and a lake volume of 4 L, if the current lake ANC is 0 μeq/L?</b>
+---
 
-Assuming that the lake is well mixed, the mass balance in the lake is given as:
+$K_1 = 10^{-6.3}, \text{ }K_2 = 10^{-10.3}, \text{ }
+K_H = 10^{-1.5} \text{ mol L}^{-1} \text{atm}^{-1}, \newline P_{CO_2}=10^{-3.5} \text{ atm}, \text{ }K_w = 10^{-14}$
 
-$$ Q\left(ANC_{in}  - ANC_{out} \right) =  \rlap{-} V \frac{d(ANC)}{dt} $$
+<b>1. Plot measured pH of the lake versus dimensionless hydraulic residence time (t/θ).</b>
 
-The Acid Neutralizing Capacity of the lake influent can be estimated from pH because it is below 4.3. Thus, an influent of pH 3.0 can be converted into:
+<b>2. Assuming that the lake can be modeled as a completely mixed flow reactor and that ANC is a conservative parameter, equation (25) can be used to calculate the expected ANC in the lake effluent as the experiment proceeds. Graph the expected ANC in the lake effluent versus the hydraulic residence time (t/θ) based on the completely mixed flow reactor equation with the plot labeled (in the legend) as conservative ANC.</b>
 
-$$ANC_{in} = -\left[H^+ \right] = -0.001 \text{ eq/L}$$
+$${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
 
-The solution to the mass balance differential equation for a well-mixed lake is:
+<b>3. If we assume that there are no carbonates exchanged with the atmosphere during the experiment, then we can calculate ANC in the lake effluent by using equation (14) describing the ANC of a closed system. Calculate the ANC under the assumption of a closed system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as closed ANC.</b>
 
-$$ANC_{out} = ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta\;}} \right)+ ANC_{0} \cdot {\mathop{e}\nolimits^{-t/\theta}}$$
+$$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
 
-For 3 hydraulic residence times:
+<b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
 
-$$0.000050 \text{ eq/L} = -0.001 \text{ eq/L} \cdot \left(1 - {\mathop{e}\nolimits^{-3}} \right)+ ANC_{0} \cdot {\mathop{e}\nolimits^{-3}}$$
+$$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
 
-Rearranging the equation and solving for $ANC_{0}$, we get:
-
-$$ {ANC}_{{0}} =\left[{0.000050}+{0.001}\cdot \left(1-{\mathop{e}\nolimits^{-3}} \right)\right]{\mathop{e}\nolimits^{3}} =  0.02009 \text{ eq/L} $$
-
-The quantity of sodium bicarbonate required can be calculated from:
-
-$$ [\text{NaHCO}_3]_{0} = ANC_{0} $$
-
-$$ \frac{{0.02009 \text{ mol}\; NaHCO}_3 }{\text{L}} {\times }\frac{{84\; \text{g}\; NaHCO}_3 }{{\text{ mol}\; NaHCO}_3 } {\times \; 4\; \text{L}\; =\; 6.75 \; \text{g\; NaHCO}_3} $$
+<b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
