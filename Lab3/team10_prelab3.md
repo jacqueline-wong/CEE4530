@@ -44,17 +44,14 @@ The pH of Wolf Pond is 7.63.
 The equation for acid neutralizing capacity is:
 $$ ANC = [HCO_3^-]+2[CO_3^{-2} ]+{[OH}^- ] - [H^+] $$
 
-<u>Insert pH diagram that shows what happens to carbonate and bicarbonate at low pH. Also know that low OH at low pH</u>
+![linear](https://github.com/lw583/CEE4530/blob/master/Lab3/pH_Diagram.gif?raw=true)
 
-As the pH is below 4, its ANC can be approximated by:
+![linear](https://github.com/lw583/CEE4530/blob/master/Lab3/pH_Diagram2.gif?raw=true)
+
+From the two graphs above, the concentration of bicarbonate, carbonate and hydroxide ions in solution is extremely small when the pH is low. Its effect on the ANC is consequently negligible. As the pH is below 4, its ANC can be approximated by:
+
 $$ANC=[H^+] = 10^{-pH}= 10^{-3.2} = 0.000631 \text{ eq/L}$$
 
 <b> 3. Why is [H+] not a conserved species? </b>
 
-[H<sup>+</sup>] is generally not conserved because it likely to react with there may react with bicarbonate or other species in the water. However, at a very low pH, [H<sup>+</sup>] is generally conserved. </u>
-
----
-Do we know the ANC of the samples? Use CMFR equation
-
-- Graph should go to -0.001
-- Should delete comments in data file for lab
+[H<sup>+</sup>] is generally not conserved because it likely to react with bicarbonate or other species in the water. However, at a very low pH, [H<sup>+</sup>] is generally conserved. </u>
