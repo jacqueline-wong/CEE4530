@@ -2,6 +2,16 @@
 
 
 #### Team 10: Victor Khong & Jacqueline Wong ####
+
+```python
+from aguaclara.core.units import unit_registry as u
+import aguaclara.research.environmental_processes_analysis as epa
+from scipy import optimize
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+```
+---
 Use CMFR equation to find ANC of the samples
 
 - Graph should go to -0.001
