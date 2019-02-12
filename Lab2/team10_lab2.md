@@ -2,7 +2,7 @@
 
 
 #### Team 10: Victor Khong & Jacqueline Wong ####
-Do we know the ANC of the samples? Use CMFR equation
+Use CMFR equation to find ANC of the samples
 
 - Graph should go to -0.001
 - Should delete comments in data file for lab
