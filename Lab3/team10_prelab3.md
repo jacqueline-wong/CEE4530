@@ -55,3 +55,9 @@ $$ANC=[H^+] = 10^{-pH}= 10^{-3.2} = 0.000631 \text{ eq/L}$$
 <b> 3. Why is [H+] not a conserved species? </b>
 
 [H<sup>+</sup>] is generally not conserved because it likely to react with bicarbonate or other species in the water. However, at a very low pH, [H<sup>+</sup>] is generally conserved. </u>
+
+---
+Do we know the ANC of the samples? Use CMFR equation
+
+- Graph should go to -0.001
+- Should delete comments in data file for lab
