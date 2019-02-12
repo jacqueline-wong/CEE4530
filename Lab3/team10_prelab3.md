@@ -45,19 +45,15 @@ The equation for acid neutralizing capacity is:
 $$ ANC = [HCO_3^-]+2[CO_3^{-2} ]+{[OH}^- ] - [H^+] $$
 
 ![linear](https://github.com/lw583/CEE4530/blob/master/Lab3/pH_Diagram.gif?raw=true)
+Figure 1: The effect of pH on H<sub>2</sub>CO<sub>3</sub>, HCO<sub>3</sub><sup>-</sup> and CO<sub>3</sub><sup>2-</sup>
 
 ![linear](https://github.com/lw583/CEE4530/blob/master/Lab3/pH_Diagram2.gif?raw=true)
+Figure 2: The effect of pH on OH<sup>-</sup> concentration
 
-From the two graphs above, the concentration of bicarbonate, carbonate and hydroxide ions in solution is extremely small when the pH is low. Its effect on the ANC is consequently negligible. As the pH is below 4, its ANC can be approximated by:
+From Figure 1 and 2, it can be seen that the concentrations of bicarbonate, carbonate and hydroxide ions are extremely small when the pH is low. Their effect on the ANC is consequently negligible. As the pH of the water sample is below 4 at pH 3.2, its ANC can be approximated by:
 
 $$ANC=[H^+] = 10^{-pH}= 10^{-3.2} = 0.000631 \text{ eq/L}$$
 
 <b> 3. Why is [H+] not a conserved species? </b>
 
 [H<sup>+</sup>] is generally not conserved because it likely to react with bicarbonate or other species in the water. However, at a very low pH, [H<sup>+</sup>] is generally conserved. </u>
-
----
-Do we know the ANC of the samples? Use CMFR equation
-
-- Graph should go to -0.001
-- Should delete comments in data file for lab
