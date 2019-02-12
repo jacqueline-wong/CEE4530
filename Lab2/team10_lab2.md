@@ -1,5 +1,7 @@
 # Lab 2 for CEE 4530
 
+
+#### Team 10: Victor Khong & Jacqueline Wong ####
 Do we know the ANC of the samples? Use CMFR equation
 
 - Graph should go to -0.001
