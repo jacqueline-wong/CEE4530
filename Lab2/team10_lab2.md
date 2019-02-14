@@ -59,30 +59,33 @@ $${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nol
 Equation 25 above can be rearranged to:
 $${ANC}_{out} = {ANC}_{{0}} {\; }{\mathop{e}\nolimits^{-t/\theta}}+ ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)$$
 
-As $ANC_0$ and $ANC_{in}$ are constant, we can build a new array that varies based on time.
-
-We can calculate $ANC_0$ from the 623 mg of sodium bicarbonate put into the lake:
+As $ANC_0$ and $ANC_{in}$ are constants, we can build a new array that varies based on time. But first, $ANC_0$ can be calculated from the 623 mg of sodium bicarbonate in the lake:
 
 ```python
 mass = 623 * u.mg
-MW = 84 * u.mg/u.mol
+MW = 84 * u.g/u.mol
+lake_vol = 4 * u.L
+ANC_0 = mass/(MW*lake_vol)
 ```
+$$[\text{NaHCO}_3]_ 0 = 623 \text{ mg}{\times }\frac{{1 \text{ mol}} }{{84,000\text{ mg}}} \times\frac{1}{4\text{ L}} = 0.00185 \text{ mol/L} $$
 
-$$[\text{NaHCO}_3]_ 0 = 623 \text{ mg}{\times }\frac{{1 \text{ mol}} }{{84,000\text{ mg}}}=blah\text{ M}$$
-
-$$ANC_{0} = [\text{NaHCO}_3]_ 0 = blah \text{ eq/L}$$
+$$[\text{NaHCO}_3]_ 0 = 0.00185 \text{ mol/L} = 0.00185 \text{ eq/L} = ANC_{0}$$
 
 ```python
 pH_rain = 3
 ANC_in = 10^-pH_rain
 ANC_array = []
 for i in range(lakepH):
-    ANC[i] = ANC_0
+    ANC_array[i] = ANC_0.magnitude * np.exp(-time[i]) + ANC_in.magnitude * (1-np.exp(-time[i])
 ```
 
 <b>3. If we assume that there are no carbonates exchanged with the atmosphere during the experiment, then we can calculate ANC in the lake effluent by using equation (14) describing the ANC of a closed system. Calculate the ANC under the assumption of a closed system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as closed ANC.</b>
 
 $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
+
+```python
+
+```
 
 <b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
 
