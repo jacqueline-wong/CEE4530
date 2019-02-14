@@ -50,6 +50,7 @@ plt.ylabel('pH')
 plt.savefig('Lab2/pHgraph.png')
 plt.show()
 ```
+![pH](https://github.com/lw583/CEE4530/blob/master/Lab3/pHgraph.png?raw=true)
 
 <b>2. Assuming that the lake can be modeled as a completely mixed flow reactor and that ANC is a conservative parameter, equation (25) can be used to calculate the expected ANC in the lake effluent as the experiment proceeds. Graph the expected ANC in the lake effluent versus the hydraulic residence time (t/θ) based on the completely mixed flow reactor equation with the plot labeled (in the legend) as conservative ANC.</b>
 
