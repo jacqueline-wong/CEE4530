@@ -62,7 +62,7 @@ $${ANC}_{out} = {ANC}_{{0}} {\; }{\mathop{e}\nolimits^{-t/\theta}}+ ANC_{in} \cd
 As $ANC_0$ and $ANC_{in}$ are constant, we can build a new array that varies based on time.
 
 ```python
-hahaha
+ANC_in 
 ```
 
 <b>3. If we assume that there are no carbonates exchanged with the atmosphere during the experiment, then we can calculate ANC in the lake effluent by using equation (14) describing the ANC of a closed system. Calculate the ANC under the assumption of a closed system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as closed ANC.</b>
