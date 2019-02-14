@@ -47,7 +47,7 @@ ax.plot(time,lakepH,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('pH')
 
-#plt.savefig('Examples/images/pHgraph')
+plt.savefig('Lab2/pHgraph.png')
 plt.show()
 ```
 
