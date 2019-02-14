@@ -24,6 +24,33 @@ K_H = 10^{-1.5} \text{ mol L}^{-1} \text{atm}^{-1}, \newline P_{CO_2}=10^{-3.5} 
 
 <b>1. Plot measured pH of the lake versus dimensionless hydraulic residence time (t/θ).</b>
 
+```python
+flowrate = 75/15 * u.mL/u.s
+mass_total = 4.645 * u.kg
+mass_tub = 0.496 * u.kg
+density = 997 * u.kg/u.m**3
+volume = (mass_total-mass_tub)/density
+theta = volume/flowrate
+
+data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/lab2_datasheet.txt"
+dframe = pd.read_csv(data_file_path,delimiter='\t')
+
+lakepHnotes = epa.notes(data_file_path)
+lakepHnotes
+start = 8
+column = 1
+lakepH = epa.column_of_data(data_file_path,start,column)
+time = ((epa.column_of_time(data_file_path,start,-1))/theta).to(u.dimensionless)
+
+fig, ax = plt.subplots()
+ax.plot(time,lakepH,'r')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('pH')
+
+#plt.savefig('Examples/images/pHgraph')
+plt.show()
+```
+
 <b>2. Assuming that the lake can be modeled as a completely mixed flow reactor and that ANC is a conservative parameter, equation (25) can be used to calculate the expected ANC in the lake effluent as the experiment proceeds. Graph the expected ANC in the lake effluent versus the hydraulic residence time (t/θ) based on the completely mixed flow reactor equation with the plot labeled (in the legend) as conservative ANC.</b>
 
 $${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
