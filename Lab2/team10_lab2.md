@@ -73,10 +73,19 @@ $$[\text{NaHCO}_3]_ 0 = 0.00185 \text{ mol/L} = 0.00185 \text{ eq/L} = ANC_{0}$$
 
 ```python
 pH_rain = 3
-ANC_in = 10^-pH_rain
-ANC_array = []
-for i in range(lakepH):
-    ANC_array[i] = ANC_0.magnitude * np.exp(-time[i]) + ANC_in.magnitude * (1-np.exp(-time[i])
+ANC_in = 10**(-pH_rain)
+ANC_array = np.zeros(len(time))
+
+for i in range(len(time)):
+    ANC_array[i] = ANC_0.magnitude * np.exp(-time[i]) + ANC_in * (1-np.exp(-time[i]))
+
+fig, ax = plt.subplots()
+ax.plot(time,ANC_array,'r')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('ANC')
+
+plt.savefig('Lab2/ANCgraph.png')
+plt.show()
 ```
 
 <b>3. If we assume that there are no carbonates exchanged with the atmosphere during the experiment, then we can calculate ANC in the lake effluent by using equation (14) describing the ANC of a closed system. Calculate the ANC under the assumption of a closed system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as closed ANC.</b>
