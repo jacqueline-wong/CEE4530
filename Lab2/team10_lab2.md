@@ -40,7 +40,7 @@ lakepHnotes
 start = 8
 column = 1
 lakepH = epa.column_of_data(data_file_path,start,column)
-time = ((epa.column_of_time(data_file_path,start,-1))/theta).to(u.dimensionless)
+time = ((epa.column_of_time(data_file_path,start))/theta).to(u.dimensionless)
 
 fig, ax = plt.subplots()
 ax.plot(time,lakepH,'r')
@@ -79,12 +79,12 @@ ANC_in = -10**(-3)
 ANC_out = np.zeros(len(time))
 
 for i in np.arange(len(time)):
-  ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
+  ANC_out[i] = ANC_0.magnitude/np.exp(time[i])+ANC_in*(1-np.exp(-time[i]))
 
 fig, ax = plt.subplots()
 ax.plot(time.magnitude,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('lake effluent ANC')
+plt.ylabel('ANC')
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
 ```
@@ -101,12 +101,6 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
-With the given values,
-
-$$ \alpha_1 = $$
-
-$$ \alpha_2 = $$
-
 ```python
 K1 = 10**(-6.3)
 K2 = 10**(-10.3)
@@ -117,6 +111,8 @@ C_T
 
 for i in range(len(lakepH)):
   H[i] = 10**(-lakepH[i])
+
+alpha1 =
 
 ANC_closed = np.zeros(len(lakepH))
 
