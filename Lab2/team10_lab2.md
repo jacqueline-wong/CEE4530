@@ -76,7 +76,7 @@ ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('ANC')
 
-plt.savefig('ANCgraph.png')
+plt.savefig('Lab2/ANCgraph.png')
 plt.show()
 ```
 
