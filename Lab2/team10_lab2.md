@@ -27,7 +27,7 @@ theta = volume/flowrate
 
 data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/lab2_datasheet.txt"
 dframe = pd.read_csv(data_file_path,delimiter='\t')
-
+theta.to(u.hr)
 lakepHnotes = epa.notes(data_file_path)
 lakepHnotes
 start = 8
@@ -71,7 +71,6 @@ lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
 ANC_in = -10**(-3) * u.eq/u.L
 ANC_out = ANC_0*np.exp(-time)+ANC_in*(1-np.exp(-time))
-
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
@@ -98,34 +97,28 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
 ```python
-help(epa.ANC_closed)
-K1 = 10**(-6.3)
-K2 = 10**(-10.3)
-Kw = 10**(-14)
-H = np.zeros(len(lakepH))
-P_CO2 = 10**(-3.5)
-C_T
+#K1 = 10**(-6.3)
+#K2 = 10**(-10.3)
+#Kw = 10**(-14)
+C_T = ANC_0
 
-for i in range(len(lakepH)):
-  H[i] = 10**(-lakepH[i])
+#H = 10**(-lakepH)
+#a0 = 1/(1+(K1/H)+(K1*K2/H**2))
+#a1 = 1/(1+(H/K1)+(K2/H))
+#a2 = 1/(1+(H**2/(K1*K2))+H/K2)
 
-a0 = 1/(1+(K1/H)+(k1*k2/H_pow))
-a1 = 1/(1+(H/k1)+(k2/H))
-a2 = 1/(1+(H_pow/(k1*k2))+H/k2)
-C_T = P_CO2*kH/a0
-
-ANC_closed = np.zeros(len(lakepH))
-
-for i in range(len(lakepH)):
-  ANC_closed[i] = C_T*(a1+2*a2)+(Kw/H[i])-H[i]
+ANC_closed = epa.ANC_closed(lakepH, C_T)
 ```
 
 <b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
 
 $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
 
-```python
+$$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 
+```python
+P_CO2 = 10**(-3.5) * u.atm
+ANC_open = epa.ANC_open(lakepH)
 ```
 
 <b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
