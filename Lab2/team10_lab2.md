@@ -69,16 +69,15 @@ mass = 623 * u.mg
 MW = 84 * u.g/u.mol
 lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
-ANC_in = -10**(-3)
-ANC_out = []
-ANC_out = ANC_0.magnitude/np.exp(time)+ANC_in*(1-np.exp(-time))
-ANC_out[1]
+ANC_in = -10**(-3) * u.eq/u.L
+ANC_out = ANC_0*np.exp(-time)+ANC_in*(1-np.exp(-time))
+
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('ANC')
 
-plt.savefig('Lab2/ANCgraph.png')
+plt.savefig('ANCgraph.png')
 plt.show()
 ```
 
@@ -99,6 +98,7 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
 ```python
+help(epa.ANC_closed)
 K1 = 10**(-6.3)
 K2 = 10**(-10.3)
 Kw = 10**(-14)
@@ -123,5 +123,9 @@ for i in range(len(lakepH)):
 <b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
 
 $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
+
+```python
+
+```
 
 <b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
