@@ -98,6 +98,8 @@ $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \lef
 
 where
 
+$$\alpha_0 =\frac{1}{1+\frac{K_1 }{[H^+]} +\frac{K_1 K_2}{[H^+]^2} }$$
+
 $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
@@ -113,7 +115,7 @@ C_T
 for i in range(len(lakepH)):
   H[i] = 10**(-lakepH[i])
 
-a0 = 1/(1+(k1/H)+(k1*k2/H_pow))
+a0 = 1/(1+(K1/H)+(k1*k2/H_pow))
 a1 = 1/(1+(H/k1)+(k2/H))
 a2 = 1/(1+(H_pow/(k1*k2))+H/k2)
 C_T = P_CO2*kH/a0
