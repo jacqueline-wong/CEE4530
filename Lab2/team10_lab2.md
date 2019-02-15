@@ -79,7 +79,7 @@ ANC_in = -10**(-3)
 t = np.arange(0,10,1)
 ANC_out = np.zeros(len(t))
 
-for i in t:
+for i in range(len(time)):
   ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
 
 fig, ax = plt.subplots()
@@ -106,6 +106,8 @@ $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 With the given values,
 
 $$ \alpha_1 = $$
+
+$$ \alpha_2 = $$
 
 ```python
 ANC = C_T*(a1+2*a2)+(kw/H)-H
