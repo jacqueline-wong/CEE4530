@@ -109,7 +109,6 @@ plt.legend(['Expected ANC', 'Closed ANC'])
 
 plt.savefig('Lab2/ANCclosed.png')
 plt.show()
-
 ```
 ![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
 
