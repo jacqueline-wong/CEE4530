@@ -76,17 +76,15 @@ MW = 84 * u.g/u.mol
 lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
 ANC_in = -10**(-3)
-t = np.arange(0,100,1)
-ANC_out = np.zeros(len(t))
-time
-for i in t:
+ANC_out = np.zeros(len(time))
+
+for i in np.arange(len(time)):
   ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
 
 fig, ax = plt.subplots()
-ax.plot(t,ANC_out,'r')
+ax.plot(time.magnitude,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('lake effluent ANC')
-
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
 ```
@@ -113,11 +111,17 @@ $$ \alpha_2 = $$
 K1 = 10**(-6.3)
 K2 = 10**(-10.3)
 Kw = 10**(-14)
-H = []
+H = np.zeros(len(lakepH))
+
+C_T
+
 for i in range(len(lakepH)):
   H[i] = 10**(-lakepH[i])
-ANC = C_T*(a1+2*a2)+(Kw/H)-H
-C_T
+
+ANC_closed = np.zeros(len(lakepH))
+
+for i in range(len(lakepH)):
+  ANC_closed[i] = C_T*(a1+2*a2)+(Kw/H[i])-H[i]
 ```
 
 <b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
