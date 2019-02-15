@@ -76,7 +76,7 @@ MW = 84 * u.g/u.mol
 lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
 ANC_in = -10**(-3)
-t = np.arange(0,10,1)
+t = np.arange(0,100,1)
 ANC_out = np.zeros(len(t))
 
 for i in t:
