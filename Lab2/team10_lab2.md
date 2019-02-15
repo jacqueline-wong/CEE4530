@@ -110,7 +110,11 @@ $$ \alpha_1 = $$
 $$ \alpha_2 = $$
 
 ```python
-ANC = C_T*(a1+2*a2)+(kw/H)-H
+H = []
+for j in t:
+  H[i] = lakepH[i]
+Kw = 10**(-14)
+ANC = C_T*(a1+2*a2)+(Kw/H)-H
 C_T
 ```
 
