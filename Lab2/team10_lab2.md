@@ -3,6 +3,8 @@
 
 #### Team 10: Victor Khong & Jacqueline Wong ####
 
+<u>Using data from Irene Sarri & Felix Yang </u>
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -152,3 +154,4 @@ plt.ylabel('pH')
 plt.savefig('Lab2/pHgraph2.png')
 plt.show()
 ```
+![pH Graph 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph2.png)
