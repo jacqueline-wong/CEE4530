@@ -98,7 +98,7 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
 ```python
-C_T = ANC_0
+C_T = ANC_0*np.exp(-time)
 ANC_closed = epa.ANC_closed(lakepH, C_T)
 
 fig, ax = plt.subplots()
@@ -151,7 +151,7 @@ ax.plot(time2,lakepH2,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('pH')
 
-plt.savefig('Lab2/pHgraph2.png')
+plt.savefig('pHgraph2.png')
 plt.show()
 ```
 ![pH Graph 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph2.png)
