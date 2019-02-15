@@ -14,8 +14,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 ```
 
-$K_1 = 10^{-6.3}, \text{ }K_2 = 10^{-10.3}, \text{ }
-K_H = 10^{-1.5} \text{ mol L}^{-1} \text{atm}^{-1}, \newline P_{CO_2}=10^{-3.5} \text{ atm}, \text{ }K_w = 10^{-14}$
+$K_1 = 10^{-6.3}\newline K_2 = 10^{-10.3}\newline
+K_H = 10^{-1.5} \text{ mol L}^{-1} \text{atm}^{-1} \newline P_{CO_2}=10^{-3.5} \text{ atm}\newline K_w = 10^{-14}$
 
 <b>1. Plot measured pH of the lake versus dimensionless hydraulic residence time (t/θ).</b>
 
@@ -135,6 +135,8 @@ plt.show()
 
 <b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
 
+In the second experiment, sodium bicarbonate was replaced with calcium carbonate to give the same acid neutralizing capacity.
+
 ```python
 dfp = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/lab2_datasheet2.txt"
 df = pd.read_csv(dfp,delimiter='\t')
@@ -142,16 +144,37 @@ df = pd.read_csv(dfp,delimiter='\t')
 lakepHnotes2 = epa.notes(dfp)
 lakepHnotes2
 start = 8
+end = 350
 column = 1
-lakepH2 = epa.column_of_data(dfp,start,column)
-time2 = ((epa.column_of_time(dfp,start))/theta).to(u.dimensionless)
+lakepH2 = epa.column_of_data(dfp,start,column,end)
+time2 = ((epa.column_of_time(dfp,start,end))/theta).to(u.dimensionless)
 
 fig, ax = plt.subplots()
 ax.plot(time2,lakepH2,'r')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('pH')
 
-plt.savefig('pHgraph2.png')
+plt.savefig('Lab2/pHgraph2.png')
 plt.show()
 ```
 ![pH Graph 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph2.png)
+
+As it can be seen on the graph, the pH dropped very fast and thus experiment was stopped quickly. This was because the calcium carbonate did not dissolve and remained on the sides of the tank. Thus, the actual ANC in the tank was much lower than what it was  calculated to be.
+
+#### Questions ####
+
+<b>1. What do you think would happen if enough NaHCO3 were added to the lake to maintain an ANC greater than 50μeq/L for 3 residence times with the stirrer turned off? How much NaHCO3 would need to be added?</b>
+
+If the stirrer was turned off, not all of the sodium bicarbonate will end up dissolving different parts of lake will have different pH. The ANC will remain at the bottom of the lake, while the top of the lake will be very acidic. <u>Thus, a lot more sodium bicarbonate would need to be added to give the same result.</u>
+
+<b>2. What are some of the complicating factors you might find in attempting to remediate a lake using CaCO3? Below is a list of issues to consider.
+
+- extent of mixing
+- solubility of CaCO3 (find the solubility and compare with NaHCO3)
+- density of CaCO3 slurry (find the density of CaCO3)</b>
+
+CaCO3 is hard to dissolve. This is shown in the results of our experiment (Question 5), where the CaCO3 was not dissolved at all. The solubility of CaCO3 is ___________ whereas the solubility of NaHCO3 is _____________.
+
+Furthermore, since the density of CaCO3 is high, most of the CaCO3 will sink to the bottom of the lake. This means that CaCO3 is likely not well mixed in the lake as the lake will be highly concentrated at the bottom of the lake and not really concentrated at the top of the lake.
+
+As a result of its low solubility, there will be an inability to mix the CaCO3 well in the lake. There will be regions of much higher concentration at the bottom of the lake and regions of much lower concentration at the top of the lake. This would cause the lake to be "over-remediated" at parts of the lake, but not remediated at all at other parts of the lake.
