@@ -79,7 +79,7 @@ ANC_in = -10**(-3)
 t = np.arange(0,10,1)
 ANC_out = np.zeros(len(t))
 
-for i in range(len(time)):
+for i in t:
   ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
 
 fig, ax = plt.subplots()
