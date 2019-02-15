@@ -75,7 +75,7 @@ ANC_out = ANC_0*np.exp(-time)+ANC_in*(1-np.exp(-time))
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC')
+plt.ylabel('ANC (eq/L)')
 
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
@@ -104,7 +104,7 @@ ANC_closed = epa.ANC_closed(lakepH, C_T)
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time,ANC_closed,'b')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC')
+plt.ylabel('ANC (eq/L)')
 plt.legend(['Expected ANC', 'Closed ANC'])
 
 plt.savefig('Lab2/ANCclosed.png')
@@ -120,11 +120,11 @@ $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left
 $$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 
 ```python
-ANC_open = epa.ANC_open(lakepH)
+ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC')
+plt.ylabel('ANC (eq/L)')
 plt.legend(['Expected ANC', 'Closed ANC', 'Open ANC'])
 
 plt.savefig('Lab2/ANCopen.png')
@@ -173,7 +173,7 @@ If the stirrer was turned off, not all of the sodium bicarbonate will end up dis
 - solubility of CaCO3 (find the solubility and compare with NaHCO3)
 - density of CaCO3 slurry (find the density of CaCO3)</b>
 
-CaCO3 is hard to dissolve. This is shown in the results of our experiment (Question 5), where the CaCO3 was not dissolved at all. The solubility of CaCO3 is ___________ whereas the solubility of NaHCO3 is _____________.
+CaCO3 is hard to dissolve. This is shown in the results of our experiment (Question 5), where the CaCO3 was not dissolved at all. The solubility of CaCO3 is 15 mg/L at room temperature whereas the solubility of NaHCO3 is _____________.
 
 Furthermore, since the density of CaCO3 is high, most of the CaCO3 will sink to the bottom of the lake. This means that CaCO3 is likely not well mixed in the lake as the lake will be highly concentrated at the bottom of the lake and not really concentrated at the top of the lake.
 
