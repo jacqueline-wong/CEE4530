@@ -75,7 +75,7 @@ ANC_out = ANC_0*np.exp(-time)+ANC_in*(1-np.exp(-time))
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC (eq/L)')
+plt.ylabel('ANC (meq/L)')
 
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
@@ -104,7 +104,7 @@ ANC_closed = epa.ANC_closed(lakepH, C_T)
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time,ANC_closed,'b')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC (eq/L)')
+plt.ylabel('ANC (meq/L)')
 plt.legend(['Expected ANC', 'Closed ANC'])
 
 plt.savefig('Lab2/ANCclosed.png')
@@ -124,7 +124,7 @@ ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC (eq/L)')
+plt.ylabel('ANC (meq/L)')
 plt.legend(['Expected ANC', 'Closed ANC', 'Open ANC'])
 
 plt.savefig('Lab2/ANCopen.png')
@@ -165,7 +165,7 @@ As it can be seen on the graph, the pH dropped very fast and thus experiment was
 
 <b>1. What do you think would happen if enough NaHCO3 were added to the lake to maintain an ANC greater than 50μeq/L for 3 residence times with the stirrer turned off? How much NaHCO3 would need to be added?</b>
 
-If the stirrer was turned off, not all of the sodium bicarbonate will end up dissolving different parts of lake will have different pH. The ANC will remain at the bottom of the lake, while the top of the lake will be very acidic. <u>Thus, a lot more sodium bicarbonate would need to be added to give the same result.</u>
+If the stirrer was turned off, not all of the sodium bicarbonate will end up dissolving different parts of lake will have different pH. The ANC will remain at the bottom of the lake, while the top of the lake will be very acidic. Thus, a lot more sodium bicarbonate would need to be added to give the same result.
 
 <b>2. What are some of the complicating factors you might find in attempting to remediate a lake using CaCO3? Below is a list of issues to consider.
 
@@ -173,8 +173,8 @@ If the stirrer was turned off, not all of the sodium bicarbonate will end up dis
 - solubility of CaCO3 (find the solubility and compare with NaHCO3)
 - density of CaCO3 slurry (find the density of CaCO3)</b>
 
-CaCO3 is hard to dissolve. This is shown in the results of our experiment (Question 5), where the CaCO3 was not dissolved at all. The solubility of CaCO3 is 15 mg/L at room temperature whereas the solubility of NaHCO3 is _____________.
+CaCO3 is hard to dissolve. This is shown in the results of our experiment (Question 5), where the CaCO3 was not dissolved at all. The solubility of CaCO3 is 15 mg/L at room temperature whereas the solubility of NaHCO3 is 100,000 mg/L.
 
-Furthermore, since the density of CaCO3 is high, most of the CaCO3 will sink to the bottom of the lake. This means that CaCO3 is likely not well mixed in the lake as the lake will be highly concentrated at the bottom of the lake and not really concentrated at the top of the lake.
+Furthermore, since the density of CaCO3 at 2.71 g/cm³ compared to water at 0.998 g/cm³, most of the CaCO3 will sink to the bottom of the lake. This means that CaCO3 is likely not well mixed in the lake as the lake will be highly concentrated at the bottom of the lake and not really concentrated at the top of the lake.
 
 As a result of its low solubility, there will be an inability to mix the CaCO3 well in the lake. There will be regions of much higher concentration at the bottom of the lake and regions of much lower concentration at the top of the lake. This would cause the lake to be "over-remediated" at parts of the lake, but not remediated at all at other parts of the lake.
