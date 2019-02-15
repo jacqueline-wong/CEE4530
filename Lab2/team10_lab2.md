@@ -111,8 +111,8 @@ $$ \alpha_2 = $$
 
 ```python
 H = []
-for j in t:
-  H[i] = lakepH[i]
+for i in range(len(lakepH)):
+  H[i] = 10**-(lakepH[i])
 Kw = 10**(-14)
 ANC = C_T*(a1+2*a2)+(Kw/H)-H
 C_T
