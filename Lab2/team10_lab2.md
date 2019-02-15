@@ -79,12 +79,13 @@ ANC_in = -10**(-3)
 ANC_out = np.zeros(len(time))
 
 for i in np.arange(len(time)):
-  ANC_out[i] = ANC_0.magnitude/np.exp(time[i])+ANC_in*(1-np.exp(-time[i]))
+  ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
 
 fig, ax = plt.subplots()
-ax.plot(time.magnitude,ANC_out,'r')
+ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('ANC')
+plt.ylabel('lake effluent ANC')
+
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
 ```
