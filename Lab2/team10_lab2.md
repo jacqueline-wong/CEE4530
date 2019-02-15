@@ -119,7 +119,6 @@ $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left
 $$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 
 ```python
-P_CO2 = 10**(-3.5) * u.atm
 ANC_open = epa.ANC_open(lakepH)
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
