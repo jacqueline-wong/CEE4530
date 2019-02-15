@@ -69,10 +69,9 @@ mass = 623 * u.mg
 MW = 84 * u.g/u.mol
 lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
-ANC_0
 ANC_in = -10**(-3)
 ANC_out = []
-ANC_out = ANC_0.magnitude*np.exp(-time)+ANC_in*(1-np.exp(-time))
+ANC_out = ANC_0.magnitude/np.exp(time)+ANC_in*(1-np.exp(-time))
 ANC_out[1]
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
