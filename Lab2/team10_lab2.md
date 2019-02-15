@@ -91,7 +91,7 @@ plt.savefig('Lab2/ANCgraph.png')
 plt.show()
 ```
 
-![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
+![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
 
 <b>3. If we assume that there are no carbonates exchanged with the atmosphere during the experiment, then we can calculate ANC in the lake effluent by using equation (14) describing the ANC of a closed system. Calculate the ANC under the assumption of a closed system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as closed ANC.</b>
 
