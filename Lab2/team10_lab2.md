@@ -113,7 +113,9 @@ C_T
 for i in range(len(lakepH)):
   H[i] = 10**(-lakepH[i])
 
-alpha1 =
+a0 =
+a1 =
+a2 =
 
 ANC_closed = np.zeros(len(lakepH))
 
