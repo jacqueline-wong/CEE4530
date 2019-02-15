@@ -97,18 +97,20 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
 ```python
-#K1 = 10**(-6.3)
-#K2 = 10**(-10.3)
-#Kw = 10**(-14)
 C_T = ANC_0
-
-#H = 10**(-lakepH)
-#a0 = 1/(1+(K1/H)+(K1*K2/H**2))
-#a1 = 1/(1+(H/K1)+(K2/H))
-#a2 = 1/(1+(H**2/(K1*K2))+H/K2)
-
 ANC_closed = epa.ANC_closed(lakepH, C_T)
+
+fig, ax = plt.subplots()
+ax.plot(time, ANC_out,'r', time,ANC_closed,'b')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('ANC')
+plt.legend(['Expected ANC', 'Closed ANC'])
+
+plt.savefig('Lab2/ANCclosed.png')
+plt.show()
+
 ```
+![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
 
 <b>4.If we assume that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere, then we can calculate ANC in the lake effluent by using equation (18) describing the ANC of an open system. Calculate the ANC under the assumption of an open system and plot it on the same graph produced in answering question #3 with the plot labeled (in the legend) as open ANC.</b>
 
@@ -119,6 +121,16 @@ $$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 ```python
 P_CO2 = 10**(-3.5) * u.atm
 ANC_open = epa.ANC_open(lakepH)
+fig, ax = plt.subplots()
+ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('ANC')
+plt.legend(['Expected ANC', 'Closed ANC', 'Open ANC'])
+
+plt.savefig('Lab2/ANCopen.png')
+plt.show()
 ```
+
+![ANC Open](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCopen.png)
 
 <b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
