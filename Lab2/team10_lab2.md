@@ -11,13 +11,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 ```
----
-Use CMFR equation to find ANC of the samples
-
-- Graph should go to -0.001
-- Should delete comments in data file for lab
-
----
 
 $K_1 = 10^{-6.3}, \text{ }K_2 = 10^{-10.3}, \text{ }
 K_H = 10^{-1.5} \text{ mol L}^{-1} \text{atm}^{-1}, \newline P_{CO_2}=10^{-3.5} \text{ atm}, \text{ }K_w = 10^{-14}$
@@ -40,6 +33,7 @@ lakepHnotes
 start = 8
 column = 1
 lakepH = epa.column_of_data(data_file_path,start,column)
+(epa.column_of_time(data_file_path,start))
 time = ((epa.column_of_time(data_file_path,start))/theta).to(u.dimensionless)
 
 fig, ax = plt.subplots()
@@ -76,15 +70,13 @@ MW = 84 * u.g/u.mol
 lake_vol = 4 * u.L
 ANC_0 = mass/(MW*lake_vol)
 ANC_in = -10**(-3)
-ANC_out = np.zeros(len(time))
-
-for i in np.arange(len(time)):
-  ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
+ANC_out = []
+ANC_out = ANC_0.magnitude*np.exp(-time)+ANC_in*(1-np.exp(-time))
 
 fig, ax = plt.subplots()
 ax.plot(time,ANC_out,'r')
 plt.xlabel('hydraulic residence time')
-plt.ylabel('lake effluent ANC')
+plt.ylabel('ANC')
 
 plt.savefig('Lab2/ANCgraph.png')
 plt.show()
@@ -97,6 +89,8 @@ plt.show()
 $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
 
 where
+
+$$C_T = \left[H_2{CO}_3^* \right] + \left[{HCO}_3^- \right]+\left[{CO}_3^{-2} \right]$$
 
 $$\alpha_0 =\frac{1}{1+\frac{K_1 }{[H^+]} +\frac{K_1 K_2}{[H^+]^2} }$$
 
