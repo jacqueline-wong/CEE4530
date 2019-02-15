@@ -107,15 +107,16 @@ K1 = 10**(-6.3)
 K2 = 10**(-10.3)
 Kw = 10**(-14)
 H = np.zeros(len(lakepH))
-
+P_CO2 = 10**(-3.5)
 C_T
 
 for i in range(len(lakepH)):
   H[i] = 10**(-lakepH[i])
 
-a0 =
-a1 =
-a2 =
+a0 = 1/(1+(k1/H)+(k1*k2/H_pow))
+a1 = 1/(1+(H/k1)+(k2/H))
+a2 = 1/(1+(H_pow/(k1*k2))+H/k2)
+C_T = P_CO2*kH/a0
 
 ANC_closed = np.zeros(len(lakepH))
 
