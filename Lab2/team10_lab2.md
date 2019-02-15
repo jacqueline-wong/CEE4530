@@ -78,7 +78,7 @@ ANC_0 = mass/(MW*lake_vol)
 ANC_in = -10**(-3)
 t = np.arange(0,100,1)
 ANC_out = np.zeros(len(t))
-
+time
 for i in t:
   ANC_out[i] = ANC_0.magnitude/np.exp(i)+ANC_in*(1-np.exp(-i))
 
@@ -110,10 +110,12 @@ $$ \alpha_1 = $$
 $$ \alpha_2 = $$
 
 ```python
+K1 = 10**(-6.3)
+K2 = 10**(-10.3)
+Kw = 10**(-14)
 H = []
 for i in range(len(lakepH)):
-  H[i] = 10**-(lakepH[i])
-Kw = 10**(-14)
+  H[i] = 10**(-lakepH[i])
 ANC = C_T*(a1+2*a2)+(Kw/H)-H
 C_T
 ```
