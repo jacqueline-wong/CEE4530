@@ -33,7 +33,6 @@ lakepHnotes
 start = 8
 column = 1
 lakepH = epa.column_of_data(data_file_path,start,column)
-(epa.column_of_time(data_file_path,start))
 time = ((epa.column_of_time(data_file_path,start))/theta).to(u.dimensionless)
 
 fig, ax = plt.subplots()
@@ -133,3 +132,23 @@ plt.show()
 ![ANC Open](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCopen.png)
 
 <b>5. Analyze the data from the second experiment and graph the data appropriately. What did you learn from the second experiment?</b>
+
+```python
+dfp = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/lab2_datasheet2.txt"
+df = pd.read_csv(dfp,delimiter='\t')
+
+lakepHnotes2 = epa.notes(dfp)
+lakepHnotes2
+start = 8
+column = 1
+lakepH2 = epa.column_of_data(dfp,start,column)
+time2 = ((epa.column_of_time(dfp,start))/theta).to(u.dimensionless)
+
+fig, ax = plt.subplots()
+ax.plot(time2,lakepH2,'r')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('pH')
+
+plt.savefig('Lab2/pHgraph2.png')
+plt.show()
+```
