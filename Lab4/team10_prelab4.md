@@ -30,6 +30,20 @@ question 4
 
 <b> 5. A dissolved oxygen probe was placed in a small vial in such a way that the vial was sealed. The water in the vial was sterile. Over a period of several hours the dissolved oxygen concentration gradually decreased to zero. Why? (You need to know how dissolved oxygen probes work!)</b>
 
-(?) The dissolved oxygen probe calculates dissolve oxygen based on the change in pressure in the accumulator.
+The dissolved oxygen probe calculates dissolve oxygen based on the fact that an applied potential of 0.8V can reduce oxygen to water:
+
+$$4 e^- + 4 H^+ + O_2 \mathrm{\to} 2 H_2O$$
+
+The concentration of oxygen in the cell is $\mathrm{\approx}0$ and thus the rate at which oxygen diffuses through the membrane is proportional to the oxygen concentration in the solution.
+
+No oxygen reduction,
+
+---
+Notes from class:
 
 (based on diffusion through the oxygen permeable membrane, such that any oxygen present becomes converted into water. There is a circuit that measures picoamps flowing in the circuit to figure out the rate in which oxygen is turned into water. Oxygen level behind the membrane is zero. Any oxygen is immediately turned into water. It makes a meaningful measurement by using a two point linear calibration)
+
+
+The cell is separated from solution by a gas permeable membrane that allows O_2 to pass through. The concentration of O_2 in the cell is kept very low by reduction to H_2O. The rate at which oxygen diffuses through the gas permeable membrane is proportional to the difference in oxygen concentration across the membrane.
+
+Oxygen is reduced to water at a silver (Ag) cathode of the probe. Oxygen reduction produces a current that is measured by the meter.
