@@ -18,6 +18,7 @@ molecular mass = -------
 <b> 2. Describe your expectations for dissolved oxygen concentration as a function of time during a reaeration experiment. Assume you have added enough sodium sulfite to consume all of the oxygen at the start of the experiment. What would the shape of the curve look like?</b>
 
 question 2
+logarithmic
 
 <b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
 
