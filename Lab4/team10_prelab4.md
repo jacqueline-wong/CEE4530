@@ -51,6 +51,7 @@ Thus, at least 42.034 mg of sodium sulfite is required.
 
 <b> 2. Describe your expectations for dissolved oxygen concentration as a function of time during a reaeration experiment. Assume you have added enough sodium sulfite to consume all of the oxygen at the start of the experiment. What would the shape of the curve look like?</b>
 
+<<<<<<< HEAD
 According to Equation (103),
 
 $$\ln \frac{C^{*} -C}{C^{*} -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
@@ -68,6 +69,22 @@ According to the oxygen transfer efficiency equation (107),
 $$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} } }$$
 
 As $Q_{air}$ is directly proportional to $\hat{k}_{v,l}$, we will expect a straight line.
+=======
+<<<<<<< HEAD
+question 2
+logarithmic? seems to be from the ppt in class...
+=======
+We would expect the shape of the curve describing the dissolved oxygen concentration as a function of time to look logarithmic in nature, but will flatten out rather than increase forever as it approaches the saturation level. Initially, the oxygen concentration would increase rapidly before increasing at a slower rate. The reason for this is because the oxygen concentration will slowly approach saturation level and when the oxygen concentration approaches saturation level, it becomes harder for oxygen to dissolve.
+>>>>>>> 360b0e75062030a37dbeb8dd3a46521d157aabfe
+
+<b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
+
+The reason why $\hat{k}_{v,l}$ is not zero when the gas flow rate is zero is because the gas does not need to flow in order for gas to exchange oxygen. As long as direct contact, oxygen will be exchanged and $\hat{k}_{v,l}$ will not be zero. Oxygen can transfer into the reactor even when no air is pumped into the diffuser because diffusers are either made of porous materials, for example, ceramic and plastic membranes, or non-porous materials, in which case a hole in the pipe. Both scenarios enable oxygen to flow into the reactor without additional need for pump.
+
+<b>4. Describe your expectations for $\hat{k}_{v,l}$ as a function of gas flow rate. Do you expect a straight line? Why?</b>
+
+My expectation is that 
+>>>>>>> 002958e2c083cc6974c2a8e1552b4400f2d49fc6
 
 <b> 5. A dissolved oxygen probe was placed in a small vial in such a way that the vial was sealed. The water in the vial was sterile. Over a period of several hours the dissolved oxygen concentration gradually decreased to zero. Why? (You need to know how dissolved oxygen probes work!)</b>
 
