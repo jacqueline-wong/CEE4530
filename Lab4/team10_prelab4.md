@@ -19,7 +19,7 @@ $$\text{O}_{{2}} +\text{2SO}_{{3}}^{-{2}} \stackrel{{cobalt}}{\longrightarrow}\t
 
 Thus, the mass of sodium sulfite needed to deoxygenate 1 g of oxygen is:
 
-$$\frac{{\text{mol}\; \text{O}}_{{2}} }{{32\; \text{g}\; } } \times \frac{{2\; \text{mol\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{mol}\; O}_{{2}} } \times \frac{{126\; \text{g}}}{{\text{mol Na}}_{{2}}\text{SO}_{{3}} } =\frac{{\; 7.875\; \text{g\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{g O}_{2}} }$$
+$$\frac{{\text{mol}\; \text{O}}_{{2}} }{{32\; \text{g}\; } } \times \frac{{2\; \text{mol\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{mol}\; \text{O}_{2}} } \times \frac{{126\; \text{g}}}{{\text{mol Na}}_{{2}}\text{SO}_{{3}} } =\frac{{\; 7.875\; \text{g\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{g O}_{2}} }$$
 
 ```python
 MW_O2 = 32 * u.g/u.mol
@@ -51,16 +51,35 @@ Thus, at least 42.034 mg of sodium sulfite is required.
 
 <b> 2. Describe your expectations for dissolved oxygen concentration as a function of time during a reaeration experiment. Assume you have added enough sodium sulfite to consume all of the oxygen at the start of the experiment. What would the shape of the curve look like?</b>
 
-question 2
-logarithmic
+According to Equation (103),
+
+$$\ln \frac{C^{*} -C}{C^{*} -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
+
+Thus, we expect the curve to look logarithmic.
 
 <b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
 
-question 3
+The reason why $\hat{k}_{v,l}$ is not zero when the gas flow rate is zero is because the gas does not need to flow in order for gas to exchange oxygen. Since it is an open system, there is gas exchange occurring at the surface of the water. Oxygen is able to be exchanged between being in air and being dissolved in water, thus $\hat{k}_{v,l}$ will not be zero.
 
 <b>4. Describe your expectations for $\hat{k}_{v,l}$ as a function of gas flow rate. Do you expect a straight line? Why?</b>
 
-question 4
+According to the oxygen transfer efficiency equation (107),
+
+$$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} } }$$
+
+As $Q_{air}$ is directly proportional to $\hat{k}_{v,l}$, we will expect a straight line.
+
+<b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
+
+The reason why $\hat{k}_{v,l}$ is not zero when the gas flow rate is zero is because the gas does not need to flow in order for gas to exchange oxygen. As long as direct contact, oxygen will be exchanged and $\hat{k}_{v,l}$ will not be zero. Oxygen can transfer into the reactor even when no air is pumped into the diffuser because diffusers are either made of porous materials, for example, ceramic and plastic membranes, or non-porous materials, in which case a hole in the pipe. Both scenarios enable oxygen to flow into the reactor without additional need for pump.
+
+<b>4. Describe your expectations for $\hat{k}_{v,l}$ as a function of gas flow rate. Do you expect a straight line? Why?</b>
+
+According to the oxygen transfer efficiency equation (107),
+
+$$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} } }$$
+
+Thus, we expect $\hat{k}_{v,l}$ to be proportional to gas flow rate $Q_{air}$. As $Q_{air}$ increases, $\hat{k}_{v,l}$ increases.
 
 <b> 5. A dissolved oxygen probe was placed in a small vial in such a way that the vial was sealed. The water in the vial was sterile. Over a period of several hours the dissolved oxygen concentration gradually decreased to zero. Why? (You need to know how dissolved oxygen probes work!)</b>
 
