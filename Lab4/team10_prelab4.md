@@ -69,18 +69,6 @@ $$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_
 
 As $Q_{air}$ is directly proportional to $\hat{k}_{v,l}$, we will expect a straight line.
 
-<b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
-
-The reason why $\hat{k}_{v,l}$ is not zero when the gas flow rate is zero is because the gas does not need to flow in order for gas to exchange oxygen. As long as direct contact, oxygen will be exchanged and $\hat{k}_{v,l}$ will not be zero. Oxygen can transfer into the reactor even when no air is pumped into the diffuser because diffusers are either made of porous materials, for example, ceramic and plastic membranes, or non-porous materials, in which case a hole in the pipe. Both scenarios enable oxygen to flow into the reactor without additional need for pump.
-
-<b>4. Describe your expectations for $\hat{k}_{v,l}$ as a function of gas flow rate. Do you expect a straight line? Why?</b>
-
-According to the oxygen transfer efficiency equation (107),
-
-$$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} } }$$
-
-Thus, we expect $\hat{k}_{v,l}$ to be proportional to gas flow rate $Q_{air}$. As $Q_{air}$ increases, $\hat{k}_{v,l}$ increases.
-
 <b> 5. A dissolved oxygen probe was placed in a small vial in such a way that the vial was sealed. The water in the vial was sterile. Over a period of several hours the dissolved oxygen concentration gradually decreased to zero. Why? (You need to know how dissolved oxygen probes work!)</b>
 
 The dissolved oxygen probe calculates dissolved oxygen based on the fact that an applied potential of 0.8V can reduce oxygen to water:
