@@ -3,12 +3,9 @@
 ## Team 10: Victor Khong & Jacqueline Wong ##
 
 ### Introduction ###
-Our client, Dr. Monroe Weber-Shirk and Jonathan Harris, are expert food scientists who are concerned that our daily diet contains too much additives, particularly the unnecessary use of dye for aesthetic appeal. Whilst dye is generally considered a safe substance to be used in food, overconsumption may lead to certain health problems such as bladder tumors. Children are particularly vulnerable to the detrimental health effects posed by dye. In particular, some brands of fruit punch and strawberry jello, two popular children’s snacks, can contain large amounts of red dye. Hence, the current situation with food dye and human health is very concerning to our client.
+Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs in spring when snow that accumulates in winter melts and runs off into the lakes.
 
-Our client has presented our research laboratory with a sample of distilled water that contains the same amount of red dye as one of the most popular fruit punches on the market. Our task is to measure the concentration of red dye in the solution, which will be a first step in supporting their investigations on food dye levels in popular food and beverage items.
-
-Given the properties of the red dye, absorption spectroscopy presented itself as one of the best analytical technique that can be used to accurately determine the concentration of a compound. The theory behind it is that colored solutions absorb light in the visible range and the resulting color of the solution is the spectrum of light that is not absorbed, but transmitted. According to Beer’s law, the attenuation of light in a chemical solution is proportional to the concentration and the length of the path that the light passes through:
-
+Our client has presented our research laboratory with the case of Wolf Lake, one such lake in the Adirondacks which is of concern. Our task is to simulate
 
 ### Objectives ###
 Our client has presented us with two sets of objectives:
