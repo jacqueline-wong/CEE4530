@@ -5,12 +5,13 @@
 ### Introduction ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs in spring when snow that accumulates in winter melts and runs off into the lakes.
 
-Our client has presented our research laboratory with the case of Wolf Lake, one such lake in the Adirondacks which is of concern. Our task is to simulate
+Our client has presented our research laboratory with the case of Wolf Lake, one such lake in the Adirondacks which is of concern. Our task is to simulate what happens to Wolf Lake during snow melt.
 
 ### Objectives ###
-Our client has presented us with two sets of objectives:
-$\bullet$ Investigate the concentration of dye in given solution
-$\bullet$ Prepare a $ 1\text{M} \ NaCl $ solution
+Our clients have presented us with two objectives:
+
+1. Determine the acid neutralizing capacity of
+2. 
 
 
 ### Procedures ###
