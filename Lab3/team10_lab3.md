@@ -1,6 +1,6 @@
 # Lab 3 for CEE 4530
 
-## Team 10: Victor Khong & Jacqueline Wong (2) ##
+## Team 10: Victor Khong & Jacqueline Wong ##
 
 <u>Using data from Irene Sarri & Felix Yang </u>
 
