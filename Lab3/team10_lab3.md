@@ -44,12 +44,14 @@ from scipy import stats
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
+plt.subplots()
 plt.plot(V_titrant,pH,'b-')
 plt.axvline(x=V_equivalent.magnitude, color='k', linestyle='dotted')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
+plt.annotate(s='buffer', xy=(0.5,6.8), xytext=(1.25,6), arrowprops=dict(color='tab:red', arrowstyle='<->'))
+plt.annotate(s='excess', xy=(2.75,3.5), xytext=(1.5,4.25), arrowprops=dict(color='tab:orange', arrowstyle='<->'))
 plt.legend(['data', 'equivalent volume of titrant'])
-ax.annotate('buffer region', xy=(0.25,7), xytext=(1.25,7),arrowprops={'arrowstyle': '<->'}), va='center')
 
 plt.savefig('Lab3/Titration_0.png')
 plt.show()
