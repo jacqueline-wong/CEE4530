@@ -49,7 +49,7 @@ from scipy import stats
 
 # Question 1
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
-V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
+V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t0 = epa.Gran(Gran_data_0)
 
 plt.subplots()
 plt.plot(V_titrant,pH,'b-')
@@ -122,12 +122,21 @@ C_T = ANC_0*np.exp(-time)
 ANC_closed = epa.ANC_closed(lakepH, C_T)
 ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
 
-ANC_t0 = (Ve*Nt)Vs
-ANC_t5 =
-ANC_t15 =
+Gran_data_5 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/5_minute_sample.xls'
+V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t5 = epa.Gran(Gran_data_5)
+
+Gran_data_10 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/5_minute_sample.xls'
+V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t10 = epa.Gran(Gran_data_10)
+
+t0 = 0*u.min/theta.to(u.min)
+t5 = 5*u.min/theta.to(u.min)
+t10 = 10*u.min/theta.to(u.min)
 
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
+plt.plot(ANC_t0, t0, 'kx')
+plt.plot(ANC_t5, t5,'kx')
+plt.plot(ANC_t10, t10, 'kx')
 plt.xlabel('hydraulic residence time')
 plt.ylabel('ANC (meq/L)')
 plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC'])
