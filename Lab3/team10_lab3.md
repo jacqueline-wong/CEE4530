@@ -28,6 +28,8 @@ Our clients have presented our research laboratory with the specific case of Wol
 $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 $$ANC=\frac{V_e N_t }{V_s }$$
 
+The equivalent volume of titrant can be calculated by the following equation:
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
