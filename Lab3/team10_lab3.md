@@ -24,6 +24,7 @@ Our clients have presented our research laboratory with the specific case of Wol
 <b>1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).</b>
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
+Figure 1: A graph of ...
 
 $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 
@@ -34,6 +35,7 @@ $$ANC=\frac{V_e N_t }{V_s }$$
 <b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
 
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
+Figure 2: A graph of ...
 
 ```python
 from aguaclara.core.units import unit_registry as u
