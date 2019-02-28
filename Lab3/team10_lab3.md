@@ -33,7 +33,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
+Gran_data_0 = 'https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/Gran.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
 def F1(V_sample,V_titrant,pH):
