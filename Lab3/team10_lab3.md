@@ -40,11 +40,9 @@ def F1(V_sample,V_titrant,pH):
   return (V_sample + V_titrant)/V_sample * epa.invpH(pH)
 
 F1_data = F1(V_Sample,V_titrant,pH)
-#By inspection I guess that there are 4 good data points in the linear region.
-N_good_points = 3
-#use scipy linear regression. Note that the we can extract the last n points from an array using the notation [-N:]
-slope, intercept, r_value, p_value, std_err = stats.linregress(V_titrant[-N_good_points:],F1_data[-N_good_points:])
-#reattach the correct units to the slope and intercept.
+
+slope, intercept, r_value, p_value, std_err = stats.linregress(V_titrant[7:9],F1_data[7:9])
+
 intercept = intercept*u.mole/u.L
 slope = slope*(u.mole/u.L)/u.mL
 V_eq = -intercept/slope
@@ -53,18 +51,16 @@ print('The r value for this curve fit is', ut.round_sf(r_value,5))
 print('The equivalent volume was', ut.round_sf(V_eq,2))
 print('The acid neutralizing capacity was',ut.round_sf(ANC_sample.to(u.meq/u.L),2))
 
-#The equivalent volume agrees well with the value calculated by ProCoDA.
-#create an array of points to draw the linear regression line
 x=[V_eq.magnitude,V_titrant[-1].magnitude ]
 y=[0,(V_titrant[-1]*slope+intercept).magnitude]
-#Now plot the data and the linear regression
+
 plt.plot(V_titrant, F1_data,'o')
 plt.plot(x, y,'r')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('Gran function (mole/L)')
 plt.legend(['data'])
 
-plt.savefig('Examples/images/Gran.png')
+plt.savefig('Lab3/images/Gran_0.png')
 plt.show()
 ```
 
