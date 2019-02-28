@@ -46,7 +46,7 @@ V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_da
 
 plt.subplots()
 plt.plot(V_titrant,pH,'b-')
-plt.axvline(x=V_equivalent.magnitude, color='k', linestyle='dotted')
+plt.axvline(x=V_equivalent.magnitude, color='tab:gray', linestyle='dotted')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
 plt.legend(['data', 'equivalent volume'])
