@@ -2,6 +2,8 @@
 
 ## Team 10: Victor Khong & Jacqueline Wong (2) ##
 
+<u>Using data from Irene Sarri & Felix Yang </u>
+
 ### Introduction ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs in spring when snow that accumulates in winter melts and runs off into the lakes.
 
