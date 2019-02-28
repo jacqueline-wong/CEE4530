@@ -45,9 +45,11 @@ Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_min
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
 plt.plot(V_titrant,pH,'b-')
-plt.vlines(V_equivalent, ymin=min(V_titrant), ymax=max(V_titrant))
+plt.axvline(x=V_equivalent.magnitude, color='k', linestyle='dotted')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
+plt.legend(['data', 'equivalent volume of titrant'])
+ax.annotate('buffer region', xy=(0.25,7), xytext=(1.25,7),arrowprops={'arrowstyle': '<->'}), va='center')
 
 plt.savefig('Lab3/Titration_0.png')
 plt.show()
