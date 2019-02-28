@@ -36,7 +36,7 @@ from scipy import stats
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
-plt.plot(pH, V_titrant,'b-')
+plt.plot(V_titrant,pH,'b-')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
 plt.legend(['data'])
