@@ -5,23 +5,17 @@
 ### Introduction ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs in spring when snow that accumulates in winter melts and runs off into the lakes.
 
-Our client has presented our research laboratory with the case of Wolf Lake, one such lake in the Adirondacks which is of concern. Our task is to simulate what happens to Wolf Lake during snow melt.
-
 ### Objectives ###
-Our clients have presented us with two objectives:
+Our clients have presented our research laboratory with the specific case of Wolf Lake, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
 
-1. Determine the acid neutralizing capacity of
-2.
-
+1. Create a model which simulate what happens to Wolf Lake during snow melt.
+2. Determine the changes in acid neutralizing capacity of Wolf Lake with time.
 
 ### Procedures ###
-<b>Investigating the concentration of dye in given solution</b>
-First, we prepared 0, 1, 2, 5, 10, 20, 50, 100 and 200 mg/L standards of red dye in distilled water. Each standard was created in a 100 mL volumetric flask, with red dye measured using a 10-100 µL pipette. The absorbance of each standard was measured with a photometer in order of increasing concentration as voltages, which were later converted to .
 
-Plotted to determine the effective range of absorbance measurements of the photometer instrument.
-
-<b>Preparing a $ 1M \ NaCl $ solution</b>
-First,
+- Created model and ran it, assuming Completely Mixed Flow Reactor (CMFR)
+- Collected samples
+- Measured ANC of samples with pH >4.5 using titration
 
 ### Results ###
 
