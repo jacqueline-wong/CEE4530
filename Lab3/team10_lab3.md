@@ -25,6 +25,9 @@ Our clients have presented our research laboratory with the specific case of Wol
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
 
+$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+$$ANC=\frac{V_e N_t }{V_s }$$
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -73,9 +76,6 @@ plt.legend(['data'])
 plt.savefig('Lab3/Gran_0.png')
 plt.show()
 ```
-
-$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
-$$ANC=\frac{V_e N_t }{V_s }$$
 
 <b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
 
