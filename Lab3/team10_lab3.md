@@ -47,6 +47,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
+# Question 1
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
@@ -65,6 +66,7 @@ plt.text(2, 4.25, 'excess H+', color='tab:orange', fontsize=10)
 plt.savefig('Lab3/Titration_0.png')
 plt.show()
 
+# Question 2
 def F1(V_sample,V_titrant,pH):
   return (V_sample + V_titrant)/V_sample * epa.invpH(pH)
 
@@ -92,7 +94,7 @@ plt.legend(['data'])
 plt.savefig('Lab3/Gran_0.png')
 plt.show()
 
-#
+# Question 3
 flowrate = 75/15 * u.mL/u.s
 mass_total = 4.645 * u.kg
 mass_tub = 0.496 * u.kg
@@ -131,6 +133,8 @@ plt.show()
 ```
 
 <b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
+
+![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
 
 ### Discussion ###
 
