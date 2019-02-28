@@ -31,6 +31,10 @@ The equivalent volume of titrant can be calculated by the following equation:
 
 $$ANC=\frac{V_e N_t }{V_s }$$
 
+<b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
+
+![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -86,10 +90,6 @@ plt.legend(['data'])
 plt.savefig('Lab3/Gran_0.png')
 plt.show()
 ```
-
-<b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
-
-![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
 
 <b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
 
