@@ -91,6 +91,43 @@ plt.legend(['data'])
 
 plt.savefig('Lab3/Gran_0.png')
 plt.show()
+
+#
+flowrate = 75/15 * u.mL/u.s
+mass_total = 4.645 * u.kg
+mass_tub = 0.496 * u.kg
+density = 997 * u.kg/u.m**3
+volume = (mass_total-mass_tub)/density
+theta = volume/flowrate
+
+data_file_path = "https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/lab2_datasheet.txt"
+dframe = pd.read_csv(data_file_path,delimiter='\t')
+lakepHnotes = epa.notes(data_file_path)
+lakepHnotes
+start = 8
+column = 1
+lakepH = epa.column_of_data(data_file_path,start,column)
+time = ((epa.column_of_time(data_file_path,start))/theta).to(u.dimensionless)
+
+mass = 623 * u.mg
+MW = 84 * u.g/u.mol
+lake_vol = 4 * u.L
+ANC_0 = mass/(MW*lake_vol)
+ANC_in = -10**(-3) * u.eq/u.L
+ANC_out = ANC_0*np.exp(-time)+ANC_in*(1-np.exp(-time))
+
+C_T = ANC_0*np.exp(-time)
+ANC_closed = epa.ANC_closed(lakepH, C_T)
+ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
+
+fig, ax = plt.subplots()
+ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
+plt.xlabel('hydraulic residence time')
+plt.ylabel('ANC (meq/L)')
+plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC'])
+
+plt.savefig('Lab3/ANC.png')
+plt.show()
 ```
 
 <b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
