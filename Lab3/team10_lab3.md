@@ -35,10 +35,10 @@ from scipy import stats
 
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
-#Define the gran function.
+
 def F1(V_sample,V_titrant,pH):
   return (V_sample + V_titrant)/V_sample * epa.invpH(pH)
-#Create an array of the F1 values.
+
 F1_data = F1(V_Sample,V_titrant,pH)
 #By inspection I guess that there are 4 good data points in the linear region.
 N_good_points = 3
