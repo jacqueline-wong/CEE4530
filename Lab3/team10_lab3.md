@@ -36,6 +36,14 @@ from scipy import stats
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
 V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC = epa.Gran(Gran_data_0)
 
+plt.plot(pH, V_titrant,'b-')
+plt.xlabel('Titrant Volume (mL)')
+plt.ylabel('pH')
+plt.legend(['data'])
+
+plt.savefig('Lab3/Titration_0.png')
+plt.show()
+
 def F1(V_sample,V_titrant,pH):
   return (V_sample + V_titrant)/V_sample * epa.invpH(pH)
 
@@ -51,16 +59,16 @@ print('The r value for this curve fit is', ut.round_sf(r_value,5))
 print('The equivalent volume was', ut.round_sf(V_eq,2))
 print('The acid neutralizing capacity was',ut.round_sf(ANC_sample.to(u.meq/u.L),2))
 
-x=[V_eq.magnitude,V_titrant[-1].magnitude ]
-y=[0,(V_titrant[-1]*slope+intercept).magnitude]
+gran_func=[V_eq.magnitude,V_titrant[-1].magnitude]
+tit_vol=[0,(V_titrant[-1]*slope+intercept).magnitude]
 
 plt.plot(V_titrant, F1_data,'o')
-plt.plot(x, y,'r')
+plt.plot(gran_func, tit_vol,'r')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('Gran function (mole/L)')
 plt.legend(['data'])
 
-plt.savefig('Lab3/images/Gran_0.png')
+plt.savefig('Lab3/Gran_0.png')
 plt.show()
 ```
 
