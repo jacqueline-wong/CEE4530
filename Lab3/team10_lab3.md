@@ -122,6 +122,10 @@ C_T = ANC_0*np.exp(-time)
 ANC_closed = epa.ANC_closed(lakepH, C_T)
 ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
 
+ANC_t0 = (Ve*Nt)Vs
+ANC_t5 =
+ANC_t15 =
+
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
 plt.xlabel('hydraulic residence time')
