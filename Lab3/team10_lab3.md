@@ -4,14 +4,45 @@
 
 <u>Using data from Irene Sarri & Felix Yang </u>
 
-### Introduction ###
+### Introduction and Objectives ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs when snow from acid precipitation accumulates in winter, which melts and runs off into the lakes in spring.
 
-### Objectives ###
 Our clients have presented our research laboratory with the specific case of Wolf Pond, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
 
 1. Create a model which simulates what happens to Wolf Pond during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
 2. Determine the changes in the acid neutralizing capacity of Wolf Pond over time.
+3. Determine if ANC follows a volatile or nonvolatile model.
+
+Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from the following equation given pH is below 4.5:
+
+$$ pH = -log{[H+]}$$
+$$ ANC_{in} ≅−[H+]$$
+
+The expected effluent ANC can be rearranged and calculated from the CMFR mass balance equation to:
+
+$${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
+
+$${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
+
+Our first model will be a closed system, which assumes that there are no carbonates exchanged with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
+
+$$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
+
+where
+
+$$C_T = \left[H_2{CO}_3^* \right] + \left[{HCO}_3^- \right]+\left[{CO}_3^{-2} \right]$$
+
+$$\alpha_0 =\frac{1}{1+\frac{K_1 }{[H^+]} +\frac{K_1 K_2}{[H^+]^2} }$$
+
+$$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
+
+$$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
+
+Our second model will be an open system, which assumes that there are carbonates exchanged in equilibrium with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
+
+$$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
+
+$$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 
 ### Procedures ###
 
@@ -34,49 +65,26 @@ Figure 2: pH of the lake against its dimensionless residence time.
 
 It can be seen that pH decreases slowly from 0 to 0.75 hydraulic residence time, but reaches an equivalence point between 0.75 and 1.00 hydraulic residence time, and continues decreasing as more acid is added.
 
-Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from the following equation given pH is below 4.5:
-
-$$ pH = -log{[H+]}$$
-$$ ANC_{in} ≅−[H+]$$
-
-Since the pH of the acid rain is 3,
+Since the pH of the acid precipitation is 3 (below 4.5),
 
 $$ [H+] = 10^{-3} $$
-$$ ANC_{in} ≅ -10^{-3} $$
-
-The effluent ANC can be rearranged and calculated from the CMFR mass balance equation to:
-
-$${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
-
-$${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
+$$ANC_{in} ≅ -10^{-3} $$
 
 With this conservative assumption, we graphed the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
 Figure 3: Lake ANC against the hydraulic residence time
 
-Assuming that there are no carbonates exchanged with the atmosphere during the experiment (i.e. closed system), the ANC in the lake effluent can be calculated with:
+As mentioned above, assuming that there are no carbonates exchanged with the atmosphere during the experiment (i.e. closed system), the ANC in the lake effluent can be calculated with:
 
 $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
-
-where
-
-$$C_T = \left[H_2{CO}_3^* \right] + \left[{HCO}_3^- \right]+\left[{CO}_3^{-2} \right]$$
-
-$$\alpha_0 =\frac{1}{1+\frac{K_1 }{[H^+]} +\frac{K_1 K_2}{[H^+]^2} }$$
-
-$$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
-
-$$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
 Again, to visualize the results, we plot it onto Figure 4.
 
 ![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
 Figure 4: ANC of lake under closed system assumption
 
-Nevertheless, the assumption that carbonates are not exchanged with the atmosphere does not hold true in the real world. Hence, we make another, more reasonable assumption, which is that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere. In other words, we are taking the lake to be an open system.
-
-With this assumption, we use a different equation, namely the following equation, to calculate the lake effluent.
+Also mentioned above is the open system assumption. With this assumption, we use a different equation, namely the following equation, to calculate the lake effluent.
 
 $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
 
@@ -119,14 +127,14 @@ $$V_{eq}=\frac{-intercept}{slope}$$
 
 where the intercept and the slope refers to the y-intercept and slope of Figure 7 respectively. From this, we found that the $V_{eq}$ was 1.73 mL. This value is shown in Figure 7, the titration curve, as the gray line.
 
-However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile, and nonvolatile.
+However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile (close system), and nonvolatile (open system).
 
 The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 9, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
 Figure 9: ANC models and the measured ANC values in the lake
 
-From Figure 9, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
+From Figure 9, the measured ANC values followed closely with the volatile ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Conclusions ###
 From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC to buffer for snow melt in spring. Because our simulation goes beyond buffer zone into low levels of pH, it can be concluded that Wolf Pond does not have enough ANC. This would affect aquatic life.
