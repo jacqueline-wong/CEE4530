@@ -13,7 +13,7 @@ Our clients have presented our research laboratory with the specific case of Wol
 2. Determine the changes in the acid neutralizing capacity of Wolf Pond over time.
 3. Determine if ANC follows a volatile or nonvolatile model.
 
-Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from the following equation given pH is below 4.5:
+We will be assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from the following equation given pH is below 4.5:
 
 $$ pH = -log{[H+]}$$
 $$ ANC_{in} ≅−[H+]$$
@@ -24,7 +24,7 @@ $${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nol
 
 $${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
 
-Our first model will be a closed system, which assumes that there are no carbonates exchanged with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
+We will also be including a second model, which will be a closed system. This takes into account reactions, but assumes that there are no carbonates exchanged with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
 
 $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
 
@@ -38,7 +38,7 @@ $$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
 
 $$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
 
-Our second model will be an open system, which assumes that there are carbonates exchanged in equilibrium with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
+Our third model will be an open system, which assumes that there are carbonates exchanged in equilibrium with the atmosphere during the experiment. The ANC in the lake effluent can be calculated from:
 
 $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
 
@@ -73,7 +73,7 @@ $$ANC_{in} ≅ -10^{-3} $$
 With this conservative assumption, we graphed the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
-Figure 3: Lake ANC against the hydraulic residence time
+Figure 3: Assumption of conservative lake ANC against the hydraulic residence time
 
 As mentioned above, assuming that there are no carbonates exchanged with the atmosphere during the experiment (i.e. closed system), the ANC in the lake effluent can be calculated with:
 
@@ -82,7 +82,7 @@ $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \lef
 Again, to visualize the results, we plot it onto Figure 4.
 
 ![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
-Figure 4: ANC of lake under closed system assumption
+Figure 4: Conservative model and closed system (nonvolatile) models of lake ANC
 
 Also mentioned above is the open system assumption. With this assumption, we use a different equation, namely the following equation, to calculate the lake effluent.
 
@@ -94,7 +94,7 @@ We plotted the results onto the same plot as the results for ANC of the lake und
 
 ![ANC Open](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCopen.png)
 
-Figure 5: ANC of lake under both closed system and open system assumption.
+Figure 5: Conservative model, closed system (nonvolatile) and open system (volatile) models of lake ANC
 
 To understand the lake in greater detail, we also experimented with calcium carbonate in place of sodium bicarbonate to give the same acid neutralizing capacity of the lake.
 
