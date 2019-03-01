@@ -8,35 +8,35 @@
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs when snow from acid precipitation accumulates in winter, which melts and runs off into the lakes in spring.
 
 ### Objectives ###
-Our clients have presented our research laboratory with the specific case of Wolf Lake, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
+Our clients have presented our research laboratory with the specific case of Wolf Pond, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
 
-1. Create a model which simulates what happens to Wolf Lake during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
-2. Determine the changes in acid neutralizing capacity of Wolf Lake with time.
+1. Create a model which simulates what happens to Wolf Pond during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
+2. Determine the changes in the acid neutralizing capacity of Wolf Pond over time.
 
 ### Procedures ###
 
-The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant
+The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant, controlled by the peristaltic pump (Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes.
 
-For practical reasons, the
-- Created model and ran it, assuming
-- Collected samples
-- Measured ANC of samples with pH >4.5 using titration</b>
+The acid neutralizing capacity of Wolf Pond is represented by the addition of sodium bicarbonate. The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
 
 ![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
-Figure 1: Experimental apparatus used to simulate snow melt into Wolf Lake
+Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
+
+For the titration, 
 
 ### Results ###
+In this experiment, we essentially mimic the acid rain by increasing the $H^+$ ions in the lake that we have set up. By adding it continuously over a period of time rather than increasing the $H^+$ instantaneously, we can see how the lake reacts to it being acidified by the acid rain. In the experiment, we have tried our best to mimic the acid rain by using 0.05 N HCl as our acid rain.
 
-<b>1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).</b>
+To visualize the results, a titration curve of the experiment is plotted.
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
 Figure 2: A titration curve
 
-The first region is not shown in the figure above. This region would usually appear around pH 10.
+The titration curve above shows two regions. The first region is the buffer zone and the reaction $HCO_{3}^{-}+H^+->H_{2}CO_{3}^{-}$ is taking place as shown in the graph. The second region is when the lake has excess $H^+$ ions and the slow pH change is due to the fact that there are no reactions occurring to bring down the pH. Instead, the $H^+$ ions contribute to the decrease in pH directly.
 
-<b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
+In reality, there should be three regions. The titration curve shows only the second and third region. The first region is not shown in the Figure 2. This region would usually appear around pH 10.
 
-To plot the Gran plot, we need to use the following equation for the linear regression:
+For extra clarity of the interpretation of the results, we also plotted a Gran plot using the data from the titration curve above. To plot the Gran plot, we need to use the following equation for the linear regression:
 
 $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 
@@ -45,13 +45,13 @@ where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
 Figure 3: A Gran plot
 
-To calculate the equivalent volume, we use the formula:
+With the Gran plot, we can calculate the equivalent volume using the following formula:
 
 $$V_{eq}=\frac{-intercept}{slope}$$
 
-where the intercept and the slope refers to the y-intercept and slope of Figure 2 respectively.
+where the intercept and the slope refers to the y-intercept and slope of Figure 2 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 2, the titration curve, as the gray line.
 
-The $V_{eq}$ found using this formula was 1.7320669438481442 milliliter.
+However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC:
 
 <b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
 
@@ -99,7 +99,7 @@ The inputs to the "air valve control" are air slope, air flow rate, accumulator 
 8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
 
 ### Conclusions ###
-From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a titrant volume of approximately 1.8 mL, the titration curve shows that s
+From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a titrant volume of approximately 1.8 mL, the titration curve shows that the lake enters the excess $[H^+]$ region.
 
 Having said that, it should be noted that in reality,
 - the volume of runoff from snow melt is not constant.
