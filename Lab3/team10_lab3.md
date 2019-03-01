@@ -113,11 +113,11 @@ where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
 Figure 8: A Gran plot used for analysis of 0 minute sample.
 
-With the Gran plot, we can calculate the equivalent volume using the following formula:
+With the Gran plot, we can calculate the equivalent volume of titrant using the following formula:
 
 $$V_{eq}=\frac{-intercept}{slope}$$
 
-where the intercept and the slope refers to the y-intercept and slope of Figure 7 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 7, the titration curve, as the gray line.
+where the intercept and the slope refers to the y-intercept and slope of Figure 7 respectively. From this, we found that the $V_{eq}$ was 1.73 mL. This value is shown in Figure 7, the titration curve, as the gray line.
 
 However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile, and nonvolatile.
 
@@ -129,13 +129,12 @@ Figure 9: ANC models and the measured ANC values in the lake
 From Figure 9, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Conclusions ###
-From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC for a certain rain event based on the volume of the rain if the acidity of the rain is the same as 0.05 N HCl.
+From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC to buffer for snow melt in spring. Because our simulation goes beyond buffer zone into low levels of pH, it can be concluded that Wolf Pond does not have enough ANC. This would affect aquatic life.
 
-Having said that, it should be noted that in reality, the volume of runoff from snow melt is not constant and a conservative acid precipitation was used to show a more serious scenario of snow melt drastically affecting the lake. Additionally, runoff from snow melt occurs across a much longer time.
+Having said that, it should be noted that in reality, the volume of runoff from snow melt is not constant and a more acidic precipitation was used to show a more serious scenario of snow melt drastically affecting the lake. Additionally, runoff from snow melt occurs across a much longer time.
 
 For our reactor model, the lakes are not actually CMFR. The assumption made in the experimentation simplified calculations, but do not accurately reflect what happens in the lake. In reality, the top of the lake is likely to be more acidic. There could also be other processes occurring in the lake and its surroundings that could influence the acid neutralizing capacity of the lake.
 
-- Goes beyond buffer zone. Not enough ANC, pH goes really low. This would affect aquatic life.
 
 ### Suggestions ###
 Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, experimentation on the magnetic stirrers should be done to ensure that it does not affect the results.
