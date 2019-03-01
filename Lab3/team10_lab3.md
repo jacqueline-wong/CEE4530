@@ -1,6 +1,6 @@
 # Lab 3 for CEE 4530
 
-## Team 10: Victor Khong & Jacqueline Wong ##
+## Team 10: Victor Khong (X hours) & Jacqueline Wong (X hours) ##
 
 <u>Using data from Irene Sarri & Felix Yang </u>
 
@@ -26,19 +26,37 @@ For the titration, pH was first measured with a pH probe as ANC can be estimated
 
 ### Results ###
 
-To start the experiment, we must understand our lake. To do so, we plot the measured pH of the lake against the dimensionless residencetime.
+To start the experiment, we must understand our lake. To do so, we plot the measured pH of the lake against the dimensionless residence time.
 
 ![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
-Figure 2: M
+Figure 2: pH of the lake against its dimensionless residence time
 
-Figure 2 shows the titration curve of the grab sample taken at 0 minutes.
+Assu
+The influent ANC can be calculated from:
+
+$$ pH = -log{[H+]}$$
+$$ ANC_{in} ≅−[H+]$$
+
+Since the pH of the acid rain is 3,
+
+$$ [H+] = 10^{-3} $$
+$$ ANC_{in} ≅ -10^{-3} $$
+
+The effluent ANC can be calculated from:
+
+$${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
+
+$${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
+
+
+Figure 5 shows the titration curve of the grab sample taken at 0 minutes.
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
-Figure 2: A titration curve for the 0 minute grab sample.
+Figure 5: A titration curve for the 0 minute grab sample.
 
 The titration curve above shows two regions. The first region is the buffer zone and the reaction $HCO_{3}^{-}+H^+->H_{2}CO_{3}^{-}$ is taking place as shown in the graph. The second region is when the lake has excess $H^+$ ions and the slow pH change is due to the fact that there are no reactions occurring to bring down the pH. Instead, the $H^+$ ions contribute to the decrease in pH directly.
 
-In reality, there should be three regions. The titration curve shows only the second and third region. The first region is not shown in the Figure 2. This region would usually appear around pH 10.
+In reality, there should be three regions. The titration curve shows only the second and third region. The first region is not shown in the Figure 5. This region would usually appear around pH 10.
 
 For extra clarity of the interpretation of the results, we also plotted a Gran plot using the data from the titration curve above. To plot the Gran plot, we need to use the following equation for the linear regression:
 
@@ -47,22 +65,22 @@ $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$ is the volume of the titrant, and $[H^+]$ is the concentration of hydrogen ions.
 
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
-Figure 3: A Gran plot used for analysis of 0 minute sample.
+Figure 6: A Gran plot used for analysis of 0 minute sample.
 
 With the Gran plot, we can calculate the equivalent volume using the following formula:
 
 $$V_{eq}=\frac{-intercept}{slope}$$
 
-where the intercept and the slope refers to the y-intercept and slope of Figure 2 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 2, the titration curve, as the gray line.
+where the intercept and the slope refers to the y-intercept and slope of Figure 5 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 5, the titration curve, as the gray line.
 
 However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile, and nonvolatile.
 
-The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 4, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
+The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 7, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
-Figure 4: ANC models and the measured ANC values in the lake
+Figure 7: ANC models and the measured ANC values in the lake
 
-From Figure 4, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
+From Figure 7, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Discussion ###
 
