@@ -1,6 +1,6 @@
 # Lab 3 for CEE 4530
 
-## Team 10: Victor Khong (8 hours) & Jacqueline Wong (10 hours) ##
+## Team 10: Victor Khong (8 hours) & Jacqueline Wong (12 hours) ##
 
 <u>Using data from Irene Sarri & Felix Yang </u>
 
@@ -146,6 +146,7 @@ For our reactor model, the lakes are not actually CMFR. The assumption made in t
 ### Suggestions ###
 Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, testing of the magnetic stirrers should be done to ensure that it is grounded and does not affect the results in the future, as we had to use another team's data because of this.
 
+### Appendix ###
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
