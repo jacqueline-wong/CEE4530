@@ -18,19 +18,19 @@ Our clients have presented our research laboratory with the specific case of Wol
 The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant, controlled by the peristaltic pump (Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes rather than multiple months.
 
 
-Given that recent studies from our clients have confirmed the acid neutralizing capacity of Wolf Pond as typically 1.85 meq/L, this was represented by the addition of 623 mg sodium bicarbonate in a 4L lake. The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
+Given that recent studies from our clients have confirmed the acid neutralizing capacity of Wolf Pond as typically 1.85 meq/L, this was represented by the addition of 623 mg sodium bicarbonate in a 4L lake (we later repeated). The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
 
 ![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
 Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
 
 For the titration, pH was first measured with a pH probe as ANC can be estimated from proton concentration if it is below 4.5. Otherwise, a magnetic stirrer was placed in 50 mL of the sample and increments of 0.05 N HCl was titrated for a Gran plot analysis.
 
-### Results ###
+### Results and Discussion ###
 
 To start the experiment, we must first understand the changes in pH in our lake. To do so, we plotted the measured pH of the lake against the dimensionless residence time.
 
 ![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
-Figure 2: pH of the lake against its dimensionless residence time
+Figure 2: pH of the lake against its dimensionless residence time.
 
 Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from:
 
@@ -51,7 +51,7 @@ $${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \c
 With this result, we graph the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
-Figure 3: Lake effluent against the hydraulic residence time
+Figure 3: Lake ANC against the hydraulic residence time
 
 Assuming that there are no carbonates exchanged with the atmosphere during the experiment, the ANC in the lake effluent can be calculated with:
 
@@ -89,7 +89,7 @@ Figure 5: ANC of lake under both closed system and open system assumption.
 To understand the lake in greater detail, we also experimented with calcium carbonate in place of sodium bicarbonate to give the same acid neutralizing capacity of the lake.
 
 ![pH Graph 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph2.png)
-Figure 6: pH of the lake against its dimensionless residence time using calcium carbonate
+Figure 6: pH of the lake against its dimensionless residence time using calcium carbonate instead of sodium bicarbonate.
 
 As it can be seen from Figure 6, the pH dropped very fast and thus experiment was stopped quickly. This was because the calcium carbonate did not dissolve and remained on the sides of the tank. Thus, the actual ANC in the tank was much lower than what it was calculated to be.
 
@@ -125,46 +125,6 @@ The ANC models, along with the measured ANC values of the lake are plotted in Fi
 Figure 9: ANC models and the measured ANC values in the lake
 
 From Figure 9, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
-
-### Discussion ###
-
-<b>Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.</b>
-
-1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
-
-ProCoDA switches from the "prepare to calibrate" state to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s.
-
-2. Under what condition does ProCoDA switch from the “calibrate” state to the “Pause” state?
-
-ProCoDA switches from the "calibrate" state to the "Pause" state when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s.
-
-3. How does the “Pause” state know which state to go to next?
-
-ProCoDA switches from the "Pause" state to the next state "Aerate" because of the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
-
-4. What is the equation that is used to calculate the maximum calibration pressure and why is this equation better than using a constant for the maximum calibration pressure?
-
-The equation used to calculate the maximum calibration pressure is:
-
-$$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
-
-This is better than using a constant for the maximum calibration pressure as the source pressure may change.
-
-5. Explain how ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate.
-
-ProCoDA calculates predicted pressure in the accumulator using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly.
-
-$$\frac{\text{max cal pressure}-\text{min cal pressure}}{\text{fill time}}$$
-
-6. What are the inputs to the “air valve control”?
-
-The inputs to the "air valve control" are air slope, air flow rate, accumulator pressure and source pressure.
-
-7. What does “air valve control” control and which two states use it?
-
-"Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
-
-8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
 
 ### Conclusions ###
 From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC for a certain rain event based on the volume of the rain if the acidity of the rain is the same as 0.05 N HCl.
