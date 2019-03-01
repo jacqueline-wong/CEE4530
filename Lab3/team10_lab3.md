@@ -25,12 +25,16 @@ Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
 For the titration, pH was first measured with a pH probe as ANC can be estimated from proton concentration if it is below 4.5. Otherwise, a magnetic stirrer was placed in 50 mL of the sample and increments of 0.05 N HCl was titrated for a Gran plot analysis.
 
 ### Results ###
-In this experiment, we essentially mimic the acid rain by increasing the $H^+$ ions in the lake that we have set up. By adding it continuously over a period of time rather than increasing the $H^+$ instantaneously, we can see how the lake reacts to it being acidified by the acid rain. In the experiment, we have tried our best to mimic the acid rain by using 0.05 N HCl as our acid rain.
 
-To visualize the results, a titration curve of the experiment is plotted.
+To start the experiment, we must understand our lake. To do so, we plot the measured pH of the lake against the dimensionless residencetime.
+
+![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
+Figure 2: M
+
+Figure 2 shows the titration curve of the grab sample taken at 0 minutes.
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
-Figure 2: A titration curve
+Figure 2: A titration curve for the 0 minute grab sample.
 
 The titration curve above shows two regions. The first region is the buffer zone and the reaction $HCO_{3}^{-}+H^+->H_{2}CO_{3}^{-}$ is taking place as shown in the graph. The second region is when the lake has excess $H^+$ ions and the slow pH change is due to the fact that there are no reactions occurring to bring down the pH. Instead, the $H^+$ ions contribute to the decrease in pH directly.
 
@@ -43,7 +47,7 @@ $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$ is the volume of the titrant, and $[H^+]$ is the concentration of hydrogen ions.
 
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
-Figure 3: A Gran plot
+Figure 3: A Gran plot used for analysis of 0 minute sample.
 
 With the Gran plot, we can calculate the equivalent volume using the following formula:
 
@@ -58,10 +62,11 @@ The ANC models, along with the measured ANC values of the lake are plotted in Fi
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
 Figure 4: ANC models and the measured ANC values in the lake
 
-The measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model.
-
+From Figure 4, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Discussion ###
+
+"Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.""
 
 1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
 
@@ -100,13 +105,11 @@ The inputs to the "air valve control" are air slope, air flow rate, accumulator 
 8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
 
 ### Conclusions ###
-From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a titrant volume of approximately 1.8 mL, the titration curve shows that the lake enters the excess $[H^+]$ region.
+From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC for a certain rain event based on the volume of the rain if the acidity of the rain is the same as 0.05 N HCl.
 
-Having said that, it should be noted that in reality,
-- the volume of runoff from snow melt is not constant.
-- runoff from snow melt occurs across a much longer period of time.
-- the lakes are not CMFR. The assumption made in the experimentation simplified calculations, but may not accurately reflect what happens in the lake.
-- there are other processes occurring in the lake and its surroundings that affects the acid neutralizing capacity of the lake.
+Having said that, it should be noted that in reality, the volume of runoff from snow melt is not constant and a conservative acid precipitation was used to show a more serious scenario of snow melt drastically affecting the lake. Additionally, runoff from snow melt occurs across a much longer time.
+
+For our reactor model, the lakes are not actually CMFR. The assumption made in the experimentation simplified calculations, but do not accurately reflect what happens in the lake. In reality, the top of the lake is likely to be more acidic. There could also be other processes occurring in the lake and its surroundings that could influence the acid neutralizing capacity of the lake.
 
 ### Suggestions ###
 Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, experimentation on the magnetic stirrers should be done to ensure that it does not affect the results.
