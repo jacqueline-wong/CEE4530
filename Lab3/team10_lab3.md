@@ -15,9 +15,10 @@ Our clients have presented our research laboratory with the specific case of Wol
 
 ### Procedures ###
 
-The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant, controlled by the peristaltic pump (Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes.
+The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant, controlled by the peristaltic pump (Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes rather than multiple months.
 
-The acid neutralizing capacity of Wolf Pond is represented by the addition of sodium bicarbonate. The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
+
+Given that recent studies from our clients have confirmed the acid neutralizing capacity of Wolf Pond as typically 1.85 meq/L, this was represented by the addition of 623 mg sodium bicarbonate in a 4L lake. The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
 
 ![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
 Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
@@ -26,7 +27,7 @@ For the titration, pH was first measured with a pH probe as ANC can be estimated
 
 ### Results ###
 
-To start the experiment, we must understand our lake. To do so, we plot the measured pH of the lake against the dimensionless residence time.
+To start the experiment, we must first understand the changes in pH in our lake. To do so, we plotted the measured pH of the lake against the dimensionless residence time.
 
 ![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
 Figure 2: pH of the lake against its dimensionless residence time
@@ -269,15 +270,22 @@ V_titrant_10, pH_10, V_Sample_10, Normality_Titrant_10, V_equivalent_10, ANC_t10
 t0 = (0*u.min)/theta.to(u.min)
 t5 = (5*u.min)/theta.to(u.min)
 t10 = (10*u.min)/theta.to(u.min)
+t15 = (15*u.min)/theta.to(u.min)
+t20 = (20*u.min)/theta.to(u.min)
+
+ANC_t15 = ANC_0*np.exp(-t15)+ANC_in*(1-np.exp(-t15))
+ANC_t20 = ANC_0*np.exp(-t20)+ANC_in*(1-np.exp(-t20))
 
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
 plt.plot(t0, ANC_t0.to(u.meq/u.L), 'k+', markersize=8)
 plt.plot(t5, ANC_t5.to(u.meq/u.L),'k+', markersize=8)
 plt.plot(t10, ANC_t10.to(u.meq/u.L),'k+', markersize=8)
+plt.plot(t15, ANC_t15.to(u.meq/u.L),'k+', markersize=8)
+plt.plot(t20, ANC_t20.to(u.meq/u.L),'k+', markersize=8)
 plt.xlabel('hydraulic residence time')
 plt.ylabel('ANC (meq/L)')
-plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC'])
+plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC', 'Sample ANC'])
 
 plt.savefig('Lab3/ANC.png')
 plt.show()
