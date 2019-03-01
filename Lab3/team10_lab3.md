@@ -15,9 +15,10 @@ Our clients have presented our research laboratory with the specific case of Wol
 
 ### Procedures ###
 
+<b>
 - Created model and ran it, assuming Completely Mixed Flow Reactor (CMFR)
 - Collected samples
-- Measured ANC of samples with pH >4.5 using titration
+- Measured ANC of samples with pH >4.5 using titration</b>
 
 ### Results ###
 
