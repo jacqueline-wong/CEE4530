@@ -5,40 +5,110 @@
 <u>Using data from Irene Sarri & Felix Yang </u>
 
 ### Introduction ###
-Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs in spring when snow that accumulates in winter melts and runs off into the lakes.
+Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs when snow from acid precipitation accumulates in winter, which melts and runs off into the lakes in spring.
 
 ### Objectives ###
 Our clients have presented our research laboratory with the specific case of Wolf Lake, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
 
-1. Create a model which simulate what happens to Wolf Lake during snow melt.
+1. Create a model which simulates what happens to Wolf Lake during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
 2. Determine the changes in acid neutralizing capacity of Wolf Lake with time.
 
 ### Procedures ###
 
-<b>
-- Created model and ran it, assuming Completely Mixed Flow Reactor (CMFR)
+The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant
+
+For practical reasons, the
+- Created model and ran it, assuming
 - Collected samples
 - Measured ANC of samples with pH >4.5 using titration</b>
+
+![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
+Figure 1: Experimental apparatus used to simulate snow melt into Wolf Lake
 
 ### Results ###
 
 <b>1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).</b>
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
-Figure 1: A titration curve
+Figure 2: A titration curve
 
 The first region is not shown in the figure above. This region would usually appear around pH 10.
 
-$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
-
 <b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
 
+To plot the Gran plot, we need to use the following equation for the linear regression:
+
+$${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
+
+where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$ is the volume of the titrant, and $[H^+]$ is the concentration of hydrogen ions.
+
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
-Figure 2: A Gran plot
+Figure 3: A Gran plot
 
 To calculate the equivalent volume, we use the formula:
 
-$$V_e=\frac{-intercept}{slope}$$
+$$V_{eq}=\frac{-intercept}{slope}$$
+
+where the intercept and the slope refers to the y-intercept and slope of Figure 2 respectively.
+
+The $V_{eq}$ found using this formula was 1.7320669438481442 milliliter.
+
+<b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
+
+![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
+
+The measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model.
+
+
+### Discussion ###
+
+1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
+
+ProCoDA switches from the "prepare to calibrate" state to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s.
+
+2. Under what condition does ProCoDA switch from the “calibrate” state to the “Pause” state?
+
+ProCoDA switches from the "calibrate" state to the "Pause" state when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s.
+
+3. How does the “Pause” state know which state to go to next?
+
+ProCoDA switches from the "Pause" state to the next state "Aerate" because of the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
+
+4. What is the equation that is used to calculate the maximum calibration pressure and why is this equation better than using a constant for the maximum calibration pressure?
+
+The equation used to calculate the maximum calibration pressure is:
+
+$$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
+
+This is better than using a constant for the maximum calibration pressure as the source pressure may change.
+
+5. Explain how ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate.
+
+ProCoDA calculates predicted pressure in the accumulator using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly.
+
+$$\frac{\text{max cal pressure}-\text{min cal pressure}}{\text{fill time}}$$
+
+6. What are the inputs to the “air valve control”?
+
+The inputs to the "air valve control" are air slope, air flow rate, accumulator pressure and source pressure.
+
+7. What does “air valve control” control and which two states use it?
+
+"Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
+
+8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
+
+### Conclusions ###
+From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a titrant volume of approximately 1.8 mL, the titration curve shows that s
+
+Having said that, it should be noted that in reality,
+- the volume of runoff from snow melt is not constant.
+- runoff from snow melt occurs across a much longer period of time.
+- the lakes are not CMFR. The assumption made in the experimentation simplified calculations, but may not accurately reflect what happens in the lake.
+- there are other processes occurring in the lake and its surroundings that affects the acid neutralizing capacity of the lake.
+
+### Suggestions ###
+Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, experimentation on the magnetic stirrers should be done to ensure that it does not affect the results.
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -146,61 +216,4 @@ plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC'])
 
 plt.savefig('Lab3/ANC.png')
 plt.show()
-```
-
-<b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
-
-![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
-
-The measured ANC values did not agree with the conservative ANC model. Rather, it somewhat followed the volatile ANC model. Other than the first point which did not follow the volatile ANC model, the rest of the points did.
-
-
-### Discussion ###
-
-1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
-
-ProCoDA switches from the "prepare to calibrate" state to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s.
-
-2. Under what condition does ProCoDA switch from the “calibrate” state to the “Pause” state?
-
-ProCoDA switches from the "calibrate" state to the "Pause" state when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s.
-
-3. How does the “Pause” state know which state to go to next?
-
-ProCoDA switches from the "Pause" state to the next state "Aerate" because of the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
-
-4. What is the equation that is used to calculate the maximum calibration pressure and why is this equation better than using a constant for the maximum calibration pressure?
-
-The equation used to calculate the maximum calibration pressure is:
-
-$$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
-
-This is better than using a constant for the maximum calibration pressure as the source pressure may change.
-
-5. Explain how ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate.
-
-ProCoDA calculates predicted pressure in the accumulator using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly.
-
-$$\frac{\text{max cal pressure}-\text{min cal pressure}}{\text{fill time}}$$
-
-6. What are the inputs to the “air valve control”?
-
-The inputs to the "air valve control" are air slope, air flow rate, accumulator pressure and source pressure.
-
-7. What does “air valve control” control and which two states use it?
-
-"Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
-
-8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
-
-### Conclusions ###
-
-"Summarize the results in a few sentences"
-
-### Suggestions ###
-
-set up with picture rather than diagram
-
-```python
-# Put all Python code here at the end
 ```
