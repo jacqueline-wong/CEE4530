@@ -15,10 +15,10 @@ Our clients have presented our research laboratory with the specific case of Wol
 
 ### Procedures ###
 
-The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the feed solution and its melting was assumed to be constant, controlled by the peristaltic pump (Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes rather than multiple months.
+The experimental apparatus consists of an acid snow storage reservoir, peristaltic pump, and lake. In our model, snow is represented by the acid feed solution and its melting was assumed to be constant, controlled by the peristaltic pump to have a flow rate of 267 mL/min(Figure 1). This feed runs into the lake, and a lake effluent runs out of the lake. For practical reasons, the simulation occurred over 20 minutes rather than multiple months.
 
 
-Given that recent studies from our clients have confirmed the acid neutralizing capacity of Wolf Pond as typically 1.85 meq/L, this was represented by the addition of 623 mg sodium bicarbonate in a 4L lake (we later repeated). The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
+Given that recent studies from our clients have confirmed the acid neutralizing capacity of Wolf Pond as typically 1.85 meq/L, this was represented by the addition of 623 mg sodium bicarbonate in a 4L lake (we later repeated this with calcium carbonate). The acid snow storage was set at pH 3 to provide a conservative measurement of whether the ANC of Wolf Pond is sufficient. 100-mL grab samples were collected at 0, 5, 10, 15, and 20 minutes for titration to better understand changes in ANC with time.
 
 ![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
 Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
@@ -32,7 +32,9 @@ To start the experiment, we must first understand the changes in pH in our lake.
 ![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
 Figure 2: pH of the lake against its dimensionless residence time.
 
-Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from:
+It can be seen that pH decreases slowly from 0 to 0.75 hydraulic residence time, but reaches an equivalence point between 0.75 and 1.00 hydraulic residence time, and continues decreasing as more acid is added.
+
+Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from the following equation given pH is below 4.5:
 
 $$ pH = -log{[H+]}$$
 $$ ANC_{in} ≅−[H+]$$
@@ -42,18 +44,18 @@ Since the pH of the acid rain is 3,
 $$ [H+] = 10^{-3} $$
 $$ ANC_{in} ≅ -10^{-3} $$
 
-The effluent ANC can be calculated from:
+The effluent ANC can be rearranged and calculated from the CMFR mass balance equation to:
 
 $${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right)\right]{\mathop{e}\nolimits^{t/\theta}}$$
 
 $${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
 
-With this result, we graph the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
+With this conservative assumption, we graphed the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
 Figure 3: Lake ANC against the hydraulic residence time
 
-Assuming that there are no carbonates exchanged with the atmosphere during the experiment, the ANC in the lake effluent can be calculated with:
+Assuming that there are no carbonates exchanged with the atmosphere during the experiment (i.e. closed system), the ANC in the lake effluent can be calculated with:
 
 $$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
 
@@ -72,7 +74,7 @@ Again, to visualize the results, we plot it onto Figure 4.
 ![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
 Figure 4: ANC of lake under closed system assumption
 
-Nevertheless, the assumption that carbonates are not exchanged with the atmosphere does not hold true in the real world. Hence, we make another, more reasonable assumption, which is that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere. In other words, we are taking the lake to be an open system, which is what the lake really is.
+Nevertheless, the assumption that carbonates are not exchanged with the atmosphere does not hold true in the real world. Hence, we make another, more reasonable assumption, which is that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere. In other words, we are taking the lake to be an open system.
 
 With this assumption, we use a different equation, namely the following equation, to calculate the lake effluent.
 
@@ -80,7 +82,7 @@ $$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left
 
 $$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
 
-We plot the results onto the same plot as the results for ANC of the lake under closed system for comparison in Figure 5.
+We plotted the results onto the same plot as the results for ANC of the lake under closed system for comparison in Figure 5.
 
 ![ANC Open](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCopen.png)
 
@@ -132,6 +134,8 @@ From this experiment, it was found that the measured ANC values of the lake foll
 Having said that, it should be noted that in reality, the volume of runoff from snow melt is not constant and a conservative acid precipitation was used to show a more serious scenario of snow melt drastically affecting the lake. Additionally, runoff from snow melt occurs across a much longer time.
 
 For our reactor model, the lakes are not actually CMFR. The assumption made in the experimentation simplified calculations, but do not accurately reflect what happens in the lake. In reality, the top of the lake is likely to be more acidic. There could also be other processes occurring in the lake and its surroundings that could influence the acid neutralizing capacity of the lake.
+
+- Goes beyond buffer zone. Not enough ANC, pH goes really low. This would affect aquatic life.
 
 ### Suggestions ###
 Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, experimentation on the magnetic stirrers should be done to ensure that it does not affect the results.
