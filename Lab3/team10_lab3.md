@@ -41,8 +41,6 @@ $$V_e=\frac{-intercept}{slope}$$
 
 The equivalent volume is found to be
 
-
-
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -59,11 +57,7 @@ V_titrant_0, pH_0, V_Sample_0, Normality_Titrant_0, V_equivalent_0, ANC_t0 = epa
 
 plt.subplots()
 plt.plot(V_titrant_0,pH_0,'b-')
-<<<<<<< HEAD
-plt.axvline(x=V_equivalent.magnitude, color='tab:gray', linestyle='dotted')
-=======
 plt.axvline(x=V_equivalent_0.magnitude, color='tab:gray', linestyle='dotted')
->>>>>>> 74cb6116bcd56a908bf879df681724979bdd06d2
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
 plt.legend(['data', 'equivalent volume'])
