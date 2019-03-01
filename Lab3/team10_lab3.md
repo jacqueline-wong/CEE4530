@@ -49,10 +49,10 @@ from scipy import stats
 
 # Question 1
 Gran_data_0 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/0_minute_sample.xls'
-V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t0 = epa.Gran(Gran_data_0)
+V_titrant_0, pH_0, V_Sample_0, Normality_Titrant_0, V_equivalent_0, ANC_t0 = epa.Gran(Gran_data_0)
 
 plt.subplots()
-plt.plot(V_titrant,pH,'b-')
+plt.plot(V_titrant_0,pH_0,'b-')
 plt.axvline(x=V_equivalent.magnitude, color='tab:gray', linestyle='dotted')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
@@ -70,22 +70,22 @@ plt.show()
 def F1(V_sample,V_titrant,pH):
   return (V_sample + V_titrant)/V_sample * epa.invpH(pH)
 
-F1_data = F1(V_Sample,V_titrant,pH)
+F1_data = F1(V_Sample_0,V_titrant_0,pH_0)
 
-slope, intercept, r_value, p_value, std_err = stats.linregress(V_titrant[7:9],F1_data[7:9])
+slope, intercept, r_value, p_value, std_err = stats.linregress(V_titrant_0[7:9],F1_data[7:9])
 
 intercept = intercept*u.mole/u.L
 slope = slope*(u.mole/u.L)/u.mL
 V_eq = -intercept/slope
-ANC_sample = V_eq*Normality_Titrant/V_Sample
+ANC_sample = V_eq*Normality_Titrant_0/V_Sample_0
 print('The r value for this curve fit is', ut.round_sf(r_value,5))
 print('The equivalent volume was', ut.round_sf(V_eq,2))
 print('The acid neutralizing capacity was',ut.round_sf(ANC_sample.to(u.meq/u.L),2))
 
-gran_func=[V_eq.magnitude,V_titrant[-1].magnitude]
-tit_vol=[0,(V_titrant[-1]*slope+intercept).magnitude]
+gran_func=[V_eq.magnitude,V_titrant_0[-1].magnitude]
+tit_vol=[0,(V_titrant_0[-1]*slope+intercept).magnitude]
 
-plt.plot(V_titrant, F1_data,'o')
+plt.plot(V_titrant_0, F1_data,'o')
 plt.plot(gran_func, tit_vol,'r')
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('Gran function (mole/L)')
@@ -123,10 +123,10 @@ ANC_closed = epa.ANC_closed(lakepH, C_T)
 ANC_open = epa.ANC_open(lakepH).to(u.meq/u.L)
 
 Gran_data_5 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/5_minute_sample.xls'
-V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t5 = epa.Gran(Gran_data_5)
+V_titrant_5, pH_5, V_Sample_5, Normality_Titrant_5, V_equivalent_5, ANC_t5 = epa.Gran(Gran_data_5)
 
-Gran_data_10 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/5_minute_sample.xls'
-V_titrant, pH, V_Sample, Normality_Titrant, V_equivalent, ANC_t10 = epa.Gran(Gran_data_10)
+Gran_data_10 = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/10_minute_sample.xls'
+V_titrant_10, pH_10, V_Sample_10, Normality_Titrant_10, V_equivalent_10, ANC_t10 = epa.Gran(Gran_data_10)
 
 t0 = (0*u.min)/theta.to(u.min)
 t5 = (5*u.min)/theta.to(u.min)
@@ -134,9 +134,9 @@ t10 = (10*u.min)/theta.to(u.min)
 
 fig, ax = plt.subplots()
 ax.plot(time, ANC_out,'r', time, ANC_closed,'b', time, ANC_open, 'g')
-plt.plot(t0, ANC_t0, 'kx')
-plt.plot(t5, ANC_t5,'kx')
-plt.plot(t10, ANC_t10,'kx')
+plt.plot(t0, ANC_t0.to(u.meq/u.L), 'k+', markersize=8)
+plt.plot(t5, ANC_t5.to(u.meq/u.L),'k+', markersize=8)
+plt.plot(t10, ANC_t10.to(u.meq/u.L),'k+', markersize=8)
 plt.xlabel('hydraulic residence time')
 plt.ylabel('ANC (meq/L)')
 plt.legend(['Conservative ANC', 'Nonvolatile ANC', 'Volatile ANC'])
