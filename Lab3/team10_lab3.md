@@ -24,18 +24,24 @@ Our clients have presented our research laboratory with the specific case of Wol
 <b>1. Plot the titration curve of the t=0 sample with 0.05 N HCl (plot pH as a function of titrant volume). Label the equivalent volume of titrant. Label the 2 regions of the graph where pH changes slowly with the dominant reaction that is occurring. (Place labels with the chemical reactions on the graph in the pH regions where each reaction is occurring.) Note that in a third region of slow pH change no significant reactions are occurring (added hydrogen ions contribute directly to change in pH).</b>
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
-Figure 1: A graph of ...
+Figure 1: A titration curve
+
+The first region is not shown in the figure above. This region would usually appear around pH 10.
 
 $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
-
-The equivalent volume of titrant can be calculated by the following equation:
-
-$$ANC=\frac{V_e N_t }{V_s }$$
 
 <b>2. Prepare a Gran plot using the data from the titration curve of the t=0 sample. Use linear regression on the linear region or simply draw a straight line through the linear region of the curve to identify the equivalent volume. Compare your calculation of V_e with that was calculated by ProCoDA.</b>
 
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
-Figure 2: A graph of ...
+Figure 2: A Gran plot
+
+To calculate the equivalent volume, we use the formula:
+
+$$V_e=\frac{-intercept}{slope}$$
+
+The equivalent volume is found to be
+
+
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -53,13 +59,17 @@ V_titrant_0, pH_0, V_Sample_0, Normality_Titrant_0, V_equivalent_0, ANC_t0 = epa
 
 plt.subplots()
 plt.plot(V_titrant_0,pH_0,'b-')
+<<<<<<< HEAD
 plt.axvline(x=V_equivalent.magnitude, color='tab:gray', linestyle='dotted')
+=======
+plt.axvline(x=V_equivalent_0.magnitude, color='tab:gray', linestyle='dotted')
+>>>>>>> 74cb6116bcd56a908bf879df681724979bdd06d2
 plt.xlabel('Titrant Volume (mL)')
 plt.ylabel('pH')
 plt.legend(['data', 'equivalent volume'])
 
 plt.annotate(s='', xy=(0.5,6.8), xytext=(1.25,6.25), arrowprops=dict(color='tab:red', arrowstyle='<->'))
-plt.text(0.75, 6.75, 'buffer zone', color='tab:red', fontsize=10)
+plt.text(0.75, 6.75, 'buffer zone $HCO_{3}^{-}+H^+->H_{2}CO_{3}^{-}$', color='tab:red', fontsize=10)
 plt.annotate(s='', xy=(2.75,3.25), xytext=(2,4), arrowprops=dict(color='tab:orange', arrowstyle='<->'))
 plt.text(2, 4.25, 'excess H+', color='tab:orange', fontsize=10)
 
@@ -148,6 +158,9 @@ plt.show()
 <b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
+
+The measured ANC values did not agree with the conservative ANC model. Rather, it somewhat followed the volatile ANC model. Other than the first point which did not follow the volatile ANC model, the rest of the points did.
+
 
 ### Discussion ###
 
