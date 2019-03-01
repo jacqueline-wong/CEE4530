@@ -39,8 +39,6 @@ To calculate the equivalent volume, we use the formula:
 
 $$V_e=\frac{-intercept}{slope}$$
 
-The equivalent volume is found to be
-
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
