@@ -1,6 +1,6 @@
 # Lab 3 for CEE 4530
 
-## Team 10: Victor Khong (X hours) & Jacqueline Wong (X hours) ##
+## Team 10: Victor Khong (8 hours) & Jacqueline Wong (10 hours) ##
 
 <u>Using data from Irene Sarri & Felix Yang </u>
 
@@ -134,7 +134,7 @@ The ANC models, along with the measured ANC values of the lake are plotted in Fi
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
 Figure 9: ANC models and the measured ANC values in the lake
 
-From Figure 9, the measured ANC values followed closely with the volatile ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
+From Figure 9, the measured ANC values followed closely with the volatile ANC model. The first point was slightly off from the model; however, this is likely due to uncertainties in the experiment. One such source of uncertainty would be the volumetric pipette for titration. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Conclusions ###
 From this experiment, it was found that the measured ANC values of the lake followed closely with the conservative ANC model. After a equivalent volume of approximately 1.73 mL, the titration curve shows that the lake enters the excess $H^+$ region. With this result, we can determine whether the lake in question will have sufficient ANC to buffer for snow melt in spring. Because our simulation goes beyond buffer zone into low levels of pH, it can be concluded that Wolf Pond does not have enough ANC. This would affect aquatic life.
@@ -143,9 +143,8 @@ Having said that, it should be noted that in reality, the volume of runoff from 
 
 For our reactor model, the lakes are not actually CMFR. The assumption made in the experimentation simplified calculations, but do not accurately reflect what happens in the lake. In reality, the top of the lake is likely to be more acidic. There could also be other processes occurring in the lake and its surroundings that could influence the acid neutralizing capacity of the lake.
 
-
 ### Suggestions ###
-Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, experimentation on the magnetic stirrers should be done to ensure that it does not affect the results.
+Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a picture of the set up was shown rather than a diagram. Furthermore, testing of the magnetic stirrers should be done to ensure that it is grounded and does not affect the results in the future, as we had to use another team's data because of this.
 
 ```python
 from aguaclara.core.units import unit_registry as u
