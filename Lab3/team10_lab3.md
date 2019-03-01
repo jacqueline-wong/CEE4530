@@ -31,8 +31,7 @@ To start the experiment, we must understand our lake. To do so, we plot the meas
 ![pH](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph.png)
 Figure 2: pH of the lake against its dimensionless residence time
 
-Assu
-The influent ANC can be calculated from:
+Assuming the lake is a CMFR (completely mixed flow reactor) and that ANC is conservative, the influent ANC can be calculated from:
 
 $$ pH = -log{[H+]}$$
 $$ ANC_{in} ≅−[H+]$$
@@ -48,15 +47,59 @@ $${ANC}_{{0}} {\; }=\left[{ANC}_{out} - ANC_{in} \cdot \left(1 - {\mathop{e}\nol
 
 $${ANC}_{out}=\frac{{ANC}_{{0}}}{{\mathop{e}\nolimits^{t/\theta}}} + ANC_{in} \cdot \left(1 - {\mathop{e}\nolimits^{-t/\theta}} \right){\; }$$
 
+With this result, we graph the expected ANC in the lake effluent against the hydraulic residence time as shown in Figure 3.
 
-Figure 5 shows the titration curve of the grab sample taken at 0 minutes.
+![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCgraph.png)
+Figure 3: Lake effluent against the hydraulic residence time
+
+Assuming that there are no carbonates exchanged with the atmosphere during the experiment, the ANC in the lake effluent can be calculated with:
+
+$$ANC=C_T \left(\alpha_1 +2\alpha_2 \right)+\frac{K_w}{\left[H^+ \right]} - \left[H^+ \right]$$
+
+where
+
+$$C_T = \left[H_2{CO}_3^* \right] + \left[{HCO}_3^- \right]+\left[{CO}_3^{-2} \right]$$
+
+$$\alpha_0 =\frac{1}{1+\frac{K_1 }{[H^+]} +\frac{K_1 K_2}{[H^+]^2} }$$
+
+$$ \alpha_1 = \frac{1}{\frac{[H^+]}{K_1} + 1 + \frac{K_2}{[H^+]}} $$
+
+$$\alpha_2 = \frac{1}{\frac{[H^+]^2 }{K_1 K_2} +\frac{[H^+]}{K_2} + 1}$$
+
+Again, to visualize the results, we plot it onto Figure 4.
+
+![ANC Closed](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCclosed.png)
+Figure 4: ANC of lake under closed system assumption
+
+Nevertheless, the assumption that carbonates are not exchanged with the atmosphere does not hold true in the real world. Hence, we make another, more reasonable assumption, which is that there is exchange with the atmosphere and that carbonates are at equilibrium with the atmosphere. In other words, we are taking the lake to be an open system, which is what the lake really is.
+
+With this assumption, we use a different equation, namely the following equation, to calculate the lake effluent.
+
+$$ANC=\frac{P_{CO_2} K_H }{\alpha_0 } (\alpha_1 +2\alpha_2 ) + \frac{K_w }{\left[H^+ \right]} - \left[H^+ \right]$$
+
+$$C_T = \frac{P_{CO_2} K_H}{\alpha_0}$$
+
+We plot the results onto the same plot as the results for ANC of the lake under closed system for comparison in Figure 5.
+
+![ANC Open](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/ANCopen.png)
+
+Figure 5: ANC of lake under both closed system and open system assumption.
+
+To understand the lake in greater detail, we also experimented with calcium carbonate in place of sodium bicarbonate to give the same acid neutralizing capacity of the lake.
+
+![pH Graph 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab2/pHgraph2.png)
+Figure 6: pH of the lake against its dimensionless residence time using calcium carbonate
+
+As it can be seen from Figure 6, the pH dropped very fast and thus experiment was stopped quickly. This was because the calcium carbonate did not dissolve and remained on the sides of the tank. Thus, the actual ANC in the tank was much lower than what it was calculated to be.
+
+However, the real motive behind the experiment is to figure out how the acid rain will affect the ANC of the lake. Figure 7 shows the titration curve of the grab sample taken at 0 minutes.
 
 ![titration](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Titration_0.png)
-Figure 5: A titration curve for the 0 minute grab sample.
+Figure 7: A titration curve for the 0 minute grab sample.
 
 The titration curve above shows two regions. The first region is the buffer zone and the reaction $HCO_{3}^{-}+H^+->H_{2}CO_{3}^{-}$ is taking place as shown in the graph. The second region is when the lake has excess $H^+$ ions and the slow pH change is due to the fact that there are no reactions occurring to bring down the pH. Instead, the $H^+$ ions contribute to the decrease in pH directly.
 
-In reality, there should be three regions. The titration curve shows only the second and third region. The first region is not shown in the Figure 5. This region would usually appear around pH 10.
+In reality, there should be three regions. The titration curve shows only the second and third region. The first region is not shown in the Figure 7. This region would usually appear around pH 10.
 
 For extra clarity of the interpretation of the results, we also plotted a Gran plot using the data from the titration curve above. To plot the Gran plot, we need to use the following equation for the linear regression:
 
@@ -65,26 +108,26 @@ $${F_1} = \frac{{{V_S} + {V_T}}}{{{V_S}}}{\text{[}}{{\text{H}}^ + }{\text{]}}$$
 where $F_1$ is the first gran function, $V_s$ is the volume of the sample, $V_t$ is the volume of the titrant, and $[H^+]$ is the concentration of hydrogen ions.
 
 ![gran](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/Gran_0.png)
-Figure 6: A Gran plot used for analysis of 0 minute sample.
+Figure 8: A Gran plot used for analysis of 0 minute sample.
 
 With the Gran plot, we can calculate the equivalent volume using the following formula:
 
 $$V_{eq}=\frac{-intercept}{slope}$$
 
-where the intercept and the slope refers to the y-intercept and slope of Figure 5 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 5, the titration curve, as the gray line.
+where the intercept and the slope refers to the y-intercept and slope of Figure 7 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 7, the titration curve, as the gray line.
 
 However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile, and nonvolatile.
 
-The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 7, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
+The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 9, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
-Figure 7: ANC models and the measured ANC values in the lake
+Figure 9: ANC models and the measured ANC values in the lake
 
-From Figure 7, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
+From Figure 9, the measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model. Hence, the lake follows the conservative ANC model.
 
 ### Discussion ###
 
-"Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.""
+<b>Compare theoretical expectations with your results and discuss reasons for any observed deviations. If the results weren't as expected, suggest reasons why the laboratory results may have differed from theory and suggest improved techniques to obtain more accurate results or modifications to the theory to better describe the experimental conditions.</b>
 
 1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
 
