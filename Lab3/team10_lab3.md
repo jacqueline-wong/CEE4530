@@ -22,7 +22,7 @@ The acid neutralizing capacity of Wolf Pond is represented by the addition of so
 ![apparatus](https://monroews.github.io/EnvEngLabTextbook/_images/Acid_rain_apparatus.png)
 Figure 1: Experimental apparatus used to simulate snow melt into Wolf Pond
 
-For the titration, 
+For the titration, pH was first measured with a pH probe as ANC can be estimated from proton concentration if it is below 4.5. Otherwise, a magnetic stirrer was placed in 50 mL of the sample and increments of 0.05 N HCl was titrated for a Gran plot analysis.
 
 ### Results ###
 In this experiment, we essentially mimic the acid rain by increasing the $H^+$ ions in the lake that we have set up. By adding it continuously over a period of time rather than increasing the $H^+$ instantaneously, we can see how the lake reacts to it being acidified by the acid rain. In the experiment, we have tried our best to mimic the acid rain by using 0.05 N HCl as our acid rain.
@@ -51,11 +51,12 @@ $$V_{eq}=\frac{-intercept}{slope}$$
 
 where the intercept and the slope refers to the y-intercept and slope of Figure 2 respectively. From this, we found that the $V_{eq}$ was 1.7320669438481442 milliliter. This value is shown in Figure 2, the titration curve, as the gray line.
 
-However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC:
+However, our real question and the motive behind our experiment is to determine the ANC of the lake and how the acid rain affects it. There are three models of ANC: conservative, volatile, and nonvolatile.
 
-<b>3. Plot the measured ANC of the lake on the same graph as was used to plot the conservative, volatile, and nonvolatile ANC models (see questions 2 to 5 of the Acid Precipitation and Remediation of an Acid Lake lab). Did the measured ANC values agree with the conservative ANC model?</b>
+The ANC models, along with the measured ANC values of the lake are plotted in Figure 4. From Figure 4, we can see how the ANC of the lake would vary based on the hydraulic residence time if the lake was following each of these model respectively.
 
 ![ANC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab3/ANC.png)
+Figure 4: ANC models and the measured ANC values in the lake
 
 The measured ANC values followed closely with the conservative ANC model. The first point was slightly off from the model; however, this can easily be explained by uncertainties in the experiment. Overall, the ANC values agree with the conservative ANC model.
 
