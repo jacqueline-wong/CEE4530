@@ -24,7 +24,7 @@ Thus, the total head loss is 0.232 m.
 <b>2. On a single graph plot the exit age distribution (E(t⋆)) for a reactor that operates as a 1-dimensional advection-dispersion reactor with Peclet numbers of 1, 10, and 100 (there will be three plots on the graph and thus a legend is required). The x-axis should be t⋆ from 0.0 to 3.0. Comment on the shapes of the curves as a function of the Peclet number. Note that the advective dispersion equation is undefined for t⋆=0. Use the epa.E_Advective_Dispersion(t,Pe) function.</b>
 
 ![EA](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/ExitAge.png)
-Figure 1: Exit age distribution against time for Peclet numbers of 1, 10, and 100.
+Figure 1: Exit age distribution plotted against time for Peclet numbers of 1, 10, and 100.
 
 ```python
 from aguaclara.core.units import unit_registry as u
