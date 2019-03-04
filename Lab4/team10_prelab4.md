@@ -1,6 +1,6 @@
 # Prelab 4 for CEE 4530
 
-### Team 10: Victor Khong & Jacqueline Wong (1 hour) ###
+### Team 10: Victor Khong & Jacqueline Wong (2 hours) ###
 
 <b>1. Calculate the change in hydraulic grade line between baffled sections of a reactor with a flow rate of 380 mL/min. The reactor baffles are perforated with 6 holes 1 mm in diameter. Is the flow through these orifices in series or in parallel? Do you multiply the head loss for one orifice by the number of orifices to get the total head loss? Are the orifices in parallel or in series? Use the pc.head_orifice function to calculate the head loss through an orifice. The vena contracta for the orifice can be found at aguaclara.core.constants.VC_ORIFICE_RATIO. Why would 6 holes 1 mm in diameter not be a good design for this reactor?</b>
 
