@@ -22,7 +22,7 @@ Thus, the total head loss is 0.232 m. From this, we can tell that having 6 holes
 
 <b>2. On a single graph plot the exit age distribution (E(t⋆)) for a reactor that operates as a 1-dimensional advection-dispersion reactor with Peclet numbers of 1, 10, and 100 (there will be three plots on the graph and thus a legend is required). The x-axis should be t⋆ from 0.0 to 3.0. Comment on the shapes of the curves as a function of the Peclet number. Note that the advective dispersion equation is undefined for t⋆=0. Use the epa.E_Advective_Dispersion(t,Pe) function.</b>
 
-![EA](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/ExitAge.png)
+
 Figure 1: Exit age against time for Peclet numbers of 1, 10, and 100.
 
 From the graph above, it can be seen that the greater the Peclet number, the greater the peak exit age. The curve for Peclet number 100 has a prominent peak at approximately 1 second whereas the curve for Peclet number 1 barely has a peak (If we had to say that there was a peak, it would be at approximately 0.2 second). This brings us to another pattern that can be noticed from the graph. The greater the Peclet number, the greater the time is when the peak exit age is reached. One more thing that can be noticed is the shape of the curve. The greater the Peclet number, the more symmetrical the curve is. The curve for Peclet number 100 is almost entirely symmetrical whereas the curve for Peclet number 10 and Peclet number 1 is obviously skewed, with the curve for Peclet number 1 being more skewed than the curve for Peclet number 10.
