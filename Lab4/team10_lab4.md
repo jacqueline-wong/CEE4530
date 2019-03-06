@@ -140,8 +140,8 @@ The inputs to the "air valve control" are air slope, air flow rate, accumulator 
 
 8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
 
-### Conclusions ###
+#### Conclusions ####
 
-### Suggestions ###
+#### Suggestions ####
 
-### Appendix ###
+#### Appendix ####
