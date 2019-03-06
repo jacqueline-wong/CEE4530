@@ -14,8 +14,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-# This code is included because there is a bug in the version of this code that is in epa.
-
 def aeration_data(DO_column, dirpath):
     """This function extracts the data from folder containing tab delimited
     files of aeration data. The file must be the original tab delimited file.
@@ -47,24 +45,14 @@ def aeration_data(DO_column, dirpath):
         have different lengths to accommodate short and long experiments
 
     time_data : numpy array list
-        sorted list of numpy arrays containing the times with units of seconds
+        sorted list of numpy arrays containing the times with units of seconds"""
 
-    Examples
-    --------
-
-    """
-    #return the list of files in the directory
     filenames = os.listdir(dirpath)
-    #extract the flowrates from the filenames and apply units
     airflows = ((np.array([i.split('.', 1)[0] for i in filenames])).astype(np.float32))
-    #sort airflows and filenames so that they are in ascending order of flow rates
     idx = np.argsort(airflows)
     airflows = (np.array(airflows)[idx])*u.umole/u.s
     filenames = np.array(filenames)[idx]
-
     filepaths = [os.path.join(dirpath, i) for i in filenames]
-    #DO_data is a list of numpy arrays. Thus each of the numpy data arrays can have different lengths to accommodate short and long experiments
-    # cycle through all of the files and extract the column of data with oxygen concentrations and the times
     DO_data=[epa.column_of_data(i,0,DO_column,-1,'mg/L') for i in filepaths]
     time_data=[(epa.column_of_time(i,0,-1)).to(u.s) for i in filepaths]
     aeration_collection = collections.namedtuple('aeration_results','filepaths airflows DO_data time_data')
@@ -74,12 +62,10 @@ def aeration_data(DO_column, dirpath):
 
 <b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
 
-Example data from Monroe is below:
 ```python
 DO_column = 2
 dirpath = "Lab4/Aeration"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
-# Plot the raw data
 
 for i in range(airflows.size):
   plt.plot(time_data[i], DO_data[i],'-')
@@ -88,7 +74,6 @@ plt.ylabel(r'Oxygen concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(airflows.magnitude)
 plt.show()
 
-#delete data that is less than 2 or greater than 6 mg/L
 DO_min = 2 * u.mg/u.L
 DO_max = 6 * u.mg/u.L
 for i in range(airflows.size):
