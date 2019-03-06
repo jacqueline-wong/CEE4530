@@ -1,72 +1,80 @@
 # Prelab 4 for CEE 4530
 
-### Team 10: Victor Khong (3 hours) & Jacqueline Wong (2 hours) ###
-
-<b>1. Calculate the change in hydraulic grade line between baffled sections of a reactor with a flow rate of 380 mL/min. The reactor baffles are perforated with 6 holes 1 mm in diameter. Is the flow through these orifices in series or in parallel? Do you multiply the head loss for one orifice by the number of orifices to get the total head loss? Are the orifices in parallel or in series? Use the pc.head_orifice function to calculate the head loss through an orifice. The vena contracta for the orifice can be found at aguaclara.core.constants.VC_ORIFICE_RATIO. Why would 6 holes 1 mm in diameter not be a good design for this reactor?</b>
-
-The flow through these orifices are parallel as the orifices on the reactor baffle are in parallel. Using equation (84) in the textbook, the change in head loss can be calculated from:
-
-$$d_{orifice} =\sqrt{\frac{4Q_{reactor} }{\pi n_{orifice} K_{orifice} \sqrt{2g\Delta h} } }$$
-
-$${d_{orifice}}^2 \pi n_{orifice} K_{orifice} = \frac{4Q_{reactor}}{\sqrt{2g\Delta h}}$$
-
-$$ \sqrt{2g\Delta h}= \frac{4Q_{reactor}}{{d_{orifice}}^2 \pi n_{orifice} K_{orifice}}$$
-
-$$ \Delta h= \frac{1}{2g}(\frac{4Q_{reactor}}{{d_{orifice}}^2 \pi n_{orifice} K_{orifice}})^2$$
-
-$$ \Delta h= \frac{1}{2g}(\frac{Q_{reactor}}{A_{orifice} n_{orifice} K_{orifice}})^2$$
-
-The "pc.head_orifice" function does not take into account the number of orifices in its definition. In order to use this function to calculate total head loss, the area of each orifice does not need to be multiplied by the number of holes. This is also equivalent to dividing the reactor flow rate by the number of holes.
-
-Thus, the total head loss is 0.232 m. From this, we can tell that having 6 holes of 1 mm in diameter would not be a good design because 6 holes is not enough to lower the head loss to a sufficient level. It would cause it to overflow (We measured it during the office hours.) The head loss needs to be lowered even more and so more holes would made the design better and feasible. However, we should try to maximize head loss still. By increasing the number of holes, we are just trying to prevent excessive head loss such that it will overflow.
-
-<b>2. On a single graph plot the exit age distribution (E(t⋆)) for a reactor that operates as a 1-dimensional advection-dispersion reactor with Peclet numbers of 1, 10, and 100 (there will be three plots on the graph and thus a legend is required). The x-axis should be t⋆ from 0.0 to 3.0. Comment on the shapes of the curves as a function of the Peclet number. Note that the advective dispersion equation is undefined for t⋆=0. Use the epa.E_Advective_Dispersion(t,Pe) function.</b>
-
-![EA](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/ExitAge.png)
-
-Figure 1: Exit age against time for Peclet numbers of 1, 10, and 100.
-
-From the graph above, it can be seen that the greater the Peclet number, the greater the peak exit age. The curve for Peclet number 100 has a prominent peak at approximately 1 second whereas the curve for Peclet number 1 barely has a peak (If we had to say that there was a peak, it would be at approximately 0.2 second). This brings us to another pattern that can be noticed from the graph. The greater the Peclet number, the greater the time is when the peak exit age is reached. One more thing that can be noticed is the shape of the curve. The greater the Peclet number, the more symmetrical the curve is. The curve for Peclet number 100 is almost entirely symmetrical whereas the curve for Peclet number 10 and Peclet number 1 is obviously skewed, with the curve for Peclet number 1 being more skewed than the curve for Peclet number 10.
+### Team 10: Victor Khong & Jacqueline Wong ###
 
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
-import aguaclara.core.utility as ut
-import aguaclara.core.constants as c
-import aguaclara.core.physchem as pc
 from scipy import optimize
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from scipy import stats
-
-# Question 1
-holes = 6
-Diam = 1 * u.mm
-RatioVCOrifice = c.VC_ORIFICE_RATIO
-FlowRate = 380 * u.mL/u.min
-headloss = pc.head_orifice(Diam, RatioVCOrifice, FlowRate/holes)
-headloss
-
-# Question 2
-Pe_1 = 1
-Pe_10 = 10
-Pe_100 = 100
-
-start = 0.0000000000001
-stop = 3
-t = np.linspace(start, stop, 100)
-
-E_1 = epa.E_Advective_Dispersion(t, Pe_1)
-E_10 = epa.E_Advective_Dispersion(t, Pe_10)
-E_100 = epa.E_Advective_Dispersion(t, Pe_100)
-
-plt.plot(t, E_1, 'b-', linewidth = 2)
-plt.plot(t, E_10, 'r-', linewidth = 2)
-plt.plot(t, E_100, 'g-', linewidth = 2)
-plt.ylabel('Exit age', fontsize=15)
-plt.xlabel('Time (sec)', fontsize=15)
-leg = plt.legend(('Peclet number = 1', 'Peclet number = 10', 'Peclet number = 100'), loc='best')
-plt.savefig('Lab4/ExitAge.png')
-plt.show()
 ```
+
+<b>1. Calculate the mass of sodium sulfite needed to reduce all the dissolved oxygen in 600 mL of pure water in equilibrium with the atmosphere and at 22˚C.</b>
+
+The reaction between oxygen and sulfite is:
+
+$$\text{O}_{{2}} +\text{2SO}_{{3}}^{-{2}} \stackrel{{cobalt}}{\longrightarrow}\text{2SO}_{{4}}^{-{2}}$$
+
+Thus, the mass of sodium sulfite needed to deoxygenate 1 g of oxygen is:
+
+$$\frac{{\text{mol}\; \text{O}}_{{2}} }{{32\; \text{g}\; } } \times \frac{{2\; \text{mol\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{mol}\; \text{O}_{2}} } \times \frac{{126\; \text{g}}}{{\text{mol Na}}_{{2}}\text{SO}_{{3}} } =\frac{{\; 7.875\; \text{g\; Na}_{{2}} \text{SO}_{{3}}} }{{\text{g O}_{2}} }$$
+
+```python
+MW_O2 = 32 * u.g/u.mol
+MW_Na2SO3 = 126 * u.g/u.mol
+ratio = (1/MW_O2)*2*(MW_Na2SO3)
+ratio
+```
+
+The mass of dissolved oxygen in 600 mL of pure water in equilibrium with the atmosphere at 22˚C can then be calculated. The air pressure here is 1 atm.
+
+```python
+P_air = 1 * u.atm
+temp = 22 * u.degC
+conc_O2 = epa.O2_sat(P_air, temp)
+
+vol = 600 * u.mL
+mass_O2 = conc_O2 * vol
+mass_O2.to(u.mg)
+```
+
+As the mass of dissolved oxygen in pure water is 5.338 mg. The amount of sodium sulfite required for deoxygenation can then be found.
+
+```python
+mass_Na2SO3 = ratio * mass_O2
+mass_Na2SO3.to(u.mg)
+```
+
+Thus, at least 42.034 mg of sodium sulfite is required.
+
+<b> 2. Describe your expectations for dissolved oxygen concentration as a function of time during a reaeration experiment. Assume you have added enough sodium sulfite to consume all of the oxygen at the start of the experiment. What would the shape of the curve look like?</b>
+
+According to Equation (103),
+
+$$\ln \frac{C^{*} -C}{C^{*} -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
+
+Thus, we expect the curve to look logarithmic.
+
+<b> 3. Why is $\hat{k}_{v,l}$ not zero when the gas flow rate is zero? How can oxygen transfer into the reactor even when no air is pumped into the diffuser? </b>
+
+The reason why $\hat{k}_{v,l}$ is not zero when the gas flow rate is zero is because the gas does not need to flow in order for gas to exchange oxygen. Since it is an open system, there is gas exchange occurring at the surface of the water. Oxygen is able to be exchanged between being in air and being dissolved in water, thus $\hat{k}_{v,l}$ will not be zero.
+
+<b>4. Describe your expectations for $\hat{k}_{v,l}$ as a function of gas flow rate. Do you expect a straight line? Why?</b>
+
+According to the oxygen transfer efficiency equation (107),
+
+$$OTE=\frac{\hat{k}_{v,l} \left(C^* -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} } }$$
+
+As $Q_{air}$ is directly proportional to $\hat{k}_{v,l}$, we will expect a straight line.
+
+<b> 5. A dissolved oxygen probe was placed in a small vial in such a way that the vial was sealed. The water in the vial was sterile. Over a period of several hours the dissolved oxygen concentration gradually decreased to zero. Why? (You need to know how dissolved oxygen probes work!)</b>
+
+The dissolved oxygen probe calculates dissolved oxygen based on the fact that an applied potential of 0.8V can reduce oxygen to water:
+
+$$4 e^- + 4 H^+ + O_2 \;\mathrm{\to}\; 2 H_2O$$
+
+The rate at which oxygen diffuses through the membrane is proportional to the oxygen concentration in the solution, and its eventual reduction to water produces a current that is measured by the meter.
+
+After several hours, all the dissolved oxygen in the vial will be reduced to water at the silver cathode of the probe, and there will be none left to produce a current that can be measured by the probe, thus gradually decreasing to a zero reading.
