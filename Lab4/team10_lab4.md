@@ -74,13 +74,11 @@ def aeration_data(DO_column, dirpath):
 
 <b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
 
+Example data from Monroe is below:
 ```python
-# The column of data containing the dissolved oxygen concentrations
 DO_column = 2
-dirpath = "Examples/data/Aeration"
+dirpath = "Lab4/Aeration"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
-
-
 # Plot the raw data
 
 for i in range(airflows.size):
