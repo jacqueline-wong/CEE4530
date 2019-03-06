@@ -15,9 +15,27 @@ import pandas as pd
 from scipy import stats
 ```
 
+<b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
 
+<b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
 
-### Discussion ###
+<b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
+
+<b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
+
+<b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
+
+<b> 6. Plot k̂ v,l as a function of airflow rate (μmole/s).</b>
+
+<b> 7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
+
+<b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
+
+<b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
+
+<b> 10. Verify that your report and graphs meet the requirements.</b>
+
+<b> (include discussion of below questions) </b>
 
 1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
 
@@ -54,3 +72,9 @@ The inputs to the "air valve control" are air slope, air flow rate, accumulator 
 "Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
 
 8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
+
+### Conclusions ###
+
+### Suggestions ###
+
+### Appendix ###
