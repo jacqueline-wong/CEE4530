@@ -28,16 +28,15 @@ $$\ln (C^{* } -C) =-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0}) $$
 As C* and C<sub>0</sub> are constants, the equation can be linearized by plotting $\ln (C^{* } -C)$ against $t$, where $-\hat{k}_{v,l}$ is the slope and $\ln(C^{* } -C_{0})$ is the intercept.
 
 ```python
-for i in range(airflows.size-1):
-  C_0 = np.asarray(DO_data)
-
-C_0[5][0]
+# C_0 should be the zero index
+C_0 = 2 * u.mg/u.L
 
 x = time_data
-y = np.log(C_star - C_0)
-# C_0 should be the zero index
+y = np.log(C_star.magnitude - DO_data.magnitude)
 
-for i in range(airflows.size-1):
+slope, intercept, r_value, p_value, std_err = stats.linregress(x[1], y[1])
+
+for i in range(0,11):
   slope, intercept, r_value, p_value, std_err = stats.linregress(x[i], y[i])
 
 k_vl = slope * (1/u.sec)
@@ -45,8 +44,20 @@ k_vl = slope * (1/u.sec)
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
 
-```python
+From the previous question, equation (103) can be further rearranged in terms of the concentration of oxygen:
 
+$$ C = C^{* } - e^{-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0})} $$
+
+Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used
+
+```python
+plt.figure('ax',(10,7))
+plt.plot(time_data[4], DO_data[4],'-')
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
+leg = plt.legend('Actual data', 'Model curve') loc='best')
+plt.savefig('Lab5/model.png')
+plt.show()
 ```
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
