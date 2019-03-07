@@ -10,26 +10,44 @@ Please refer to Appendix for code used.
 
 ![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/DOsubset.png)
 
-<b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
+Figure 1: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
 
-C* is calculated to be 8.90 mg/L given an average water temperature of 22˚C and atmospheric pressure. Please refer to Appendix for code used.
+<b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2 exp(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
 
-<b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
+Given an average water temperature of 22˚C and atmospheric pressure, C* is calculated to be 8.90 mg/L. Please refer to Appendix for code used.
 
+<b> 4. Estimate k̂<sub>v,l</sub> using linear regression and equation (103) for each data set.</b>
+
+Equation (103) of a simple gas transfer model is:
 $$\ln \frac{C^{* } -C}{C^{* } -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
-$$\ln (C^{* } -C) - \ln(C^{* } -C_{0}) =-\hat{k}_{v,l} (t-t_{0} )$$
-$$\ln (C^{* } -C) =-\hat{k}_{v,l} (t-t_{0} ) + \ln(C^{* } -C_{0}) $$
+
+As the datasets have been manipulated such that the start of each aeration begins at time 0 (i.e. t<sub>0</sub> = 0), equation (103) can be simplified and rearranged to:
+
+$$\ln (C^{* } -C) =-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0}) $$
+
+As C* and C<sub>0</sub> are constants, the equation can be linearized by plotting $\ln (C^{* } -C)$ against $t$, where $-\hat{k}_{v,l}$ is the slope and $\ln(C^{* } -C_{0})$ is the intercept.
 
 ```python
-C_0 =
+C_0 = []
+for i in range(airflows.size):
+  C_0 = C_0 + DO_data[i][0]
+
+DO_data[5][1]
+y = np.log(C_star - C_0)
 # C_0 should be the zero index
+
+# Code from Lab 3
+slope, intercept, r_value, p_value, std_err = stats.linregress(time_data[], y))
+
+slope = slope * (1/u.sec)
+k_vl =
 ```
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
 
-<b> 6. Plot k̂ v,l as a function of airflow rate (μmole/s).</b>
+<b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
-<b> 7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
+<b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
 
