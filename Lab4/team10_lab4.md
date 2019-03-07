@@ -77,34 +77,26 @@ for i in range(airflows.size):
   idx_end = (np.abs(DO_data[i]-DO_max)).argmin()
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
-
-plt.figure('ax',(10,7))
-for i in range(airflows.size):
-  plt.plot(time_data[i], DO_data[i],'-')
-plt.xlabel(r'time (s)')
-plt.ylabel(r'Oxygen concentration (mg/L)')
-plt.legend(airflows.magnitude)
-plt.show()
 ```
 
 <b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
 
 ```python
-start = 0
-stop = airflows.size
-step = int(stop/5)
-subset = np.linspace(start,stop,5)
-subset = np.ndarray.tolist(subset)
-subset = list(map(int,subset))
-subset
-
 plt.figure('ax',(10,7))
-for i in subset:
-  plt.plot(time_data[i], DO_data[i],'-')
+plt.plot(time_data[0], DO_data[0],'-')
+plt.plot(time_data[4], DO_data[4],'-')
+plt.plot(time_data[11], DO_data[11],'-')
+plt.plot(time_data[15], DO_data[15],'-')
+plt.plot(time_data[22], DO_data[22],'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
-plt.legend(airflows.magnitude)
+leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
+plt.savefig('Lab5/DOsubset.png')
 plt.show()
+
+airflows.magnitude[5]
+
+# Just plot the ones that you like
 ```
 
 <b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
@@ -117,8 +109,11 @@ C_star = epa.O2_sat(P_air, T)
 
 <b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
 
-```python
+$$\ln \frac{C^{*} -C}{C^{*} -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
 
+```python
+C_0 = 0 * u.mg/u.L
+# C_0 should be the zero index
 ```
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
