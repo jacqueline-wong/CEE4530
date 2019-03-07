@@ -70,10 +70,11 @@ DO_column = 2
 dirpath = "Lab4/Aeration"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
+plt.figure('ax',(10,7))
 for i in range(airflows.size):
   plt.plot(time_data[i], DO_data[i],'-')
-plt.xlabel(r'$time (s)$')
-plt.ylabel(r'Oxygen concentration $\left ( \frac{mg}{L} \right )$')
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
 plt.legend(airflows.magnitude)
 plt.show()
 
@@ -84,7 +85,15 @@ for i in range(airflows.size):
   idx_end = (np.abs(DO_data[i]-DO_max)).argmin()
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
-  Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
+#  Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
+
+plt.figure('ax',(10,7))
+for i in range(airflows.size):
+  plt.plot(time_data[i], DO_data[i],'-')
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
+plt.legend(airflows.magnitude)
+plt.show()
 ```
 
 <b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
