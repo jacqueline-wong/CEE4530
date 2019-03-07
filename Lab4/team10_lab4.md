@@ -91,13 +91,16 @@ plt.show()
 <b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
 
 ```python
-start = min(airflows)
-stop = max(airflows)
-DO = np.linspace(start, stop, 5)
+start = 0
+stop = airflows.size
+step = int(stop/5)
+subset = np.linspace(start,stop,5)
+
+airflows.size
 
 plt.figure('ax',(10,7))
-for i in 1:5:
-  plt.plot(time_data[i], DO[i],'-')
+for i in range(airflows.size):
+  plt.plot(time_data[i], DO_data[i],'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
 plt.legend(airflows.magnitude)
