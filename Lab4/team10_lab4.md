@@ -2,6 +2,85 @@
 
 #### Team 10: Victor Khong & Jacqueline Wong ####
 
+<b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
+
+Please refer to Appendix for code used.
+
+<b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
+
+![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/DOsubset.png)
+
+<b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
+
+C* is calculated to be 8.90 mg/L given an average water temperature of 22˚C and atmospheric pressure. Please refer to Appendix for code used.
+
+<b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
+
+$$\ln \frac{C^{* } -C}{C^{* } -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
+$$\ln (C^{* } -C) - \ln(C^{* } -C_{0}) =-\hat{k}_{v,l} (t-t_{0} )$$
+$$\ln (C^{* } -C) =-\hat{k}_{v,l} (t-t_{0} ) + \ln(C^{* } -C_{0}) $$
+
+```python
+C_0 =
+# C_0 should be the zero index
+```
+
+<b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
+
+<b> 6. Plot k̂ v,l as a function of airflow rate (μmole/s).</b>
+
+<b> 7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
+
+<b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
+
+<b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
+
+<b> 10. Verify that your report and graphs meet the requirements.</b>
+
+<b> (include discussion of below questions) </b>
+
+1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
+
+ProCoDA switches from the "prepare to calibrate" state to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s.
+
+2. Under what condition does ProCoDA switch from the “calibrate” state to the “Pause” state?
+
+ProCoDA switches from the "calibrate" state to the "Pause" state when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s.
+
+3. How does the “Pause” state know which state to go to next?
+
+ProCoDA switches from the "Pause" state to the next state "Aerate" because of the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
+
+4. What is the equation that is used to calculate the maximum calibration pressure and why is this equation better than using a constant for the maximum calibration pressure?
+
+The equation used to calculate the maximum calibration pressure is:
+
+$$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
+
+This is better than using a constant for the maximum calibration pressure as the source pressure may change.
+
+5. Explain how ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate.
+
+ProCoDA calculates predicted pressure in the accumulator using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly.
+
+$$\frac{\text{max cal pressure}-\text{min cal pressure}}{\text{fill time}}$$
+
+6. What are the inputs to the “air valve control”?
+
+The inputs to the "air valve control" are air slope, air flow rate, accumulator pressure and source pressure.
+
+7. What does “air valve control” control and which two states use it?
+
+"Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
+
+8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
+
+#### Conclusions ####
+
+#### Suggestions ####
+
+#### Appendix ####
+
 ```python
 from aguaclara.core.units import unit_registry as u
 import aguaclara.research.environmental_processes_analysis as epa
@@ -61,11 +140,9 @@ def aeration_data(DO_column, dirpath):
     aeration_collection = collections.namedtuple('aeration_results','filepaths airflows DO_data time_data')
     aeration_results = aeration_collection(filepaths, airflows, DO_data, time_data)
     return aeration_results
-```
 
-<b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
+# Question 1
 
-```python
 DO_column = 2
 dirpath = "Lab4/Aeration"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
@@ -77,13 +154,9 @@ for i in range(airflows.size):
   idx_end = (np.abs(DO_data[i]-DO_max)).argmin()
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
-```
 
-<b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
+# Question 2
 
-![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/DOsubset.png)
-
-```python
 plt.figure('ax',(10,7))
 plt.plot(time_data[0], DO_data[0],'-')
 plt.plot(time_data[4], DO_data[4],'-')
@@ -95,77 +168,11 @@ plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
 plt.savefig('Lab5/DOsubset.png')
 plt.show()
-```
 
-<b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
+# Question 3
 
-```python
 T = 22 * u.degC
 P_air = 1 * u.atm
 C_star = epa.O2_sat(P_air, T)
+C_star
 ```
-
-<b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
-
-$$\ln \frac{C^{*} -C}{C^{*} -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
-
-```python
-C_0 = 0 * u.mg/u.L
-# C_0 should be the zero index
-```
-
-<b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
-
-<b> 6. Plot k̂ v,l as a function of airflow rate (μmole/s).</b>
-
-<b> 7. Plot OTE as a function of airflow rate (?mole/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
-
-<b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
-
-<b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
-
-<b> 10. Verify that your report and graphs meet the requirements.</b>
-
-<b> (include discussion of below questions) </b>
-
-1. Under what condition does ProCoDA switch from the “prepare to calibrate” state to the “calibrate” state?
-
-ProCoDA switches from the "prepare to calibrate" state to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s.
-
-2. Under what condition does ProCoDA switch from the “calibrate” state to the “Pause” state?
-
-ProCoDA switches from the "calibrate" state to the "Pause" state when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s.
-
-3. How does the “Pause” state know which state to go to next?
-
-ProCoDA switches from the "Pause" state to the next state "Aerate" because of the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
-
-4. What is the equation that is used to calculate the maximum calibration pressure and why is this equation better than using a constant for the maximum calibration pressure?
-
-The equation used to calculate the maximum calibration pressure is:
-
-$$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
-
-This is better than using a constant for the maximum calibration pressure as the source pressure may change.
-
-5. Explain how ProCoDA calculates the predicted pressure in the accumulator when it is filled at a constant mass flow rate.
-
-ProCoDA calculates predicted pressure in the accumulator using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly.
-
-$$\frac{\text{max cal pressure}-\text{min cal pressure}}{\text{fill time}}$$
-
-6. What are the inputs to the “air valve control”?
-
-The inputs to the "air valve control" are air slope, air flow rate, accumulator pressure and source pressure.
-
-7. What does “air valve control” control and which two states use it?
-
-"Air valve control" controls the solenoid valves. The two states that use it are "Aerate" and "Fill accumulator".
-
-8. Write a ProCoDA program that cycles between two states that aerate for 15 s and then pause for 10 s. Show the TA!
-
-#### Conclusions ####
-
-#### Suggestions ####
-
-#### Appendix ####
