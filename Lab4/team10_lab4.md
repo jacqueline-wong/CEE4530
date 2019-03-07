@@ -32,7 +32,7 @@ As C* and C<sub>0</sub> are constants, the equation can be linearized by plottin
 C_0 = 2 * u.mg/u.L
 
 x = time_data
-y = np.log(C_star.magnitude - DO_data.magnitude)
+y = np.log(C_star - DO_data)
 
 slope, intercept, r_value, p_value, std_err = stats.linregress(x[1], y[1])
 
