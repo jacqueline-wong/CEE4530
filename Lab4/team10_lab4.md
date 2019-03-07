@@ -32,12 +32,11 @@ C_0 = []
 for i in range(airflows.size):
   C_0 = C_0 + DO_data[i][0]
 
-DO_data[5][1]
+x = time_data
 y = np.log(C_star - C_0)
 # C_0 should be the zero index
 
-# Code from Lab 3
-slope, intercept, r_value, p_value, std_err = stats.linregress(time_data[], y))
+slope, intercept, r_value, p_value, std_err = stats.linregress(x[i], y[i])
 
 slope = slope * (1/u.sec)
 k_vl =
