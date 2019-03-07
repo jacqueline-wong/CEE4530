@@ -8,11 +8,14 @@ import aguaclara.research.environmental_processes_analysis as epa
 import aguaclara.core.utility as ut
 import aguaclara.core.constants as c
 import aguaclara.core.physchem as pc
-from scipy import optimize
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
 from scipy import stats
+from scipy import optimize
+import collections
+import os
+from pathlib import Path
 
 def aeration_data(DO_column, dirpath):
     """This function extracts the data from folder containing tab delimited
