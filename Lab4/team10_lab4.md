@@ -77,7 +77,6 @@ for i in range(airflows.size):
   idx_end = (np.abs(DO_data[i]-DO_max)).argmin()
   time_data[i] = time_data[i][idx_start:idx_end] - time_data[i][idx_start]
   DO_data[i] = DO_data[i][idx_start:idx_end]
-#  Accumulator_P[i] = Accumulator_P[i][idx_start:idx_end]
 
 plt.figure('ax',(10,7))
 for i in range(airflows.size):
@@ -95,11 +94,12 @@ start = 0
 stop = airflows.size
 step = int(stop/5)
 subset = np.linspace(start,stop,5)
-
-airflows.size
+subset = np.ndarray.tolist(subset)
+subset = list(map(int,subset))
+subset
 
 plt.figure('ax',(10,7))
-for i in range(airflows.size):
+for i in subset:
   plt.plot(time_data[i], DO_data[i],'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
@@ -108,6 +108,13 @@ plt.show()
 ```
 
 <b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
+
+```python
+T = 22 * u.degC
+P_air = 1 * u.atm
+O2_sat = epa.O2_sat(P_air, temp)
+C = P_O2 * np.exp(1727/T.to(u.K) - 2.105)
+```
 
 <b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
 
