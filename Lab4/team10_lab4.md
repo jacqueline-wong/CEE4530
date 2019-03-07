@@ -29,6 +29,12 @@ As C* and C<sub>0</sub> are constants, the equation can be linearized by plottin
 
 ```python
 # C_0 should be the zero index
+for j in range(airflows.size):
+  C_0 = DO_data[j][0]
+
+DO_data[12][0]
+
+DO_data[0][0]
 C_0 = 2 * u.mg/u.L
 
 x = time_data
