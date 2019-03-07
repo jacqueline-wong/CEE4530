@@ -81,6 +81,8 @@ for i in range(airflows.size):
 
 <b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
 
+![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/DOsubset.png)
+
 ```python
 plt.figure('ax',(10,7))
 plt.plot(time_data[0], DO_data[0],'-')
