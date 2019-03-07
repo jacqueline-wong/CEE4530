@@ -21,42 +21,38 @@ Given an average water temperature of 22˚C and atmospheric pressure, C* is calc
 Equation (103) of a simple gas transfer model is:
 $$\ln \frac{C^{* } -C}{C^{* } -C_{0} } =-\hat{k}_{v,l} (t-t_{0} )$$
 
-As the datasets have been manipulated such that the start of each aeration begins at time 0 (i.e. t<sub>0</sub> = 0), equation (103) can be simplified and rearranged to:
+As the datasets have been manipulated such that the start of each aeration begins at time 0 (i.e. t<sub>0</sub> = 0), it can be simplified to:
 
-$$\ln (C^{* } -C) =-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0}) $$
+$$\ln \frac{C^{* } -C}{C^{* } -C_{0} } =-\hat{k}_{v,l}\text{ }t$$
 
-As C* and C<sub>0</sub> are constants, the equation can be linearized by plotting $\ln (C^{* } -C)$ against $t$, where $-\hat{k}_{v,l}$ is the slope and $\ln(C^{* } -C_{0})$ is the intercept.
+The equation can be linearized by plotting $\ln \frac{C^{* } -C}{C^{* } -C_{0} }$ against $t$. $-\hat{k}_{v,l}$ can be found by taking the negative of the slope.
 
 ```python
-# C_0 should be the zero index
-for j in range(airflows.size):
-  C_0 = DO_data[j][0]
-
-DO_data[12][0]
-
-DO_data[0][0]
-C_0 = 2 * u.mg/u.L
-
-x = time_data
-y = np.log(C_star - DO_data)
-
-slope, intercept, r_value, p_value, std_err = stats.linregress(x[1], y[1])
-
+k_vl = np.array([0,0,0,0,0,0,0,0,0,0,0,0])
 for i in range(0,11):
-  slope, intercept, r_value, p_value, std_err = stats.linregress(x[i], y[i])
+  C_0 = DO_data[i][0]
+  DO_data_temp = DO_data[i]
+  x_temp = time_data[i]
+  y = np.log((C_star - DO_data_temp)/(C_star - C_0)).magnitude
+  slope, intercept, r_value, p_value, std_err = stats.linregress(x_temp, y)
+  k_vl[i] = -slope
 
-k_vl = slope * (1/u.sec)
+k = k_vl / u.sec
 ```
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
 
-From the previous question, equation (103) can be further rearranged in terms of the concentration of oxygen:
+From the previous question, equation (103) can be further rearranged to be expressed in terms of the concentration of oxygen:
 
 $$ C = C^{* } - e^{-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0})} $$
 
 Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used
 
 ```python
+
+for i in range(0,11):
+C_model =
+
 plt.figure('ax',(10,7))
 plt.plot(time_data[4], DO_data[4],'-')
 plt.xlabel(r'time (s)')
@@ -68,13 +64,31 @@ plt.show()
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
+Figure 2: Plots of k̂<sub>v,l</sub> against tairflow rate.
+
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
+Figure 3: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
+
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
 
+The oxygen transfer efficiency can be calculated using the equation
+$$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
+From the calculation, the oxygen transfer efficiency is pretty low.
+
+```python
+
+```
+
+A trend that I observed is that the greater the air flow rate, the greater the rate of increase in dissolved oxygen as shown in Figure 1. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes. There is an exception with the air flow rate of 925µmol/s where the rate of increase in dissolved oxygen is actually lower than 525µmol/s and 700µmol/s. However, this may simply be a case where the experiment was not conducted properly and resulted in inaccurate data.
+
 <b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
 
+A change to the experimental apparatus that would increase the efficiency is using a larger container but filling the same volume of water such that a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
+
 <b> 10. Verify that your report and graphs meet the requirements.</b>
+
+Verified.
 
 <b> (include discussion of below questions) </b>
 
@@ -200,11 +214,11 @@ plt.figure('ax',(10,7))
 plt.plot(time_data[0], DO_data[0],'-')
 plt.plot(time_data[4], DO_data[4],'-')
 plt.plot(time_data[11], DO_data[11],'-')
-plt.plot(time_data[15], DO_data[15],'-')
-plt.plot(time_data[22], DO_data[22],'-')
+plt.plot(time_data[16], DO_data[16],'-')
+plt.plot(time_data[23], DO_data[23],'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
-leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
+leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[16].magnitude,airflows[23].magnitude), loc='best')
 plt.savefig('Lab5/DOsubset.png')
 plt.show()
 
