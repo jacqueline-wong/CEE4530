@@ -95,10 +95,6 @@ plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
 plt.savefig('Lab5/DOsubset.png')
 plt.show()
-
-airflows.magnitude[5]
-
-# Just plot the ones that you like
 ```
 
 <b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
