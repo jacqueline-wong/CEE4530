@@ -70,14 +70,6 @@ DO_column = 2
 dirpath = "Lab4/Aeration"
 filepaths, airflows, DO_data, time_data = aeration_data(DO_column,dirpath)
 
-plt.figure('ax',(10,7))
-for i in range(airflows.size):
-  plt.plot(time_data[i], DO_data[i],'-')
-plt.xlabel(r'time (s)')
-plt.ylabel(r'Oxygen concentration (mg/L)')
-plt.legend(airflows.magnitude)
-plt.show()
-
 DO_min = 2 * u.mg/u.L
 DO_max = 6 * u.mg/u.L
 for i in range(airflows.size):
@@ -97,6 +89,20 @@ plt.show()
 ```
 
 <b> 2. Plot a representative subset of the data showing dissolved oxygen vs. time. Perhaps show 5 plots on one graph.</b>
+
+```python
+start = min(airflows)
+stop = max(airflows)
+DO = np.linspace(start, stop, 5)
+
+plt.figure('ax',(10,7))
+for i in 1:5:
+  plt.plot(time_data[i], DO[i],'-')
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
+plt.legend(airflows.magnitude)
+plt.show()
+```
 
 <b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2e(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
 
