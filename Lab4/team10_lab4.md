@@ -112,11 +112,14 @@ plt.show()
 ```python
 T = 22 * u.degC
 P_air = 1 * u.atm
-O2_sat = epa.O2_sat(P_air, temp)
-C = P_O2 * np.exp(1727/T.to(u.K) - 2.105)
+C_star = epa.O2_sat(P_air, T)
 ```
 
 <b> 4. Estimate k̂ v,l using linear regression and equation (103) for each data set.</b>
+
+```python
+
+```
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
 
