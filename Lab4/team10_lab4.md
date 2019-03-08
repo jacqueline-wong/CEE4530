@@ -31,17 +31,18 @@ The equation can be linearized by plotting $\ln \frac{C^{* } -C}{C^{* } -C_{0} }
 
 From the previous question, equation (103) can be further rearranged to be expressed in terms of the concentration of oxygen:
 
-$$ C = C^{* } - e^{-\hat{k}_{v,l}\text{ }t + \ln(C^{* } -C_{0})} $$
+$$ C = C^{* } - (C^{* } - C_0)e^{-\hat{k}_{v,l}\text{ }t} $$
 
 Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used. We will be using the airflow at 225.0 µmol/s as the representative plot.
 
 ```python
-C_model = (C_star - np.exp((-k[4]*time_data[4])
-+ np.log(C_star-C_0[4]))).magnitude
+C_model = np.zeros(airflows.size)
+for i in range(airflows.size):
+  C_model[i] = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude + np.log((C_star - C_0).magnitude))
 
 plt.figure('ax',(10,7))
 plt.plot(time_data[4], DO_data[4],'-')
-#plt.plot(time_data[4], C_model,'-')
+plt.plot(time_data[4], C_model,'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend('Actual data', loc='best')
@@ -217,9 +218,10 @@ C_star
 
 # Question 4
 
-k_vl = np.zeros(23)
+k_vl = np.zeros(airflows.size)
+C_0 = 2 * u.mg/u.L
+
 for i in range(airflows.size):
-  C_0 = DO_data[i][0]
   DO_data_temp = DO_data[i]
   x = time_data[i]
   y = np.log((C_star - DO_data_temp)/(C_star - C_0)).magnitude
@@ -233,4 +235,6 @@ k = k_vl / u.sec
 # Question 6
 
 # Question 7
+R = 8.314*u.
+OTE = (k_vl*(C_star-C)*V*R*T)/()
 ```
