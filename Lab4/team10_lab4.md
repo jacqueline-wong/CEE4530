@@ -49,7 +49,7 @@ plt.ylabel(r'k_v,l')
 plt.savefig('Lab4/k_vl.png')
 plt.show()
 ```
-Figure 2: Plots of k̂<sub>v,l</sub> against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
+Figure 3: Plots of k̂<sub>v,l</sub> against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
@@ -67,12 +67,12 @@ plt.savefig('Lab4/OTE.png')
 plt.show()
 ```
 
-Figure 3: Plots of dissolved oxygen transfer efficiency against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
+Figure 4: Plots of dissolved oxygen transfer efficiency against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
 
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
 
-From Figure 3, the oxygen transfer efficiency is pretty low. This is expected as the height of water and consequently duration in which the oxygen can be dissolved into the water is very short. As a result, most of the oxygen will be released into the air. This would be lower; however, some of the oxygen released will remain above the water surface, causing there to be a higher concentration of oxygen in the air directly above the water surface. From Henry's law, we know that there will be increased transfer of oxygen from the air to the water.
+From Figure 4, the oxygen transfer efficiency is pretty low. This is expected as the height of water and consequently duration in which the oxygen can be dissolved into the water is very short. As a result, most of the oxygen will be released into the air. This would be lower; however, some of the oxygen released will remain above the water surface, causing there to be a higher concentration of oxygen in the air directly above the water surface. From Henry's law, we know that there will be increased transfer of oxygen from the air to the water.
 
 A trend that I observed is that the greater the air flow rate, the greater the rate of increase in dissolved oxygen as shown in Figure 1. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes, with airflow of 100 μmol/s almost entirely linear. There is an exception with the air flow rate of 925µmol/s where the rate of increase in dissolved oxygen is actually lower than 525µmol/s and 700µmol/s. However, this may simply be a case where the experiment was not conducted properly and resulted in inaccurate data. Another trend is that the middle three curves are not jagged in shape whereas the two curves on either end is not, but rather smooth. This may simply be due to disruptions in the experiment or random uncertainties to do with the experimental apparatus.
 
