@@ -44,8 +44,8 @@ Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model agai
 ```python
 plt.figure('ax',(10,7))
 plt.plot(airflows, k_vl,'-')
-plt.xlabel(r'Airflow rate(μmol/s)')
-plt.ylabel(r'k_v,l')
+plt.xlabel(r'Airflow rate (μmol/s)')
+plt.ylabel(r'k_v,l (1/s)')
 plt.savefig('Lab4/k_vl.png')
 plt.show()
 ```
