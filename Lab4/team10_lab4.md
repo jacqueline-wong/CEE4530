@@ -195,7 +195,7 @@ plt.plot(time_data[22], DO_data[22],'o')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
-plt.savefig('Lab5/DOsubset.png')
+plt.savefig('Lab4/DOsubset.png')
 plt.show()
 
 # Question 3
@@ -223,7 +223,7 @@ k = k_vl / u.sec
 
 C_model = np.zeros(airflows.size)
 for i in range(len(time_data)):
-  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
+  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]))
   C_model[i] = C.magnitude
 
 t_model = np.linspace(0,max(time_data[4]),len(C_model))
