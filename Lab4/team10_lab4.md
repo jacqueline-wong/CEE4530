@@ -47,11 +47,13 @@ It can be seen that our model overestimates the time it takes to reaerate. Furth
 
 <b>Figure 3</b>: Plots of estimated k̂<sub>v,l</sub> against airflow rates.
 
-While there is not a clear trend, appears that apart from some anomalies, k̂<sub>v,l</sub> increases with airflow rate. This makes sense as the more air is pumped per unit time, the more oxygen is pumped and the greater the volumetric gas transfer coefficient.
+While there is not a clear trend, appears that apart from some anomalies, k̂<sub>v,l</sub> increases with airflow rate. This makes sense as the more air is pumped per unit time, the more oxygen is pumped and the greater the volumetric gas transfer coefficient. This also makes sense from the oxygen transfer efficiency equation (107) as k̂<sub>v,l</sub> and Q<sub>air</sub> are proportional.
+
+$$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
-The oxygen transfer efficiency can be calculated using the equation
+As mentioned above, the oxygen transfer efficiency can be calculated using the equation:
 $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
 
 ![OTE](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/OTE.png)
