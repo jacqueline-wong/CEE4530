@@ -66,11 +66,11 @@ From <b>Figure 4</b>, the oxygen transfer efficiency is considerably low, and co
 
 A general trend that we observed is that the greater the air flow rate, the greater the rate of increase in dissolved oxygen as shown in <b>Figure 1</b>. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes, with airflow of 100 μmol/s almost entirely linear. There is an exception with the air flow rate of 925µmol/s where the rate of increase in dissolved oxygen is actually lower than 525µmol/s and 700µmol/s. However, this may simply be a case where the experiment was not conducted properly and resulted in inaccurate data. Another trend is that the middle three curves are not jagged in shape whereas the two curves on either end is not, but rather smooth. This may simply be due to disruptions in the experiment or random uncertainties to do with the experimental apparatus.
 
-Another trend that I observed is that the greater the air flow rate, the lower the oxygen transfer efficiency. This is reasonable as the surface area with which oxygen can be transferred into the water is approximately the same for air flow rates; yet, even at low air flow rates, 100% oxygen transfer efficiency cannot be reached. Hence, by increasing the air flow rate and consequently increasing the oxygen available for transfer but not changing the rate at which oxygen can transfer will result in lower oxygen transfer efficiency.
+Another trend that observed is that the greater the air flow rate, the lower the oxygen transfer efficiency. This is reasonable as the surface area with which oxygen can be transferred into the water is approximately the same for air flow rates; yet, even at low air flow rates, 100% oxygen transfer efficiency cannot be reached. Hence, by increasing the air flow rate and consequently increasing the oxygen available for transfer but not changing the rate at which oxygen can transfer will result in lower oxygen transfer efficiency.
 
 <b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
 
-A change to the experimental apparatus that would increase the efficiency is using a larger container but filling the same volume of water such that a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
+A change to the experimental apparatus that would increase the efficiency is using a deeper and less wide container but filling the same volume of water such that a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50 µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
 
 <b> 10. Verify that your report and graphs meet the requirements.</b>
 
@@ -96,7 +96,7 @@ To show our understanding of the ProCoDA program, we have also written a ProCoDA
 
 #### Conclusions ####
 
-Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration and the lower the oxygen transfer efficiency.
+Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration and the lower the oxygen transfer efficiency. Furthermore, it was found that the actual aeration process actually requires less time than predicted by our model.
 
 #### Suggestions ####
 
