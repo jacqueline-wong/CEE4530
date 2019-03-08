@@ -50,32 +50,20 @@ Figure 3: Plots of estimated k̂<sub>v,l</sub> against airflow rates.
 The oxygen transfer efficiency can be calculated using the equation
 $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
 
+![OTE](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/OTE.png)
+
 ```python
 R = 8.314 * u.J/u.mol/ u.K
 OD = 6 * u.mg/u.L
-OTE = (k_vl * OD * V * R * T)/(MW_O2 * Q_air * P_air * f_O2)
+MW_O2 = 32 * u.g/u.mol
+V = 750 * u.mL
+f_O2 = 0.21
+OTE = (k_vl * OD * V * R * T)/(MW_O2 * airflows * P_air * f_O2)
 plt.figure('ax',(10,7))
 plt.plot(airflows, OTE,'-')
 plt.xlabel(r'Airflow rate(μmol/s)')
 plt.ylabel(r'OTE')
 plt.savefig('Lab4/OTE.png')
-plt.show()
-```
-
-```python
-C_model = np.zeros(airflows.size)
-for i in range(len(time_data)):
-  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
-  C_model[i] = C.magnitude
-
-t_model = np.linspace(0,max(time_data[4]),len(C_model))
-plt.figure('ax',(10,7))
-plt.plot(time_data[4], DO_data[4],'-')
-plt.plot(t_model, C_model)
-plt.xlabel(r'time (s)')
-plt.ylabel(r'Oxygen concentration (mg/L)')
-leg = plt.legend(('Actual data', 'Model'), loc='best')
-plt.savefig('Lab4/model.png')
 plt.show()
 ```
 
