@@ -10,7 +10,7 @@ Please refer to Appendix for code used.
 
 ![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/DOsubset.png)
 
-Figure 1: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
+<b>Figure 1</b>: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. Generally, as airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
 
 <b> 3. Calculate C⋆ based on the average water temperature, barometric pressure, and the equation from environmental processes analysis called O2_sat. C⋆=PO2 exp(1727T−2.105) where T is in Kelvin, PO2 is the partial pressure of oxygen in atmospheres, and C⋆ is in mg/L.</b>
 
@@ -37,13 +37,17 @@ Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previou
 
 ![model](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/model.png)
 
-Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 225 µmol/s. The curve of actual data appears to be in a logarithmic-like shape, while the model is less curved.
+<b>Figure 2</b>: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 225 µmol/s.
+
+It can be seen that our model overestimates the time it takes to reaerate. Furthermore, we see that the curve for actual dissolved oxygen is less smooth compared to the curve for the model. This is expected due to uncertainties within the experiment and extraneous factors that we are unable to control.
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
 ![k_vl](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/k_vl.png)
 
-Figure 3: Plots of estimated k̂<sub>v,l</sub> against airflow rates.
+<b>Figure 3</b>: Plots of estimated k̂<sub>v,l</sub> against airflow rates.
+
+While there is not a clear trend, appears that apart from some anomalies, k̂<sub>v,l</sub> increases with airflow rate. This makes sense as the more air is pumped per unit time, the more oxygen is pumped and the greater the volumetric gas transfer coefficient.
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
@@ -52,14 +56,15 @@ $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air}
 
 ![OTE](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/OTE.png)
 
-Figure 4: Plots of oxygen transfer efficiency against airflow rates.
+<b>Figure 4</b>: Plots of oxygen transfer efficiency against airflow rates.
 
+While there is not a clear trend, appears that apart from some anomalies, oxygen transfer efficiency decreases with airflow rate. This makes sense as the more oxygen is pumped per unit time, the faster it rises and escapes into the air above the water.
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
 
-From Figure 4, the oxygen transfer efficiency is considerably low, and consistently below 50%. This is expected as the height of water and consequently the duration in which the oxygen can be dissolved into the water is very short. As a result, most of the oxygen will be released into the air. This would be lower; however, some of the oxygen released will remain above the water surface, causing there to be a higher concentration of oxygen in the air directly above the water surface. From Henry's law, we know that there will be increased transfer of oxygen from the air to the water.
+From <b>Figure 4</b>, the oxygen transfer efficiency is considerably low, and consistently below 50%. This is expected as the height of water and consequently the duration in which the oxygen can be dissolved into the water is very short. As a result, most of the oxygen will be released into the air directly above the water surface.
 
-A trend that I observed is that the greater the air flow rate, the greater the rate of increase in dissolved oxygen as shown in Figure 1. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes, with airflow of 100 μmol/s almost entirely linear. There is an exception with the air flow rate of 925µmol/s where the rate of increase in dissolved oxygen is actually lower than 525µmol/s and 700µmol/s. However, this may simply be a case where the experiment was not conducted properly and resulted in inaccurate data. Another trend is that the middle three curves are not jagged in shape whereas the two curves on either end is not, but rather smooth. This may simply be due to disruptions in the experiment or random uncertainties to do with the experimental apparatus.
+A general trend that we observed is that the greater the air flow rate, the greater the rate of increase in dissolved oxygen as shown in <b>Figure 1</b>. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes, with airflow of 100 μmol/s almost entirely linear. There is an exception with the air flow rate of 925µmol/s where the rate of increase in dissolved oxygen is actually lower than 525µmol/s and 700µmol/s. However, this may simply be a case where the experiment was not conducted properly and resulted in inaccurate data. Another trend is that the middle three curves are not jagged in shape whereas the two curves on either end is not, but rather smooth. This may simply be due to disruptions in the experiment or random uncertainties to do with the experimental apparatus.
 
 Another trend that I observed is that the greater the air flow rate, the lower the oxygen transfer efficiency. This is reasonable as the surface area with which oxygen can be transferred into the water is approximately the same for air flow rates; yet, even at low air flow rates, 100% oxygen transfer efficiency cannot be reached. Hence, by increasing the air flow rate and consequently increasing the oxygen available for transfer but not changing the rate at which oxygen can transfer will result in lower oxygen transfer efficiency.
 
@@ -69,9 +74,9 @@ A change to the experimental apparatus that would increase the efficiency is usi
 
 <b> 10. Verify that your report and graphs meet the requirements.</b>
 
-Verified.
+We have verified that the report and graphs meet the requirements.
 
-<b> Discussion </b>
+#### Discussion ####
 
 To record data with ProCoDA, we must understand how it works as ProCoDA works in a specific manner. There are several stages before we could record data, one of which ProCoDA is "prepare to calibrate" and "calibrate". The experiment begins from the "prepare to calibrate" state. The "prepare to calibrate" state will switch to the "calibrate" state when the accumulator pressure is greater than the minimum calibration pressure given the data average interval of 0.1 s. After calibration, ProCoDA will switch to the "Pause" state. This happens when the accumulator pressure is greater than the maximum calibration pressure given the data average interval of 0.1 s. The way that ProCoDA knows to switch the "Pause" state to next state, which is "Aerate" is through the "New Rule" in ProCoDA, when elapsed time in the current state is greater than the elapsed time to calibrate to aeration lag.
 
@@ -79,7 +84,7 @@ Given that multiple states require the maximum calibration pressure to determine
 
 $$\frac{\text{max cal}}{\text{source}} \times \text{source pressure}$$
 
-This is better than using a constant for the maximum calibration pressure as the source pressure may change. 
+This is better than using a constant for the maximum calibration pressure as the source pressure may change.
 
 Another important calculation that we need to know is the predicted pressure in the accumulator when it is filled at a constant mass flow rate. ProCoDA calculates this for us by using the air flow model. Its inputs are minimum calibration pressure, maximum calibration pressure and fill time. Using the ramp function, it goes from minimum pressure to maximum pressure over the fill time linearly. The equation is as follows:
 
@@ -91,13 +96,13 @@ To show our understanding of the ProCoDA program, we have also written a ProCoDA
 
 #### Conclusions ####
 
-
+Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration and the lower the oxygen transfer efficiency.
 
 #### Suggestions ####
 
 As mentioned in Question 9, using a larger container but filling the same volume of water is beneficial to the experiment. The problem with the current experimental apparatus is that water often has a chance to overflow at high air flow rates, which would disrupt our experiment. To counter for this, we are forced to used lower air flow rates. By using a larger container but filling the same volume of water, it would increase the efficiency because a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
 
-Another suggestion is 
+Another suggestion is to include more pictures and diagrams in the instructions. We felt that pictures of different components and diagrams would have clarified some of the instructions and made it easier for us to follow the instructions step-by-step. This would have enabled us to complete the experiment with less mistakes and with greater efficiency.
 
 #### Appendix ####
 
