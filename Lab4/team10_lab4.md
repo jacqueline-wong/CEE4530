@@ -41,15 +41,9 @@ Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model agai
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
-```python
-plt.figure('ax',(10,7))
-plt.plot(airflows, k_vl,'-')
-plt.xlabel(r'Airflow rate (μmol/s)')
-plt.ylabel(r'k_v,l (1/s)')
-plt.savefig('Lab4/k_vl.png')
-plt.show()
-```
-Figure 3: Plots of k̂<sub>v,l</sub> against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
+![k_vl](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/k_vl.png)
+
+Figure 3: Plots of k̂<sub>v,l</sub> against airflow rates.
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
@@ -255,6 +249,13 @@ plt.savefig('Lab4/model.png')
 plt.show()
 
 # Question 6
+
+plt.figure('ax',(10,7))
+plt.plot(airflows, k_vl,'-')
+plt.xlabel(r'Airflow rate (μmol/s)')
+plt.ylabel(r'k_v,l (1/s)')
+plt.savefig('Lab4/k_vl.png')
+plt.show()
 
 # Question 7
 
