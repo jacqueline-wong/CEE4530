@@ -35,9 +35,9 @@ $$ C = C^{* } - (C^{* } - C_0)e^{-\hat{k}_{v,l}\text{ }t} $$
 
 Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used. We will be using the airflow at 225.0 µmol/s as the representative plot.
 
-![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/model.png)
+![model](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/model.png)
 
-Figure 2: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
+Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 225 µmol/s. The curve of actual data appears to be in a logarithmic-like shape, while the model is less curved.
 
 ```python
 C_model = np.zeros(airflows.size)
