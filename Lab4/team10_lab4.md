@@ -25,20 +25,7 @@ As the datasets have been manipulated such that the start of each aeration begin
 
 $$\ln \frac{C^{* } -C}{C^{* } -C_{0} } =-\hat{k}_{v,l}\text{ }t$$
 
-The equation can be linearized by plotting $\ln \frac{C^{* } -C}{C^{* } -C_{0} }$ against $t$. $-\hat{k}_{v,l}$ can be found by taking the negative of the slope.
-
-```python
-k_vl = np.zeros(23)
-for i in range(airflows.size):
-  C_0 = DO_data[i][0]
-  DO_data_temp = DO_data[i]
-  x = time_data[i]
-  y = np.log((C_star - DO_data_temp)/(C_star - C_0)).magnitude
-  slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
-  k_vl[i] = -slope
-
-k = k_vl / u.sec
-```
+The equation can be linearized by plotting $\ln \frac{C^{* } -C}{C^{* } -C_{0} }$ against $t$. $-\hat{k}_{v,l}$ can be found by taking the negative of the slope. Please refer to Appendix for code used.
 
 <b> 5. Create a graph with a representative plot showing the model curve (as a smooth curve) and the data from one experiment. You will need to derive the equation for the concentration of oxygen as a function of time based on equation (103).</b>
 
@@ -54,11 +41,11 @@ C_model = (C_star - np.exp((-k[4]*time_data[4])
 
 plt.figure('ax',(10,7))
 plt.plot(time_data[4], DO_data[4],'-')
-plt.plot(time_data[4], C_model,'-')
+#plt.plot(time_data[4], C_model,'-')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
-leg = plt.legend('Actual data', 'Model curve') loc='best')
-plt.savefig('Lab5/model.png')
+leg = plt.legend('Actual data', loc='best')
+plt.savefig('Lab4/model.png')
 plt.show()
 ```
 
@@ -230,9 +217,20 @@ C_star
 
 # Question 4
 
+k_vl = np.zeros(23)
+for i in range(airflows.size):
+  C_0 = DO_data[i][0]
+  DO_data_temp = DO_data[i]
+  x = time_data[i]
+  y = np.log((C_star - DO_data_temp)/(C_star - C_0)).magnitude
+  slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+  k_vl[i] = -slope
+
+k = k_vl / u.sec
+
 # Question 5
 
 # Question 6
 
-
+# Question 7
 ```
