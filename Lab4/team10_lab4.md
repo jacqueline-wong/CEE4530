@@ -43,7 +43,7 @@ Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model agai
 
 ![k_vl](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/k_vl.png)
 
-Figure 3: Plots of k̂<sub>v,l</sub> against airflow rates.
+Figure 3: Plots of estimated k̂<sub>v,l</sub> against airflow rates.
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
 
@@ -51,13 +51,31 @@ The oxygen transfer efficiency can be calculated using the equation
 $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
 
 ```python
-R = 8.314*u.Joules/(u.g*u.mol*u.Kelvin)
-OTE = (k_vl*(C_star-C)*V*R*T)/(MW_O2*Q_air*P_air*f_O2)
+R = 8.314 * u.J/u.mol/ u.K
+OD = 6 * u.mg/u.L
+OTE = (k_vl * OD * V * R * T)/(MW_O2 * Q_air * P_air * f_O2)
 plt.figure('ax',(10,7))
-plt.plot(, OTE,'-')
+plt.plot(airflows, OTE,'-')
 plt.xlabel(r'Airflow rate(μmol/s)')
 plt.ylabel(r'OTE')
 plt.savefig('Lab4/OTE.png')
+plt.show()
+```
+
+```python
+C_model = np.zeros(airflows.size)
+for i in range(len(time_data)):
+  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
+  C_model[i] = C.magnitude
+
+t_model = np.linspace(0,max(time_data[4]),len(C_model))
+plt.figure('ax',(10,7))
+plt.plot(time_data[4], DO_data[4],'-')
+plt.plot(t_model, C_model)
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
+leg = plt.legend(('Actual data', 'Model'), loc='best')
+plt.savefig('Lab4/model.png')
 plt.show()
 ```
 
