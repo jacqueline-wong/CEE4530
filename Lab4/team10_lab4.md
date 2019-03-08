@@ -33,13 +33,13 @@ From the previous question, equation (103) can be further rearranged to be expre
 
 $$ C = C^{* } - (C^{* } - C_0)e^{-\hat{k}_{v,l}\text{ }t} $$
 
-Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used. We will be using the airflow at 225.0 µmol/s as the representative plot.
+Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used. We will be using the airflow at 250.0 µmol/s as the representative plot.
 
 ![model](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/model.png)
 
-<b>Figure 2</b>: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 225 µmol/s.
+<b>Figure 2</b>: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 250 µmol/s.
 
-It can be seen that our model overestimates the time it takes to reaerate. Furthermore, we see that the curve for actual dissolved oxygen is less smooth compared to the curve for the model. This is expected due to uncertainties within the experiment and extraneous factors that we are unable to control.
+It can be seen that our model fits very well with the data.
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
@@ -98,7 +98,7 @@ To show our understanding of the ProCoDA program, we have also written a ProCoDA
 
 #### Conclusions ####
 
-Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration, the greater the volume gas transfer coefficient and the lower the oxygen transfer efficiency. Furthermore, it was found that the actual aeration process actually requires less time than predicted by our model.
+Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration, the greater the volume gas transfer coefficient and the lower the oxygen transfer efficiency. Furthermore, it was found that our model fits very well with the data.
 
 #### Suggestions ####
 
@@ -220,16 +220,15 @@ for i in range(airflows.size):
 k = k_vl / u.sec
 
 # Question 5
-
-C_model = np.zeros(airflows.size)
-for i in range(len(time_data)):
-  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]))
+n = 6
+C_model = np.zeros(len(time_data[n]))
+for i in range(len(time_data[n])):
+  C = C_star-(C_star-DO_data[n][0])*np.exp((-k[n]*time_data[n][i]))
   C_model[i] = C.magnitude
 
-t_model = np.linspace(0,max(time_data[4]),len(C_model))
-plt.figure('ax',(10,7))
-plt.plot(time_data[4], DO_data[4],'o')
-plt.plot(t_model, C_model)
+plt.figure('ax',(5,4))
+plt.plot(time_data[n], DO_data[n],'o')
+plt.plot(time_data[n], C_model)
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend(('Actual data', 'Model'), loc='best')
