@@ -35,23 +35,37 @@ $$ C = C^{* } - (C^{* } - C_0)e^{-\hat{k}_{v,l}\text{ }t} $$
 
 Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previously estimated, the above rearrangement can be used. We will be using the airflow at 225.0 µmol/s as the representative plot.
 
+![DO](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/model.png)
+
+Figure 2: Plots of dissolved oxygen against time for airflows of 100, 225, 525, 700 and 925 µmol/s. As airflow increases, less time is taken to reach saturated oxygen level. Each curve appears to be in a logarithmic-like shape, but lower airflows result in more linear-like shapes.
+
 ```python
 C_model = np.zeros(airflows.size)
-for i in range(airflows.size):
-  C_model[i] = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude + np.log((C_star - C_0).magnitude))
+for i in range(len(time_data)):
+  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
+  C_model[i] = C.magnitude
 
+t_model = np.linspace(0,max(time_data[4]),len(C_model))
 plt.figure('ax',(10,7))
 plt.plot(time_data[4], DO_data[4],'-')
-plt.plot(time_data[4], C_model,'-')
+plt.plot(t_model, C_model)
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
-leg = plt.legend('Actual data', loc='best')
+leg = plt.legend(('Actual data', 'Model'), loc='best')
 plt.savefig('Lab4/model.png')
 plt.show()
 ```
 
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
+```python
+plt.figure('ax',(10,7))
+plt.plot(airflows, k_vl,'-')
+plt.xlabel(r'Airflow rate(μmol/s)')
+plt.ylabel(r'k_v,l')
+plt.savefig('Lab4/k_vl.png')
+plt.show()
+```
 Figure 2: Plots of k̂<sub>v,l</sub> against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
 
 <b> 7. Plot OTE as a function of airflow rate (μmol/s) with the oxygen deficit (C⋆−C) set at 6 mg/L.</b>
@@ -59,6 +73,16 @@ Figure 2: Plots of k̂<sub>v,l</sub> against airflow rate for airflows of 100, 2
 The oxygen transfer efficiency can be calculated using the equation
 $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air} f_{O_{2} }}$$
 
+```python
+R = 8.314*u.Joules/(u.g*u.mol*u.Kelvin)
+OTE = (k_vl*(C_star-C)*V*R*T)/(MW_O2*Q_air*P_air*f_O2)
+plt.figure('ax',(10,7))
+plt.plot(, OTE,'-')
+plt.xlabel(r'Airflow rate(μmol/s)')
+plt.ylabel(r'OTE')
+plt.savefig('Lab4/OTE.png')
+plt.show()
+```
 
 Figure 3: Plots of dissolved oxygen transfer efficiency against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
 
@@ -235,6 +259,5 @@ k = k_vl / u.sec
 # Question 6
 
 # Question 7
-R = 8.314*u.
-OTE = (k_vl*(C_star-C)*V*R*T)/()
+
 ```
