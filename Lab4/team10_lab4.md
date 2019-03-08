@@ -39,23 +39,6 @@ Given that C* and C<sub>0</sub> are constants, and k̂<sub>v,l</sub> was previou
 
 Figure 2: Plots of actual dissolved oxygen and model dissolved oxygen model against time for airflow of 225 µmol/s. The curve of actual data appears to be in a logarithmic-like shape, while the model is less curved.
 
-```python
-C_model = np.zeros(airflows.size)
-for i in range(len(time_data)):
-  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
-  C_model[i] = C.magnitude
-
-t_model = np.linspace(0,max(time_data[4]),len(C_model))
-plt.figure('ax',(10,7))
-plt.plot(time_data[4], DO_data[4],'-')
-plt.plot(t_model, C_model)
-plt.xlabel(r'time (s)')
-plt.ylabel(r'Oxygen concentration (mg/L)')
-leg = plt.legend(('Actual data', 'Model'), loc='best')
-plt.savefig('Lab4/model.png')
-plt.show()
-```
-
 <b> 6. Plot k̂<sub>v,l</sub> as a function of airflow rate (μmol/s).</b>
 
 ```python
@@ -255,6 +238,21 @@ for i in range(airflows.size):
 k = k_vl / u.sec
 
 # Question 5
+
+C_model = np.zeros(airflows.size)
+for i in range(len(time_data)):
+  C = C_star-(C_star-C_0)*np.exp((-k[4]*time_data[4][i]).magnitude)
+  C_model[i] = C.magnitude
+
+t_model = np.linspace(0,max(time_data[4]),len(C_model))
+plt.figure('ax',(10,7))
+plt.plot(time_data[4], DO_data[4],'-')
+plt.plot(t_model, C_model)
+plt.xlabel(r'time (s)')
+plt.ylabel(r'Oxygen concentration (mg/L)')
+leg = plt.legend(('Actual data', 'Model'), loc='best')
+plt.savefig('Lab4/model.png')
+plt.show()
 
 # Question 6
 
