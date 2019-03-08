@@ -1,6 +1,6 @@
 # Lab 4 for CEE 4530
 
-#### Team 10: Victor Khong & Jacqueline Wong ####
+#### Team 10: Victor Khong (8 hours) & Jacqueline Wong (12 hours) ####
 
 <b> 1. Eliminate the data from each data set when the dissolved oxygen concentration was less than 2 mg/L. This will ensure that all of the sulfite has reacted. Also remove the data when the dissolved oxygen concentration was greater than 6 mg/L to reduce the effect of measurement errors when the oxygen deficit is small.</b>
 
@@ -58,7 +58,7 @@ $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air}
 
 <b>Figure 4</b>: Plots of oxygen transfer efficiency against airflow rates.
 
-While there is not a clear trend, appears that apart from some anomalies, oxygen transfer efficiency decreases with airflow rate. This makes sense as the more oxygen is pumped per unit time, the faster it rises and escapes into the air above the water.
+While there is not a clear simple trend, appears that apart from some anomalies, oxygen transfer efficiency decreases with airflow rate. This makes sense as the more oxygen is pumped per unit time, the faster it rises and escapes into the air above the water. It also matches with the above equation.
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
 
@@ -70,7 +70,7 @@ Another trend that observed is that the greater the air flow rate, the lower the
 
 <b> 9. Propose a change to the experimental apparatus that would increase the efficiency.</b>
 
-A change to the experimental apparatus that would increase the efficiency is using a deeper and less wide container but filling the same volume of water such that a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50 µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
+A change to the experimental apparatus that would increase the efficiency is using a deeper and less wide container but filling the same volume of water such that a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a slight greater rate with a higher airflow rate. More importantly, this will increase the surface area with which the oxygen comes into direct contact with the water, increasing the time for which the oxygen is able to transfer into the water. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50 µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
 
 <b> 10. Verify that your report and graphs meet the requirements.</b>
 
@@ -96,11 +96,13 @@ To show our understanding of the ProCoDA program, we have also written a ProCoDA
 
 #### Conclusions ####
 
-Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration and the lower the oxygen transfer efficiency. Furthermore, it was found that the actual aeration process actually requires less time than predicted by our model.
+Overall, for this experiment, we found out that the greater the air flow rate, the greater the rate of increase in dissolved oxygen concentration, the greater the volume gas transfer coefficient and the lower the oxygen transfer efficiency. Furthermore, it was found that the actual aeration process actually requires less time than predicted by our model.
 
 #### Suggestions ####
 
 As mentioned in Question 9, using a larger container but filling the same volume of water is beneficial to the experiment. The problem with the current experimental apparatus is that water often has a chance to overflow at high air flow rates, which would disrupt our experiment. To counter for this, we are forced to used lower air flow rates. By using a larger container but filling the same volume of water, it would increase the efficiency because a larger airflow rate could be used without the water overflowing from the container and disrupting our results. This would enable us to test for more airflow rates since the dissolved oxygen concentration increases at a greater rate with a higher airflow rate. However, since we still would like to test a range of airflow rate values, each airflow rate value currently used in this experiment can be increased by the same magnitude, for example by 50µmol/s or by 50%. This change in experimental apparatus would also enable us to test for a larger range of airflow rate values so there is greater flexibility in choosing the air flow rate values.
+
+As seen in Figures 3 and 4, there were some anomalies in the experiment that made it difficult to identify trends. Perhaps we should consider having each group stick to one airflow rate but repeating the experiment 3 times for that airflow. In other words, we feel that repeating the experiment would increase the reliability of our results, especially since we see from our graphs, that the values fluctuate a lot.
 
 Another suggestion is to include more pictures and diagrams in the instructions. We felt that pictures of different components and diagrams would have clarified some of the instructions and made it easier for us to follow the instructions step-by-step. This would have enabled us to complete the experiment with less mistakes and with greater efficiency.
 
@@ -183,11 +185,11 @@ for i in range(airflows.size):
 # Question 2
 
 plt.figure('ax',(10,7))
-plt.plot(time_data[0], DO_data[0],'-')
-plt.plot(time_data[4], DO_data[4],'-')
-plt.plot(time_data[11], DO_data[11],'-')
-plt.plot(time_data[15], DO_data[15],'-')
-plt.plot(time_data[22], DO_data[22],'-')
+plt.plot(time_data[0], DO_data[0],'o')
+plt.plot(time_data[4], DO_data[4],'o')
+plt.plot(time_data[11], DO_data[11],'o')
+plt.plot(time_data[15], DO_data[15],'o')
+plt.plot(time_data[22], DO_data[22],'o')
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
 leg = plt.legend((airflows[0].magnitude,airflows[4].magnitude,airflows[11].magnitude,airflows[15].magnitude,airflows[22].magnitude), loc='best')
@@ -224,7 +226,7 @@ for i in range(len(time_data)):
 
 t_model = np.linspace(0,max(time_data[4]),len(C_model))
 plt.figure('ax',(10,7))
-plt.plot(time_data[4], DO_data[4],'-')
+plt.plot(time_data[4], DO_data[4],'o')
 plt.plot(t_model, C_model)
 plt.xlabel(r'time (s)')
 plt.ylabel(r'Oxygen concentration (mg/L)')
@@ -235,7 +237,7 @@ plt.show()
 # Question 6
 
 plt.figure('ax',(10,7))
-plt.plot(airflows, k_vl,'-')
+plt.plot(airflows, k_vl,'o')
 plt.xlabel(r'Airflow rate (μmol/s)')
 plt.ylabel(r'k_v,l (1/s)')
 plt.savefig('Lab4/k_vl.png')
@@ -250,7 +252,7 @@ V = 750 * u.mL
 f_O2 = 0.21
 OTE = (k_vl * OD * V * R * T)/(MW_O2 * airflows * P_air * f_O2)
 plt.figure('ax',(10,7))
-plt.plot(airflows, OTE,'-')
+plt.plot(airflows, OTE,'o')
 plt.xlabel(r'Airflow rate(μmol/s)')
 plt.ylabel(r'OTE')
 plt.savefig('Lab4/OTE.png')
