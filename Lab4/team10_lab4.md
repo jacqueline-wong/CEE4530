@@ -52,22 +52,7 @@ $$OTE=\frac{\hat{k}_{v,l} \left(C^{* } -C\right)VRT}{MW_{O_{2} } Q_{air} P_{air}
 
 ![OTE](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab4/OTE.png)
 
-```python
-R = 8.314 * u.J/u.mol/ u.K
-OD = 6 * u.mg/u.L
-MW_O2 = 32 * u.g/u.mol
-V = 750 * u.mL
-f_O2 = 0.21
-OTE = (k_vl * OD * V * R * T)/(MW_O2 * airflows * P_air * f_O2)
-plt.figure('ax',(10,7))
-plt.plot(airflows, OTE,'-')
-plt.xlabel(r'Airflow rate(μmol/s)')
-plt.ylabel(r'OTE')
-plt.savefig('Lab4/OTE.png')
-plt.show()
-```
-
-Figure 4: Plots of dissolved oxygen transfer efficiency against airflow rate for airflows of 100, 225, 525, 700 and 925 µmol/s.
+Figure 4: Plots of oxygen transfer efficiency against airflow rates.
 
 
 <b> 8. Comment on the oxygen transfer efficiency and the trend or trends that you observe.</b>
@@ -265,4 +250,16 @@ plt.show()
 
 # Question 7
 
+R = 8.314 * u.J/u.mol/ u.K
+OD = 6 * u.mg/u.L
+MW_O2 = 32 * u.g/u.mol
+V = 750 * u.mL
+f_O2 = 0.21
+OTE = (k_vl * OD * V * R * T)/(MW_O2 * airflows * P_air * f_O2)
+plt.figure('ax',(10,7))
+plt.plot(airflows, OTE,'-')
+plt.xlabel(r'Airflow rate(μmol/s)')
+plt.ylabel(r'OTE')
+plt.savefig('Lab4/OTE.png')
+plt.show()
 ```
