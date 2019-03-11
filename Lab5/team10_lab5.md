@@ -1,8 +1,10 @@
 # Lab 5 for CEE 4530
 
-## Team 10: Victor Khong (8 hours) & Jacqueline Wong (12 hours) ##
+## Team 10: Victor Khong (x hours) & Jacqueline Wong (x hours) ##
 
-<u>Using data from Irene Sarri & Felix Yang </u>
+# Notes
+
+CMFR is open
 
 ### Introduction and Objectives ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs when snow from acid precipitation accumulates in winter, which melts and runs off into the lakes in spring.
