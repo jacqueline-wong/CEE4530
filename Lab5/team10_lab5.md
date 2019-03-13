@@ -1,19 +1,45 @@
-# Lab 5 for CEE 4530
+# Water Quality Modelling for Conservative Contaminant Transport in Rivers and Lakes #
+
+## Lab 5 for CEE 4530 ##
 
 ## Team 10: Victor Khong (x hours) & Jacqueline Wong (x hours) ##
 
-# Notes
+##### Notes #####
 
-CMFR is open
+For CMFR:
+
+- 2547 g
+- 1074 g
+
+For 2 CMFR:
+
+
+
+For 3 CMFR:
+
+- 3490 kg
+- 1267 g
+
+For 4 CMFR:
+
+-
+
+Baffles:
+
+- 5 mm diameter
+- 4 x 6 = 24 orifices in parallel.
 
 ### Introduction and Objectives ###
-Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are concerned about the large seasonal inputs of acids into lakes in the Adirondack region of New York State, as the acid neutralizing capacity (ANC) may not be sufficient to neutralize these inputs. This occurs when snow from acid precipitation accumulates in winter, which melts and runs off into the lakes in spring.
+Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are interested in modelling
 
-Our clients have presented our research laboratory with the specific case of Wolf Pond, one such lake in the Adirondacks which is of concern. The main objectives of this study are to:
+various lakes in rivers ...
+CMFR for lakes, and various plug-flow rivers/streams of various sizes.
+concern about contaminant transport
+
+The main objectives of this study are to:
 
 1. Create a model which simulates what happens to Wolf Pond during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
-2. Determine the changes in the acid neutralizing capacity of Wolf Pond over time.
-3. Determine if ANC follows a volatile or nonvolatile model.
+2. Determine ...
 
 Put theory here.
 
@@ -148,6 +174,6 @@ plt.show()
 From this experiment, it was found that ...
 
 ### Suggestions ###
-Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a clearer picture of the set up was shown instead. From the one provided, it was difficult to tell which components were supposed to connect to each other. Furthermore, the instructions should provide more detail to ensure that the probe is in the right place as we had to repeat our experiments multiple times due to this mistake.
+Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a clearer picture of the set up was shown instead. From the one provided, it was difficult to tell which components were supposed to connect to each other, especially with the peristaltic pump. Furthermore, the instructions should provide more detail to ensure that the probe is in the right place as we had to repeat our experiments multiple times due to this mistake.
 
 ### Appendix ###
