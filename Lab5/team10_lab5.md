@@ -13,7 +13,8 @@ For CMFR:
 
 For 2 CMFR:
 
-
+- 3592 g
+- 1168 g
 
 For 3 CMFR:
 
@@ -22,7 +23,8 @@ For 3 CMFR:
 
 For 4 CMFR:
 
--
+- 2298 g
+- 1371 g
 
 Baffles:
 
