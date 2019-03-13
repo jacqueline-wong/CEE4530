@@ -28,7 +28,7 @@ Taking this retardation factor, the time it takes for the mass transfer zone to 
 
 $$t_{mtz} = R_{adsorption} \times t_{water}$$
 
-Thus, the time it takes for the mass transfer zone to travel to the bottom of the carbon column, $t_{mtz}$, is <b>xx seconds</b>.
+Thus, the time it takes for the mass transfer zone to travel to the bottom of the carbon column, $t_{mtz}$, is about <b>33.3 hours</b>.
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -42,11 +42,10 @@ dist = 15 * u.cm
 t_water = dist / vel_pore
 
 rho_b = 0.5 * u.g/u.cm**3
-C_0 = 0.050 * u.g/u.L
+C_0 = 50 * u.mg/u.L
 q_0 = 0.080
 R_ads = (q_0 * rho_b)/(phi * C_0)
 
 t_mtz = R_ads * t_water
-
-t_mtz.to(u.min)
+t_mtz.to(u.hour)
 ```
