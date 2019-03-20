@@ -48,4 +48,8 @@ R_ads = (q_0 * rho_b)/(phi * C_0)
 
 t_mtz = R_ads * t_water
 t_mtz.to(u.hour)
+
+mass_AC = 29.342 * u.g
+mass_dye = q_0 * mass_AC
+vol_dye = mass_dye * 0.050 * u.g/L
 ```
