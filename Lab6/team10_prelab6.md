@@ -1,6 +1,6 @@
 # Prelab 6 for CEE 4530
 
-### Team 10: Victor Khong (x hours) & Jacqueline Wong (1.5 hours) ###
+### Team 10: Victor Khong (1 hours) & Jacqueline Wong (1.5 hours) ###
 
 <b> 1. A carbon column is packed with 15 cm of activated carbon and then used to remove 50 mg/L of red dye #40. The approach velocity is 1 mm/s, the porosity is 0.4, and the bulk density of the activated carbon is 0.5 g/cm3. How long will it take for the mass transfer zone to travel to the bottom of the carbon column? </b>
 
@@ -8,11 +8,11 @@ According to equation (89), the relationship between the velocity in the pores a
 
 $$\phi v_{pore} = v_a$$
 
-This can be arranged to find velocity in the pores:
+This can be rearranged to find the velocity in the pores:
 
 $$v_{pore} = \frac{v_a}{\phi}$$
 
-As the length of the column is 15 cm, the time it takes for the water to travel to the bottom of the carbon column is:
+As we know that the length of the column is 15 cm, the time it takes for the water to travel to the bottom of the carbon column can be calculated with the following equation:
 
 $$ t_{water} = \frac{distance}{v_{pore}}$$
 
@@ -28,7 +28,7 @@ Taking this retardation factor, the time it takes for the mass transfer zone to 
 
 $$t_{mtz} = R_{adsorption} \times t_{water}$$
 
-Thus, the time it takes for the mass transfer zone to travel to the bottom of the carbon column, $t_{mtz}$, is about <b>33.3 hours</b>.
+Thus, the time it takes for the mass transfer zone to travel to the bottom of the carbon column, $t_{mtz}$, is about $$33.3 hours$$.
 
 ```python
 from aguaclara.core.units import unit_registry as u
