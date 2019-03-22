@@ -91,7 +91,7 @@ CMFR_1_CMFR = epa.Solver_CMFR_N(CMFR_1_time_data, CMFR_1_concentration_data, CMF
 print('The model estimated mass of tracer injected was',ut.round_sf((CMFR_1_CMFR.C_bar*CMFR_1_V).to(u.mg) ,2) )
 print('The model estimate of the number of reactors in series was', CMFR_1_CMFR.N)
 print('The tracer residence time was',ut.round_sf(CMFR_1_CMFR.theta ,2))
-print('The ratio of tracer to hydraulic residence time was',(CMFR_CMFR.theta/CMFR_theta_hydraulic).magnitude)
+print('The ratio of tracer to hydraulic residence time was',(CMFR_1_CMFR.theta/CMFR_1_theta_hydraulic).magnitude)
 
 #create a model curve given the curve fit parameters.
 
