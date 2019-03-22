@@ -22,6 +22,7 @@ import aguaclara.core.utility as ut
 mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
 Pump_rpm = 10 * u.revolution/u.min
 Q_reddye = Pump_rpm * mLperrev_Tubing_17
+Q_reddye.to(u.mL/u.sec)
 vol = 20 * u.L
 exp_time = vol/Q_reddye
 exp_time.to(u.hour)
