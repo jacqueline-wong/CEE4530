@@ -63,7 +63,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-CMFR_path = 'https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/CMFR_example.xls'
+CMFR_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_1.xls'
 
 # find the row after the last note in the file. This assumes that the last note marks the beginning of the test.
 epa.notes(CMFR_path)
