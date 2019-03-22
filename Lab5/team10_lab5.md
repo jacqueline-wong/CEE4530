@@ -63,12 +63,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
 
-CMFR_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_1.xls'
-
-# find the row after the last note in the file. This assumes that the last note marks the beginning of the test.
-epa.notes(CMFR_path)
-CMFR_firstrow = epa.notes(CMFR_path).last_valid_index() + 1
-CMFR_firstrow
+CMFR_1_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_1.xls'
+epa.notes(CMFR_1_path)
+CMFR_1_firstrow = epa.notes(CMFR_1_path).last_valid_index() + 1
+CMFR_1_firstrow
 
 #I eliminate the beginning of the data file because this is a CMFR and the
 #first data was taken before the dye reached the sensor. Note that eliminating
