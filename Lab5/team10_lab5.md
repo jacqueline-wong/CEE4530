@@ -95,9 +95,9 @@ print('The ratio of tracer to hydraulic residence time was',(CMFR_1_CMFR.theta/C
 
 #create a model curve given the curve fit parameters.
 
-CMFR_CMFR_model = CMFR_CMFR.C_bar * epa.E_CMFR_N(CMFR_time_data/CMFR_CMFR.theta,CMFR_CMFR.N)
-plt.plot(CMFR_time_data.to(u.min), CMFR_concentration_data.to(u.mg/u.L),'r')
-plt.plot(CMFR_time_data.to(u.min), CMFR_CMFR_model,'b')
+CMFR_1_CMFR_model = CMFR_1_CMFR.C_bar * epa.E_CMFR_N(CMFR_1_time_data/CMFR_1_CMFR.theta,CMFR_1_CMFR.N)
+plt.plot(CMFR_1_time_data.to(u.min), CMFR_1_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_1_time_data.to(u.min), CMFR_1_CMFR_model,'b')
 
 plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
@@ -106,6 +106,8 @@ plt.savefig('Lab5/CMFR1.png')
 plt.show()
 
 #Load a data file for a reactor with baffles.
+
+####### HERE ONWARDS IS JUST MONROE EXAMPLE
 
 one_baffle_path = 'https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/Dispersion_example.xls'
 one_baffle_firstrow = epa.notes(one_baffle_path).last_valid_index() + 1
