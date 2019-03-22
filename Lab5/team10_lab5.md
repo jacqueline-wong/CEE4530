@@ -96,9 +96,9 @@ print('The ratio of tracer to hydraulic residence time was',(CMFR_1_CMFR.theta/C
 #create a model curve given the curve fit parameters.
 
 CMFR_1_CMFR_model = CMFR_1_CMFR.C_bar * epa.E_CMFR_N(CMFR_1_time_data/CMFR_1_CMFR.theta,CMFR_1_CMFR.N)
+
 plt.plot(CMFR_1_time_data.to(u.min), CMFR_1_concentration_data.to(u.mg/u.L),'r')
 plt.plot(CMFR_1_time_data.to(u.min), CMFR_1_CMFR_model,'b')
-
 plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model'])
@@ -109,7 +109,7 @@ plt.show()
 
 ####### HERE ONWARDS IS JUST MONROE EXAMPLE
 
-one_baffle_path = 'https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/Dispersion_example.xls'
+zone_baffle_path = 'https://raw.githubusercontent.com/monroews/CEE4530/master/Examples/data/Dispersion_example.xls'
 one_baffle_firstrow = epa.notes(one_baffle_path).last_valid_index() + 1
 one_baffle_time_data = (epa.column_of_time(one_baffle_path,one_baffle_firstrow,-1)).to(u.s)
 one_baffle_concentration_data = epa.column_of_data(one_baffle_path,one_baffle_firstrow,1,-1,'mg/L')
