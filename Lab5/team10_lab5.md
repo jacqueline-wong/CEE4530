@@ -31,7 +31,12 @@ Put theory here.
 
 ### Results and Discussion ###
 
-...
+1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
+3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
+Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
+4. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
+5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -160,6 +165,8 @@ plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR3.png')
 plt.show()
+
+############################
 
 CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
 CMFR_4_firstrow = epa.notes(CMFR_4_path).last_valid_index() + 1
