@@ -6,21 +6,6 @@
 
 ##### Notes #####
 
-For 2 CMFR:
-
-- 3592 g
-- 1168 g
-
-For 3 CMFR:
-
-- 3490 kg
-- 1267 g
-
-For 4 CMFR:
-
-- 2298 g
-- 1371 g
-
 Baffles:
 
 - 5 mm diameter
@@ -142,7 +127,7 @@ CMFR_3_time_data = (epa.column_of_time(CMFR_3_path,CMFR_3_firstrow,-1)).to(u.s)
 CMFR_3_concentration_data = epa.column_of_data(CMFR_3_path,CMFR_3_firstrow,1,-1,'mg/L')
 
 CMFR_3_concentration_data = CMFR_3_concentration_data - CMFR_3_concentration_data[0]
-CMFR_3_mass = 3592 * u.g - 1168 * u.g
+CMFR_3_mass = 3490 * u.g - 1267 * u.g
 CMFR_3_V = CMFR_1_mass/rho
 CMFR_3_Q = 380 * u.mL/u.min
 CMFR_3_theta_hydraulic = (CMFR_3_V/CMFR_3_Q).to(u.s)
@@ -178,12 +163,12 @@ plt.show()
 
 CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
 CMFR_4_firstrow = epa.notes(CMFR_4_path).last_valid_index() + 1
-CMFR_4_firstrow = CMFR_4_firstrow + 80
+CMFR_4_firstrow = CMFR_4_firstrow + 90
 CMFR_4_time_data = (epa.column_of_time(CMFR_4_path,CMFR_4_firstrow,-1)).to(u.s)
 CMFR_4_concentration_data = epa.column_of_data(CMFR_4_path,CMFR_4_firstrow,1,-1,'mg/L')
 
 CMFR_4_concentration_data = CMFR_4_concentration_data - CMFR_4_concentration_data[0]
-CMFR_4_mass = 3592 * u.g - 1168 * u.g
+CMFR_4_mass = 2298 * u.g - 1371 * u.g
 CMFR_4_V = CMFR_1_mass/rho
 CMFR_4_Q = 380 * u.mL/u.min
 CMFR_4_theta_hydraulic = (CMFR_4_V/CMFR_4_Q).to(u.s)
