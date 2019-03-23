@@ -175,6 +175,47 @@ plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR3.png')
 plt.show()
+
+CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
+CMFR_4_firstrow = epa.notes(CMFR_4_path).last_valid_index() + 1
+CMFR_4_firstrow = CMFR_4_firstrow + 80
+CMFR_4_time_data = (epa.column_of_time(CMFR_4_path,CMFR_4_firstrow,-1)).to(u.s)
+CMFR_4_concentration_data = epa.column_of_data(CMFR_4_path,CMFR_4_firstrow,1,-1,'mg/L')
+
+CMFR_4_concentration_data = CMFR_4_concentration_data - CMFR_4_concentration_data[0]
+CMFR_4_mass = 3592 * u.g - 1168 * u.g
+CMFR_4_V = CMFR_1_mass/rho
+CMFR_4_Q = 380 * u.mL/u.min
+CMFR_4_theta_hydraulic = (CMFR_4_V/CMFR_4_Q).to(u.s)
+CMFR_4_C_bar_guess = np.max(CMFR_4_concentration_data)/2
+
+CMFR_4_CMFR = epa.Solver_CMFR_N(CMFR_4_time_data, CMFR_4_concentration_data, CMFR_4_theta_hydraulic, CMFR_4_C_bar_guess)
+CMFR_4_CMFR.C_bar
+CMFR_4_CMFR.N
+CMFR_4_CMFR.theta.to(u.s)
+
+CMFR_4_CMFR_model = (CMFR_4_CMFR.C_bar*epa.E_CMFR_N(CMFR_4_time_data/CMFR_4_CMFR.theta, CMFR_4_CMFR.N)).to(u.mg/u.L)
+
+CMFR_4_AD = epa.Solver_AD_Pe(CMFR_4_time_data, CMFR_4_concentration_data, CMFR_4_theta_hydraulic, CMFR_4_C_bar_guess)
+CMFR_4_AD.C_bar
+CMFR_4_AD.Pe
+CMFR_4_AD.theta
+
+print('The model estimated mass of tracer injected was',ut.round_sf(CMFR_4_AD.C_bar*CMFR_4_V ,2) )
+print('The model estimate of the Peclet number was', CMFR_4_AD.Pe)
+print('The tracer residence time was',ut.round_sf(CMFR_4_AD.theta ,2))
+print('The ratio of tracer to hydraulic residence time was',(CMFR_4_AD.theta/CMFR_4_theta_hydraulic).magnitude)
+
+CMFR_4_AD_model = (CMFR_4_AD.C_bar*epa.E_Advective_Dispersion((CMFR_4_time_data/CMFR_4_AD.theta).to_base_units(), CMFR_4_AD.Pe)).to(u.mg/u.L)
+
+plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_CMFR_model,'b')
+plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_AD_model,'g')
+plt.xlabel(r'$time (min)$')
+plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
+plt.legend(['Measured dye','CMFR Model', 'AD Model'])
+plt.savefig('Lab5/CMFR4.png')
+plt.show()
 ```
 
 ### Conclusions ###
