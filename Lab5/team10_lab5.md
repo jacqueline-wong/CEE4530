@@ -106,7 +106,7 @@ CMFR_2_V = CMFR_1_mass/rho
 CMFR_2_Q = 380 * u.mL/u.min
 CMFR_2_theta_hydraulic = (CMFR_2_V/CMFR_2_Q).to(u.s)
 CMFR_2_C_bar_guess = np.max(CMFR_2_concentration_data)/2
-#use solver to get the CMFR parameters
+
 CMFR_2_CMFR = epa.Solver_CMFR_N(CMFR_2_time_data, CMFR_2_concentration_data, CMFR_2_theta_hydraulic, CMFR_2_C_bar_guess)
 CMFR_2_CMFR.C_bar
 CMFR_2_CMFR.N
