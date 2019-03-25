@@ -31,10 +31,12 @@ Put theory here.
 
 ### Results and Discussion ###
 
-Using multivariable nonlinear regression, a best fit was obtained by minimising the sum of squared errors between the experimental data and to models.
+Using multivariable nonlinear regression, a best fit between the experimental data and two models was obtained by minimising the sum of squared errors. This was done by using curve-fitting functions written by the programmers of our firm, called "epa.Solver_AD_Pe" for the advective dispersion model and "epa.Solver_CMFR_N" for the completely-mixed flow reactors in series.
 
+Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... cannot fit curve.
 
-1. Use multivariable nonlinear regression to obtain the best fit between the experimental data and the two models by minimizing the sum of the squared errors. Use epa.Solver_AD_Pe and epa.Solver_CMFR_N. These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+
 2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
