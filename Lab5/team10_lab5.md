@@ -29,19 +29,25 @@ Put theory here.
 
 ...
 
+Using multivariable nonlinear regression, a best fit between the experimental data and two models was obtained by minimising the sum of squared errors. This was done by using curve-fitting functions written by the programmers of our firm, called "epa.Solver_AD_Pe" for the advective dispersion model and "epa.Solver_CMFR_N" for the completely-mixed flow reactors in series. These functions minimise the errors by varying the values of average residence time $\theta$, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+
 ### Results and Discussion ###
 
-Using multivariable nonlinear regression, a best fit between the experimental data and two models was obtained by minimising the sum of squared errors. This was done by using curve-fitting functions written by the programmers of our firm, called "epa.Solver_AD_Pe" for the advective dispersion model and "epa.Solver_CMFR_N" for the completely-mixed flow reactors in series.
+![CMFR1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1.png)
+Figure 1: Graph of dye concentration against time for the actual measured dye in one CMFR reactor and its corresponding CMFR model.
+
+For the first experiment with one CMFR, it appears that the actual data does not fit well on the CMFR model, although the start and end points correspond well. The change in actual measured dye concentrations is more steep.
+
+![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
+Figure 2: Graph of dye concentration against time for the actual measured dye in one CMFR reactor, its corresponding CMFR model and its corresponding adversive dispersion model.
 
 Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... cannot fit curve.
 
-These functions will minimize the error by varying the values of average residence time, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
-
-2. Generate a plot showing the experimental data as points and the model results as thin lines for each of your experiments. Explain which model fits best and discuss those results based on your expectations.
+<b> 2. Explain which model fits best and discuss those results based on your expectations...
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
 4. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
-5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.
+5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.</b>
 
 ```python
 from aguaclara.core.units import unit_registry as u
