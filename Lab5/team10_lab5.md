@@ -170,7 +170,7 @@ plt.show()
 
 CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
 CMFR_4_firstrow = epa.notes(CMFR_4_path).last_valid_index() + 1
-CMFR_4_firstrow = CMFR_4_firstrow + 90
+CMFR_4_firstrow = CMFR_4_firstrow + 10
 CMFR_4_time_data = (epa.column_of_time(CMFR_4_path,CMFR_4_firstrow,-1)).to(u.s)
 CMFR_4_concentration_data = epa.column_of_data(CMFR_4_path,CMFR_4_firstrow,1,-1,'mg/L')
 
@@ -201,8 +201,8 @@ print('The ratio of tracer to hydraulic residence time was',(CMFR_4_AD.theta/CMF
 CMFR_4_AD_model = (CMFR_4_AD.C_bar*epa.E_Advective_Dispersion((CMFR_4_time_data/CMFR_4_AD.theta).to_base_units(), CMFR_4_AD.Pe)).to(u.mg/u.L)
 
 plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_concentration_data.to(u.mg/u.L),'r')
-plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_CMFR_model,'b')
-plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_AD_model,'g')
+#plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_CMFR_model,'b')
+#plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_AD_model,'g')
 plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
