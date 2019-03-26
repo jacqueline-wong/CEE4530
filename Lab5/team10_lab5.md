@@ -43,11 +43,10 @@ For the second experiment with one baffle placed in the reactor, it appears that
 ![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
 Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advective dispersion model.
 
-
 ![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advective dispersion model.
 
-Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... cannot fit curve.
+Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... 
 
 ![CMFR4](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
