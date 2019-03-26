@@ -33,15 +33,24 @@ Using multivariable nonlinear regression, a best fit between the experimental da
 
 ### Results and Discussion ###
 
+For the first experiment with one CMFR, it appears that the actual data does not fit well on the CMFR model, although the start and end points correspond well (Figure 1). Here, the initial decrease in actual measured dye concentrations is much greater than the model.
+
 ![CMFR1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1.png)
 Figure 1: Graph of dye concentration against time for the actual measured dye in one CMFR reactor and its corresponding CMFR model.
 
-For the first experiment with one CMFR, it appears that the actual data does not fit well on the CMFR model, although the start and end points correspond well. The change in actual measured dye concentrations is more steep.
+For the second experiment with one baffle placed in the reactor, it appears that ...
 
 ![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
-Figure 2: Graph of dye concentration against time for the actual measured dye in one CMFR reactor, its corresponding CMFR model and its corresponding adversive dispersion model.
+Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advective dispersion model.
+
+
+![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
+Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advective dispersion model.
 
 Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... cannot fit curve.
+
+![CMFR4](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4.png)
+Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
 
 <b> 2. Explain which model fits best and discuss those results based on your expectations...
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
