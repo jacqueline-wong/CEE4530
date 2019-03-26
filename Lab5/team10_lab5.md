@@ -11,19 +11,44 @@ Baffles:
 - 5 mm diameter
 - 4 x 6 = 24 orifices in parallel.
 
-### Introduction and Objectives ###
-Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. They are interested in modelling
-
-various lakes in rivers ...
-CMFR for lakes, and various plug-flow rivers/streams of various sizes.
-concern about contaminant transport
-
+### Introduction ###
+Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. The New York State Department of Environmental Conservation are concerned with the contaminants that have been released into the lakes and rivers by the industry and our clients have been asked to figure out methods to remove the contaminants. For easy analysis, they have modelled the various contaminated lakes and rivers in the New York State as flow reactors in order to decide what actions should be taken, namely CMFR, PFR and flow dispersion reactor. However, they would like to explore how to model the contaminant under the different types of flow reactors.
 The main objectives of this study are to:
+1.	Determine the time taken for contaminant to be removed in the different types of flow reactors
+2.	Understand how contaminants flow through each of the flow reactors and model them to a high degree of accuracy
+3.	Confirm which flow reactor results in the removal of contaminants the quickest
+CMFR and PFR are both well-known standardized flow reactors. They can be modeled with equations quite simply. The mass balance for the CMFR is given in equation (52).
+$$\rlap{-} V _{r} \frac{dC}{dt} =\left(C_{in} -C\right)Q$$
 
-1. Create a model which simulates what happens to Wolf Pond during snow melt, assuming it acts as a Completely Mixed Flow Reactor (CMFR).
-2. Determine ...
+Assuming the initial concentration of tracer in the reactor is $C_{0} =\frac{C_{tr} \rlap{-} V _{tr} }{\rlap{-} V _{r} }$ and the input concentration is zero $(C_{in} = 0)$, the solution to the differential equation above is equation (53).
 
-Put theory here.
+$$E_{\left(t\right)}=\frac{C_t{\rlap{-} V }_r}{C_{tr}{\rlap{-} V }_{tr}}=e^{\left(-t/\theta \right)}$$
+
+The dimensionless form of the above equation is given by equation (54).
+
+$$E_{\left(t^{\star} \right)} =\frac{C_{\left(t^{\star} \right)} \rlap{-} V _{r} }{C_{tr} \rlap{-} V _{tr} } ={\mathop{e}\nolimits^{\left(-t^{\star} \right)}}$$
+
+Similarly, the same can be done for PFR. The advection-diffusion equation for PFR is represented by equation (55).
+$$\frac{\partial C}{\partial t} =-U\frac{\partial C}{\partial x}$$
+
+The flow dispersion reactor is slightly more complicated. It resembles lakes and rivers more accurately and is a mix between the CMFR and PFR as is the case with lakes and rivers. There are two models for arbitrary mixing level. Assuming open boundary conditions, the advectional-dispersion equation is given by equation (56)
+$$\frac{\partial C}{\partial t} ={\rm \; -U}\frac{\partial C}{\partial x} +{\rm \; D}_{{\rm d}} \frac{\partial ^{2} C}{\partial x^{2}}$$
+
+Given complete mixing in the y-z plane and advective and dispersive transport only in the x direction, the above differential equation is resolved into equation (57).
+
+$${\rm C(x,t)\; }={\rm \; }\frac{M}{A\sqrt{4\pi D_{d} t} } \exp \left[\frac{-x'^{2} }{4D_{d} t} \right]$$
+
+This can be converted into dimensionless form as in equation (63).
+
+$$E_{\left(t^{\star} \right)} =\sqrt{\frac{Pe}{4\pi t^{\star} } } \exp \left[\frac{-\left(1-t^{\star} \right)^{2} Pe}{4t^{\star} } \right]$$
+
+The Peclet number for the open boundary condition and the closed boundary condition is also different. The Peclet number for the open boundary condition is given by equation (58).
+
+$$Pe=\frac{UL}{D_{d}}$$
+
+For the closed boundary condition, the Peclet number is given by equation (69)
+
+$$Pe=2N$$
 
 ### Procedures ###
 
@@ -46,7 +71,7 @@ Figure 2: Graph of dye concentration against time for the actual measured dye in
 ![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advective dispersion model.
 
-Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data... 
+Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data...
 
 ![CMFR4](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
