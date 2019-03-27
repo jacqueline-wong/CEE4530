@@ -4,13 +4,6 @@
 
 ## Team 10: Victor Khong (x hours) & Jacqueline Wong (x hours) ##
 
-##### Notes #####
-
-Baffles:
-
-- 5 mm diameter
-- 4 x 6 = 24 orifices in parallel.
-
 ### Introduction ###
 
 Our clients, Dr. Monroe Weber-Shirk, Jonathan Harris and Lily Falk work under the New York State Department of Environmental Conservation. The New York State Department of Environmental Conservation are concerned with the contaminants that have been released into the lakes and rivers by the industry and our clients have been asked to figure out methods to remove the contaminants. For easy analysis, they have modeled the various contaminated lakes and rivers in the New York State as flow reactors in order to decide what actions should be taken, namely CMFR, PFR and flow dispersion reactor. However, they would like to explore how to model the contaminant under the different types of flow reactors. Furthermore, they are interested in designing a reactor and a deep understanding of the different types of flow reactors is needed to do so.
@@ -113,16 +106,19 @@ Estimated values of N were calculated from the CMFR model while estimated values
 
 While it is difficult to compare the values of N and Pe since only data collected two experiments were able to fit into the curve models, it appears that the N for the estimated number of reactors for the one baffle experiment is 2, which is expected, while the N for the two baffle experiment is 2.3. It is good that this number is larger than that for two baffles, but we expected it to be closer to 3. On the other hand, for the Peclet numbers, they appear to be about the same.
 
-
 #### Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations? ####
 
-tstar for 2 baffles = 1.92 minutes
+10 seconds
+15 seconds
+15 seconds
+35 seconds
+
+Explanation, attach graphs
+...
 
 In our reactor, there was no evidence of "short circuiting". The influent was mixed throughout most of the container before flowing out as effluent as different parts of the flow reactor was seen to turn red visibly. There was no evidence of red dye seeping between the wall of the reactor and the baffle instead of flowing through the orifices. This was one of the reason we decided to use red dye as our contaminant.
 
 However, there was some evidence of "dead volumes". During the running of the experiment, the red dye took much longer to reach the corner of the container. This is because this volume does not mix with the rest of the volume in the container well. This would have affected the experiment in some ways. We tried to counter this problem by including a magnetic stirrer. However, in reality, there are "dead volumes" in lakes and rivers so we are not too worried about the fact that there are "dead volumes" in our flow reactor.
-
-5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.</b>
 
 To design a full scale chlorine tank, we would need to determine the size of the flow reactor, the diameter and the head loss across each orifice on the baffles, the number of orifices on each baffles, and the number of baffles. The goal of a chlorine contact tank is to maximize the inactivation of pathogens by maximizing the contact time between the chlorine and the pathogens before the water is sent to the distribution system. A large flow reactor would make for a better full scale chlorine contact tank.
 
@@ -154,6 +150,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy import stats
+
+C_tracer = 10 * u.mg/u.L
+V_tracer = 0.8 * u.mL
 
 CMFR_1_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_1.xls'
 epa.notes(CMFR_1_path)
@@ -191,7 +190,7 @@ plt.legend(['Measured dye','CMFR Model'])
 plt.savefig('Lab5/CMFR1.png')
 plt.show()
 
-CMFR_1_E = ((CMFR_1_concentration_data*CMFR_1_V)/(CMFR_1_CMFR.C_bar*CMFR_1_V)).to(u.dimensionless)
+CMFR_1_E = ((CMFR_1_concentration_data*CMFR_1_V)/(C_tracer*V_tracer)).to(u.dimensionless)
 CMFR_1_dimensionless_time = CMFR_1_time_data/CMFR_1_theta_hydraulic
 plt.plot(CMFR_1_dimensionless_time.to(u.dimensionless), CMFR_1_E.to(u.dimensionless),'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -207,7 +206,7 @@ for i in range (CMFR_1_E.size):
   else:
     print("F is over 0.1 at " +str(CMFR_1_dimensionless_time[i]))
 
-CMFR_1_tstar = (0.8574*CMFR_1_theta_hydraulic).to(u.min)
+CMFR_1_tstar = (0.04288*CMFR_1_theta_hydraulic).to(u.seconds)
 CMFR_1_tstar
 plt.plot(CMFR_1_dimensionless_time.to(u.dimensionless), CMFR_1_F,'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -256,6 +255,30 @@ plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR2.png')
 plt.show()
 
+CMFR_2_E = ((CMFR_2_concentration_data*CMFR_2_V)/(C_tracer*V_tracer*1/3)).to(u.dimensionless)
+CMFR_2_dimensionless_time = CMFR_2_time_data/CMFR_2_theta_hydraulic
+plt.plot(CMFR_2_dimensionless_time.to(u.dimensionless), CMFR_2_E.to(u.dimensionless),'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR2_CMFR_E.png')
+plt.show()
+
+CMFR_2_F = np.zeros(CMFR_2_E.size)
+for i in range (CMFR_2_E.size):
+  CMFR_2_F[i] = np.trapz(CMFR_2_E[0:i], CMFR_2_dimensionless_time[0:i])
+  if CMFR_2_F[i] <.1:
+    print("F is not over 0.1 at " +str(CMFR_2_dimensionless_time[i]))
+  else:
+    print("F is over 0.1 at " +str(CMFR_2_dimensionless_time[i]))
+
+CMFR_2_tstar = (0.06431*CMFR_1_theta_hydraulic).to(u.seconds)
+CMFR_2_tstar
+plt.plot(CMFR_2_dimensionless_time.to(u.dimensionless), CMFR_2_F,'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'F')
+plt.savefig('Lab5/CMFR2_CMFR_F.png')
+plt.show()
+
 CMFR_3_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_3.xls'
 CMFR_3_firstrow = epa.notes(CMFR_3_path).last_valid_index() + 1
 CMFR_3_firstrow = CMFR_3_firstrow + 10
@@ -297,7 +320,7 @@ plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR3.png')
 plt.show()
 
-CMFR_3_E = ((CMFR_3_concentration_data*CMFR_3_V)/(CMFR_3_CMFR.C_bar*CMFR_3_V)).to(u.dimensionless)
+CMFR_3_E = ((CMFR_3_concentration_data*CMFR_3_V)/(C_tracer*V_tracer*1/2)).to(u.dimensionless)
 CMFR_3_dimensionless_time = CMFR_3_time_data/CMFR_3_theta_hydraulic
 plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_E.to(u.dimensionless),'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -313,7 +336,7 @@ for i in range (CMFR_3_E.size):
   else:
     print("F is over 0.1 at " +str(CMFR_3_dimensionless_time[i]))
 
-CMFR_3_tstar = (0.493*CMFR_3_theta_hydraulic).to(u.min)
+CMFR_3_tstar = (0.06431*CMFR_3_theta_hydraulic).to(u.seconds)
 CMFR_3_tstar
 plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_F,'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -361,4 +384,33 @@ plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR4.png')
 plt.show()
+
+CMFR_4_E = ((CMFR_4_concentration_data*CMFR_4_V)/(C_tracer*V_tracer*1/4)).to(u.dimensionless)
+CMFR_4_dimensionless_time = CMFR_4_time_data/CMFR_4_theta_hydraulic
+plt.plot(CMFR_4_dimensionless_time.to(u.dimensionless), CMFR_4_E.to(u.dimensionless),'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR4_CMFR_E.png')
+plt.show()
+
+CMFR_4_F = np.zeros(CMFR_4_E.size)
+for i in range (CMFR_4_E.size):
+  CMFR_4_F[i] = np.trapz(CMFR_4_E[0:i], CMFR_4_dimensionless_time[0:i])
+  if CMFR_4_F[i] <.1:
+    print("F is not over 0.1 at " +str(CMFR_4_dimensionless_time[i]))
+  else:
+    print("F is over 0.1 at " +str(CMFR_4_dimensionless_time[i]))
+
+CMFR_3_tstar = (0.1501*CMFR_3_theta_hydraulic).to(u.seconds)
+CMFR_3_tstar
+plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_F,'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'F')
+plt.savefig('Lab5/CMFR3_CMFR_F.png')
+plt.show()
 ```
+
+Baffles:
+
+- 5 mm diameter
+- 4 x 6 = 24 orifices in parallel.
