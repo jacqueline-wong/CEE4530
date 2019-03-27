@@ -12,7 +12,8 @@ Baffles:
 - 4 x 6 = 24 orifices in parallel.
 
 ### Introduction ###
-Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. The New York State Department of Environmental Conservation are concerned with the contaminants that have been released into the lakes and rivers by the industry and our clients have been asked to figure out methods to remove the contaminants. For easy analysis, they have modelled the various contaminated lakes and rivers in the New York State as flow reactors in order to decide what actions should be taken, namely CMFR, PFR and flow dispersion reactor. However, they would like to explore how to model the contaminant under the different types of flow reactors.
+
+Our clients, Dr. Monroe Weber-Shirk, Jonathan Harris and Lily Falk work under the New York State Department of Environmental Conservation. The New York State Department of Environmental Conservation are concerned with the contaminants that have been released into the lakes and rivers by the industry and our clients have been asked to figure out methods to remove the contaminants. For easy analysis, they have modelled the various contaminated lakes and rivers in the New York State as flow reactors in order to decide what actions should be taken, namely CMFR, PFR and flow dispersion reactor. However, they would like to explore how to model the contaminant under the different types of flow reactors.
 
 The main objectives of this study are to:
 
@@ -22,15 +23,15 @@ The main objectives of this study are to:
 CMFR and PFR are both well-known standardized flow reactors. They can be modeled with equations quite simply.
 
 The mass balance for the CMFR is given in equation (52).
-$$\rlap{-} V _{r} \frac{dC}{dt} =\left(C_{in} -C\right)Q$$
+$$\rlap{-} V_{r} \frac{dC}{dt} =\left(C_{in} -C\right)Q$$
 
-Assuming the initial concentration of tracer in the reactor is $C_{0} =\frac{C_{tr} \rlap{-} V _{tr} }{\rlap{-} V _{r} }$ and the input concentration is zero $(C_{in} = 0)$, the solution to the differential equation above is equation (53).
+Assuming the initial concentration of tracer in the reactor is $C_{0} =\frac{C_{tr} \rlap{-} V_{tr} }{\rlap{-} V_{r} }$ and the input concentration is zero $(C_{in} = 0)$, the solution to the differential equation above is equation (53).
 
 $$E_{\left(t\right)}=\frac{C_t{\rlap{-} V }_r}{C_{tr}{\rlap{-} V }_{tr}}=e^{\left(-t/\theta \right)}$$
 
 The dimensionless form of the above equation is given by equation (54).
 
-$$E_{\left(t^{\star} \right)} =\frac{C_{\left(t^{\star} \right)} \rlap{-} V _{r} }{C_{tr} \rlap{-} V _{tr} } ={\mathop{e}\nolimits^{\left(-t^{\star} \right)}}$$
+$$E_{\left(t^{\star} \right)} =\frac{C_{\left(t^{\star} \right)} \rlap{-} V_{r} }{C_{tr} \rlap{-} V_{tr} } ={\mathop{e}\nolimits^{\left(-t^{\star} \right)}}$$
 
 Similarly, the same can be done for PFR. The advection-diffusion equation for PFR is represented by equation (55).
 $$\frac{\partial C}{\partial t} =-U\frac{\partial C}{\partial x}$$
@@ -38,7 +39,7 @@ $$\frac{\partial C}{\partial t} =-U\frac{\partial C}{\partial x}$$
 The flow dispersion reactor is slightly more complicated. It resembles lakes and rivers more accurately and is a mix between the CMFR and PFR as is the case with lakes and rivers. There are two models for arbitrary mixing level. Assuming open boundary conditions, the advectional-dispersion equation is given by equation (56)
 $$\frac{\partial C}{\partial t} ={\rm \; -U}\frac{\partial C}{\partial x} +{\rm \; D}_{{\rm d}} \frac{\partial ^{2} C}{\partial x^{2}}$$
 
-Given complete mixing in the y-z plane and advective and dispersive transport only in the x direction, the above differential equation is resolved into equation (57).
+Given complete mixing in the y-z plane and advection and dispersive transport only in the x direction, the above differential equation is resolved into equation (57).
 
 $${\rm C(x,t)\; }={\rm \; }\frac{M}{A\sqrt{4\pi D_{d} t} } \exp \left[\frac{-x'^{2} }{4D_{d} t} \right]$$
 
@@ -60,7 +61,7 @@ In our experiment, we used red dye as our contaminant. The reason we chose red d
 
 ...
 
-Using multivariable nonlinear regression, a best fit between the experimental data and two models was obtained by minimising the sum of squared errors. This was done by using curve-fitting functions written by the programmers of our firm, called "epa.Solver_AD_Pe" for the advective dispersion model and "epa.Solver_CMFR_N" for the completely-mixed flow reactors in series. These functions minimise the errors by varying the values of average residence time $\theta$, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
+Using multivariable nonlinear regression, a best fit between the experimental data and two models was obtained by minimising the sum of squared errors. This was done by using curve-fitting functions written by the programmers of our firm, called "epa.Solver_AD_Pe" for the advection dispersion model and "epa.Solver_CMFR_N" for the completely-mixed flow reactors in series. These functions minimise the errors by varying the values of average residence time $\theta$, (mass of tracer/reactor volume), and either the number of CMFR in series or the Peclet number.
 
 ### Results and Discussion ###
 
@@ -69,35 +70,41 @@ For the first experiment with one CMFR, it appears that the actual data does not
 ![CMFR1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1.png)
 Figure 1: Graph of dye concentration against time for the actual measured dye in one CMFR reactor and its corresponding CMFR model.
 
-For the second experiment with one baffle placed in the reactor, the measured dye concentration appears to remain stagnant from 100 to 180 minutes (Figure 2). This was likely due to an air bubble being trapped in the photometer, which resulted in the later spike. While it is difficult to tell which model is better suited due to poor data, the first 100 minutes follows the CMFR model better than the AD model.
+For the second experiment with one baffle placed in the reactor, the measured dye concentration appears to remain stagnant between 1-3 minutes (Figure 2). This was likely due to an air bubble being trapped in the photometer, which resulted in the later spike. While it is difficult to tell which model is better suited due to poor data, the first minute follows the CMFR model better than the AD model.
 
 ![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
-Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advective dispersion model.
+Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advection dispersion model.
 
 For the third experiment with two identical baffles placed in the reactor, the measured dye concentration indeed appears to fit the CMFR model much better than the AD model (Figure 3).  
 
 ![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
-Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advective dispersion model.
+Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advection dispersion model.
 
-Unfortunately for the fourth and final experiment with three identical baffles placed in the reactor, there was an error with data collection, likely due to a trapped air bubble, as measured dye concentration dropped at around 75 minutes...
- case with four CMFR reactors in series (using three baffles in between), data... dip and spike could not fit to curve model.
-(steady inital slope suggests)
+Unfortunately for the fourth and final experiment with three identical baffles placed in the reactor, there was an error with data collection, likely due to a trapped air bubble, as measured dye concentration dropped at around the first minute and spiked at about the second minute (Figure 4). This poor quality data resulted in the measured dye points being unable to fit both the CMFR model nor the AD model. However, the initial slop was constant and later decreases, suggesting a similar shape to that of a CMFR model.
 
 ![CMFR4](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4.png)
-Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
+Figure 4: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
 
-<b> 2. Explain which model fits best and discuss those results based on your expectations...
+Despite, some spikes and data collection errors due to issues such as air bubbles being trapped in the photometer, it appears that the CMFR model fit better than the AD model across the relevant experiments. This was expected since our reactor resembles a closed boundary system more than an open boundary system, since the reactor is has a much larger volume and different diffusion or dispersion coefficient compared to the entrance or exit.
+
+Estimated values of N were calculated from the CMFR model while estimated values of Pe were calculated from the AD model. For the second experiment, which had one baffle placed in the reactor, N = 2.30 while Pe = 0.010. For the third experiment, which had two identical baffles placed in the reactor, N = 2.09 while Pe = 0.010.
+
+Unfortunately due to ,
+
+they cannot be well-compared.
+
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
 4. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
 5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.</b>
 
 
-
 ### Conclusions ###
-From this experiment, it was found that ...
+
+From this experiment, it was found that the CMFR model fit best... Not good at modelling rivers.
 
 ### Suggestions ###
+
 Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a clearer picture of the set up was shown instead. From the one provided, it was difficult to tell which components were supposed to connect to each other, especially with the peristaltic pump. Furthermore, the instructions should provide more detail to ensure that the probe is in the right place as we had to repeat our experiments multiple times due to this mistake. In particular, the instructions should also specify that the photometer should be placed behind the last baffle for the PFR experiment. Although this is intuitive, we made the mistake the first time we did it, which resulted in us having to repeat the experiment again.
 
 Our team also thinks that we can model the CMFR and PFR more accurately than we did in the experiment. With regards to CMFR, we believe that a container that is more “square” in shape would be better over the rectangular container we used. For the PFR, we felt that adding more baffles into the container would definitely be closer to the ideal PFR.
@@ -182,7 +189,7 @@ print('The model estimate of the Peclet number was', CMFR_2_AD.Pe)
 print('The tracer residence time was',ut.round_sf(CMFR_2_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(CMFR_2_AD.theta/CMFR_2_theta_hydraulic).magnitude)
 
-CMFR_2_AD_model = (CMFR_2_AD.C_bar*epa.E_Advective_Dispersion((CMFR_2_time_data/CMFR_2_AD.theta).to_base_units(), CMFR_2_AD.Pe)).to(u.mg/u.L)
+CMFR_2_AD_model = (CMFR_2_AD.C_bar*epa.E_advection_Dispersion((CMFR_2_time_data/CMFR_2_AD.theta).to_base_units(), CMFR_2_AD.Pe)).to(u.mg/u.L)
 
 plt.plot(CMFR_2_time_data.to(u.min), CMFR_2_concentration_data.to(u.mg/u.L),'r')
 plt.plot(CMFR_2_time_data.to(u.min), CMFR_2_CMFR_model,'b')
@@ -223,7 +230,7 @@ print('The model estimate of the Peclet number was', CMFR_3_AD.Pe)
 print('The tracer residence time was',ut.round_sf(CMFR_3_AD.theta ,2))
 print('The ratio of tracer to hydraulic residence time was',(CMFR_3_AD.theta/CMFR_3_theta_hydraulic).magnitude)
 
-CMFR_3_AD_model = (CMFR_3_AD.C_bar*epa.E_Advective_Dispersion((CMFR_3_time_data/CMFR_3_AD.theta).to_base_units(), CMFR_3_AD.Pe)).to(u.mg/u.L)
+CMFR_3_AD_model = (CMFR_3_AD.C_bar*epa.E_advection_Dispersion((CMFR_3_time_data/CMFR_3_AD.theta).to_base_units(), CMFR_3_AD.Pe)).to(u.mg/u.L)
 
 plt.plot(CMFR_3_time_data.to(u.min), CMFR_3_concentration_data.to(u.mg/u.L),'r')
 plt.plot(CMFR_3_time_data.to(u.min), CMFR_3_CMFR_model,'b')
@@ -264,7 +271,7 @@ CMFR_4_C_bar_guess = np.max(CMFR_4_concentration_data)/2
 #print('The tracer residence time was',ut.round_sf(CMFR_4_AD.theta ,2))
 #print('The ratio of tracer to hydraulic residence time was',(CMFR_4_AD.theta/CMFR_4_theta_hydraulic).magnitude)
 
-#CMFR_4_AD_model = (CMFR_4_AD.C_bar*epa.E_Advective_Dispersion((CMFR_4_time_data/CMFR_4_AD.theta).to_base_units(), CMFR_4_AD.Pe)).to(u.mg/u.L)
+#CMFR_4_AD_model = (CMFR_4_AD.C_bar*epa.E_advection_Dispersion((CMFR_4_time_data/CMFR_4_AD.theta).to_base_units(), CMFR_4_AD.Pe)).to(u.mg/u.L)
 
 plt.plot(CMFR_4_time_data.to(u.min), CMFR_4_concentration_data.to(u.mg/u.L),'r')
 #plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_CMFR_model,'b')
