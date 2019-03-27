@@ -118,7 +118,27 @@ While it is difficult to compare the values of N and Pe since only data collecte
 
 ```python
 
-E =
+CMFR_3_E = ((CMFR_3_concentration_data*CMFR_3_V)/(CMFR_3_AD.C_bar*CMFR_3_V)).to(u.dimensionless)
+
+plt.plot((CMFR_3_time_data/CMFR_3_theta_hydraulic
+).to(u.dimensionless), CMFR_3_E.to(u.dimensionless),'r')
+plt.xlabel(r'$Residence Time $')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR3_CMFR_E.png')
+plt.show()
+
+CMFR_3_F = no.zeros(CMFR_3_E.size)
+for i in range (CMFR_3_E.size):
+
+AD_3_E = epa.E_Advective_Dispersion((CMFR_3_time_data/CMFR_3_AD.theta).to_base_units(), CMFR_3_AD.Pe)
+
+plt.plot((CMFR_3_time_data/CMFR_3_theta_hydraulic
+).to(u.dimensionless), AD_3_E.to(u.dimensionless),'r')
+plt.xlabel(r'$Residence Time $')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR3_AD_E.png')
+plt.show()
+
 
 ```
 
