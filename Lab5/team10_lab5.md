@@ -13,11 +13,15 @@ Baffles:
 
 ### Introduction ###
 Our clients, Dr. Monroe Weber-Shirk and Jonathan Harris, work under the New York State Department of Environmental Conservation. The New York State Department of Environmental Conservation are concerned with the contaminants that have been released into the lakes and rivers by the industry and our clients have been asked to figure out methods to remove the contaminants. For easy analysis, they have modelled the various contaminated lakes and rivers in the New York State as flow reactors in order to decide what actions should be taken, namely CMFR, PFR and flow dispersion reactor. However, they would like to explore how to model the contaminant under the different types of flow reactors.
+
 The main objectives of this study are to:
+
 1.	Determine the time taken for contaminant to be removed in the different types of flow reactors
 2.	Understand how contaminants flow through each of the flow reactors and model them to a high degree of accuracy
 3.	Confirm which flow reactor results in the removal of contaminants the quickest
-CMFR and PFR are both well-known standardized flow reactors. They can be modeled with equations quite simply. The mass balance for the CMFR is given in equation (52).
+CMFR and PFR are both well-known standardized flow reactors. They can be modeled with equations quite simply.
+
+The mass balance for the CMFR is given in equation (52).
 $$\rlap{-} V _{r} \frac{dC}{dt} =\left(C_{in} -C\right)Q$$
 
 Assuming the initial concentration of tracer in the reactor is $C_{0} =\frac{C_{tr} \rlap{-} V _{tr} }{\rlap{-} V _{r} }$ and the input concentration is zero $(C_{in} = 0)$, the solution to the differential equation above is equation (53).
@@ -50,6 +54,8 @@ For the closed boundary condition, the Peclet number is given by equation (69)
 
 $$Pe=2N$$
 
+In our experiment, we used red dye as our contaminant. The reason we chose red dye rather than other “contaminants” is because it is easy to perform the experiment with. It is non-toxic at low dosage and can be clearly seen by our eyes so we could make a good judgement as to when to stop the experiment. More importantly, it is inert and since we are exploring the physical process, it would be ideal for us to ignore any chemical processes of contaminants in the water. Different contaminants have different chemical reactions.
+
 ### Procedures ###
 
 ...
@@ -63,15 +69,19 @@ For the first experiment with one CMFR, it appears that the actual data does not
 ![CMFR1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1.png)
 Figure 1: Graph of dye concentration against time for the actual measured dye in one CMFR reactor and its corresponding CMFR model.
 
-For the second experiment with one baffle placed in the reactor, it appears that ...
+For the second experiment with one baffle placed in the reactor, the measured dye concentration appears to remain stagnant from 100 to 180 minutes (Figure 2). This was likely due to an air bubble being trapped in the photometer, which resulted in the later spike. While it is difficult to tell which model is better suited due to poor data, the first 100 minutes follows the CMFR model better than the AD model.
 
 ![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
 Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advective dispersion model.
 
+For the third experiment with two identical baffles placed in the reactor, the measured dye concentration indeed appears to fit the CMFR model much better than the AD model (Figure 3).  
+
 ![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advective dispersion model.
 
-Unfortunately for the case with four CMFR reactors in series (using three baffles in between), data...
+Unfortunately for the fourth and final experiment with three identical baffles placed in the reactor, there was an error with data collection, likely due to a trapped air bubble, as measured dye concentration dropped at around 75 minutes...
+ case with four CMFR reactors in series (using three baffles in between), data... dip and spike could not fit to curve model.
+(steady inital slope suggests)
 
 ![CMFR4](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4.png)
 Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with four baffles.
@@ -81,6 +91,20 @@ Figure 3: Graph of dye concentration against time for the actual measured dye in
 Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
 4. Evaluate whether there is any evidence of “dead volumes” or “short circuiting” in your reactor.
 5. Make a recommendation for the design of a full scale chlorine contact tank. As part of your recommendation discuss the parameter you chose to vary as part of your experimentation and what the optimal value was determined to be.</b>
+
+
+
+### Conclusions ###
+From this experiment, it was found that ...
+
+### Suggestions ###
+Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a clearer picture of the set up was shown instead. From the one provided, it was difficult to tell which components were supposed to connect to each other, especially with the peristaltic pump. Furthermore, the instructions should provide more detail to ensure that the probe is in the right place as we had to repeat our experiments multiple times due to this mistake. In particular, the instructions should also specify that the photometer should be placed behind the last baffle for the PFR experiment. Although this is intuitive, we made the mistake the first time we did it, which resulted in us having to repeat the experiment again.
+
+Our team also thinks that we can model the CMFR and PFR more accurately than we did in the experiment. With regards to CMFR, we believe that a container that is more “square” in shape would be better over the rectangular container we used. For the PFR, we felt that adding more baffles into the container would definitely be closer to the ideal PFR.
+
+Some other suggestions we had to expand on the experiment is to change the concentration of the red dye in the experiment to see whether the removal of contaminant is proportional to the concentration of contaminant in the water. It would also be a good idea to do the experiment using different contaminants other than red dye and see whether it would yield different results. This would also be helpful for us to see the accuracy of our model of the different types of flow reactors and consequently, their applicability in the lakes and rivers in the New York State and other places as well.
+
+### Appendix ###
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -160,9 +184,9 @@ print('The ratio of tracer to hydraulic residence time was',(CMFR_2_AD.theta/CMF
 
 CMFR_2_AD_model = (CMFR_2_AD.C_bar*epa.E_Advective_Dispersion((CMFR_2_time_data/CMFR_2_AD.theta).to_base_units(), CMFR_2_AD.Pe)).to(u.mg/u.L)
 
-plt.plot(CMFR_2_time_data.to(u.s), CMFR_2_concentration_data.to(u.mg/u.L),'r')
-plt.plot(CMFR_2_time_data.to(u.s), CMFR_2_CMFR_model,'b')
-plt.plot(CMFR_2_time_data.to(u.s), CMFR_2_AD_model,'g')
+plt.plot(CMFR_2_time_data.to(u.min), CMFR_2_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_2_time_data.to(u.min), CMFR_2_CMFR_model,'b')
+plt.plot(CMFR_2_time_data.to(u.min), CMFR_2_AD_model,'g')
 plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
@@ -201,16 +225,14 @@ print('The ratio of tracer to hydraulic residence time was',(CMFR_3_AD.theta/CMF
 
 CMFR_3_AD_model = (CMFR_3_AD.C_bar*epa.E_Advective_Dispersion((CMFR_3_time_data/CMFR_3_AD.theta).to_base_units(), CMFR_3_AD.Pe)).to(u.mg/u.L)
 
-plt.plot(CMFR_3_time_data.to(u.s), CMFR_3_concentration_data.to(u.mg/u.L),'r')
-plt.plot(CMFR_3_time_data.to(u.s), CMFR_3_CMFR_model,'b')
-plt.plot(CMFR_3_time_data.to(u.s), CMFR_3_AD_model,'g')
+plt.plot(CMFR_3_time_data.to(u.min), CMFR_3_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_3_time_data.to(u.min), CMFR_3_CMFR_model,'b')
+plt.plot(CMFR_3_time_data.to(u.min), CMFR_3_AD_model,'g')
 plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR3.png')
 plt.show()
-
-############################
 
 CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
 CMFR_4_firstrow = epa.notes(CMFR_4_path).last_valid_index() + 1
@@ -244,7 +266,7 @@ CMFR_4_C_bar_guess = np.max(CMFR_4_concentration_data)/2
 
 #CMFR_4_AD_model = (CMFR_4_AD.C_bar*epa.E_Advective_Dispersion((CMFR_4_time_data/CMFR_4_AD.theta).to_base_units(), CMFR_4_AD.Pe)).to(u.mg/u.L)
 
-plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_concentration_data.to(u.mg/u.L),'r')
+plt.plot(CMFR_4_time_data.to(u.min), CMFR_4_concentration_data.to(u.mg/u.L),'r')
 #plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_CMFR_model,'b')
 #plt.plot(CMFR_4_time_data.to(u.s), CMFR_4_AD_model,'g')
 plt.xlabel(r'$time (min)$')
@@ -253,11 +275,3 @@ plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR4.png')
 plt.show()
 ```
-
-### Conclusions ###
-From this experiment, it was found that ...
-
-### Suggestions ###
-Our team believes that while the experiment was successful, there were certain things that could be improved upon. One of the difficulties that we had with the experiment was with following the instructions, in particular setting up the experiment. We feel that this could have been made easier for us if a clearer picture of the set up was shown instead. From the one provided, it was difficult to tell which components were supposed to connect to each other, especially with the peristaltic pump. Furthermore, the instructions should provide more detail to ensure that the probe is in the right place as we had to repeat our experiments multiple times due to this mistake.
-
-### Appendix ###
