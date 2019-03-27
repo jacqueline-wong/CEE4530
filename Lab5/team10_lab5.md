@@ -65,20 +65,20 @@ Using multivariable nonlinear regression, a best fit between the experimental da
 
 ### Results and Discussion ###
 
-For the first experiment with one CMFR, it appears that the actual data does not fit well on the CMFR model, although the start and end points correspond well (Figure 1). Here, the initial decrease in actual measured dye concentrations is much greater than the model.
+For the first experiment with one CMFR, it appears that the actual data does not fit well on the CMFR model, although the start and end points correspond well (Figure 1). Here, the initial decrease in actual measured dye concentrations is much greater than the model. In this experiment,
 
 ![CMFR1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1.png)
 Figure 1: Graph of dye concentration against time for the actual measured dye in one CMFR reactor and its corresponding CMFR model.
 
-For the second experiment with one baffle placed in the reactor, the measured dye concentration appears to remain stagnant between 1-3 minutes (Figure 2). This was likely due to an air bubble being trapped in the photometer, which resulted in the later spike. While it is difficult to tell which model is better suited due to poor data, the first minute follows the CMFR model better than the AD model.
+For the second experiment with one baffle placed in the reactor, the measured dye concentration indeed appears to fit the CMFR model much better than the AD model (Figure 3).  
 
-![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
+![CMFR2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
 Figure 2: Graph of dye concentration against time for the actual measured dye in the reactor with one baffle, its corresponding CMFR model and advection dispersion model.
 
-For the third experiment with two identical baffles placed in the reactor, the measured dye concentration indeed appears to fit the CMFR model much better than the AD model (Figure 3).  
+For the third experiment with two baffles placed in the reactor, the measured dye concentration appears to remain stagnant between 1-3 minutes (Figure 2). This was likely due to an air bubble being trapped in the photometer, which resulted in the later spike. While it is difficult to tell which model is better suited due to poor data, the first minute follows the CMFR model better than the AD model.
 
-![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3.png)
-Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two baffles, its corresponding CMFR model and advection dispersion model.
+![CMFR3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2.png)
+Figure 3: Graph of dye concentration against time for the actual measured dye in the reactor with two identical baffle, its corresponding CMFR model and advection dispersion model.
 
 Unfortunately for the fourth and final experiment with three identical baffles placed in the reactor, there was an error with data collection, likely due to a trapped air bubble, as measured dye concentration dropped at around the first minute and spiked at about the second minute (Figure 4). This poor quality data resulted in the measured dye points being unable to fit both the CMFR model nor the AD model. However, the initial slop was constant and later decreases, suggesting a similar shape to that of a CMFR model.
 
@@ -87,11 +87,14 @@ Figure 4: Graph of dye concentration against time for the actual measured dye in
 
 Despite, some spikes and data collection errors due to issues such as air bubbles being trapped in the photometer, it appears that the CMFR model fit better than the AD model across the relevant experiments. This was expected since our reactor resembles a closed boundary system more than an open boundary system, since the reactor is has a much larger volume and different diffusion or dispersion coefficient compared to the entrance or exit.
 
-Estimated values of N were calculated from the CMFR model while estimated values of Pe were calculated from the AD model. For the second experiment, which had one baffle placed in the reactor, N = 2.30 while Pe = 0.010. For the third experiment, which had two identical baffles placed in the reactor, N = 2.09 while Pe = 0.010.
+Estimated values of N were calculated from the CMFR model while estimated values of Pe were calculated from the AD model. For the second experiment, which had one baffle placed in the reactor, N = 2.09 while Pe = 0.010. For the third experiment, which had two identical baffles placed in the reactor, N = 2.30 while Pe = 0.010.
+
+F = 0.1
 
 Unfortunately due to ,
 
 they cannot be well-compared.
+
 
 3. Compare the trends in the estimated values of N and Pe across your set of experiments. How did your chosen reactor modifications effect dispersion?
 Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations?
@@ -281,4 +284,10 @@ plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR4.png')
 plt.show()
+
+F_tstar = 0.1
+C_in = 30 * u.mg/u.L
+C_tstar = C_in*F_tstar
+C_tstar
+CMFR_1_concentration_data
 ```
