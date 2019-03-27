@@ -116,31 +116,7 @@ While it is difficult to compare the values of N and Pe since only data collecte
 
 #### Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations? ####
 
-```python
-
-CMFR_3_E = ((CMFR_3_concentration_data*CMFR_3_V)/(CMFR_3_AD.C_bar*CMFR_3_V)).to(u.dimensionless)
-
-plt.plot((CMFR_3_time_data/CMFR_3_theta_hydraulic
-).to(u.dimensionless), CMFR_3_E.to(u.dimensionless),'r')
-plt.xlabel(r'$Residence Time $')
-plt.ylabel(r'E')
-plt.savefig('Lab5/CMFR3_CMFR_E.png')
-plt.show()
-
-CMFR_3_F = no.zeros(CMFR_3_E.size)
-for i in range (CMFR_3_E.size):
-
-AD_3_E = epa.E_Advective_Dispersion((CMFR_3_time_data/CMFR_3_AD.theta).to_base_units(), CMFR_3_AD.Pe)
-
-plt.plot((CMFR_3_time_data/CMFR_3_theta_hydraulic
-).to(u.dimensionless), AD_3_E.to(u.dimensionless),'r')
-plt.xlabel(r'$Residence Time $')
-plt.ylabel(r'E')
-plt.savefig('Lab5/CMFR3_AD_E.png')
-plt.show()
-
-
-```
+tstar for 2 baffles = 1.92 minutes
 
 In our reactor, there was no evidence of "short circuiting". The influent was mixed throughout most of the container before flowing out as effluent as different parts of the flow reactor was seen to turn red visibly. There was no evidence of red dye seeping between the wall of the reactor and the baffle instead of flowing through the orifices. This was one of the reason we decided to use red dye as our contaminant.
 
@@ -213,6 +189,30 @@ plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model'])
 plt.savefig('Lab5/CMFR1.png')
+plt.show()
+
+CMFR_1_E = ((CMFR_1_concentration_data*CMFR_1_V)/(CMFR_1_CMFR.C_bar*CMFR_1_V)).to(u.dimensionless)
+CMFR_1_dimensionless_time = CMFR_1_time_data/CMFR_1_theta_hydraulic
+plt.plot(CMFR_1_dimensionless_time.to(u.dimensionless), CMFR_1_E.to(u.dimensionless),'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR1_CMFR_E.png')
+plt.show()
+
+CMFR_1_F = np.zeros(CMFR_1_E.size)
+for i in range (CMFR_1_E.size):
+  CMFR_1_F[i] = np.trapz(CMFR_1_E[0:i], CMFR_1_dimensionless_time[0:i])
+  if CMFR_1_F[i] <.1:
+    print("F is not over 0.1 at " +str(CMFR_1_dimensionless_time[i]))
+  else:
+    print("F is over 0.1 at " +str(CMFR_1_dimensionless_time[i]))
+
+CMFR_1_tstar = (0.8574*CMFR_1_theta_hydraulic).to(u.min)
+CMFR_1_tstar
+plt.plot(CMFR_1_dimensionless_time.to(u.dimensionless), CMFR_1_F,'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'F')
+plt.savefig('Lab5/CMFR1_CMFR_F.png')
 plt.show()
 
 CMFR_2_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_2.xls'
@@ -295,6 +295,30 @@ plt.xlabel(r'$time (min)$')
 plt.ylabel(r'Concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(['Measured dye','CMFR Model', 'AD Model'])
 plt.savefig('Lab5/CMFR3.png')
+plt.show()
+
+CMFR_3_E = ((CMFR_3_concentration_data*CMFR_3_V)/(CMFR_3_CMFR.C_bar*CMFR_3_V)).to(u.dimensionless)
+CMFR_3_dimensionless_time = CMFR_3_time_data/CMFR_3_theta_hydraulic
+plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_E.to(u.dimensionless),'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'E')
+plt.savefig('Lab5/CMFR3_CMFR_E.png')
+plt.show()
+
+CMFR_3_F = np.zeros(CMFR_3_E.size)
+for i in range (CMFR_3_E.size):
+  CMFR_3_F[i] = np.trapz(CMFR_3_E[0:i], CMFR_3_dimensionless_time[0:i])
+  if CMFR_3_F[i] <.1:
+    print("F is not over 0.1 at " +str(CMFR_3_dimensionless_time[i]))
+  else:
+    print("F is over 0.1 at " +str(CMFR_3_dimensionless_time[i]))
+
+CMFR_3_tstar = (0.493*CMFR_3_theta_hydraulic).to(u.min)
+CMFR_3_tstar
+plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_F,'r')
+plt.xlabel(r'Dimensionless Residence Time')
+plt.ylabel(r'F')
+plt.savefig('Lab5/CMFR3_CMFR_F.png')
 plt.show()
 
 CMFR_4_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_4.xls'
