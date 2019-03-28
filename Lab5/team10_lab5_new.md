@@ -104,9 +104,8 @@ Despite, some spikes and data collection errors due to issues such as air bubble
 
 Estimated values of N were calculated from the CMFR model while estimated values of Pe were calculated from the AD model. For the second experiment, which had one baffle placed in the reactor, N = 2.09 while Pe = 0.010. For the third experiment, which had two identical baffles placed in the reactor, N = 2.30 while Pe = 0.010.
 
+#2.19, 0.91; 2.12, 0.01 #
 While it is difficult to compare the values of N and Pe since only data collected two experiments were able to fit into the curve models, it appears that the N for the estimated number of reactors for the one baffle experiment is 2, which is expected, while the N for the two baffle experiment is 2.3. It is good that this number is larger than that for two baffles, but we expected it to be closer to 3. On the other hand, for the Peclet numbers, they appear to be about the same.
-
-#### Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations? ####
 
 For each of the experiments, the $t^{star}$ at F = 0.1 was also calculated. For the first experiment, $t^{star}$ = 10 seconds based on the calculated exit age E and cumulative exit age F.
 
@@ -132,23 +131,15 @@ Figure 10: Plot of exit age E against dimensionless residence time for the secon
 ![CMFR3F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_F.png)
 Figure 9: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
 
-For the third experiment with two identical baffles, $t^{star}$ = 15 seconds based on the calculated exit age E and cumulative exit age F. This was unexpected as there was no significant change compared to the second experiment. Perhaps one issue is because data was taken in increments that are two big, and the point at which F = 0.1 is crossed would be more accurately defined.
+For the fourth experiment with three identical baffles, $t^{star}$ = 35 seconds based on the calculated exit age E and cumulative exit age F.
 
-![CMFR3E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_E.png)
+![CMFR4E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4_CMFR_E.png)
 Figure 10: Plot of exit age E against dimensionless residence time for the second reactor experiment.
 
-![CMFR3F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_F.png)
-Figure 9: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
+![CMFR4F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR4_CMFR_F.png)
+Figure 11: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
 
-10 seconds
-15 seconds
-15 seconds
-35 seconds
-
-Explanation...
-
-# reactor volume should be changed!!
-...
+This ...
 
 In our reactor, there was no evidence of "short circuiting". The influent was mixed throughout most of the container before flowing out as effluent as different parts of the flow reactor was seen to turn red visibly. There was no evidence of red dye seeping between the wall of the reactor and the baffle instead of flowing through the orifices. This was one of the reason we decided to use red dye as our contaminant.
 
@@ -157,7 +148,6 @@ However, there was some evidence of "dead volumes". During the running of the ex
 To design a full scale chlorine tank, we would need to determine the size of the flow reactor, the diameter and the head loss across each orifice on the baffles, the number of orifices on each baffles, and the number of baffles. The goal of a chlorine contact tank is to maximize the inactivation of pathogens by maximizing the contact time between the chlorine and the pathogens before the water is sent to the distribution system. A large flow reactor would make for a better full scale chlorine contact tank.
 
 As part of our experimentation, the parameters that could be varied are the number of orifices on each baffle and the diameter of each orifice, and the number of baffles. The optimal value of baffles in the reactor was not determined from the experiment. We found that the more baffles added, the better the flow reactor was. Hence, the ideal design of the full scale chlorine contact tank would include as many baffle as possible.
-
 
 ### Conclusions ###
 
