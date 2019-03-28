@@ -108,12 +108,46 @@ While it is difficult to compare the values of N and Pe since only data collecte
 
 #### Report the values of t^{\star} at F = 0.1 for each of your experiments. Do they meet your expectations? ####
 
+For each of the experiments, the $t^{star}$ at F = 0.1 was also calculated. For the first experiment, $t^{star}$ = 10 seconds based on the calculated exit age E and cumulative exit age F.
+
+![CMFR1E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1_CMFR_E.png)
+Figure 6: Plot of exit age E against dimensionless residence time for the first reactor experiment.
+
+![CMFR1F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR1_CMFR_F.png)
+Figure 7: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
+
+For the second experiment with one baffle, $t^{star}$ = 15 seconds based on the calculated exit age E and cumulative exit age F.
+
+![CMFR2E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3_CMFR_E.png)
+Figure 8: Plot of exit age E against dimensionless residence time for the second reactor experiment.
+
+![CMFR2F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR3_CMFR_F.png)
+Figure 9: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
+
+For the third experiment with two identical baffles, $t^{star}$ = 15 seconds based on the calculated exit age E and cumulative exit age F. This was unexpected as there was no significant change compared to the second experiment. Perhaps one issue is because data was taken in increments that are two big, and the point at which F = 0.1 is crossed would be more accurately defined.
+
+![CMFR3E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_E.png)
+Figure 10: Plot of exit age E against dimensionless residence time for the second reactor experiment.
+
+![CMFR3F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_F.png)
+Figure 9: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
+
+For the third experiment with two identical baffles, $t^{star}$ = 15 seconds based on the calculated exit age E and cumulative exit age F. This was unexpected as there was no significant change compared to the second experiment. Perhaps one issue is because data was taken in increments that are two big, and the point at which F = 0.1 is crossed would be more accurately defined.
+
+![CMFR3E](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_E.png)
+Figure 10: Plot of exit age E against dimensionless residence time for the second reactor experiment.
+
+![CMFR3F](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/CMFR2_CMFR_F.png)
+Figure 9: Plot of cumulative exit age F against dimensionless residence time for the first reactor experiment.
+
 10 seconds
 15 seconds
 15 seconds
 35 seconds
 
-Explanation, attach graphs
+Explanation...
+
+# reactor volume should be changed!!
 ...
 
 In our reactor, there was no evidence of "short circuiting". The influent was mixed throughout most of the container before flowing out as effluent as different parts of the flow reactor was seen to turn red visibly. There was no evidence of red dye seeping between the wall of the reactor and the baffle instead of flowing through the orifices. This was one of the reason we decided to use red dye as our contaminant.
@@ -216,13 +250,13 @@ plt.show()
 
 CMFR_2_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_2.xls'
 CMFR_2_firstrow = epa.notes(CMFR_2_path).last_valid_index() + 1
-CMFR_2_firstrow = CMFR_2_firstrow + 10
+CMFR_2_firstrow = CMFR_2_firstrow + 22
 CMFR_2_time_data = (epa.column_of_time(CMFR_2_path,CMFR_2_firstrow,-1)).to(u.s)
 CMFR_2_concentration_data = epa.column_of_data(CMFR_2_path,CMFR_2_firstrow,1,-1,'mg/L')
 
 CMFR_2_concentration_data = CMFR_2_concentration_data - CMFR_2_concentration_data[0]
 CMFR_2_mass = 3592 * u.g - 1168 * u.g
-CMFR_2_V = CMFR_1_mass/rho
+CMFR_2_V = (CMFR_2_mass/rho)/3
 CMFR_2_Q = 380 * u.mL/u.min
 CMFR_2_theta_hydraulic = (CMFR_2_V/CMFR_2_Q).to(u.s)
 CMFR_2_C_bar_guess = np.max(CMFR_2_concentration_data)/2
@@ -271,7 +305,7 @@ for i in range (CMFR_2_E.size):
   else:
     print("F is over 0.1 at " +str(CMFR_2_dimensionless_time[i]))
 
-CMFR_2_tstar = (0.06431*CMFR_1_theta_hydraulic).to(u.seconds)
+CMFR_2_tstar = (0.1173*CMFR_2_theta_hydraulic).to(u.seconds)
 CMFR_2_tstar
 plt.plot(CMFR_2_dimensionless_time.to(u.dimensionless), CMFR_2_F,'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -281,13 +315,13 @@ plt.show()
 
 CMFR_3_path = 'https://raw.githubusercontent.com/lw583/CEE4530/master/Lab5/lab5_cmfr_3.xls'
 CMFR_3_firstrow = epa.notes(CMFR_3_path).last_valid_index() + 1
-CMFR_3_firstrow = CMFR_3_firstrow + 10
+CMFR_3_firstrow = CMFR_3_firstrow + 22
 CMFR_3_time_data = (epa.column_of_time(CMFR_3_path,CMFR_3_firstrow,-1)).to(u.s)
 CMFR_3_concentration_data = epa.column_of_data(CMFR_3_path,CMFR_3_firstrow,1,-1,'mg/L')
 
 CMFR_3_concentration_data = CMFR_3_concentration_data - CMFR_3_concentration_data[0]
 CMFR_3_mass = 3490 * u.g - 1267 * u.g
-CMFR_3_V = CMFR_1_mass/rho
+CMFR_3_V = (CMFR_3_mass/rho)/2
 CMFR_3_Q = 380 * u.mL/u.min
 CMFR_3_theta_hydraulic = (CMFR_3_V/CMFR_3_Q).to(u.s)
 CMFR_3_C_bar_guess = np.max(CMFR_3_concentration_data)/2
@@ -336,7 +370,7 @@ for i in range (CMFR_3_E.size):
   else:
     print("F is over 0.1 at " +str(CMFR_3_dimensionless_time[i]))
 
-CMFR_3_tstar = (0.06431*CMFR_3_theta_hydraulic).to(u.seconds)
+CMFR_3_tstar = (0.0852*CMFR_3_theta_hydraulic).to(u.seconds)
 CMFR_3_tstar
 plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_F,'r')
 plt.xlabel(r'Dimensionless Residence Time')
@@ -352,7 +386,7 @@ CMFR_4_concentration_data = epa.column_of_data(CMFR_4_path,CMFR_4_firstrow,1,-1,
 
 CMFR_4_concentration_data = CMFR_4_concentration_data - CMFR_4_concentration_data[0]
 CMFR_4_mass = 2298 * u.g - 1371 * u.g
-CMFR_4_V = CMFR_1_mass/rho
+CMFR_4_V = (CMFR_4_mass/rho)/4
 CMFR_4_Q = 380 * u.mL/u.min
 CMFR_4_theta_hydraulic = (CMFR_4_V/CMFR_4_Q).to(u.s)
 CMFR_4_C_bar_guess = np.max(CMFR_4_concentration_data)/2
@@ -401,12 +435,12 @@ for i in range (CMFR_4_E.size):
   else:
     print("F is over 0.1 at " +str(CMFR_4_dimensionless_time[i]))
 
-CMFR_3_tstar = (0.1501*CMFR_3_theta_hydraulic).to(u.seconds)
-CMFR_3_tstar
-plt.plot(CMFR_3_dimensionless_time.to(u.dimensionless), CMFR_3_F,'r')
+CMFR_4_tstar = (0.9537*CMFR_4_theta_hydraulic).to(u.seconds)
+CMFR_4_tstar
+plt.plot(CMFR_4_dimensionless_time.to(u.dimensionless), CMFR_4_F,'r')
 plt.xlabel(r'Dimensionless Residence Time')
 plt.ylabel(r'F')
-plt.savefig('Lab5/CMFR3_CMFR_F.png')
+plt.savefig('Lab5/CMFR4_CMFR_F.png')
 plt.show()
 ```
 
