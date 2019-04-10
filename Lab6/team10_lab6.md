@@ -39,7 +39,7 @@ $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
 ##### What changes to the experimental method do you recommend for next year (or for a project)?
 
-In Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to 
+In Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to see how very high flow rates render the adsorption column effectively useless
 
 Use the same flow rates, stating it explicitly in rpm.
 
