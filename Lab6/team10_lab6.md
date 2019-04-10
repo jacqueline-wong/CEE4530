@@ -18,6 +18,8 @@ $$\frac{L_{column}}{v_{mtz}} = \frac{L_{column}\phi}{v_a} + \frac{L_{column}q_0 
 
 ##### 3. Calculate the retardation coefficient (R_{adsorption}) based on the time to breakthrough for the columns with and without activated carbon. #
 
+To calculate the retardation
+
 $$R_{adsorption} = \frac{t_{mtz}}{t_{water}} = \frac{v_{pore}}{v_{mtz}} = \frac{v_a}{\phi v_{mtz}}$$
 
 $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
@@ -128,7 +130,7 @@ for i in range(np.size(filenames)):
 plt.xlabel(r'$\frac{t}{\theta}$')
 plt.xlim(right=875,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
-# plt.legend(mylegend)
+plt.legend(mylegend)
 plt.savefig('Lab6/Activated_carbon_2')
 plt.show()
 ```
