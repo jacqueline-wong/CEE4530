@@ -13,12 +13,14 @@ Figure 2: Breakthrough curve of C/Co against time for different masses of activa
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
 To calculate the time when the effluent concentration was 50% of the influent concentration, we use the following equations.
+
 $$t_{mtz} = t_{water} + t_{ads}$$
+
 $$\frac{L_{column}}{v_{mtz}} = \frac{L_{column}\phi}{v_a} + \frac{L_{column}q_0 M_{adsorbent}}{v_a C_0 V_{column}}$$
 
-##### 3. Calculate the retardation coefficient (R_{adsorption}) based on the time to breakthrough for the columns with and without activated carbon. #
+##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
-To calculate the retardation
+To calculate the retardation coefficient based on the time to breakthrough for the columns with and without activated carbon, we use the following equations.
 
 $$R_{adsorption} = \frac{t_{mtz}}{t_{water}} = \frac{v_{pore}}{v_{mtz}} = \frac{v_a}{\phi v_{mtz}}$$
 
@@ -27,9 +29,19 @@ $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
 ##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
 
-##### 5. Calculate the q_0 for each of the columns. Plot this as a function of the mass of activated carbon used. #
+##### 5. Calculate the $q_0$ for each of the columns. Plot this as a function of the mass of activated carbon used. #
 
-##### What did you learn from this analysis? How can you explain the results that you have obtained? What changes to the experimental method do you recommend for next year (or for a project)? #
+#### Conclusions ####
+
+##### What did you learn from this analysis? How can you explain the results that you have obtained?
+
+#### Suggestions ####
+
+##### What changes to the experimental method do you recommend for next year (or for a project)?
+
+In Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to 
+
+Use the same flow rates, stating it explicitly in rpm.
 
 ```python
 from aguaclara.core.units import unit_registry as u
