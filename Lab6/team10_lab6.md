@@ -4,10 +4,10 @@
 
 ##### 1. Plot the breakthrough curves showing \frac{C}{C_0} versus time. #
 
-![AC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
+![AC1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
 Figure 1: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
 
-![AC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_2.png)
+![AC2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_2.png)
 Figure 2: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a larger x-axis.
 
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
@@ -18,6 +18,9 @@ $$\frac{L_{column}}{v_{mtz}} = \frac{L_{column}\phi}{v_a} + \frac{L_{column}q_0 
 
 ##### 3. Calculate the retardation coefficient (R_{adsorption}) based on the time to breakthrough for the columns with and without activated carbon. #
 
+$$R_{adsorption} = \frac{t_{mtz}}{t_{water}} = \frac{v_{pore}}{v_{mtz}} = \frac{v_a}{\phi v_{mtz}}$$
+
+$$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
 
 ##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
