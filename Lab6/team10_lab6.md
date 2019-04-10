@@ -7,7 +7,14 @@
 ![AC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
 Figure 1: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
 
+![AC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_2.png)
+Figure 2: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a larger x-axis to view the graph for 29.3 g of activated carbon with a flow rate of 0.47 mL/s.
+
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
+
+To calculate the time when the effluent concentration was 50% of the influent concentration, we use the following equations.
+$$t_{mtz} = t_{water} + t_{ads}$$
+$$\frac{L_{column}}{v_{mtz}} = \frac{L_{column}\phi}{v_a} + \frac{L_{column}q_0 M_{adsorbent}}{v_a C_0 V_{column}}$$
 
 ##### 3. Calculate the retardation coefficient (R_{adsorption}) based on the time to breakthrough for the columns with and without activated carbon. #
 
@@ -114,10 +121,10 @@ for i in range(np.size(filenames)):
     mylegend.append(str(ut.round_sf(metadata['carbon (g)'][i],3)) + ' g, ' + str(ut.round_sf(metadata['flow (mL/s)'][i],2)) + ' mL/s')
 
 plt.xlabel(r'$\frac{t}{\theta}$')
-plt.xlim(right=100,left=0)
+plt.xlim(right=875,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
-plt.legend(mylegend)
-plt.savefig('Lab6/Activated_carbon')
+# plt.legend(mylegend)
+plt.savefig('Lab6/Activated_carbon_2')
 plt.show()
 ```
 
