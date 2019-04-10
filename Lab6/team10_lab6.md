@@ -5,7 +5,7 @@
 ##### 1. Plot the breakthrough curves showing \frac{C}{C_0} versus time. #
 
 ![AC](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
-Figure 1: ...
+Figure 1: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
 
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
