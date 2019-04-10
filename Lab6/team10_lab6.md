@@ -12,11 +12,7 @@ Figure 2: Breakthrough curve of C/Co against time for different masses of activa
 
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
-To calculate the time when the effluent concentration was 50% of the influent concentration, we use the following equations.
-
-$$t_{mtz} = t_{water} + t_{ads}$$
-
-$$\frac{L_{column}}{v_{mtz}} = \frac{L_{column}\phi}{v_a} + \frac{L_{column}q_0 M_{adsorbent}}{v_a C_0 V_{column}}$$
+When the effluent concentration was 50% of the influent concentration, $C/C_0 = 0.5$. To find the time when this happens, we can do this by simply looking at the graph and locating when the breakthrough curve crosses this point and identifying the corresponding time in the graph. To do this, we borrow the code from Dissolved Oxygen Lab.
 
 ##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
@@ -29,7 +25,13 @@ $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
 ##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
 
+To calculate the quantity of red dye #40 that was transferred to the activated carbon based based on the influent concentration, flow rate, and 50% breakthrough time, we use the following equation.
+
+$$q_0 = \left(R_{adsorption} - 1\right) \frac{C_0 \phi V_{column}}{M_{adsorbent}}$$
+
 ##### 5. Calculate the $q_0$ for each of the columns. Plot this as a function of the mass of activated carbon used. #
+
+As we did for question 4, we calculated the $q_0$ for each of the columns.
 
 #### Conclusions ####
 
@@ -39,9 +41,11 @@ $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
 ##### What changes to the experimental method do you recommend for next year (or for a project)?
 
-In Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to see how very high flow rates render the adsorption column effectively useless
+From Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to see how very high flow rates render the adsorption column effectively useless, to compare the breakthrough curves by varying the mass of activated carbon, perhaps it would be good to explicitly state the flow rate that should be used, as well as the setting in revolutions per minute (rpm) for the peristaltic pump.
 
-Use the same flow rates, stating it explicitly in rpm.
+Another suggestion is to label the diagram of the setup to state which connection uses a T-shaped connector and which one uses a T-shaped valve, as we initially spent a bit of time being confused about which one would go where since we had a limited number of each item.. Additionally, there were no instructions about how the T-shaped valves themselves worked in the textbook, so adding these in the instructions would be good as well.
+
+It would also be good to identify the maximum amount of activated carbon that can be placed in the adsorption column such that the experiment can be completed within one lab session. We saw teams using small amounts of activated carbon without any sand in the column, resulting in activated carbon "floating" and being suspended in the column while water was pumped through. While it seemed clear for us to fill the gaps with sand, perhaps the instructions could make it more clear to do so.
 
 ```python
 from aguaclara.core.units import unit_registry as u
@@ -148,8 +152,7 @@ plt.show()
 ```
 
 ```python
-...
-
+# Notes while conducting the actual experiment
 mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
 Pump_rpm = 10 * u.revolution/u.min
 Q_reddye = Pump_rpm * mLperrev_Tubing_17
