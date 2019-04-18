@@ -4,28 +4,40 @@
 
 ##### 1. Plot the breakthrough curves showing \frac{C}{C_0} versus time. #
 
+![sand](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Sand_column.png)
+Figure 2: Breakthrough curves of C/Co against time for column of sand with no activated carbon at different flow rates.
+
 ![AC1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
-Figure 1: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
+Figure 2: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
 
 ![AC2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_2.png)
-Figure 2: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a larger x-axis.
+Figure 3: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a larger x-axis.
+
+![AC3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_3.png)
+Figure 3: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a smaller x-axis.
 
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
-When the effluent concentration was 50% of the influent concentration, $C/C_0 = 0.5$. To find the time when this happens, we can do this by simply looking at the graph and locating when the breakthrough curve crosses this point and identifying the corresponding time in the graph. To do this, we borrow the code from Dissolved Oxygen Lab.
+![time](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph.png)
+Figure 4: ...
+
+Different flow rate, hard to see relationship
+
+![time2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph_2.png)
+Figure 5: ...
+
+Better relationship. Greater mass, greater time.
 
 ##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
-To calculate the retardation coefficient based on the time to breakthrough for the columns with and without activated carbon, we use the following equations.
+To calculate the retardation coefficient based on the time to breakthrough for the columns with and without activated carbon, we use the following equation:
 
-$$R_{adsorption} = \frac{t_{mtz}}{t_{water}} = \frac{v_{pore}}{v_{mtz}} = \frac{v_a}{\phi v_{mtz}}$$
-
-$$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
+$$R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
 
 
 ##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
 
-To calculate the quantity of red dye #40 that was transferred to the activated carbon based based on the influent concentration, flow rate, and 50% breakthrough time, we use the following equation.
+To calculate the quantity of red dye #40 that was transferred to the activated carbon based based on the influent concentration, flow rate, and 50% breakthrough time, we use the following equation:
 
 $$q_0 = \left(R_{adsorption} - 1\right) \frac{C_0 \phi V_{column}}{M_{adsorbent}}$$
 
@@ -59,6 +71,7 @@ import os
 from pathlib import Path
 import pandas as pd
 
+# Question 1
 def adsorption_data(C_column, dirpath):
     """This function extracts the data from folder containing tab delimited
     files of adsorption data. The file must be the original tab delimited file.
@@ -87,8 +100,7 @@ def adsorption_data(C_column, dirpath):
 
 
     filepaths = [dirpath + '/' + i for i in filenames]
-    #C_data is a list of numpy arrays. Thus each of the numpy data arrays can have different lengths to accommodate short and long experiments
-    # cycle through all of the files and extract the column of data with oxygen concentrations and the times
+
     C_data=[epa.column_of_data(i,epa.notes(i).last_valid_index() + 1,C_column,-1,'mg/L') for i in filepaths]
     time_data=[(epa.column_of_time(i,epa.notes(i).last_valid_index() + 1,-1)).to(u.s) for i in filepaths]
 
@@ -149,6 +161,52 @@ plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(mylegend)
 plt.savefig('Lab6/Activated_carbon_2')
 plt.show()
+
+mylegend =[]
+for i in range(np.size(filenames)):
+  if (metadata['carbon (g)'][i] != 0):
+    plt.plot(time_data[i]/HRT[i] - Tubing_HRT[i]/HRT[i], C_data[i]/C_0,'-');
+    mylegend.append(str(ut.round_sf(metadata['carbon (g)'][i],3)) + ' g, ' + str(ut.round_sf(metadata['flow (mL/s)'][i],2)) + ' mL/s')
+
+plt.xlabel(r'$\frac{t}{\theta}$')
+plt.xlim(right=10,left=0)
+plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
+plt.legend(mylegend)
+plt.savefig('Lab6/Activated_carbon_3')
+plt.show()
+
+# Question 2
+t_array = np.zeros(len(filenames))
+C_50 = 0.5 * C_0
+for i in range(len(filenames)):
+  for j in range(1, C_data[i].size):
+    if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
+      t_array[i] = (time_data[i][j].magnitude)
+
+plt.plot(Mass_carbon, t_array, 'o')
+plt.xlabel('Activated carbon (g)')
+plt.ylabel('Time to C/Co = 0.5 (s)')
+plt.savefig('Lab6/Time_graph')
+plt.show
+
+t_array_2 = np.zeros(len(filenames))
+for i in range(len(filenames)):
+  for j in range(1, C_data[i].size):
+    if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
+      if (Flow_rate[i]).magnitude < 0.6:
+        t_array_2[i] = (time_data[i][j].magnitude)
+      else:
+        t_array_2[i] = float('nan')
+
+plt.plot(Mass_carbon, t_array_2, 'o')
+plt.xlabel('Activated carbon (g)')
+plt.ylabel('Time to C/Co = 0.5 (s)')
+plt.savefig('Lab6/Time_graph_2')
+plt.show
+
+# Question 3
+
+v_pore_1 = ...
 ```
 
 ```python
