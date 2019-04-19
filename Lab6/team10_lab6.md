@@ -2,7 +2,7 @@
 
 ### Team 10: Victor Khong (X hours) & Jacqueline Wong (X hours)
 
-##### 1. Plot the breakthrough curves showing \frac{C}{C_0} versus time. #
+##### 1. Plot the breakthrough curves showing $\frac{C}{C_0}$ versus time. #
 
 ![sand](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Sand_column.png)
 Figure 2: Breakthrough curves of C/Co against time for column of sand with no activated carbon at different flow rates.
@@ -19,14 +19,14 @@ Figure 3: Breakthrough curve of C/Co against time for different masses of activa
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
 ![time](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph.png)
-Figure 4: ...
+Figure 4: **VICTOR**
 
-Different flow rate, hard to see relationship
+Using different flow rates, hard to see relationship. Replot those with flow rate around 0.5 mL/s **VICTOR**
 
 ![time2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph_2.png)
-Figure 5: ...
+Figure 5: **VICTOR**
 
-Better relationship. Greater mass, greater time.
+Better relationship. Greater mass, greater time. **VICTOR**
 
 ##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
@@ -58,9 +58,11 @@ $$M_{adsorbate} = M_{adsorbent} q_{0}$$
 | 15.6 | 2.6 | 0.0760 | x | x |
 | 29.3 | 0.467 | 0.3953 | x | x |
 
+**VICTOR**
+
 ```python
 q0_array
-Mabsorbate_array
+M_absorbate_array
 ```
 ![q0](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/q0_graph.png)
 Figure 6: ...
@@ -68,6 +70,8 @@ Figure 6: ...
 #### Conclusions ####
 
 ##### What did you learn from this analysis? How can you explain the results that you have obtained?
+
+**VICTOR**
 
 #### Suggestions ####
 
@@ -261,6 +265,9 @@ plt.xlabel('Mass of AC (g)')
 plt.ylabel(r'$q_0$')
 plt.savefig('Lab6/q0_graph')
 plt.show()
+
+# Question 4
+M_absorbate_array = Mass_carbon[4:13]*q0_array
 ```
 
 ```python
