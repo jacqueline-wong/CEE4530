@@ -168,7 +168,7 @@ plt.xlabel(r'$\frac{t}{\theta}$')
 plt.xlim(right=3,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(mylegend)
-plt.savefig('C:/Users/jacquelinewong/github/CEE4530/Lab6/Sand_column')
+plt.savefig('Sand_column')
 plt.show()
 
 # create a graph of the columns that had different masses of activated carbon. Note that this includes systems with different flow rates!
@@ -182,7 +182,7 @@ plt.xlabel(r'$\frac{t}{\theta}$')
 plt.xlim(right=875,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(mylegend)
-plt.savefig('Lab6/Activated_carbon_2')
+plt.savefig('Activated_carbon_2')
 plt.show()
 
 mylegend =[]
@@ -195,7 +195,7 @@ plt.xlabel(r'$\frac{t}{\theta}$')
 plt.xlim(right=10,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(mylegend)
-plt.savefig('Lab6/Activated_carbon_3')
+plt.savefig('Activated_carbon_3')
 plt.show()
 
 # Question 2
@@ -209,7 +209,7 @@ for i in range(len(filenames)):
 plt.plot(Mass_carbon, t_array, 'o')
 plt.xlabel('Activated carbon (g)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
-plt.savefig('Lab6/Time_graph')
+plt.savefig('Time_graph')
 plt.show
 
 t_array_2 = np.zeros(len(filenames))
@@ -224,7 +224,7 @@ for i in range(len(filenames)):
 plt.plot(Mass_carbon, t_array_2, 'o')
 plt.xlabel('Activated carbon (g)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
-plt.savefig('Lab6/Time_graph_2')
+plt.savefig('Time_graph_2')
 plt.show
 
 # Question 3
@@ -263,7 +263,7 @@ q0_array
 plt.plot(Mass_carbon[4:13], q0_array, 'o')
 plt.xlabel('Mass of AC (g)')
 plt.ylabel(r'$q_0$')
-plt.savefig('Lab6/q0_graph')
+plt.savefig('q0_graph')
 plt.show()
 
 # Question 4
