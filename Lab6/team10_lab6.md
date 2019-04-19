@@ -1,11 +1,11 @@
 # Lab 6 for CEE 4530
 
-### Team 10: Victor Khong (X hours) & Jacqueline Wong (X hours)
+### Team 10: Victor Khong (X hours) & Jacqueline Wong (10 hours)
 
 ##### 1. Plot the breakthrough curves showing $\frac{C}{C_0}$ versus time. #
 
 ![sand](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Sand_column.png)
-Figure 2: Breakthrough curves of C/Co against time for column of sand with no activated carbon at different flow rates.
+Figure 1: Breakthrough curves of C/Co against time for column of sand with no activated carbon at different flow rates.
 
 ![AC1](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon.png)
 Figure 2: Breakthrough curves of C/Co against time for different masses of activated carbon and different flow rates.
@@ -14,19 +14,19 @@ Figure 2: Breakthrough curves of C/Co against time for different masses of activ
 Figure 3: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a larger x-axis.
 
 ![AC3](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Activated_carbon_3.png)
-Figure 3: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a smaller x-axis.
+Figure 4: Breakthrough curve of C/Co against time for different masses of activated carbon and different flow rates, with a smaller x-axis.
 
 ##### 2. Find the time when the effluent concentration was 50% of the influent concentration and plot that as a function of the mass of activated carbon used. #
 
 ![time](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph.png)
-Figure 4: **VICTOR**
+Figure 5: Time taken for effluent concentration to reach 50% of influent concentration based on the mass of activated carbon used. Data comes from all the experiments done in the lab.
 
-Using different flow rates, hard to see relationship. Replot those with flow rate around 0.5 mL/s **VICTOR**
+In other words, the graph above shows the time taken for the adsorption column to lose effectiveness such that the effluent concentration is half the influent concentration against the mass of activated carbon used. Since different flow rates are used for some of the experiments, it is a hard to see the relationship between the mass of activated carbon used and the time taken for effluent concentration to become half the influent concentration. For easier analysis, we replot Figure 5 using only data from experiments with flow rate around 0.5 mL/s.
 
 ![time2](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/Time_graph_2.png)
-Figure 5: **VICTOR**
+Figure 6: Time taken for effluent concentration to reach 50% of influent concentration based on the mass of activated carbon used. Data comes only from experiments with flow rate around 0.5 mL/s.
 
-Better relationship. Greater mass, greater time. **VICTOR**
+Figure 6 shows a much clearer relationship between the mass of activated carbon used and the time taken for the effluent concentration to become half the influent concentration. The greater the mass of activated carbon used in the adsorption column, the greater the time taken for the effluent concentration to become half the influent concentration. In fact, the data suggests that there is an exponential relationship between the mass of activated carbon used and the time taken for the effluent concentration to become half the influent concentration.
 
 ##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
@@ -48,8 +48,8 @@ $$M_{adsorbate} = M_{adsorbent} q_{0}$$
 
 | Mass of AC (g) | Flow rate (mL/s) | $R_{adsorption}$ | $q_0$ | $M_{adsorbate}$ |
 | --- | --- | --- | ---- | --- |
-| 0.5 | 0.5 | 0.0742 | x | x |
-| 0.6 | 0.5 | 0.0649 | x | x |
+| 0.5 | 0.5 | 0.0742 | 0.000321 | x |
+| 0.6 | 0.5 | 0.0649 |  | x |
 | 1.7 | 0.5 | 0.2058 | x | x |
 | 2.0 | 0.466 | 0.3207 | x | x |
 | 4.0 | 0.466 | 0.0426 | x | x |
@@ -65,7 +65,7 @@ q0_array
 M_absorbate_array
 ```
 ![q0](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/q0_graph.png)
-Figure 6: ...
+Figure 7: Ratio of the mass of adsorbate over the mass of adsorbent against the mass of activated carbon used in the adsorption column.
 
 #### Conclusions ####
 
@@ -256,6 +256,7 @@ R_array[8] = t_mtz[12]/t_w_2_6
 R_array
 
 # Question 5
+phi = 0.4
 q0_array = np.zeros(len(R_array))
 q0_array = (R_array-1) * C_0.to(u.g/u.L) * phi * (Column_V).to(u.L) /Mass_carbon[4:13]
 q0_array
