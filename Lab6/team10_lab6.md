@@ -157,7 +157,6 @@ HRT = (porosity * Column_V/Flow_rate).to(u.s)
 for i in range(np.size(filenames)):
   C_data[i]=C_data[i]-C_data[i][0]
 
-
 #Create a graph of the columns that didn't have any activated carbon
 mylegend = []
 for i in range(np.size(filenames)):
