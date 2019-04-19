@@ -30,20 +30,40 @@ Better relationship. Greater mass, greater time.
 
 ##### 3. Calculate the retardation coefficient $R_{adsorption}$ based on the time to breakthrough for the columns with and without activated carbon. #
 
+##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
+
+##### 5. Calculate the $q_0$ for each of the columns. Plot this as a function of the mass of activated carbon used. #
+
 To calculate the retardation coefficient based on the time to breakthrough for the columns with and without activated carbon, we use the following equation:
 
 $$R_{adsorption} = \frac{t_{mtz}}{t_{water}}$$
 
-
-##### 4. Calculate the quantity of Red Dye #40 that was transferred to the activated carbon based on the influent concentration, flow rate, and 50% breakthrough time. #
-
-To calculate the quantity of red dye #40 that was transferred to the activated carbon based based on the influent concentration, flow rate, and 50% breakthrough time, we use the following equation:
+To calculate the $q_0$ for each of the columns, we use the following equation:
 
 $$q_0 = \left(R_{adsorption} - 1\right) \frac{C_0 \phi V_{column}}{M_{adsorbent}}$$
 
-##### 5. Calculate the $q_0$ for each of the columns. Plot this as a function of the mass of activated carbon used. #
+Thus, to calculate the quantity of red dye #40 that was transferred to the activated carbon based based on the influent concentration, flow rate, and 50% breakthrough time, we use the following equation:
 
-As we did for question 4, we calculated the $q_0$ for each of the columns.
+$$M_{adsorbate} = M_{adsorbent} q_{0}$$
+
+| Mass of AC (g) | Flow rate (mL/s) | $R_{adsorption}$ | $q_0$ | $M_{adsorbate}$ |
+| --- | --- | --- | ---- | --- |
+| 0.5 | 0.5 | 0.0742 | x | x |
+| 0.6 | 0.5 | 0.0649 | x | x |
+| 1.7 | 0.5 | 0.2058 | x | x |
+| 2.0 | 0.466 | 0.3207 | x | x |
+| 4.0 | 0.466 | 0.0426 | x | x |
+| 13.8 | 2.6 | 0.0630 | x | x |
+| 15.0 | 0.5 | 0.3278 | x | x |
+| 15.6 | 2.6 | 0.0760 | x | x |
+| 29.3 | 0.467 | 0.3953 | x | x |
+
+```python
+q0_array
+Mabsorbate_array
+```
+![q0](https://raw.githubusercontent.com/lw583/CEE4530/master/Lab6/q0_graph.png)
+Figure 6: ...
 
 #### Conclusions ####
 
@@ -53,7 +73,7 @@ As we did for question 4, we calculated the $q_0$ for each of the columns.
 
 ##### What changes to the experimental method do you recommend for next year (or for a project)?
 
-From Figures 1 and 2, it can be seen that different teams used different flow rates. While it is educational to see how very high flow rates render the adsorption column effectively useless, to compare the breakthrough curves by varying the mass of activated carbon, perhaps it would be good to explicitly state the flow rate that should be used, as well as the setting in revolutions per minute (rpm) for the peristaltic pump.
+From Figures 1, 2, 3 and 4, it can be seen that different teams used different flow rates. While it is educational to see how very high flow rates render the adsorption column effectively useless, to compare the breakthrough curves by varying the mass of activated carbon, perhaps it would be good to explicitly state the flow rate that should be used, as well as the setting in revolutions per minute (rpm) for the peristaltic pump.
 
 Another suggestion is to label the diagram of the setup to state which connection uses a T-shaped connector and which one uses a T-shaped valve, as we initially spent a bit of time being confused about which one would go where since we had a limited number of each item.. Additionally, there were no instructions about how the T-shaped valves themselves worked in the textbook, so adding these in the instructions would be good as well.
 
@@ -206,7 +226,41 @@ plt.show
 
 # Question 3
 
-v_pore_1 = ...
+Flow_rate
+V_array = t_array[0:4] * u.sec * Flow_rate[0:4]
+V_sum = 0 * u.mL
+
+for i in range(len(V_array)):
+  V_sum = V_sum + V_array[i]
+
+avg_V = V_sum/len(V_array)
+
+t_w_0_5 = avg_V/Flow_rate[1]
+t_w_2_6 = avg_V/Flow_rate[2]
+
+t_mtz = t_array * u.sec
+
+Mass_carbon
+Mass_carbon[4:13]
+
+R_array = t_mtz[4:13]/t_w_0_5
+Flow_rate
+len(R_array)
+R_array[5] = t_mtz[9]/t_w_2_6
+R_array[7] = t_mtz[11]/t_w_2_6
+R_array[8] = t_mtz[12]/t_w_2_6
+R_array
+
+# Question 5
+q0_array = np.zeros(len(R_array))
+q0_array = (R_array-1) * C_0.to(u.g/u.L) * phi * (Column_V).to(u.L) /Mass_carbon[4:13]
+q0_array
+
+plt.plot(Mass_carbon[4:13], q0_array, 'o')
+plt.xlabel('Mass of AC (g)')
+plt.ylabel(r'$q_0$')
+plt.savefig('Lab6/q0_graph')
+plt.show()
 ```
 
 ```python
