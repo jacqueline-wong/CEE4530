@@ -168,7 +168,7 @@ plt.xlabel(r'$\frac{t}{\theta}$')
 plt.xlim(right=3,left=0)
 plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
 plt.legend(mylegend)
-plt.savefig('Lab6/Sand_column')
+plt.savefig('C:/Users/jacquelinewong/github/CEE4530/Lab6/Sand_column')
 plt.show()
 
 # create a graph of the columns that had different masses of activated carbon. Note that this includes systems with different flow rates!
