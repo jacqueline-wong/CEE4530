@@ -92,13 +92,8 @@ def adsorption_data(C_column, dirpath):
     Examples
     --------
     """
-    #return the list of files in the directory
     metadata = pd.read_csv(dirpath + '/metadata.txt', delimiter='\t')
     filenames = metadata['file name']
-    #extract the flowrates from the filenames and apply units
-    #sort airflows and filenames so that they are in ascending order of flow rates
-
-
     filepaths = [dirpath + '/' + i for i in filenames]
 
     C_data=[epa.column_of_data(i,epa.notes(i).last_valid_index() + 1,C_column,-1,'mg/L') for i in filepaths]
@@ -116,7 +111,7 @@ def adsorption_data(C_column, dirpath):
           t_array[i] = (time_data[i][j].magnitude)
 
 C_column = 1
-dirpath = "https://raw.githubusercontent.com/monroews/CEE4530/master/"
+dirpath = "https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Data/"
 
 metadata, filenames, C_data, time_data = adsorption_data(C_column,dirpath)
 metadata
@@ -124,35 +119,19 @@ Column_D = 1 * u.inch
 Column_A = pc.area_circle(Column_D)
 Column_L = 15.2 * u.cm
 Column_V = Column_A * Column_L
-#I'm guessing at the volume of water in the tubing, in the photometer, and in the space above and below the column. This parameter could be adjusted!
+# I'm guessing at the volume of water in the tubing, in the photometer, and in the space above and below the column. This parameter could be adjusted!
 Tubing_V = 60 * u.mL
 Flow_rate = ([metadata['flow (mL/s)'][i] for i in metadata.index])* u.mL/u.s
 Mass_carbon= ([metadata['carbon (g)'][i] for i in metadata.index])* u.g
 Tubing_HRT = Tubing_V/Flow_rate
-#to make things simple we are assuming that the porosity is the same for sand and for activated carbon. That is likely not true!
+# To make things simple we are assuming that the porosity is the same for sand and for activated carbon. That is likely not true!
 porosity = 0.4
 C_0 = 50 * u.mg/u.L
 
-#estimate the HRT for all of the columns
 HRT = (porosity * Column_V/Flow_rate).to(u.s)
 
-#zero the concentration data by subtracting the value of the first data point from all data points. Do this in each data set.
 for i in range(np.size(filenames)):
   C_data[i]=C_data[i]-C_data[i][0]
-
-#Create a graph of the columns that didn't have any activated carbon
-mylegend = []
-for i in range(np.size(filenames)):
-  if (metadata['carbon (g)'][i] == 0):
-    plt.plot(time_data[i]/HRT[i] - Tubing_HRT[i]/HRT[i], C_data[i]/C_0,'-');
-    mylegend.append(str(metadata['flow (mL/s)'][i]) + ' mL/s')
-
-plt.xlabel(r'$\frac{t}{\theta}$')
-plt.xlim(right=3,left=0)
-plt.ylabel(r'Red dye concentration $\left ( \frac{mg}{L} \right )$')
-plt.legend(mylegend)
-plt.savefig('Sand_column')
-plt.show()
 
 t_array = np.zeros(len(filenames))
 C_50 = 0.5 * C_0
