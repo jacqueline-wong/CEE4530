@@ -12,6 +12,8 @@ At any given water and wastewater treatment facility, there is a maximum contami
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
+EQUATIONS
+
 #### Objectives ####
 
 There are two objectives of this project:
