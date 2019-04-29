@@ -12,7 +12,12 @@ At any given water and wastewater treatment facility, there is a maximum contami
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
-EQUATIONS
+
+Retardation factor
+$$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
+
+Mass of adsorbent
+$$M_{adsorbent} = \left(R_{adsorption} - 1\right) \frac{C_0 \phi V_{column}}{q_0}$$
 
 #### Objectives ####
 
@@ -147,4 +152,13 @@ plt.xlabel('Activated carbon (g)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
 plt.savefig('Time_graph')
 plt.show()
+```
+```python
+mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
+Pump_rpm = 15 * u.revolution/u.min
+Q_reddye = Pump_rpm * mLperrev_Tubing_17
+Q_reddye.to(u.mL/u.sec)
+vol = 20 * u.L
+exp_time = vol/Q_reddye
+exp_time.to(u.hour)
 ```
