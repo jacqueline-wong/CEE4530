@@ -4,7 +4,7 @@
 
 #### Introduction ####
 
-Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewaters, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
+Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewater, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
 
 Our team is interested in investigating methods to optimize the effectiveness of an adsorption system, in particular how the variation in the way the adsorbent is placed within the column and a change in influent flow rate into the adsorption system affects the effectiveness of the adsorption system in removing a pollutant from the water. This is an interesting problem that has practical applications because our society is constantly faced with the challenge to treat wastewater at a low cost and efficient manner, and activated is not cheap considering that it needs to be continually replaced and that it is not as accessible for treatment plants in developing countries. Higher flow rates allow for more water to be treated at a given time, but this may affect adsorption efficiency. The results of this experiment will enable scientists and engineers to gain a better understanding towards building the most optimal adsorption system for better drinking water and wastewater treatment (Çeçen, 2011).
 
@@ -12,6 +12,17 @@ At any given water and wastewater treatment facility, there is a maximum contami
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
+This experiment utilizes two different partitioning models: the Freundlich partitioning model
+$$q =K_f C^{\frac{1}{n}}$$
+
+The Langmuir partitioning model
+$$q =\frac{K_{Lang}q_{\max} C}{1+K_{Lang}C}$$
+
+Mass of adsorbate
+$$M_{adsorbate} = M_{adsorbent} q_{0}$$
+
+Effective bed porosity
+$$\phi =1 - \frac{\frac{M_{ac}}{\rho_{ac}} + \frac{M_{sand}}{\rho_{sand}}}{V_{column}}$$
 
 Retardation factor
 $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
@@ -158,6 +169,7 @@ mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
 Pump_rpm = 15 * u.revolution/u.min
 Q_reddye = Pump_rpm * mLperrev_Tubing_17
 Q_reddye.to(u.mL/u.sec)
+
 vol = 20 * u.L
 exp_time = vol/Q_reddye
 exp_time.to(u.hour)

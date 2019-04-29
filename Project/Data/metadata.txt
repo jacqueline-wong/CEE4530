@@ -1,14 +1,1 @@
-file name	carbon (g)	flow (mL/s)
-0gac0_5mLpers.xls	0	0.5
-0gac0_5mlperws.xls	0	0.5
-0gac2_6mLpers.xls	0	2.6
-120gsand.xls	0	0.5
-0_5gac.xls	0.5	0.5
-0_601gac0_5mlpers.xls	0.601	0.5
-1_66gac0_5mlpers.xls	1.66	0.5
-2gac0_466mLpers.xls	2	0.466
-4gac0_466mLpers.xls	4	0.466
-13_8gac2_6mLpers.xls	13.8	2.6
-15gac0_5mLpers.xls	15	0.5
-15_63gac2_6mLpers.xls	15.63	2.6
-29.342gac0.467mLpers.xls	29.342	0.467
+file name	layers	flow (mL/s)0gac_15rpm_trial2.xls	no	0.78gac_90gsand_15rpm_1_layer_trial1.xls	1	0.78gac_90gsand_15rpm_2_layer_trial1.xls	2	0.88gac_90gsand_15rpm_4_layer_trial1.xls	4	0.98gac_90gsand_15rpm_6_layer_trial2.xls	6	0.108gac_90gsand_15rpm_8_layer_trial2.xls	8	0.118gac_90gsand_15rpm_mixed_trial1.xls	no	0.128gac_90gsand_20rpm_1_layer_trial1.xls	1	0.9338gac_90gsand_25rpm_1_layer_trial1.xls	1	1.1678gac_90gsand_30rpm_1_layer_trial1.xls	1	1.48gac_90gsand_45rpm_1_layer_trial1.xls	1	2.18gac_90gsand_60rpm_1_layer_trial1.xls	1	2.88gac_90gsand_75rpm_1_layer_trial1.xls	1	3.58gac_90gsand_90rpm_1_layer_trial1.xls	1	4.2
