@@ -12,13 +12,16 @@ At any given water and wastewater treatment facility, there is a maximum contami
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
-This experiment utilizes two different partitioning models: the Freundlich partitioning model
+This experiment utilizes two different partitioning models: the Freundlich partitioning model and the Langmuir partitioning model. The Freundlich partitioning mode is given as:
+
 $$q =K_f C^{\frac{1}{n}}$$
 
-The Langmuir partitioning model
+The Langmuir partitioning model is given as:
+
 $$q =\frac{K_{Lang}q_{\max} C}{1+K_{Lang}C}$$
 
-Mass of adsorbate
+The mass of adsorbate at the breakthrough time is given as:
+
 $$M_{adsorbate} = M_{adsorbent} q_{0}$$
 
 Effective bed porosity
@@ -138,11 +141,20 @@ Column_A = pc.area_circle(Column_D)
 Column_L = 15.2 * u.cm
 Column_V = Column_A * Column_L
 # I'm guessing at the volume of water in the tubing, in the photometer, and in the space above and below the column. This parameter could be adjusted!
-Tubing_V = 60 * u.mL
+
+Tubing_t = 2.5 * u.min
+Tubing_Q = 0.7 * u.mL/u.sec
+Tubing_V = Tubing_Q * Tubing_t
+Tubing_V.to(u.mL)
+
+# Check with Monroe if method is correct
+Tubing_V = 60 * u.mL # WRONG
 Flow_rate = ([metadata['flow (mL/s)'][i] for i in metadata.index])* u.mL/u.s
 Mass_carbon= ([metadata['carbon (g)'][i] for i in metadata.index])* u.g
 Tubing_HRT = Tubing_V/Flow_rate
 # To make things simple we are assuming that the porosity is the same for sand and for activated carbon. That is likely not true!
+
+# CHANGE POROSITY DATA
 porosity = 0.4
 C_0 = 50 * u.mg/u.L
 
