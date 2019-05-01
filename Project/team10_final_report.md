@@ -176,6 +176,7 @@ plt.savefig("Project/Layers.png")
 plt.show()
 
 # Plot concentration against time for different flow rates
+plt.plot(time_data[6].to(u.min), C_data[6])
 plt.plot(time_data[7].to(u.min), C_data[7])
 plt.plot(time_data[8].to(u.min), C_data[8])
 plt.plot(time_data[9].to(u.min), C_data[9])
@@ -202,12 +203,13 @@ plt.savefig("Project/Flows_2.png")
 plt.show()
 
 # Plot concentration against time for lower flow rates
+plt.plot(time_data[6].to(u.min), C_data[6])
 plt.plot(time_data[7].to(u.min), C_data[7])
 plt.plot(time_data[8].to(u.min), C_data[8])
 plt.plot(time_data[9].to(u.min), C_data[9])
 plt.xlabel("Time (min)")
 plt.ylabel("Concentration (mg/L)")
-leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s'), loc='best')
+leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s', '1.4 mL/s'), loc='best')
 plt.savefig("Project/Flows_3.png")
 plt.show()
 
@@ -218,8 +220,9 @@ for i in range(len(filenames)):
     if (C_data[i][j-1] < C_45) and (C_data[i][j] > C_45):
       t_array[i] = (time_data[i][j].magnitude)
 
-plt.plot(Flow_rate[7:13], t_array[7:13], 'o')
+plt.plot(Flow_rate[6:14], t_array[6:14], 'o')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
 plt.show()
+Flow_rate
 ```
