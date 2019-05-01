@@ -12,26 +12,13 @@ At any given water and wastewater treatment facility, there is a maximum contami
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
-This experiment utilizes two different partitioning models: the Freundlich partitioning model and the Langmuir partitioning model. The Freundlich partitioning mode is given as:
-
-$$q =K_f C^{\frac{1}{n}}$$
-
-The Langmuir partitioning model is given as:
-
-$$q =\frac{K_{Lang}q_{\max} C}{1+K_{Lang}C}$$
-
-The mass of adsorbate at the breakthrough time is given as:
-
-$$M_{adsorbate} = M_{adsorbent} q_{0}$$
-
-Retardation factor
-$$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
-
 To calculate the volume of water that is treated, we would simply use the following equation:
 $$V=T_{breakthrough}Q$$
 where $Q$ is the flow rate of the red dye passing through the adsorbent column and $T_{breakthrough}$ is the time when breakthrough is achieved.
 
-Our team thought it might be interesting to examine the retardation facor that
+To extend our results to wastewater of different concentration, we would want to calculate the mass of adsorbate at the breakthrough time is given as:
+
+$$M_{adsorbate} = M_{adsorbent} q_{0}$$
 
 #### Objectives ####
 
@@ -56,7 +43,7 @@ Figure 1: Diagram of the experimental setup for the trial with activated carbon 
 
 In this experiment, the effectiveness of the adsorption system will be measured in accordance to how clear the water filtered out is and the duration at which the absorbent is able to last. These two factors are important in vital in determining how much pollutant the adsorption system can adsorb with one batch of adsorbent. The concentration of dye in the effluent can be measured using a photometer.
 
-The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3). The flow rates that will be experimented on are 15, 30, 45, 60, 75 and 90 rpm with one layer of activated carbon.
+The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3). The flow rates that will be experimented on are 15, 20, 25 30, 45, 60, 75 and 90 rpm with one layer of activated carbon.
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_2.png)
 Figure 2: Diagram of the experimental setup for the trial with 2 even layers of activated carbon separated by layers of sand.
