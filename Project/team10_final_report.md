@@ -8,17 +8,21 @@ Adsorption is a unit operation in which surface-active materials in true solutio
 
 Our team is interested in investigating methods to optimize the effectiveness of an adsorption system, in particular how the variation in the way the adsorbent is placed within the column and a change in influent flow rate into the adsorption system affects the effectiveness of the adsorption system in removing a pollutant from the water. This is an interesting problem that has practical applications because our society is constantly faced with the challenge to treat wastewater at a low cost and efficient manner, and activated is not cheap considering that it needs to be continually replaced and that it is not as accessible for treatment plants in developing countries. Higher flow rates allow for more water to be treated at a given time, but this may affect adsorption efficiency. The results of this experiment will enable scientists and engineers to gain a better understanding towards building the most optimal adsorption system for better drinking water and wastewater treatment (Çeçen, 2011).
 
-At any given water and wastewater treatment facility, there is a maximum contaminant level, which operator considers water to be treated at levels lower than the standard. In this experiment, water is considered treated when the concentration of the pollutant in the effluent is less than or equal to 60% of the concentration of the pollutant in the influent, i.e. $\frac{C}{C_0} <= 0.6$.
+At any given water and wastewater treatment facility, there is a maximum contaminant level, which operator considers water to be treated at levels lower than the standard. In this experiment, water is considered treated when the concentration of the pollutant in the effluent is less than or equal to 60% of the concentration of the pollutant in the influent, i.e. $\frac{C}{C_0} <= 0.5$.
 
 As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
-To calculate the volume of water that is treated, we would simply use the following equation:
+To calculate the volume of water that is treated, the following equation is used:
+
 $$V=T_{breakthrough}Q$$
+
 where $Q$ is the flow rate of the red dye passing through the adsorbent column and $T_{breakthrough}$ is the time when breakthrough is achieved.
 
-To extend our results to wastewater of different concentration, we would want to calculate the mass of adsorbate at the breakthrough time is given as:
+To further extend our results to wastewater of different concentration, our team intends to calculate the mass of adsorbate at the breakthrough time, which is given as:
 
 $$M_{adsorbate} = M_{adsorbent} q_{0}$$
+
+where $M$ is the mass and $q_{0}$ is mass of adsorbate per mass of adsorbent at the breakthrough time.
 
 #### Objectives ####
 
@@ -30,7 +34,7 @@ There are two objectives of this project:
 
 For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin.  In Gritti et. al’s 2004 study titled “Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis”, it states that as flow rate increases, the mass of dye adsorbed increases (Gritti, 2004). However, for flow rate, we believe that this flow rate should not affect the mass of dye adsorbed. Although there already exists a study on this, we are interested in further investigating this claim as too high of a flow rate may also make it more difficult for dye to attach to the pores in activated carbon, and perhaps even render it useless.
 
-In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. **To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.**
+In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.
 
 #### Materials ####
 
@@ -151,18 +155,71 @@ HRT = (porosity * Column_V/Flow_rate).to(u.s)
 # Concentration of red dye
 C_0 = 50 * u.mg/u.L
 
+# Target concentration
+C_50 = 0.5 * C_0
+
+# Subtract first data point
 for i in range(np.size(filenames)):
   C_data[i]=C_data[i]-C_data[i][0]
 
+# Plot concentration against time for different layers
+plt.plot(time_data[1].to(u.min), C_data[1])
+plt.plot(time_data[2].to(u.min), C_data[2])
+plt.plot(time_data[3].to(u.min), C_data[3])
+plt.plot(time_data[4].to(u.min), C_data[4])
+plt.plot(time_data[5].to(u.min), C_data[5])
+plt.plot(time_data[6].to(u.min), C_data[6])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
+plt.savefig("Project/Layers.png")
+plt.show()
+
+# Plot concentration against time for different flow rates
+plt.plot(time_data[7].to(u.min), C_data[7])
+plt.plot(time_data[8].to(u.min), C_data[8])
+plt.plot(time_data[9].to(u.min), C_data[9])
+plt.plot(time_data[10].to(u.min), C_data[10])
+plt.plot(time_data[11].to(u.min), C_data[11])
+plt.plot(time_data[12].to(u.min), C_data[12])
+plt.plot(time_data[13].to(u.min), C_data[13])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s', '1.4 mL/s','2.1 mL/s','2.8 mL/s','3.5 mL/s','4.2 mL/s'), loc='best')
+plt.savefig("Project/Flows_1.png")
+plt.show()
+
+# Plot concentration against time for higher flow rates
+plt.plot(time_data[10].to(u.min), C_data[10])
+plt.plot(time_data[11].to(u.min), C_data[11])
+plt.plot(time_data[12].to(u.min), C_data[12])
+plt.plot(time_data[13].to(u.min), C_data[13])
+plt.xlim(right=2,left=0)
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('2.1 mL/s','2.8 mL/s','3.5 mL/s','4.2 mL/s'), loc='best')
+plt.savefig("Project/Flows_2.png")
+plt.show()
+
+# Plot concentration against time for lower flow rates
+plt.plot(time_data[7].to(u.min), C_data[7])
+plt.plot(time_data[8].to(u.min), C_data[8])
+plt.plot(time_data[9].to(u.min), C_data[9])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s'), loc='best')
+plt.savefig("Project/Flows_3.png")
+plt.show()
+
+# Plot time to C = 0.5 C0 for different flow rates
 t_array = np.zeros(len(filenames))
-C_50 = 0.5 * C_0
 for i in range(len(filenames)):
   for j in range(1, C_data[i].size):
     if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
       t_array[i] = (time_data[i][j].magnitude)
 
-plt.plot(Layers[1:6], t_array[1:6], 'o')
-plt.xlabel('Number of layers')
+plt.plot(Flow_rate[7:13], t_array[7:13], 'o')
+plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
 plt.show()
 ```
