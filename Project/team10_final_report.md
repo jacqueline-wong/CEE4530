@@ -164,16 +164,23 @@ for i in range(np.size(filenames)):
 
 # Plot concentration against time for different layers
 plt.plot(time_data[1].to(u.min), C_data[1])
-plt.plot(time_data[2].to(u.min), C_data[2])
-plt.plot(time_data[3].to(u.min), C_data[3])
-plt.plot(time_data[4].to(u.min), C_data[4])
+#plt.plot(time_data[2].to(u.min), C_data[2])
+#plt.plot(time_data[3].to(u.min), C_data[3])
+#plt.plot(time_data[4].to(u.min), C_data[4])
 plt.plot(time_data[5].to(u.min), C_data[5])
-plt.plot(time_data[6].to(u.min), C_data[6])
+#plt.plot(time_data[6].to(u.min), C_data[6])
 plt.xlabel("Time (min)")
 plt.ylabel("Concentration (mg/L)")
-leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
+#leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
 plt.savefig("Project/Layers.png")
 plt.show()
+
+# Essentially did the same thing for 1-8 layers...
+# More uniform red dye concentration between pores with mixing because bigger distance between activated carbon granules. More transport, more mixing, more uniform before next AC granule.
+# Assuming transport by diffusion within the dimension of a pore is a rate limiting step. Rate at which transfer red dye into AC is function of diffusion within the pore.
+
+# Suspect might take a difference at huuuuge layers
+# Diluting with sand helps only if same mass of activated carbon 
 
 # Plot concentration against time for different flow rates
 plt.plot(time_data[6].to(u.min), C_data[6])
