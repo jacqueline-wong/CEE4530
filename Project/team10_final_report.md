@@ -156,7 +156,7 @@ HRT = (porosity * Column_V/Flow_rate).to(u.s)
 C_0 = 50 * u.mg/u.L
 
 # Target concentration
-C_50 = 0.5 * C_0
+C_45 = 0.45 * C_0
 
 # Subtract first data point
 for i in range(np.size(filenames)):
@@ -215,7 +215,7 @@ plt.show()
 t_array = np.zeros(len(filenames))
 for i in range(len(filenames)):
   for j in range(1, C_data[i].size):
-    if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
+    if (C_data[i][j-1] < C_45) and (C_data[i][j] > C_45):
       t_array[i] = (time_data[i][j].magnitude)
 
 plt.plot(Flow_rate[7:13], t_array[7:13], 'o')
