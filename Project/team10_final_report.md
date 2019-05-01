@@ -24,14 +24,14 @@ The mass of adsorbate at the breakthrough time is given as:
 
 $$M_{adsorbate} = M_{adsorbent} q_{0}$$
 
-Effective bed porosity
-$$\phi =1 - \frac{\frac{M_{ac}}{\rho_{ac}} + \frac{M_{sand}}{\rho_{sand}}}{V_{column}}$$
-
 Retardation factor
 $$R_{adsorption} =1+ \frac{q_0 M_{adsorbent}}{C_0 \phi V_{column}}$$
 
-Mass of adsorbent
-$$M_{adsorbent} = \left(R_{adsorption} - 1\right) \frac{C_0 \phi V_{column}}{q_0}$$
+To calculate the volume of water that is treated, we would simply use the following equation:
+$$V=T_{breakthrough}Q$$
+where $Q$ is the flow rate of the red dye passing through the adsorbent column and $T_{breakthrough}$ is the time when breakthrough is achieved.
+
+Our team thought it might be interesting to examine the retardation facor that
 
 #### Objectives ####
 
@@ -43,7 +43,7 @@ There are two objectives of this project:
 
 For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin.  In Gritti et. al’s 2004 study titled “Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis”, it states that as flow rate increases, the mass of dye adsorbed increases (Gritti, 2004). However, for flow rate, we believe that this flow rate should not affect the mass of dye adsorbed. Although there already exists a study on this, we are interested in further investigating this claim as too high of a flow rate may also make it more difficult for dye to attach to the pores in activated carbon, and perhaps even render it useless.
 
-In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 60% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 60% of the influent concentration. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.
+In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. **To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.**
 
 #### Materials ####
 
@@ -131,34 +131,38 @@ def adsorption_data(C_column, dirpath):
         if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
           t_array[i] = (time_data[i][j].magnitude)
 
+# Use adsorption_data function to extract data
 C_column = 1
 dirpath = "https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Data/"
-
 metadata, filenames, C_data, time_data = adsorption_data(C_column,dirpath)
 metadata
+
+# Calculate volume of column based on dimensions
 Column_D = 1 * u.inch
 Column_A = pc.area_circle(Column_D)
 Column_L = 15.2 * u.cm
 Column_V = Column_A * Column_L
-# I'm guessing at the volume of water in the tubing, in the photometer, and in the space above and below the column. This parameter could be adjusted!
 
+# Assume this porosity
+porosity = 0.4
+
+# Calculate volume of tubing by pumping water through system
+mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
+Pump_rpm = 15 * u.revolution/u.min
+Tubing_Q = mLperrev_Tubing_17 * Pump_rpm
 Tubing_t = 2.5 * u.min
-Tubing_Q = 0.7 * u.mL/u.sec
-Tubing_V = Tubing_Q * Tubing_t
+Tubing_V = (Tubing_Q * Tubing_t) - Column_V * (1 - porosity)
 Tubing_V.to(u.mL)
 
-# Check with Monroe if method is correct
-Tubing_V = 60 * u.mL # WRONG
 Flow_rate = ([metadata['flow (mL/s)'][i] for i in metadata.index])* u.mL/u.s
-Mass_carbon= ([metadata['carbon (g)'][i] for i in metadata.index])* u.g
+Layers= ([metadata['layers'][i] for i in metadata.index])
 Tubing_HRT = Tubing_V/Flow_rate
-# To make things simple we are assuming that the porosity is the same for sand and for activated carbon. That is likely not true!
 
-# CHANGE POROSITY DATA
-porosity = 0.4
-C_0 = 50 * u.mg/u.L
-
+# Calculate hydraulic residence time in column
 HRT = (porosity * Column_V/Flow_rate).to(u.s)
+
+# Concentration of red dye
+C_0 = 50 * u.mg/u.L
 
 for i in range(np.size(filenames)):
   C_data[i]=C_data[i]-C_data[i][0]
@@ -170,19 +174,8 @@ for i in range(len(filenames)):
     if (C_data[i][j-1] < C_50) and (C_data[i][j] > C_50):
       t_array[i] = (time_data[i][j].magnitude)
 
-plt.plot(Mass_carbon, t_array, 'o')
-plt.xlabel('Activated carbon (g)')
+plt.plot(Layers[1:6], t_array[1:6], 'o')
+plt.xlabel('Number of layers')
 plt.ylabel('Time to C/Co = 0.5 (s)')
-plt.savefig('Time_graph')
 plt.show()
-```
-```python
-mLperrev_Tubing_17 = 2.8 * u.mL/u.revolution
-Pump_rpm = 15 * u.revolution/u.min
-Q_reddye = Pump_rpm * mLperrev_Tubing_17
-Q_reddye.to(u.mL/u.sec)
-
-vol = 20 * u.L
-exp_time = vol/Q_reddye
-exp_time.to(u.hour)
 ```
