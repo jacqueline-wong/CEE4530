@@ -180,7 +180,7 @@ plt.show()
 # Assuming transport by diffusion within the dimension of a pore is a rate limiting step. Rate at which transfer red dye into AC is function of diffusion within the pore.
 
 # Suspect might take a difference at huuuuge layers
-# Diluting with sand helps only if same mass of activated carbon 
+# Diluting with sand helps only if same mass of activated carbon
 
 # Plot concentration against time for different flow rates
 plt.plot(time_data[6].to(u.min), C_data[6])
@@ -230,6 +230,10 @@ for i in range(len(filenames)):
 plt.plot(Flow_rate[6:14], t_array[6:14], 'o')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
+plt.xlim(right=4.5,left=0)
 plt.show()
-Flow_rate
+
+30
+37.5 rpm
+45
 ```
