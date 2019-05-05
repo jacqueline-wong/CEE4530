@@ -175,7 +175,6 @@ plt.ylabel("Concentration (mg/L)")
 plt.savefig("Project/Layers.png")
 plt.show()
 
-# Essentially did the same thing for 1-8 layers...
 # More uniform red dye concentration between pores with mixing because bigger distance between activated carbon granules. More transport, more mixing, more uniform before next AC granule.
 # Assuming transport by diffusion within the dimension of a pore is a rate limiting step. Rate at which transfer red dye into AC is function of diffusion within the pore.
 
@@ -232,8 +231,4 @@ plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Time to C/Co = 0.5 (s)')
 plt.xlim(right=4.5,left=0)
 plt.show()
-
-30
-37.5 rpm
-45
 ```

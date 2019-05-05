@@ -9,6 +9,7 @@ file name	layers	flow (mL/s)
 8gac_90gsand_20rpm_1_layer_trial1.xls	1	0.933
 8gac_90gsand_25rpm_1_layer_trial1.xls	1	1.167
 8gac_90gsand_30rpm_1_layer_trial1.xls	1	1.4
+8gac_90gsand_37.5rpm_1_layer_trial1.xls	1	1.75
 8gac_90gsand_45rpm_1_layer_trial1.xls	1	2.1
 8gac_90gsand_60rpm_1_layer_trial1.xls	1	2.8
 8gac_90gsand_75rpm_1_layer_trial1.xls	1	3.5
