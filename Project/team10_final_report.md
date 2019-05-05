@@ -164,6 +164,32 @@ for i in range(np.size(filenames)):
 
 # Plot concentration against time for different layers
 plt.plot(time_data[1].to(u.min), C_data[1])
+plt.plot(time_data[2].to(u.min), C_data[2])
+plt.plot(time_data[3].to(u.min), C_data[3])
+plt.plot(time_data[4].to(u.min), C_data[4])
+plt.plot(time_data[5].to(u.min), C_data[5])
+plt.plot(time_data[6].to(u.min), C_data[6])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
+plt.savefig("Project/Layers_1.png")
+plt.show()
+
+# Plot 1-8 layers
+plt.plot(time_data[1].to(u.min), C_data[1])
+plt.plot(time_data[2].to(u.min), C_data[2])
+plt.plot(time_data[3].to(u.min), C_data[3])
+plt.plot(time_data[4].to(u.min), C_data[4])
+plt.plot(time_data[5].to(u.min), C_data[5])
+#plt.plot(time_data[6].to(u.min), C_data[6])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
+plt.savefig("Project/Layers_2.png")
+plt.show()
+
+# Plot 1 layer and 8 layers
+plt.plot(time_data[1].to(u.min), C_data[1])
 #plt.plot(time_data[2].to(u.min), C_data[2])
 #plt.plot(time_data[3].to(u.min), C_data[3])
 #plt.plot(time_data[4].to(u.min), C_data[4])
@@ -171,8 +197,21 @@ plt.plot(time_data[5].to(u.min), C_data[5])
 #plt.plot(time_data[6].to(u.min), C_data[6])
 plt.xlabel("Time (min)")
 plt.ylabel("Concentration (mg/L)")
-#leg = plt.legend(('1 layer', '2 layers', '4 layers', '6 layers', '8 layers', 'no layers'), loc='best')
-plt.savefig("Project/Layers.png")
+leg = plt.legend(('1 layer', '8 layers'), loc='best')
+plt.savefig("Project/Layers_3.png")
+plt.show()
+
+# Plot 1 layer and no layers
+plt.plot(time_data[1].to(u.min), C_data[1])
+#plt.plot(time_data[2].to(u.min), C_data[2])
+#plt.plot(time_data[3].to(u.min), C_data[3])
+#plt.plot(time_data[4].to(u.min), C_data[4])
+#plt.plot(time_data[5].to(u.min), C_data[5])
+plt.plot(time_data[6].to(u.min), C_data[6])
+plt.xlabel("Time (min)")
+plt.ylabel("Concentration (mg/L)")
+leg = plt.legend(('1 layer', 'no layers'), loc='best')
+plt.savefig("Project/Layers_4.png")
 plt.show()
 
 # More uniform red dye concentration between pores with mixing because bigger distance between activated carbon granules. More transport, more mixing, more uniform before next AC granule.
