@@ -72,6 +72,12 @@ Figure 3: Diagram of the experimental setup for the trial with 8 even layers of 
 
 [Jacqueline: Diagrams to explain hypothesis]:#
 
+![Layering Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_5.png)
+Figure x: Diagram of ....
+
+![Mixing Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_6.png)
+Figure x: Diagram of ....
+
 #### Suggestions / Comments ####
 
 [Victor: Copy things from slide.]:#
@@ -229,12 +235,6 @@ leg = plt.legend(('1 layer', 'no layers'), loc='best')
 plt.savefig("Project/Layers_4.png")
 plt.show()
 
-# More uniform red dye concentration between pores with mixing because bigger distance between activated carbon granules. More transport, more mixing, more uniform before next AC granule.
-# Assuming transport by diffusion within the dimension of a pore is a rate limiting step. Rate at which transfer red dye into AC is function of diffusion within the pore.
-
-# Suspect might take a difference at huuuuge layers
-# Diluting with sand helps only if same mass of activated carbon
-
 # Plot concentration against time for different flow rates
 plt.plot(time_data[6].to(u.min), C_data[6])
 plt.plot(time_data[7].to(u.min), C_data[7])
@@ -283,10 +283,26 @@ for i in range(len(filenames)):
     if (C_data[i][j-1] < C_45) and (C_data[i][j] > C_45):
       t_array[i] = (time_data[i][j].magnitude)
 
-plt.plot(Flow_rate[6:15], t_array[6:15], 'o')
+t_array = t_array * u.s
+plt.plot(Flow_rate[6:15], (t_array[6:15]).to(u.min), 'o')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('Time to C/Co = 0.5 (s)')
+plt.ylabel('Time to C/Co = 0.5 (min)')
 plt.xlim(right=4.5,left=0)
 plt.savefig("Project/Time_Flows.png")
+plt.show()
+
+# Plot volume treated until C = 0.5 C0
+V_array = t_array[6:15] * Flow_rate[6:15]
+plt.plot(Flow_rate[6:15], (V_array).to(u.L), 'o')
+plt.xlabel('Flow rate (mL/s)')
+plt.ylabel('Volume (L)')
+plt.savefig("Project/Volume_Flows_1.png")
+plt.show()
+
+# Plot volume treated for lower flow rates
+plt.plot(Flow_rate[6:11], (V_array[1:6]).to(u.L), 'o')
+plt.xlabel('Flow rate (mL/s)')
+plt.ylabel('Volume (L)')
+plt.savefig("Project/Volume_Flows_2.png")
 plt.show()
 ```
