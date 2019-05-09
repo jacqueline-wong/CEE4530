@@ -4,6 +4,8 @@
 
 #### Introduction ####
 
+[Victor: Equations used in analysis. I don't think we even used q0.]:#
+
 Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewater, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
 
 Our team is interested in investigating methods to optimize the effectiveness of an adsorption system, in particular how the variation in the way the adsorbent is placed within the column and a change in influent flow rate into the adsorption system affects the effectiveness of the adsorption system in removing a pollutant from the water. This is an interesting problem that has practical applications because our society is constantly faced with the challenge to treat wastewater at a low cost and efficient manner, and activated is not cheap considering that it needs to be continually replaced and that it is not as accessible for treatment plants in developing countries. Higher flow rates allow for more water to be treated at a given time, but this may affect adsorption efficiency. The results of this experiment will enable scientists and engineers to gain a better understanding towards building the most optimal adsorption system for better drinking water and wastewater treatment (Çeçen, 2011).
@@ -45,9 +47,11 @@ Figure 1: Diagram of the experimental setup for the trial with activated carbon 
 
 #### Experimental Procedure ####
 
+[Victor: Add anything else that we missed]:#
+
 In this experiment, the effectiveness of the adsorption system will be measured in accordance to how clear the water filtered out is and the duration at which the absorbent is able to last. These two factors are important in vital in determining how much pollutant the adsorption system can adsorb with one batch of adsorbent. The concentration of dye in the effluent can be measured using a photometer.
 
-The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3). The flow rates that will be experimented on are 15, 20, 25 30, 45, 60, 75 and 90 rpm with one layer of activated carbon.
+The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3). The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon.
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_2.png)
 Figure 2: Diagram of the experimental setup for the trial with 2 even layers of activated carbon separated by layers of sand.
@@ -55,11 +59,22 @@ Figure 2: Diagram of the experimental setup for the trial with 2 even layers of 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_8.png)
 Figure 3: Diagram of the experimental setup for the trial with 8 even layers of activated carbon separated by layers of sand.
 
+[Jacqueline: Convert into a table]:#
+
 #### Results ####
 
+[Jacqueline: Graphs with caption]:#
+[Jacqueline: Calculate volume treated]:#
+
+[Victor: Go further into description]:#
 
 #### Conclusion ####
 
+[Jacqueline: Diagrams to explain hypothesis]:#
+
+#### Suggestions / Comments ####
+
+[Victor: Copy things from slide.]:#
 
 #### References ####
 
