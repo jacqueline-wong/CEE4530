@@ -82,17 +82,20 @@ Table 2: Experiments conducted with varying flow rate
 
 #### Results ####
 
-For the first
+As mentioned above, the first part of this project aims to investigate the breakthrough characteristics of a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column (Table 1). The concentration of red dye was plotted against time for Experiments 1-6 (Figure 4). It can be seen that most of the breakthrough curves have very similar shapes, apart from the brown line which represents the graph for Experiment 6, which has no layers and has activated carbon and sand thoroughly mixed throughout the adsorption column.
+
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_1.png)
 Figure 4: Graph of red dye concentration against time for all layering experiments at 0.7 mL/s.
 
-![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_2.png)
+
+
+![Layers 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_2.png)
 Figure 5: Graph of red dye concentration against time for 1, 2, 4, 6 and 8 layers at 0.7 mL/s.
 
-![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_3.png)
+![Layers 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_3.png)
 Figure 6: Graph of red dye concentration against time for 1 layer and 8 layers at 0.7 mL/s.
 
-![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_4.png)
+![Layers 4](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_4.png)
 Figure 7: Graph of red dye concentration against time for 1 layer and no layers (mixed) at 0.7 mL/s.
 
 
@@ -354,11 +357,12 @@ y_array_3 = 328.71 * x_array**2 - 1747.1 * x_array + 2218.5
 y_array_3 = y_array_3 * u.mL
 
 plt.plot(Flow_rate[6:12], (V_array[0:6]).to(u.L), 'o')
-plt.plot(x_array, y_array_2.to(u.L), '-')
+#plt.plot(x_array, y_array_2.to(u.L), '-')
 plt.plot(x_array, y_array_3.to(u.L), '-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Volume (L)')
 plt.savefig("Project/Volume_Flows_2.png")
-leg = plt.legend(('Data points','Linear fit', 'Polynomial fit'), loc='best')
+#leg = plt.legend(('Data points','Linear fit', 'Curve fit'), loc='best')
+leg = plt.legend(('Data points', 'Curve fit'), loc='best')
 plt.show()
 ```
