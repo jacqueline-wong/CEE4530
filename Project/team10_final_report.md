@@ -107,7 +107,7 @@ One hypothesis that was developed to explain this phenomenon is that thorough mi
 ![Layering Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_5.png)
 Figure 8: Diagram of the similar adsorption mechanism for 1, 2, 4, 6 and 8 layers of activated carbon alternating between layers of sand.
 
-In Figure 8, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules. The ...
+**In Figure 8, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules. The ...**
 
 ![Mixing Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_6.png)
 Figure 9: Diagram of adsorption mechanism for no layers, i.e. thorough mixing of activated carbon and sand throughout the column.
