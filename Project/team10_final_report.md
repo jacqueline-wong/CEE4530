@@ -60,9 +60,9 @@ Figure 2: Diagram of the experimental setup for the trial with 2 even layers of 
 Figure 3: Diagram of the experimental setup for the trial with 8 even layers of activated carbon separated by layers of sand.
 
 Table 1: Experiments conducted with varying layers
-|                  | Layers | Flow Rate (mL/s) | Pump (rpm) |
-| ---------------- | ------ | ---------------- | ---------- |
-| **Control**      | 0      | 0.7              | 15         |
+|                   | Layers | Flow Rate (mL/s) | Pump (rpm) |
+| ----------------- | ------ | ---------------- | ---------- |
+| **Control**       | 0      | 0.7              | 15         |
 | **Experiment 01** | 1      | 0.7              | 15         |
 | **Experiment 02** | 2      | 0.7              | 15         |
 | **Experiment 03** | 4      | 0.7              | 15         |
@@ -74,29 +74,31 @@ Table 1: Experiments conducted with varying layers
 Table 2: Experiments conducted with varying flow rate
 |                   | Layers | Flow Rate (mL/s) | Pump (rpm) |
 | ----------------- | ------ | ---------------- | ---------- |
-| **Experiment 07**  | 1      | 0.7              | 15         |
-| **Experiment 08**  | 1      | 0.933            | 20         |
-| **Experiment 09**  | 1      | 1.167            | 25         |
+| **Experiment 07** | 1      | 0.7              | 15         |
+| **Experiment 08** | 1      | 0.933            | 20         |
+| **Experiment 09** | 1      | 1.167            | 25         |
 | **Experiment 10** | 1      | 1.4              | 30         |
 | **Experiment 11** | 1      | 1.75             | 37.5       |
 | **Experiment 12** | 1      | 2.1              | 45         |
-| **Experiment 13** | 1     | 2.8              | 60 |
-| **Experiment 14** | 1      | 3.5              | 75 |
-| **Experiment 15** | 1      | 4.2              | 90 |
+| **Experiment 13** | 1      | 2.8              | 60         |
+| **Experiment 14** | 1      | 3.5              | 75         |
+| **Experiment 15** | 1      | 4.2              | 90         |
 
 #### Results ####
 
+For the 
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_1.png)
-Figure 4:
+Figure 4: Graph of red dye concentration against time for all layering experiments at 0.7 mL/s.
 
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_2.png)
-Figure 5:
+Figure 5: Graph of red dye concentration against time for 1, 2, 4, 6 and 8 layers at 0.7 mL/s.
 
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_3.png)
-Figure 6:
+Figure 6: Graph of red dye concentration against time for 1 layer and 8 layers at 0.7 mL/s.
 
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_4.png)
-Figure 7: 
+Figure 7: Graph of red dye concentration against time for 1 layer and no layers (mixed) at 0.7 mL/s.
+
 
 [Jacqueline: Graphs with caption]:#
 [Jacqueline: Calculate volume treated]:#
