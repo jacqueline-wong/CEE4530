@@ -4,39 +4,35 @@
 
 #### Introduction ####
 
-[Victor: Equations used in analysis. I don't think we even used q0.]:#
+[Victor: Equations used in analysis. I don't think we will even use q0 so I deleted it]:#
 
 Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewater, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
 
-Our team is interested in investigating methods to optimize the effectiveness of an adsorption system, in particular how the variation in the way the adsorbent is placed within the column and a change in influent flow rate into the adsorption system affects the effectiveness of the adsorption system in removing a pollutant from the water. This is an interesting problem that has practical applications because our society is constantly faced with the challenge to treat wastewater at a low cost and efficient manner, and activated is not cheap considering that it needs to be continually replaced and that it is not as accessible for treatment plants in developing countries. Higher flow rates allow for more water to be treated at a given time, but this may affect adsorption efficiency. The results of this experiment will enable scientists and engineers to gain a better understanding towards building the most optimal adsorption system for better drinking water and wastewater treatment (Çeçen, 2011).
+Our team is interested in investigating methods to optimize the effectiveness of an adsorption system, in particular how the variation in the way the adsorbent is placed within the column and a change in influent flow rate into the adsorption system affects the effectiveness of the adsorption system in removing a pollutant from the water. This is an interesting problem that has practical applications because our society is constantly faced with the challenge to treat wastewater at a low cost and efficient manner, and activated carbon is not cheap considering that it needs to be continually replaced and that it is not as accessible for treatment plants in developing countries. Higher flow rates allow for more water to be treated at a given time, but this may affect adsorption efficiency. The results of this experiment will enable us to gain a better understanding towards building a more optimal adsorption system for better drinking water and wastewater treatment (Çeçen, 2011).
 
-At any given water and wastewater treatment facility, there is a maximum contaminant level, which operator considers water to be treated at levels lower than the standard. In this experiment, water is considered treated when the concentration of the pollutant in the effluent is less than or equal to 60% of the concentration of the pollutant in the influent, i.e. $\frac{C}{C_0} <= 0.5$.
+At any given water and wastewater treatment facility, there is a maximum contaminant level, which operator considers water to be treated at levels lower than the standard. In this experiment, water is considered treated when the concentration of the pollutant in the effluent is less than or equal to 50% of the concentration of the pollutant in the influent, i.e. $\frac{C}{C_0} <= 0.5$.
 
-As our team will vary flow rate across the adsorption column, we are interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
+Furthermore, our team is interested in the tradeoff between the amount of water that can be treated given the useful lifespan of the adsorption column decreases with increasing flow rate. This is also synonymous to the amount of water that a factory can bottle and sell until the adsorption column needs to be maintained and replaced. These two factors will directly vary the total amount of water treated and consequently, affect the effectiveness of the adsorption column in treating water.
 
-To calculate the volume of water that is treated, the following equation is used:
+To calculate the volume of water that is treated, $V_{treated}$ the following equation is used:
 
-$$V=T_{breakthrough}Q$$
+$$V_{treated}=t_{breakthrough} \times Q$$
 
-where $Q$ is the flow rate of the red dye passing through the adsorbent column and $T_{breakthrough}$ is the time when breakthrough is achieved.
-
-To further extend our results to wastewater of different concentration, our team intends to calculate the mass of adsorbate at the breakthrough time, which is given as:
-
-$$M_{adsorbate} = M_{adsorbent} q_{0}$$
-
-where $M$ is the mass and $q_{0}$ is mass of adsorbate per mass of adsorbent at the breakthrough time.
+where $Q$ is the flow rate of the red dye passing through the adsorbent column and $t_{breakthrough}$ is the time when breakthrough is achieved.
 
 #### Objectives ####
 
 There are two objectives of this project:
 1. Investigate the breakthrough characteristics and equilibrium partitioning of red dye #40 on activated carbon in a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column.
-2. Investigate the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 60% of the influent concentration.
+2. Investigate the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 50% of the influent concentration.
 
 #### Hypothesis ####
 
-For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin.  In Gritti et. al’s 2004 study titled “Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis”, it states that as flow rate increases, the mass of dye adsorbed increases (Gritti, 2004). However, for flow rate, we believe that this flow rate should not affect the mass of dye adsorbed. Although there already exists a study on this, we are interested in further investigating this claim as too high of a flow rate may also make it more difficult for dye to attach to the pores in activated carbon, and perhaps even render it useless.
+For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin as there is a chance that the red dye will not come into contact with an activated carbon granule if it is thoroughly mixed with sand.  
 
-In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.
+For our second objective, in Gritti et. al’s 2004 study titled “Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis”, it states that as flow rate increases, the mass of dye adsorbed increases (Gritti, 2004). However, we believe that this flow rate should not affect the mass of dye adsorbed. Although there already exists a study on this, we are interested in further investigating this claim as we expect that too high of a flow rate may make it more difficult for dye to attach to the pores in activated carbon, and perhaps even render it useless.
+
+In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration, $V_{treated}$. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.
 
 #### Materials ####
 
@@ -86,7 +82,7 @@ Table 2: Experiments conducted with varying flow rate
 
 #### Results ####
 
-For the 
+For the first
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_1.png)
 Figure 4: Graph of red dye concentration against time for all layering experiments at 0.7 mL/s.
 
@@ -102,8 +98,6 @@ Figure 7: Graph of red dye concentration against time for 1 layer and no layers 
 
 [Jacqueline: Graphs with caption]:#
 [Jacqueline: Calculate volume treated]:#
-
-[Victor: Go further into description]:#
 
 #### Conclusion ####
 
@@ -140,6 +134,7 @@ from scipy import stats
 from scipy import optimize
 import collections
 import os
+from scipy.optimize import curve_fit
 from pathlib import Path
 
 def adsorption_data(C_column, dirpath):
@@ -320,12 +315,26 @@ for i in range(len(filenames)):
     if (C_data[i][j-1] < C_45) and (C_data[i][j] > C_45):
       t_array[i] = (time_data[i][j].magnitude)
 
-t_array = t_array * u.s
+t_array = t_array * u.sec
 plt.plot(Flow_rate[6:15], (t_array[6:15]).to(u.min), 'o')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Time to C/Co = 0.5 (min)')
 plt.xlim(right=4.5,left=0)
-plt.savefig("Project/Time_Flows.png")
+leg = plt.legend(('Data points','Curve fit'), loc='best')
+plt.savefig("Project/Time_Flows_1.png")
+plt.show()
+
+# Plot time to C = 0.5 C0 for lower flow rates
+x_array = np.linspace(0.7, 2.1, 100)
+y_array_1 = 924.59 * x_array**4 - 5980.4 * x_array**3 + 14852 * x_array**2 - 17354 * x_array + 8352.3
+y_array_1 = y_array_1 * u.sec
+
+plt.plot(Flow_rate[6:12], (t_array[6:12]).to(u.min), 'o')
+plt.plot(x_array, y_array_1.to(u.min), 'r-')
+plt.xlabel('Flow rate (mL/s)')
+plt.ylabel('Time to C/Co = 0.5 (min)')
+leg = plt.legend(('Data points','Curve fit'), loc='best')
+plt.savefig("Project/Time_Flows_1.png")
 plt.show()
 
 # Plot volume treated until C = 0.5 C0
@@ -337,9 +346,19 @@ plt.savefig("Project/Volume_Flows_1.png")
 plt.show()
 
 # Plot volume treated for lower flow rates
-plt.plot(Flow_rate[6:11], (V_array[1:6]).to(u.L), 'o')
+slope, intercept, r_value, p_value, std_err = stats.linregress(Flow_rate[6:12],V_array[0:6])
+y_array_2 = x_array * slope + intercept
+y_array_2 = y_array_2 * u.mL
+
+y_array_3 = 328.71 * x_array**2 - 1747.1 * x_array + 2218.5
+y_array_3 = y_array_3 * u.mL
+
+plt.plot(Flow_rate[6:12], (V_array[0:6]).to(u.L), 'o')
+plt.plot(x_array, y_array_2.to(u.L), '-')
+plt.plot(x_array, y_array_3.to(u.L), '-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Volume (L)')
 plt.savefig("Project/Volume_Flows_2.png")
+leg = plt.legend(('Data points','Linear fit', 'Polynomial fit'), loc='best')
 plt.show()
 ```
