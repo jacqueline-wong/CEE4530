@@ -61,6 +61,31 @@ Figure 3: Diagram of the experimental setup for the trial with 8 even layers of 
 
 [Jacqueline: Convert into a table]:#
 
+Table 1: Experiments conducted with varying layers
+|                  | Layers | Flow Rate (mL/s) | Pump (rpm) |
+| ---------------- | ------ | ---------------- | ---------- |
+| **Control**      | 0      | 0.7              | 15         |
+| **Experiment 01** | 1      | 0.7              | 15         |
+| **Experiment 02** | 2      | 0.7              | 15         |
+| **Experiment 03** | 4      | 0.7              | 15         |
+| **Experiment 04** | 6      | 0.7              | 15         |
+| **Experiment 05** | 8      | 0.7              | 15         |
+| **Experiment 06** | Mixed  | 0.7              | 15         |
+
+
+Table 2: Experiments conducted with varying flow rate
+|                   | Layers | Flow Rate (mL/s) | Pump (rpm) |
+| ----------------- | ------ | ---------------- | ---------- |
+| **Experiment 07**  | 1      | 0.7              | 15         |
+| **Experiment 08**  | 1      | 0.933            | 20         |
+| **Experiment 09**  | 1      | 1.167            | 25         |
+| **Experiment 10** | 1      | 1.4              | 30         |
+| **Experiment 11** | 1      | 1.75             | 37.5       |
+| **Experiment 12** | 1      | 2.1              | 45         |
+| **Experiment 13** | 1     | 2.8              | 60 |
+| **Experiment 14** | 1      | 3.5              | 75 |
+| **Experiment 15** | 1      | 4.2              | 90 |
+
 #### Results ####
 
 [Jacqueline: Graphs with caption]:#
