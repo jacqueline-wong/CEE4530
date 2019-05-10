@@ -107,12 +107,23 @@ One hypothesis that was developed to explain this phenomenon is that thorough mi
 ![Layering Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_5.png)
 Figure 8: Diagram of the similar adsorption mechanism for 1, 2, 4, 6 and 8 layers of activated carbon alternating between layers of sand.
 
-Complete mixing is analogous to infinite layers.
+In Figure 8, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules. The ...
 
 ![Mixing Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_6.png)
 Figure 9: Diagram of adsorption mechanism for no layers, i.e. thorough mixing of activated carbon and sand throughout the column.
 
+*Complete mixing is analogous to infinite layers.*
+
 [Jacqueline: Graphs with caption]:#
+
+![Flows 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_1.png)
+Figure 10: Graph of red dye concentration against time for all flow rate experiments with 1 layer of activated carbon between layers of sand.
+
+![Flows 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_2.png)
+Figure 11: Graph of red dye concentration against time for higher flow rates.
+
+![Flows 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_3.png)
+Figure 11: Graph of red dye concentration against time for lower flow rates.
 
 #### Conclusion ####
 
@@ -298,7 +309,7 @@ plt.plot(time_data[11].to(u.min), C_data[11])
 plt.plot(time_data[12].to(u.min), C_data[12])
 plt.plot(time_data[13].to(u.min), C_data[13])
 plt.plot(time_data[14].to(u.min), C_data[14])
-plt.xlim(right=2,left=0)
+plt.ylim(0,22)
 plt.xlabel("Time (min)")
 plt.ylabel("Concentration (mg/L)")
 leg = plt.legend(('2.1 mL/s','2.8 mL/s','3.5 mL/s','4.2 mL/s'), loc='best')
@@ -311,6 +322,7 @@ plt.plot(time_data[7].to(u.min), C_data[7])
 plt.plot(time_data[8].to(u.min), C_data[8])
 plt.plot(time_data[9].to(u.min), C_data[9])
 plt.plot(time_data[10][0:25].to(u.min), C_data[10][0:25])
+plt.ylim(0,23)
 plt.xlabel("Time (min)")
 plt.ylabel("Concentration (mg/L)")
 leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s', '1.4 mL/s', '1.75 mL/s'), loc='best')
