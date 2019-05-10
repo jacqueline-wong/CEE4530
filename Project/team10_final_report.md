@@ -51,15 +51,13 @@ Figure 1: Diagram of the experimental setup for the trial with activated carbon 
 
 In this experiment, the effectiveness of the adsorption system will be measured in accordance to how clear the water filtered out is and the duration at which the absorbent is able to last. These two factors are important in vital in determining how much pollutant the adsorption system can adsorb with one batch of adsorbent. The concentration of dye in the effluent can be measured using a photometer.
 
-The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3). The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon.
+The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3) (Table 1). The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon (Table 2).
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_2.png)
 Figure 2: Diagram of the experimental setup for the trial with 2 even layers of activated carbon separated by layers of sand.
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_8.png)
 Figure 3: Diagram of the experimental setup for the trial with 8 even layers of activated carbon separated by layers of sand.
-
-[Jacqueline: Convert into a table]:#
 
 Table 1: Experiments conducted with varying layers
 |                  | Layers | Flow Rate (mL/s) | Pump (rpm) |
@@ -87,6 +85,18 @@ Table 2: Experiments conducted with varying flow rate
 | **Experiment 15** | 1      | 4.2              | 90 |
 
 #### Results ####
+
+![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_1.png)
+Figure 4:
+
+![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_2.png)
+Figure 5:
+
+![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_3.png)
+Figure 6:
+
+![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_4.png)
+Figure 7: 
 
 [Jacqueline: Graphs with caption]:#
 [Jacqueline: Calculate volume treated]:#
