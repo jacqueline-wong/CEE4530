@@ -4,6 +4,10 @@
 
 ### Team 10: Victor Khong & Jacqueline Wong ###
 
+![Photo 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Photo_1.png)
+
+![Photo 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Photo_2.png)
+
 #### Introduction ####
 
 Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewater, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
