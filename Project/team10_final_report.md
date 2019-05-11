@@ -417,7 +417,7 @@ plt.plot(Flow_rate[6:12], (V_array[0:6]).to(u.L), 'o')
 plt.plot(x_array, y_array_3.to(u.L), '-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Volume (L)')
-plt.savefig("Project/Volume_Flows_2.png")
 leg = plt.legend(('Data points', 'Curve fit'), loc='best')
+plt.savefig("Project/Volume_Flows_2.png")
 plt.show()
 ```
