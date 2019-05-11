@@ -356,7 +356,7 @@ plt.plot(x_array, (y_array_1), 'r-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
 leg = plt.legend(('Data points','Curve fit'), loc='best')
-plt.savefig("Project/Time_Flows_1.png")
+plt.savefig("Project/Time_Flows_2.png")
 plt.show()
 
 # Plot volume treated until C = 0.5 C0
