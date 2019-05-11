@@ -4,6 +4,7 @@
 
 ### Team 10: Victor Khong & Jacqueline Wong ###
 
+[Victor: Please put this somewhere. Thanks!]:#
 ![Photo 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Photo_3.png)
 
 #### Introduction ####
