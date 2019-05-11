@@ -1,4 +1,6 @@
-# Project Report for CEE 4530
+# Utilizing layering and flow rate variation to improve existing adsorption treatment strategies #
+
+### Final Project Report for CEE 4530 ###
 
 ### Team 10: Victor Khong & Jacqueline Wong ###
 
@@ -144,15 +146,23 @@ Figure 11: Graph of red dye concentration against time for higher flow rates.
 
 Figure 12: Graph of red dye concentration against time for lower flow rates.
 
-In terms of
+In terms of the time it takes for the time until the effluent concentration is 50% of the influent concentration, $t_{breakthrough}$, it can be seen to decrease with increasing flow rate (Figure 13). While flow rates above 2.1 mL/s breakthrough immediately, there appears to be a curve that could fit this relationship with time to C/C~0~ = 0.5 for lower flow rates.
 
 ![Time 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Time_Flows_1.png)
 
 Figure 13: Graph of the time is takes for effluent concentration to be 50% of influent concentration for different flow rates.
 
+Using the trendline function on Microsoft Excel, the following fourth-order polynomial curve was found to be a good estimate of the time to breakthrough, $\hat{t}_{breakthrough}$, based on varying flow rate $Q$ (Figure 14):
+
+$$ \hat{t}_{breakthrough} = Q $$
+
 ![Time 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Time_Flows_2.png)
 
 Figure 14: Graph of the time is takes for effluent concentration to be 50% of influent concentration for the lower flow rates.
+
+However, ... . This is only an empirical model that was calculated based on observations limited to the investigation.
+
+Similarly, ...
 
 ![Volume 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_1.png)
 
