@@ -123,7 +123,7 @@ Figure 10: Graph of red dye concentration against time for all flow rate experim
 Figure 11: Graph of red dye concentration against time for higher flow rates.
 
 ![Flows 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_3.png)
-Figure 11: Graph of red dye concentration against time for lower flow rates.
+Figure 12: Graph of red dye concentration against time for lower flow rates.
 
 #### Conclusion ####
 
@@ -337,23 +337,24 @@ for i in range(len(filenames)):
       t_array[i] = (time_data[i][j].magnitude)
 
 t_array = t_array * u.sec
-plt.plot(Flow_rate[6:15], (t_array[6:15]).to(u.min), 'o')
+HRT_array = (porosity * Column_V/Flow_rate).to(u.s)
+
+plt.plot(Flow_rate[6:15], (t_array[6:15]/HRT_array[6:15]), 'o')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('Time to C/Co = 0.5 (min)')
+plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
 plt.xlim(right=4.5,left=0)
-leg = plt.legend(('Data points','Curve fit'), loc='best')
 plt.savefig("Project/Time_Flows_1.png")
 plt.show()
 
 # Plot time to C = 0.5 C0 for lower flow rates
 x_array = np.linspace(0.7, 2.1, 100)
-y_array_1 = 924.59 * x_array**4 - 5980.4 * x_array**3 + 14852 * x_array**2 - 17354 * x_array + 8352.3
+y_array_1 = 10.671 * x_array**2 - 56.713 * x_array + 72.012
 y_array_1 = y_array_1 * u.sec
 
-plt.plot(Flow_rate[6:12], (t_array[6:12]).to(u.min), 'o')
-plt.plot(x_array, y_array_1.to(u.min), 'r-')
+plt.plot(Flow_rate[6:12], (t_array[6:12]/HRT_array[6:12]), 'o')
+plt.plot(x_array, (y_array_1), 'r-')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('Time to C/Co = 0.5 (min)')
+plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
 leg = plt.legend(('Data points','Curve fit'), loc='best')
 plt.savefig("Project/Time_Flows_1.png")
 plt.show()
