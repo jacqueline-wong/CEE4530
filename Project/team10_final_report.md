@@ -39,6 +39,7 @@ In order to achieve the first objective, the adsorbent will be either mixed or s
 For simplicity, this experiment will utilize a basic adsorption system. The adsorption system will be built using a peristaltic pump, an adsorption column, #17 tubing, and a photometer. The absorbent of the system is activated carbon. The rest of the adsorption column will be filled with sand. There should be equal mass of activated carbon and sand in the adsorption column. The adsorption system will be set up as shown in Figure 1.
 
 ![setup_mixed](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_mixed.png)
+
 Figure 1: Diagram of the experimental setup for the trial with activated carbon mixed throughout the column with sand.
 
 #### Experimental Procedure ####
@@ -50,12 +51,15 @@ In this experiment, the effectiveness of the adsorption system will be measured 
 The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3) (Table 1). The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon (Table 2).
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_2.png)
+
 Figure 2: Diagram of the experimental setup for the trial with 2 even layers of activated carbon separated by layers of sand.
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_8.png)
+
 Figure 3: Diagram of the experimental setup for the trial with 8 even layers of activated carbon separated by layers of sand.
 
 Table 1: Experiments conducted with varying layers
+
 |                   | Layers | Flow Rate (mL/s) | Pump (rpm) |
 | ----------------- | ------ | ---------------- | ---------- |
 | **Control**       | 0      | 0.7              | 15         |
@@ -66,8 +70,8 @@ Table 1: Experiments conducted with varying layers
 | **Experiment 05** | 8      | 0.7              | 15         |
 | **Experiment 06** | Mixed  | 0.7              | 15         |
 
-
 Table 2: Experiments conducted with varying flow rate
+
 |                   | Layers | Flow Rate (mL/s) | Pump (rpm) |
 | ----------------- | ------ | ---------------- | ---------- |
 | **Experiment 07** | 1      | 0.7              | 15         |
@@ -85,31 +89,37 @@ Table 2: Experiments conducted with varying flow rate
 As mentioned above, the first part of this project aims to investigate the breakthrough characteristics of a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column (Table 1). The concentration of red dye was plotted against time for Experiments 1-6 (Figure 4).
 
 ![Layers 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_1.png)
+
 Figure 4: Graph of red dye concentration against time for all layering experiments at 0.7 mL/s.
 
 For Experiments 1-5, which all 1, 2, 4, 6 or 8 alternating layers of activated carbon and sand, it can be seen that most of the breakthrough curves have very similar shapes (Figure 5). Although our team tried to ensure that the peristaltic pump would pump red dye instead of reverse osmosis water once logging began, there were slight variations with when the concentration of red dye began to change. However, this is mostly negligible as it can still be seen that the curves still look very similar.
 
 ![Layers 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_2.png)
+
 Figure 5: Graph of red dye concentration against time for 1, 2, 4, 6 and 8 layers at 0.7 mL/s.
 
 For better visualization, the two experiments with the most different number of layers (which also happen to have fewer air bubble spikes) were plotted (Figure 6). It can be seen that even the experiment with 1 layer of activated carbon and the experiment with 8 layers of activated carbon have almost identical breakthrough curves. Thus, this data suggests that contrary to our hypothesis, there there was no observed difference in adsorption efficiency by varying the number of alternating layers of activated carbon and sand.
 
 ![Layers 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_3.png)
+
 Figure 6: Graph of red dye concentration against time for 1 layer and 8 layers at 0.7 mL/s.
 
 However, despite the mostly similar breakthrough curves in Figure 4, there is one particular plot in brown of the breakthrough curve with no layers (i.e. activated carbon and sand mixed thoroughly throughout the adsorption column) that appears to have a lower slope. Plotting this against the experiment with 1 layer of activated carbon, it can be seen that the breakthrough curve for the mixing experiment is indeed at a lower gradient (Figure 7). This suggests that while there is no difference between the number of layers, thoroughly mixing activated carbon and sand throughout the column results in a visible improvement in adsorption efficiency.
 
 ![Layers 4](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Layers_4.png)
+
 Figure 7: Graph of red dye concentration against time for 1 layer and no layers (mixed) at 0.7 mL/s.
 
 One hypothesis that was developed to explain this phenomenon is that thorough mixing allowed for more uniform red dye concentration within the column due to the greater distance between activated carbon granules.
 
 ![Layering Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_5.png)
+
 Figure 8: Diagram of the similar adsorption mechanism for 1, 2, 4, 6 and 8 layers of activated carbon alternating between layers of sand.
 
 For the proposed adsorption mechanism in experiments with layers of activated carbon, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules (Figure 8). As red dye is diffusing into the pores of the activated carbon granules, concentration is lower next to the activated carbon granules and higher in between, resulting in a less uniform distribution.
 
 ![Mixing Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_6.png)
+
 Figure 9: Diagram of adsorption mechanism for no layers, i.e. thorough mixing of activated carbon and sand throughout the column.
 
 On the other hand, for the proposed adsorption mechanism in the experiment with no layers of activated carbon (i.e. thorough mixing with sand), the dark red line on the right side represents the distribution of red dye concentration between an activated carbon granule and sand particle (Figure 9). Red dye concentration is lower next to the activated carbon granules but higher in the spacing between and next to the sand particle, as sand has negligible adsorption properties. This results in more uniform distribution compared to the previous scenario.
@@ -123,12 +133,15 @@ The second part of this project aims to investigate the breakthrough characteris
 "the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 50% of the influent concentration"
 
 ![Flows 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_1.png)
+
 Figure 10: Graph of red dye concentration against time for all flow rate experiments with 1 layer of activated carbon between layers of sand.
 
 ![Flows 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_2.png)
+
 Figure 11: Graph of red dye concentration against time for higher flow rates.
 
 ![Flows 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_3.png)
+
 Figure 12: Graph of red dye concentration against time for lower flow rates.
 
 #### Conclusion ####
