@@ -162,9 +162,7 @@ Figure 14: Graph of the time is takes for effluent concentration to be 50% of in
 
 However, despite the fact that the fourth-order polynomial curve fits the data nicely, this is only an empirical model that calculated based on observations limited to the investigation. It does not explain any of the theory behind the physical-chemical processes that result in this pattern.
 
-Because, ... normalized to volume of water treated
-
-Similarly, ...
+The time that it takes for effluent concentration to be 50% of influent concentration cannot be used as a good comparison of results because flow rate is different. Thus, in order to normalize these values, the total volume of water "treated", $V_{treated}$, will be plotted as well (Figure 15). Similarly, it can be seen that even with this normalization, as the flow rate increases, the less volume of water the system can treat until breakthrough.
 
 ![Volume 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_1.png)
 
@@ -178,9 +176,13 @@ $$ \hat{V}_{treated} = 0.32871 Q^2 - 1.7472 Q + 2.2185 $$
 
 Figure 16: Graph of the volume of water treated until effluent concentration is 50% of influent concentration for lower flow rates.
 
+Even though the fact that the second-order polynomial curve fits the data nicely, this is still only an empirical model that calculated based on observations limited to the investigation. It does not explain any of the theory behind the physical-chemical processes that result in this pattern.
+
+Regardless, this data suggests that even though flow rate allows for more water to pass through the adsorption column at a given time, in order to best utilize the system, the lowest flow rate possible is the optimum choice in this scenario. In terms of real-life application, perhaps even on a large-scale, it would be best for treatment plants to operate the adsorption system with the lowest flow rate as possible that can still meet consumer needs.
+
 #### Conclusion ####
 
-[Jacqueline: Summarize the results in a few sentences. Connect this to the objectives]:#
+[Victor: Summarize the results in a few sentences. Connect this to the objectives]:#
 
 #### Suggestions / Comments ####
 
@@ -393,7 +395,7 @@ HRT_array = (porosity * Column_V/Flow_rate).to(u.s)
 
 x_array = np.linspace(0.7, 2.1, 100)
 y_array_1 = 15.411 * x_array**4 - 99.682 * x_array**3 + 247.54 * x_array**2 - 289.24 * x_array + 139.21
-y_array_1 = y_array_1 * u.sec
+y_array_1 = y_array_1 * u.min
 
 # Plot time to C = 0.5 C0 for different flow rates
 plt.plot(Flow_rate[6:15], (t_array[6:15]).to(u.min), 'o')
@@ -416,8 +418,8 @@ slope, intercept, r_value, p_value, std_err = stats.linregress(Flow_rate[6:12],V
 y_array_2 = x_array * slope + intercept
 y_array_2 = y_array_2 * u.mL
 
-y_array_3 = 328.71 * x_array**2 - 1747.1 * x_array + 2218.5
-y_array_3 = y_array_3 * u.mL
+y_array_3 = 0.3287 * x_array**2 - 1.7472 * x_array + 2.2185
+y_array_3 = y_array_3 * u.L
 
 # Plot volume treated until C = 0.5 C0
 V_array = t_array[6:15] * Flow_rate[6:15]
