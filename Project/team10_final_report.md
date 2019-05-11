@@ -152,21 +152,27 @@ In terms of the time it takes for the time until the effluent concentration is 5
 
 Figure 13: Graph of the time is takes for effluent concentration to be 50% of influent concentration for different flow rates.
 
-Using the trendline function on Microsoft Excel, the following fourth-order polynomial curve was found to be a good estimate of the time to breakthrough, $\hat{t}_{breakthrough}$, based on varying flow rate $Q$ (Figure 14):
+Using the trendline function on Microsoft Excel, the following fourth-order polynomial curve was found to be a good estimate (R^2^ = 0.99662) of the time to breakthrough (in minutes), $\hat{t}_{breakthrough}$, based on varying flow rates (in milliliters per second), $Q$, between 0.7-2.1 mL/s:
 
-$$ \hat{t}_{breakthrough} = Q $$
+$$ \hat{t}_{breakthrough} = 15.411 Q^4 - 99.682 Q^3 + 247.54 Q^2 - 289.24 Q + 139.21 $$
 
 ![Time 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Time_Flows_2.png)
 
 Figure 14: Graph of the time is takes for effluent concentration to be 50% of influent concentration for the lower flow rates.
 
-However, ... . This is only an empirical model that was calculated based on observations limited to the investigation.
+However, despite the fact that the fourth-order polynomial curve fits the data nicely, this is only an empirical model that calculated based on observations limited to the investigation. It does not explain any of the theory behind the physical-chemical processes that result in this pattern.
+
+Because, ... normalized to volume of water treated
 
 Similarly, ...
 
 ![Volume 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_1.png)
 
 Figure 15: Graph of the volume of water treated until effluent concentration is 50% of influent concentration for different flow rates.
+
+Again using the trendline function on Microsoft Excel, the following second-order polynomial curve was found to be a good estimate (R^2^ = 0.99172) of the total volume of water treated (in liters), $\hat{V}_{treated}$, based on varying flow rates (in milliliters per second), $Q$, between 0.7-2.1 mL/s:
+
+$$ \hat{V}_{treated} = 0.32871 Q^2 - 1.7472 Q + 2.2185 $$
 
 ![Volume 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_2.png)
 
@@ -386,22 +392,22 @@ t_array = t_array * u.sec
 HRT_array = (porosity * Column_V/Flow_rate).to(u.s)
 
 x_array = np.linspace(0.7, 2.1, 100)
-y_array_1 = 924 * x_array**4 - 5980.4 * x_array**3 + 14852 * x_array**2 - 17354 * x_array + 8352.3
+y_array_1 = 15.411 * x_array**4 - 99.682 * x_array**3 + 247.54 * x_array**2 - 289.24 * x_array + 139.21
 y_array_1 = y_array_1 * u.sec
 
 # Plot time to C = 0.5 C0 for different flow rates
-plt.plot(Flow_rate[6:15], t_array[6:15], 'o')
+plt.plot(Flow_rate[6:15], (t_array[6:15]).to(u.min), 'o')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('Time to C/Co = 0.5')
+plt.ylabel('Time to C/Co = 0.5 (min)')
 leg = plt.legend(('Data points','Curve fit', 'Line fit'), loc='best')
 plt.savefig("Project/Time_Flows_1.png")
 plt.show()
 
 # Plot time to C = 0.5 C0 for lower flow rates
-plt.plot(Flow_rate[6:12], t_array[6:12], 'o')
+plt.plot(Flow_rate[6:12], (t_array[6:12]).to(u.min), 'o')
 plt.plot(x_array, y_array_1, 'r-')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
+plt.ylabel('Time to C/Co = 0.5 (min)')
 leg = plt.legend(('Data points','Curve fit'), loc='best')
 plt.savefig("Project/Time_Flows_2.png")
 plt.show()
