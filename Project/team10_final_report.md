@@ -329,7 +329,6 @@ leg = plt.legend(('0.7 mL/s','0.933 mL/s','1.167 mL/s', '1.4 mL/s', '1.75 mL/s')
 plt.savefig("Project/Flows_3.png")
 plt.show()
 
-# Plot time to C = 0.5 C0 for different flow rates
 t_array = np.zeros(len(filenames))
 for i in range(len(filenames)):
   for j in range(1, C_data[i].size):
@@ -339,35 +338,27 @@ for i in range(len(filenames)):
 t_array = t_array * u.sec
 HRT_array = (porosity * Column_V/Flow_rate).to(u.s)
 
-plt.plot(Flow_rate[6:15], (t_array[6:15]/HRT_array[6:15]), 'o')
+x_array = np.linspace(0.7, 2.1, 100)
+y_array_1 = 924 * x_array**4 - 5980.4 * x_array**3 + 14852 * x_array**2 - 17354 * x_array + 8352.3
+y_array_1 = y_array_1 * u.sec
+
+# Plot time to C = 0.5 C0 for different flow rates
+plt.plot(Flow_rate[6:15], t_array[6:15], 'o')
 plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
-plt.xlim(right=4.5,left=0)
+plt.ylabel('Time to C/Co = 0.5')
+leg = plt.legend(('Data points','Curve fit', 'Line fit'), loc='best')
 plt.savefig("Project/Time_Flows_1.png")
 plt.show()
 
 # Plot time to C = 0.5 C0 for lower flow rates
-x_array = np.linspace(0.7, 2.1, 100)
-y_array_1 = 10.671 * x_array**2 - 56.713 * x_array + 72.012
-y_array_1 = y_array_1 * u.sec
-
-plt.plot(Flow_rate[6:12], (t_array[6:12]/HRT_array[6:12]), 'o')
-plt.plot(x_array, (y_array_1), 'r-')
+plt.plot(Flow_rate[6:12], t_array[6:12], 'o')
+plt.plot(x_array, y_array_1, 'r-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('(Time to C/Co = 0.5) ÷ (Hydraulic Residence Time)')
 leg = plt.legend(('Data points','Curve fit'), loc='best')
 plt.savefig("Project/Time_Flows_2.png")
 plt.show()
 
-# Plot volume treated until C = 0.5 C0
-V_array = t_array[6:15] * Flow_rate[6:15]
-plt.plot(Flow_rate[6:15], (V_array).to(u.L), 'o')
-plt.xlabel('Flow rate (mL/s)')
-plt.ylabel('Volume (L)')
-plt.savefig("Project/Volume_Flows_1.png")
-plt.show()
-
-# Plot volume treated for lower flow rates
 slope, intercept, r_value, p_value, std_err = stats.linregress(Flow_rate[6:12],V_array[0:6])
 y_array_2 = x_array * slope + intercept
 y_array_2 = y_array_2 * u.mL
@@ -375,6 +366,17 @@ y_array_2 = y_array_2 * u.mL
 y_array_3 = 328.71 * x_array**2 - 1747.1 * x_array + 2218.5
 y_array_3 = y_array_3 * u.mL
 
+# Plot volume treated until C = 0.5 C0
+V_array = t_array[6:15] * Flow_rate[6:15]
+plt.plot(Flow_rate[6:15], (V_array).to(u.L), 'o')
+plt.plot(x_array, y_array_2.to(u.L), '-')
+#plt.plot(Flow_rate[11:15], (V_array[11:15]).to(u.L), '-')
+plt.xlabel('Flow rate (mL/s)')
+plt.ylabel('Volume (L)')
+plt.savefig("Project/Volume_Flows_1.png")
+plt.show()
+
+# Plot volume treated for lower flow rates
 plt.plot(Flow_rate[6:12], (V_array[0:6]).to(u.L), 'o')
 #plt.plot(x_array, y_array_2.to(u.L), '-')
 plt.plot(x_array, y_array_3.to(u.L), '-')
