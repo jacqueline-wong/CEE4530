@@ -107,14 +107,20 @@ One hypothesis that was developed to explain this phenomenon is that thorough mi
 ![Layering Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_5.png)
 Figure 8: Diagram of the similar adsorption mechanism for 1, 2, 4, 6 and 8 layers of activated carbon alternating between layers of sand.
 
-**In Figure 8, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules. The ...**
+For the proposed adsorption mechanism in experiments with layers of activated carbon, the dark red line on the right side represents the distribution of red dye concentration between the two activated carbon granules (Figure 8). As red dye is diffusing into the pores of the activated carbon granules, concentration is lower next to the activated carbon granules and higher in between, resulting in a less uniform distribution.
 
 ![Mixing Hypothesis](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Graphic_6.png)
 Figure 9: Diagram of adsorption mechanism for no layers, i.e. thorough mixing of activated carbon and sand throughout the column.
 
-*Complete mixing is analogous to infinite layers.*
+On the other hand, for the proposed adsorption mechanism in the experiment with no layers of activated carbon (i.e. thorough mixing with sand), the dark red line on the right side represents the distribution of red dye concentration between an activated carbon granule and sand particle (Figure 9). Red dye concentration is lower next to the activated carbon granules but higher in the spacing between and next to the sand particle, as sand has negligible adsorption properties. This results in more uniform distribution compared to the previous scenario.
 
-[Jacqueline: Graphs with caption]:#
+Assuming that the rate at which red dye is adsorbed by the activated carbon granule is a function of diffusion into its pores, this could be a rate limiting step. The more uniform the distribution of red dye, the better the diffusion. Thus, the experiment with thorough mixing of activated carbon and sand performed better than the experiments with alternating layers.
+
+However, it is also worth noting that the number of layers in this experiment is generally in the lower range. Perhaps a difference in performance may only be seen at a much greater number of layers (e.g. 100 layers), since thorough mixing is analogous to having infinite layers.
+
+The second part of this project aims to investigate the breakthrough characteristics of a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column (Table 2). The concentration of red dye was plotted against time for Experiments 7-15 (Figure 4).
+
+"the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 50% of the influent concentration"
 
 ![Flows 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_1.png)
 Figure 10: Graph of red dye concentration against time for all flow rate experiments with 1 layer of activated carbon between layers of sand.
@@ -369,8 +375,6 @@ y_array_3 = y_array_3 * u.mL
 # Plot volume treated until C = 0.5 C0
 V_array = t_array[6:15] * Flow_rate[6:15]
 plt.plot(Flow_rate[6:15], (V_array).to(u.L), 'o')
-plt.plot(x_array, y_array_2.to(u.L), '-')
-#plt.plot(Flow_rate[11:15], (V_array[11:15]).to(u.L), '-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Volume (L)')
 plt.savefig("Project/Volume_Flows_1.png")
