@@ -22,9 +22,9 @@ where $Q$ is the flow rate of the red dye passing through the adsorbent column a
 
 #### Objectives ####
 
-There are two objectives of this project:
+There are two main objectives of this project:
 1. Investigate the breakthrough characteristics and equilibrium partitioning of red dye #40 on activated carbon in a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column.
-2. Investigate the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 50% of the influent concentration.
+2. Investigate the relationship between varying flow rate and how it affects the amount of water that can be "treated" by the adsorption column until the effluent is 50% of the influent concentration.
 
 #### Hypothesis ####
 
@@ -128,13 +128,13 @@ Assuming that the rate at which red dye is adsorbed by the activated carbon gran
 
 However, it is also worth noting that the number of layers in this experiment is generally in the lower range. Perhaps a difference in performance may only be seen at a much greater number of layers (e.g. 100 layers), since thorough mixing is analogous to having infinite layers.
 
-The second part of this project aims to investigate the breakthrough characteristics of a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column (Table 2). The concentration of red dye was plotted against time for Experiments 7-15 (Figure 4).
-
-"the relationship between how varying flow rate affects the amount of water that can be “treated” by the adsorption column until the effluent is 50% of the influent concentration"
+The second part of this project aims to investigate the relationship between varying flow rate and how it affects the amount of water that can be treated by the adsorption column until the effluent is 50% of the influent concentration given a single layer of the same mass of activated carbon in the column (Table 2). The concentration of red dye was plotted against time for Experiments 7-15 (Figure 10).
 
 ![Flows 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_1.png)
 
 Figure 10: Graph of red dye concentration against time for all flow rate experiments with 1 layer of activated carbon between layers of sand.
+
+From Figure 10, it can be seen that as the flow rate increases, the less time it takes to reach breakthrough, as was expected in our second hypothesis. As the shapes of all the breakthrough curves are difficult to see, Figure 11 shows the breakthrough curves for the higher flow rates and Figure 12 shows those for the lower flow rates.
 
 ![Flows 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_2.png)
 
@@ -143,6 +143,24 @@ Figure 11: Graph of red dye concentration against time for higher flow rates.
 ![Flows 3](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Flows_3.png)
 
 Figure 12: Graph of red dye concentration against time for lower flow rates.
+
+In terms of
+
+![Time 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Time_Flows_1.png)
+
+Figure 13: Graph of the time is takes for effluent concentration to be 50% of influent concentration for different flow rates.
+
+![Time 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Time_Flows_2.png)
+
+Figure 14: Graph of the time is takes for effluent concentration to be 50% of influent concentration for the lower flow rates.
+
+![Volume 1](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_1.png)
+
+Figure 15: Graph of the volume of water treated until effluent concentration is 50% of influent concentration for different flow rates.
+
+![Volume 2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Volume_Flows_2.png)
+
+Figure 16: Graph of the volume of water treated until effluent concentration is 50% of influent concentration for lower flow rates.
 
 #### Conclusion ####
 
@@ -400,7 +418,6 @@ plt.plot(x_array, y_array_3.to(u.L), '-')
 plt.xlabel('Flow rate (mL/s)')
 plt.ylabel('Volume (L)')
 plt.savefig("Project/Volume_Flows_2.png")
-#leg = plt.legend(('Data points','Linear fit', 'Curve fit'), loc='best')
 leg = plt.legend(('Data points', 'Curve fit'), loc='best')
 plt.show()
 ```
