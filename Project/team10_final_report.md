@@ -182,7 +182,7 @@ Regardless, this data suggests that even though flow rate allows for more water 
 
 #### Conclusion ####
 
-[Victor: Summarize the results in a few sentences. Connect this to the objectives]:#
+[Victor: Summarize the results in a few sentences. Directly connect this to the two objectives]:#
 
 #### Suggestions / Comments ####
 
