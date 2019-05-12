@@ -30,7 +30,7 @@ There are two main objectives of this project:
 
 #### Hypothesis ####
 
-For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin as there is a chance that the red dye will not come into contact with an activated carbon granule if it is thoroughly mixed with sand.  
+For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin as there is a chance that the red dye will not come into contact with an activated carbon granule if it is thoroughly mixed with sand.
 
 For our second objective, in Gritti et. al’s 2004 study titled “Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis”, it states that as flow rate increases, the mass of dye adsorbed increases (Gritti, 2004). However, we believe that this flow rate should not affect the mass of dye adsorbed. Although there already exists a study on this, we are interested in further investigating this claim as we expect that too high of a flow rate may make it more difficult for dye to attach to the pores in activated carbon, and perhaps even render it useless.
 
@@ -46,11 +46,9 @@ Figure 1: Diagram of the experimental setup for the trial with activated carbon 
 
 #### Experimental Procedure ####
 
-[Victor: Add anything else that we missed]:#
-
 In this experiment, the effectiveness of the adsorption system will be measured in accordance to how clear the water filtered out is and the duration at which the absorbent is able to last. These two factors are important in vital in determining how much pollutant the adsorption system can adsorb with one batch of adsorbent. The concentration of dye in the effluent can be measured using a photometer.
 
-The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3) (Table 1). The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon (Table 2).
+The key design parameters of the experiment is the placement of the adsorbent and the influent flow rate. The experiment would explore the scenarios when the adsorbent is mixed throughout the adsorbent column (Figure 1), and when the adsorbent is separated into 1, 2, 4, 6 and 8 layers (Figure 2, 3) (Table 1). To ensure even layers of sand and activated carbon, it is critical to remember to rotate the adsorption column slowly whilst pouring activated carbon or sand. The flow rates that will be experimented on are 15, 20, 25 30, 37.5, 45, 60, 75 and 90 rpm with one layer of activated carbon (Table 2), which can be easily adjusted using the peristaltic pump.
 
 ![setup_2](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/setup_2.png)
 
@@ -182,11 +180,13 @@ Regardless, this data suggests that even though flow rate allows for more water 
 
 #### Conclusion ####
 
-[Victor: Summarize the results in a few sentences. Directly connect this to the two objectives]:#
+Through the experiments and data analysis, it was found that for a given mass of activated carbon, an adsorption column with a homogeneous mixture of activated carbon and sand performed better than one with distinct layers. Between the different number of layers, there was not much evidence to show that the number of layers affected the performance of the adsorption column at all. Another important result found was that the greater the flow rate, the less efficient the adsorption column is in terms of the volume of water it could treat, which was in agreement with our hypothesis. These findings are critical because they enable a better understanding of the theory behind the inner workings of an adsorption column and encourage designs of a more robust adsorption process for the future.
 
 #### Suggestions / Comments ####
 
-[Victor: Copy things from slide.]:#
+Given the timeframe of the project, a very limited number of experiments was done. For the experiments varying the physical geometry of the adsorption column, a suggestion for further study is to conduct more experiments with high number of layers, for instance 100 layers or 200 layers. Since the project focused solely on the effect of efficiency with a low number of layers, the conclusion that changing geometry does not affect efficiency of the adsorption column only applies to the small range of layers our team conducted experiment on. By performing experiments on more extreme layers, it can help investigate the hypothesis that was proposed and further understand the adsorption mechanism.
+
+For the experiments varying flow rate across the adsorption column, a suggestion for further study is to look into what the findings of this study means in terms of cost to water/wastewater treatment plants. It was found that increasing flow rate decreases adsorption efficiency as hypothesized. However, a more interesting question is how to optimize the tradeoff between the replacement of activated carbon and water treated per unit time can be examined. To do so, a curve-fitting model can be constructed for greater accuracy. Successful optimization in efficiency of adsorption column translates to economic benefits for institutions. A cost-benefit analysis can be conducted to find the magnitude of the savings that an institution can realize.
 
 #### References ####
 
