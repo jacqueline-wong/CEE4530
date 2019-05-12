@@ -1,12 +1,12 @@
-# Utilizing layering and flow rate variation to improve existing adsorption treatment strategies #
+# Utilizing layering and flow rate variation to improve existing adsorption treatment strategies
 
-### Final Project Report for CEE 4530 ###
+### Final Project Report for CEE 4530
 
-### Team 10: Victor Khong & Jacqueline Wong ###
+### Team 10: Victor Khong & Jacqueline Wong
 
 ![Photo](https://raw.githubusercontent.com/lw583/CEE4530/master/Project/Photo_3.png)
 
-#### Introduction ####
+#### Introduction
 
 Adsorption is a unit operation in which surface-active materials in true solution are removed from the solvent by interphase transfer to the surface of an adsorbent particle. This process is employed in environmental engineering practice for removal of various pollutants such as soluble organics, dyes, pesticides and humic substances from wastewater, and for removal of color, taste, and odor-producing compounds from natural waters that are to be used as potable water supplies. Activated carbon is one such adsorbent used in drinking water and wastewater treatment to transfer dissolved species to the solid phase, particularly for the remediation of groundwater contaminated with volatile and nonvolatile organic pollutants (Weber-Shirk, 2019).
 
@@ -22,13 +22,13 @@ $$V_{treated}=t_{breakthrough} \times Q$$
 
 where $Q$ is the flow rate of the red dye passing through the adsorbent column and $t_{breakthrough}$ is the time when breakthrough is achieved.
 
-#### Objectives ####
+#### Objectives
 
 There are two main objectives of this project:
 1. Investigate the breakthrough characteristics and equilibrium partitioning of red dye #40 on activated carbon in a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column.
 2. Investigate the relationship between varying flow rate and how it affects the amount of water that can be "treated" by the adsorption column until the effluent is 50% of the influent concentration.
 
-#### Hypothesis ####
+#### Hypothesis
 
 For the first objective, our hypothesis is that for the same mass of adsorbent, the column with adsorbent mixed throughout the column will be the least effective, while the column with the more layers will be the more effective until those layers become too thin as there is a chance that the red dye will not come into contact with an activated carbon granule if it is thoroughly mixed with sand.
 
@@ -36,7 +36,7 @@ For our second objective, in Gritti et. al’s 2004 study titled “Effect of th
 
 In order to achieve the first objective, the adsorbent will be either mixed or separated into even layers throughout the column and the column will be run with the same flow rate. For the second objective, the layering pattern will be the same in the column but flow rate will be varied. To determine which has the better performance for the first objective, we will plot the breakthrough curves of different experiments, and the relative time it takes for the effluent concentration to be 50% of the influent concentration (Weber-Shirk, “Adsorption”). To determine which has the better performance for the second objective, we will determine the amount of water treated based on the time it takes until the effluent is 50% of the influent concentration, $V_{treated}$. This is dependent on the life of the adsorption column and the amount of pollutant absorbed by the adsorbent at any given time in which that water is considered treated.
 
-#### Materials ####
+#### Materials
 
 For simplicity, this experiment will utilize a basic adsorption system. The adsorption system will be built using a peristaltic pump, an adsorption column, #17 tubing, and a photometer. The absorbent of the system is activated carbon. The rest of the adsorption column will be filled with sand. There should be equal mass of activated carbon and sand in the adsorption column. The adsorption system will be set up as shown in Figure 1.
 
@@ -44,7 +44,7 @@ For simplicity, this experiment will utilize a basic adsorption system. The adso
 
 Figure 1: Diagram of the experimental setup for the trial with activated carbon mixed throughout the column with sand.
 
-#### Experimental Procedure ####
+#### Experimental Procedure
 
 In this experiment, the effectiveness of the adsorption system will be measured in accordance to how clear the water filtered out is and the duration at which the absorbent is able to last. These two factors are important in vital in determining how much pollutant the adsorption system can adsorb with one batch of adsorbent. The concentration of dye in the effluent can be measured using a photometer.
 
@@ -84,7 +84,7 @@ Table 2: Experiments conducted with varying flow rate
 | **Experiment 14** | 1      | 3.5              | 75         |
 | **Experiment 15** | 1      | 4.2              | 90         |
 
-#### Results ####
+#### Results
 
 As mentioned above, the first part of this project aims to investigate the breakthrough characteristics of a continuous flow carbon contactor at a range of different layering patterns given equal proportions of sand and activated carbon by mass in the column (Table 1). The concentration of red dye was plotted against time for Experiments 1-6 (Figure 4).
 
@@ -178,23 +178,25 @@ Even though the fact that the second-order polynomial curve fits the data nicely
 
 Regardless, this data suggests that even though flow rate allows for more water to pass through the adsorption column at a given time, in order to best utilize the system, the lowest flow rate possible is the optimum choice in this scenario. In terms of real-life application, perhaps even on a large-scale, it would be best for treatment plants to operate the adsorption system with the lowest flow rate as possible that can still meet consumer needs.
 
-#### Conclusion ####
+#### Conclusion
 
 Through the experiments and data analysis, it was found that for a given mass of activated carbon, an adsorption column with a homogeneous mixture of activated carbon and sand performed better than one with distinct layers. Between the different number of layers, there was not much evidence to show that the number of layers affected the performance of the adsorption column at all. Another important result found was that the greater the flow rate, the less efficient the adsorption column is in terms of the volume of water it could treat, which was in agreement with our hypothesis. These findings are critical because they enable a better understanding of the theory behind the inner workings of an adsorption column and encourage designs of a more robust adsorption process for the future.
 
-#### Suggestions / Comments ####
+#### Suggestions / Comments
 
 Given the timeframe of the project, a very limited number of experiments was done. For the experiments varying the physical geometry of the adsorption column, a suggestion for further study is to conduct more experiments with high number of layers, for instance 100 layers or 200 layers. Since the project focused solely on the effect of efficiency with a low number of layers, the conclusion that changing geometry does not affect efficiency of the adsorption column only applies to the small range of layers our team conducted experiment on. By performing experiments on more extreme layers, it can help investigate the hypothesis that was proposed and further understand the adsorption mechanism.
 
 For the experiments varying flow rate across the adsorption column, a suggestion for further study is to look into what the findings of this study means in terms of cost to water/wastewater treatment plants. It was found that increasing flow rate decreases adsorption efficiency as hypothesized. However, a more interesting question is how to optimize the tradeoff between the replacement of activated carbon and water treated per unit time can be examined. To do so, a curve-fitting model can be constructed for greater accuracy. Successful optimization in efficiency of adsorption column translates to economic benefits for institutions. A cost-benefit analysis can be conducted to find the magnitude of the savings that an institution can realize.
 
-#### References ####
+#### References
 
 Çeçen, F. & Aktaş, Ö. (2011). Activated Carbon for Water and Wastewater Treatment: Integration of Adsorption and Biological Treatment. Retrieved from https://onlinelibrary.wiley.com/doi/book/10.1002/9783527639441
 
 Gritti, F. & Guiochon, G. (2011). Effect of the flow rate on the measurement of adsorption data by dynamic frontal analysis. Retreived from https://www.sciencedirect.com/science/article/pii/S0021967304014888
 
 Weber-Shirk, M. (2019). Adsorption. Retrieved from https://monroews.github.io/EnvEngLabTextbook/Adsorption/Adsorption.html#prelab-questions
+
+#### Appendix
 
 ```python
 from aguaclara.core.units import unit_registry as u
